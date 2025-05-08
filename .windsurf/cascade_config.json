@@ -1,0 +1,10 @@
+{
+  "workspaceRules": [],
+  "protection": {
+    "protectedPaths": [
+      ".windsurf/**",
+      "lean.json"
+    ],
+    "message": "These files contain critical workspace rules and workflows and must not be modified without explicit user permission."
+  }
+}
