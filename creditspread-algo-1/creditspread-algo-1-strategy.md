@@ -86,3 +86,7 @@ The strategy will be implemented incrementally in the following order of priorit
    - Test with different market conditions
 
 This phased approach prioritizes the core mechanics of option spread construction and execution before adding strategy-specific logic, ensuring a solid foundation for the algorithm.
+
+## Implementation Plan
+
+A detailed implementation plan for this trading algorithm is available in [creditspread-algo-1-implementation-plan.md](./creditspread-algo-1-implementation-plan.md).
