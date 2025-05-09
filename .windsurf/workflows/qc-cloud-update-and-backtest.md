@@ -20,7 +20,8 @@ lean cloud push --project "{{ project_name }}" && \
 BACKTEST_OUTPUT=$(lean cloud backtest "{{ project_name }}") && \
 echo "$BACKTEST_OUTPUT" && \
 BACKTEST_URL=$(echo "$BACKTEST_OUTPUT" | grep -o 'https://www.quantconnect.com/project/[^[:space:]]*' | tail -1) && \
-open -a Safari "$BACKTEST_URL"
+# Open Safari in background (non-blocking)
+open -g -a Safari "$BACKTEST_URL"
 ```
 
 ## Notes
