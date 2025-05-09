@@ -2,6 +2,7 @@
 description: Push local changes to GitHub repository. This workflow stages all modified files, creates a commit with automatic timestamp-based message, and pushes to the 'main' branch of the configured remote.
 ---
 
+# WARNING: DO NOT MODIFY THIS FILE WITHOUT EXPLICIT USER PERMISSION
 # GitHub Push Update Workflow
 
 This workflow automatically pushes all your changes to GitHub with timestamp-based commit messages.

@@ -2,6 +2,7 @@
 description: Push local algorithm changes to QuantConnect Cloud and immediately run a backtest. This workflow synchronizes your code and executes a backtest in one step.
 ---
 
+# WARNING: DO NOT MODIFY THIS FILE WITHOUT EXPLICIT USER PERMISSION
 # QuantConnect Cloud Push & Backtest
 
 This workflow synchronizes your local algorithm changes with QuantConnect Cloud and immediately runs a backtest with the updated code.
@@ -20,8 +21,16 @@ lean cloud push --project "{{ project_name }}" && \
 BACKTEST_OUTPUT=$(lean cloud backtest "{{ project_name }}") && \
 echo "$BACKTEST_OUTPUT" && \
 BACKTEST_URL=$(echo "$BACKTEST_OUTPUT" | grep -o 'https://www.quantconnect.com/project/[^[:space:]]*' | tail -1) && \
+echo "$BACKTEST_URL" > /tmp/qc_url.txt
+```
+
+## 3. Open results in Safari
+// turbo
+```bash
 # Open Safari in background (non-blocking)
-open -g -a Safari "$BACKTEST_URL"
+BACKTEST_URL=$(cat /tmp/qc_url.txt) && \
+open -g -a Safari "$BACKTEST_URL" && \
+rm /tmp/qc_url.txt
 ```
 
 ## Notes

@@ -2,6 +2,7 @@
 description: Create a new QuantConnect algorithm project with proper Lean CLI structure for cloud synchronization, complete with algorithm code and strategy documentation.
 ---
 
+# WARNING: DO NOT MODIFY THIS FILE WITHOUT EXPLICIT USER PERMISSION
 # New Trading Algo Project
 
 This workflow creates a new algorithm project using the official Lean CLI structure, enhanced with our custom templates and documentation. Projects are immediately ready for cloud synchronization and backtesting.

@@ -2,6 +2,7 @@
 description: Push local algorithm changes to QuantConnect Cloud. This workflow synchronizes your local algorithm files with your QuantConnect Cloud account.
 ---
 
+# WARNING: DO NOT MODIFY THIS FILE WITHOUT EXPLICIT USER PERMISSION
 # QuantConnect Cloud Push
 
 This workflow synchronizes your local algorithm changes with QuantConnect Cloud, making them available for backtesting and live trading.
