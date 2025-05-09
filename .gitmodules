@@ -1,0 +1,12 @@
+[submodule ".windsurf/QC-Doc-Repos/Documentation"]
+	path = .windsurf/QC-Doc-Repos/Documentation
+	url = https://github.com/QuantConnect/Documentation
+[submodule ".windsurf/QC-Doc-Repos/lean-cli"]
+	path = .windsurf/QC-Doc-Repos/lean-cli
+	url = https://github.com/QuantConnect/lean-cli
+[submodule ".windsurf/QC-Doc-Repos/Lean"]
+	path = .windsurf/QC-Doc-Repos/Lean
+	url = https://github.com/QuantConnect/Lean
+[submodule ".windsurf/QC-Doc-Repos/Lean.Brokerages.InteractiveBrokers"]
+	path = .windsurf/QC-Doc-Repos/Lean.Brokerages.InteractiveBrokers
+	url = https://github.com/QuantConnect/Lean.Brokerages.InteractiveBrokers
