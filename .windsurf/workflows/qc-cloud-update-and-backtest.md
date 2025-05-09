@@ -16,8 +16,11 @@ This workflow synchronizes your local algorithm changes with QuantConnect Cloud 
 ```bash
 # Push local changes to QuantConnect Cloud
 lean cloud push --project "{{ project_name }}" && \
-# Run backtest with the updated code
-lean cloud backtest "{{ project_name }}" --open
+# Run backtest with the updated code and capture the URL
+BACKTEST_OUTPUT=$(lean cloud backtest "{{ project_name }}") && \
+# Extract the backtest URL and open it in Safari
+BACKTEST_URL=$(echo "$BACKTEST_OUTPUT" | grep -o 'https://www.quantconnect.com/project/[^[:space:]]*' | tail -1) && \
+open -a Safari "$BACKTEST_URL"
 ```
 
 ## Notes
