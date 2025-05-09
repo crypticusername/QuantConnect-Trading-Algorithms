@@ -15,20 +15,8 @@ This workflow runs a backtest of your algorithm on QuantConnect Cloud using the 
 ## 2. Run backtest on QuantConnect Cloud
 // turbo
 ```bash
-# Run backtest and capture output for display while also extracting URL
-BACKTEST_OUTPUT=$(lean cloud backtest "{{ project_name }}") && \
-echo "$BACKTEST_OUTPUT" && \
-BACKTEST_URL=$(echo "$BACKTEST_OUTPUT" | grep -o 'https://www.quantconnect.com/project/[^[:space:]]*' | tail -1) && \
-echo "$BACKTEST_URL" > /tmp/qc_url.txt
-```
-
-## 3. Open results in Safari
-// turbo
-```bash
-# Open Safari in background (non-blocking)
-BACKTEST_URL=$(cat /tmp/qc_url.txt) && \
-open -g -a Safari "$BACKTEST_URL" && \
-rm /tmp/qc_url.txt
+# Run backtest on QuantConnect Cloud
+lean cloud backtest "{{ project_name }}" --open
 ```
 
 ## Notes
