@@ -1,4 +1,4 @@
-# Creditspread Algo1 Strategy
+# Creditspread Algo 1 Strategy
 
 ## Overview
 *[Brief description of the strategy and its goals]*

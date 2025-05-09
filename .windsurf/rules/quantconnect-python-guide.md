@@ -5,27 +5,29 @@ trigger: always_on
 # WARNING: DO NOT MODIFY THIS FILE WITHOUT EXPLICIT USER PERMISSION
 # QuantConnect Python Workspace Rules
 
-> **Scope:** This guide defines conventions for creating Python option-trading algorithms for QuantConnect Cloud via Lean CLI (cloud mode). Follow these alongside global rules.
+> **Scope:** This guide defines conventions for creating Python option-trading algorithms for QuantConnect Cloud via Lean CLI (cloud mode).
 
 ---
 ## 1  Authoritative References
 | Topic                          | Source                                                                                  |
 |--------------------------------|-----------------------------------------------------------------------------------------|
 | QuantConnect Docs (v2)         | https://www.quantconnect.com/docs/v2                                                     |
-| LEAN Engine GitHub             | https://github.com/QuantConnect/Lean                                                     |
-| Documentation GitHub           | https://github.com/QuantConnect/Documentation                                           |
 | Option Strategies              | https://www.quantconnect.com/docs/v2/writing-algorithms/trading-and-orders/option-strategies |
 | Equity Options Universe        | https://www.quantconnect.com/docs/v2/writing-algorithms/universes/equity-options        |
 | Index Options Universe         | https://www.quantconnect.com/docs/v2/writing-algorithms/universes/index-options         |
 | Future Options Universe        | https://www.quantconnect.com/docs/v2/writing-algorithms/universes/future-options        |
 | Lean CLI API Reference         | https://www.quantconnect.com/docs/v2/lean-cli/api-reference                              |
+| Python PEP 8 Style Guide       | https://peps.python.org/pep-0008/                                                       |
 
 ---
 ## 2  Project & Folder Conventions
-1. Place each strategy in its own folder under `./projects/`.
-2. Name the main file `strategy_name.py`, config `lean.json` or `config.yaml`.
-3. Helpers in `./lib/`; avoid circular imports.
-4. Don’t commit backtest outputs; store in `.results/` (git-ignored).
+1. Use the `/new-trading-algo-project` workflow to create new algorithm projects with proper structure.
+2. Each algorithm lives in its own folder at workspace root.
+3. Main algorithm code is in `main.py` (created by the workflow).
+4. Strategy documentation is in `[project-name]-strategy.md` (created by the workflow).
+5. Use `/qc-cloud-push-update` to sync changes to QuantConnect Cloud.
+6. Use `/qc-cloud-run-backtest` to run backtests on the cloud.
+7. Use `/qc-cloud-update-and-backtest` to push changes and immediately run a backtest.
 
 ---
 ## 3  Algorithm Boilerplate
@@ -34,90 +36,107 @@ from AlgorithmImports import *
 
 class MyAlgorithm(QCAlgorithm):
     def Initialize(self):
-        self.SetStartDate(2024, 1, 1)
-        self.SetEndDate(2024, 12, 31)
-        self.SetCash(100000)
-        self.SetTimeZone(TimeZones.NEW_YORK)
-        self.SetWarmUp(10, Resolution.Daily)
+        """Initialize algorithm parameters, data subscriptions, and scheduling."""
+        self.set_start_date(2024, 1, 1)
+        self.set_end_date(2024, 12, 31)
+        self.set_cash(100000)
+        self.set_time_zone(TimeZones.EASTERN_STANDARD)
+        self.set_warm_up(10, Resolution.DAILY)
 
-        equity = self.AddEquity("SPY", Resolution.Minute).Symbol
-        opt = self.AddOption("SPY", Resolution.Minute)
-        opt.SetFilter(lambda u: u.IncludeWeeklys().Strikes(-5, 5).Expiration(0, 7))
+        # Add equity and options
+        equity = self.add_equity("SPY", Resolution.MINUTE).Symbol
+        opt = self.add_option("SPY", Resolution.MINUTE)
+        opt.set_filter(lambda u: u.include_weeklys().strikes(-5, 5).expiration(0, 7))
         self.option_symbol = opt.Symbol
 
-        self.Schedule.On(DateRules.EveryDay(), TimeRules.AfterMarketOpen("SPY", 5), self.OpenTrades)
+        # Schedule algorithm entry points
+        self.schedule.on(self.date_rules.every_day(), 
+                         self.time_rules.after_market_open("SPY", 5), 
+                         self.open_trades)
 ```
-- Always `from AlgorithmImports import *` ([docs](https://www.quantconnect.com/docs/v2/writing-algorithms/key-concepts/algorithm-imports)).
-- Use `Schedule.On` for timed entry/exit. 
+
+### Algorithm Syntax Requirements
+- Always use `from AlgorithmImports import *`
+- Use snake_case for method names (`set_start_date` not `SetStartDate`).
+- Use UPPERCASE for Resolution values (`Resolution.MINUTE` not `Resolution.Minute`).
+- Use `self.schedule.on` with `self.date_rules` and `self.time_rules`.
+- Include docstrings for all methods.
+- Follow PEP 8 for code style (4-space indentation, 79-char line limit).
 
 ---
 ## 4  Data Subscriptions & Universes
 ```python
 # Equity options
-opt = self.AddOption("SPY", Resolution.Minute)
-opt.SetFilter(lambda u: u.IncludeWeeklys().Strikes(-5, 5).Expiration(0, 7))
+opt = self.add_option("SPY", Resolution.MINUTE)
+opt.set_filter(lambda u: u.include_weeklys().strikes(-5, 5).expiration(0, 7))
 
 # Index options
-idx = self.AddIndexOption("SPX", Resolution.Minute)
-idx.SetFilter(lambda u: u.IncludeWeeklys().Strikes(-10, 10).Expiration(0, 7))
+idx = self.add_index_option("SPX", Resolution.MINUTE)
+idx.set_filter(lambda u: u.include_weeklys().strikes(-10, 10).expiration(0, 7))
 
 # Future options
-fut = self.AddFuture(Futures.Indices.SP500EMini, Resolution.Minute)
-opt = self.AddFutureOption(fut.Symbol, Resolution.Minute)
+fut = self.add_future(Futures.Indices.SP500EMini, Resolution.MINUTE)
+opt = self.add_future_option(fut.Symbol, Resolution.MINUTE)
 ```
-[Equity Options Universe](https://www.quantconnect.com/docs/v2/writing-algorithms/universes/equity-options).
 
 ---
 ## 5  Option Strategy Construction
 ```python
-# Bull Put Spread
-strat = OptionStrategies.BullPutSpread(self.option_symbol.Canonical, shortStrike, longStrike, expiry)
-self.Sell(strat, qty)
+# Create a put credit spread
+symbol = self.option_symbol
+expiry = sorted(self.option_chain.GetExpiryFunctions().Select(x => x.Date))[0]
+strikes = sorted([x.Strike for x in self.option_chain.GetStrikesByExpiration(expiry)])
+spread = OptionStrategies.BearPutSpread(symbol, strikes[1], strikes[0], expiry)
+self.buy(spread, 1)
 ```
-Guard empty chains:
-```python
-chain = self.CurrentSlice.OptionChains.get(self.option_symbol)
-if chain is None:
-    return
-```
-[Option Strategies](https://www.quantconnect.com/docs/v2/writing-algorithms/trading-and-orders/option-strategies).
 
 ---
 ## 6  Risk & Position Sizing
+1. Define max drawdown tolerance (e.g., 5%).
+2. Implement position sizing based on volatility.
+3. Use `self.portfolio.margin_remaining` for buying power awareness.
+4. Set stop-loss and take-profit levels for each trade.
+5. Monitor and adjust leverage ratios.
+
+---
+## 7  Documentation-First Principle
+1. **Always consult official documentation** before writing algorithm code.
+2. **Use Lean CLI cloud documentation** specifically - not Docker-based approaches.
+3. **Never ad-lib or guess syntax** for QuantConnect-specific methods.
+4. **When researching, prioritize**:
+   - Official QuantConnect Docs (v2)
+   - QuantConnect Options Strategies documentation
+   - QuantConnect Algorithm Writing guides
+   - LEAN GitHub repository examples
+   - QuantConnect Forum verified answers
+
+This workspace is configured for Lean CLI cloud synchronization mode exclusively. When implementing algorithm features, always check the proper syntax in documentation rather than guessing.
+
+---
+## 8  Code Quality & Style
+1. Follow PEP 8 for Python style.
+2. Include docstrings for all methods.
+3. Add comments for complex logic.
+4. Use type hints where possible.
+5. Keep methods small and focused.
+6. Implement proper error handling.
+
 ```python
-risk_pct = 0.02
-risk_budget = self.Portfolio.TotalPortfolioValue * risk_pct
-max_loss = (width * 100 - credit * 100)
-qty = int(risk_budget / max_loss)
+def open_trades(self):
+    """
+    Execute opening trades based on market conditions.
+    """
+    try:
+        # Implementation logic
+        pass
+    except Exception as e:
+        self.log(f"Error in open_trades: {e}")
 ```
-- Flat all positions 30 min before close.
-- Use stop-loss triggers in scheduled callbacks.
 
 ---
-## 7  Spread / Condor Rules
-| Spread               | Guidelines                                                |
-|----------------------|-----------------------------------------------------------|
-| BullPut/BearCall     | Short leg Δ≈0.30; width 1–2 strikes; credit≥`creditPct×width` |
-| (Short) IronCondor   | Use `OptionStrategies.ShortIronCondor`; balance wings symmetrically |
-
----
-## 8  Lean CLI Cloud Workflow
-| Action             | Command                                                                     |
-|--------------------|-----------------------------------------------------------------------------|
-| Create project     | `lean cloud create-project "<Name>" --language python`                     |
-| Pull project       | `lean cloud pull "<Name>"`                                                |
-| Push & backtest    | `lean cloud backtest "<Name>" --push --open false --output results.json`  |
-| Deploy live        | `lean cloud live deploy "<Name>" --brokerage PaperTrading`                |
-[Lean CLI API](https://www.quantconnect.com/docs/v2/lean-cli/api-reference).
-
----
-## 9  Code Quality & Style
-- **PEP 8** (4-space indents, ≤120 cols).  
-- Type hints and docstrings for public methods.  
-- Atomic commits: `feat:`, `fix:`, `docs:`.
-
----
-## 10  Consultation Triggers
-Consult before: architecture changes, core dependency swaps, >20% refactor, or fundamental risk logic edits.
-
-*Last updated: 2025-05-08*
+## 9  Consultation Triggers
+Consult before:
+1. Changing core algorithm structure.
+2. Adding new asset classes.
+3. Modifying risk parameters.
+4. Implementing complex option strategies.

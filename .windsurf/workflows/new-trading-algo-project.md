@@ -1,45 +1,44 @@
 ---
-description: Create a new QuantConnect algorithm project with appropriate folder structure, main.py for algorithm code, and documentation template for strategy explanation.
+description: Create a new QuantConnect algorithm project with proper Lean CLI structure for cloud synchronization, complete with algorithm code and strategy documentation.
 ---
 
+# New Trading Algo Project
 
-# New QuantConnect Algorithm Project
-
-This workflow creates a new algorithm project at the root of the "QuantConnect Trading Algorithms" workspace, following QuantConnect python standards and workspace rules. Each algorithm will be in its own dedicated folder.
+This workflow creates a new algorithm project using the official Lean CLI structure, enhanced with our custom templates and documentation. Projects are immediately ready for cloud synchronization and backtesting.
 
 ## 1. Enter project name
 - id: project_name
 - type: input
 - prompt: Enter a name for your new trading algorithm project:
 
-## 2. Create project directory structure
+## 2. Create project with Lean CLI
 ```bash
-# Creates the project folder at workspace root
-mkdir -p "{{ project_name }}"
+# Creates a properly structured project recognized by Lean CLI
+lean create-project "{{ project_name }}" --language python
 ```
 
-## 3. Create main.py with algorithm boilerplate
+## 3. Enhance main.py with our custom algorithm boilerplate
 ```bash
 cat > "{{ project_name }}/main.py" << 'EOF'
 from AlgorithmImports import *
 
 class {{ project_name | replace('-', '_') | title }}Algorithm(QCAlgorithm):
     def Initialize(self):
-        self.SetStartDate(2024, 1, 1)
-        self.SetEndDate(2024, 12, 31)
-        self.SetCash(100000)
-        self.SetTimeZone(TimeZones.NEW_YORK)
-        self.SetWarmUp(10, Resolution.Daily)
+        self.set_start_date(2024, 1, 1)
+        self.set_end_date(2024, 12, 31)
+        self.set_cash(100000)
+        self.set_time_zone(TimeZones.EASTERN_STANDARD)
+        self.set_warm_up(10, Resolution.DAILY)
 
         # Add equity and options
-        equity = self.AddEquity("SPY", Resolution.Minute).Symbol
-        opt = self.AddOption("SPY", Resolution.Minute)
-        opt.SetFilter(lambda u: u.IncludeWeeklys().Strikes(-5, 5).Expiration(0, 7))
+        equity = self.add_equity("SPY", Resolution.MINUTE).Symbol
+        opt = self.add_option("SPY", Resolution.MINUTE)
+        opt.set_filter(lambda u: u.include_weeklys().strikes(-5, 5).expiration(0, 7))
         self.option_symbol = opt.Symbol
 
         # Schedule algorithm entry points
-        self.Schedule.On(DateRules.EveryDay(), TimeRules.AfterMarketOpen("SPY", 5), self.OpenTrades)
-        self.Schedule.On(DateRules.EveryDay(), TimeRules.BeforeMarketClose("SPY", 30), self.ClosePositions)
+        self.schedule.on(self.date_rules.every_day(), self.time_rules.after_market_open("SPY", 5), self.OpenTrades)
+        self.schedule.on(self.date_rules.every_day(), self.time_rules.before_market_close("SPY", 30), self.ClosePositions)
 
     def OpenTrades(self):
         """Logic for opening positions goes here"""
@@ -55,7 +54,7 @@ class {{ project_name | replace('-', '_') | title }}Algorithm(QCAlgorithm):
 EOF
 ```
 
-## 4. Create strategy documentation template
+## 4. Add strategy documentation template
 ```bash
 cat > "{{ project_name }}/{{ project_name }}-strategy.md" << 'EOF'
 # {{ project_name | replace('-', ' ') | title }} Strategy
@@ -74,6 +73,9 @@ cat > "{{ project_name }}/{{ project_name }}-strategy.md" << 'EOF'
 - **Position Sizing**: 
 - **Risk Management**: 
 
+## Expected Performance
+*[Performance expectations, drawdowns, Sharpe ratio targets, etc.]*
+
 ## Limitations
 *[Known limitations or scenarios where the strategy may underperform]*
 
@@ -82,8 +84,21 @@ cat > "{{ project_name }}/{{ project_name }}-strategy.md" << 'EOF'
 EOF
 ```
 
+## 5. Push to QuantConnect Cloud (Optional)
+```bash
+# Uncomment this line to automatically push to QC Cloud
+# lean cloud push --project "{{ project_name }}"
+```
+
 ## Next Steps
 After the project is created, you can:
-1. Define your strategy by describing it to Windsurf and editing the `{{ project_name }}-strategy.md` file
-2. Work with Windsruf to code and implement your algorithm logic in `main.py`
-3. Test and backtest using Lean CLI to QC Cloud 
+1. Define your strategy in the `{{ project_name }}-strategy.md` file
+2. Implement your algorithm logic in `main.py`
+3. Push to the cloud with:
+   ```
+   lean cloud push --project "{{ project_name }}"
+   ```
+4. Run a backtest with:
+   ```
+   lean cloud backtest "{{ project_name }}" --open
+   ```
