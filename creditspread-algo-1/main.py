@@ -70,7 +70,7 @@ class Creditspread_Algo_1Algorithm(QCAlgorithm):
         More complex logic will be added in later phases.
         """
         # Store today's open price when market opens
-        if self.Time.hour == 9 and self.Time.minute == 30 and self.today_open == 0:
+        if self.UtcTime.hour == 9 and self.UtcTime.minute == 30 and self.today_open == 0:
             if self.equity_symbol in slice.Bars:
                 self.today_open = slice.Bars[self.equity_symbol].Open
                 self.log(f"Today's open price: ${self.today_open}")
@@ -89,11 +89,12 @@ class Creditspread_Algo_1Algorithm(QCAlgorithm):
         In Phase 1, this is a placeholder that will be implemented in later phases.
         """
         self.log("Enter trades method called at 10:30 AM ET")
-        self.log(f"Current SPY price: ${self.Securities[self.equity_symbol].Price}")
+        current_price = self.spy.Price
+        self.log(f"Current SPY price: ${current_price}")
         self.log(f"Previous day's close: ${self.previous_day_close}")
         
         # Store entry price for reference
-        self.entry_price = self.Securities[self.equity_symbol].Price
+        self.entry_price = current_price
         
         # Credit spread construction will be implemented in Phase 3
         # Signal generation will be implemented in Phase 5
@@ -109,20 +110,20 @@ class Creditspread_Algo_1Algorithm(QCAlgorithm):
         In Phase 1, this is a placeholder that will be implemented in later phases.
         """
         self.log("Exit trades method called at 3:30 PM ET")
-        self.log(f"Current SPY price: ${self.Securities[self.equity_symbol].Price}")
+        self.log(f"Current SPY price: ${self.spy.Price}")
         
         # Exit management will be implemented in Phase 6
     
     def store_previous_close(self):
         """Store the previous day's closing price for SPY."""
-        self.previous_day_close = self.Securities[self.equity_symbol].Close
+        self.previous_day_close = self.spy.Close
         self.log(f"Stored previous day's close: ${self.previous_day_close}")
     
     def log(self, message):
         """Enhanced logging method with timestamps and log levels."""
         if self.debug_mode or self.IsWarmingUp:
-            self.Debug(f"{self.Time} [INFO] {message}")
+            self.Debug(f"{self.UtcTime} [INFO] {message}")
         else:
             # In production, only log important messages
-            self.Debug(f"{self.Time} [INFO] {message}")
+            self.Debug(f"{self.UtcTime} [INFO] {message}")
 
