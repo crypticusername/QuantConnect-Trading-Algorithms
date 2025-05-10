@@ -22,6 +22,7 @@ lean cloud backtest "{{ project_name }}" --open
 ## Notes
 - This workflow runs a backtest using the algorithm version currently on QuantConnect Cloud
 - It does not push local changes first (use QC-Cloud-Push workflow before this one if needed)
+- Alternatively, you can add the `--push` flag to push local changes before running the backtest: `lean cloud backtest "{{ project_name }}" --open --push`
 - The `--open` flag automatically opens the backtest results in your browser
 - Backtest results will be available in your QuantConnect account
 - For custom parameters, use the Lean CLI directly with additional flags

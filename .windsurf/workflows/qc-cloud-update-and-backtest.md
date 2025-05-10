@@ -15,17 +15,15 @@ This workflow synchronizes your local algorithm changes with QuantConnect Cloud 
 ## 2. Push to QuantConnect Cloud and run backtest
 // turbo
 ```bash
-# Push local changes to QuantConnect Cloud
-lean cloud push --project "{{ project_name }}" && \
-# Run backtest with the updated code
-lean cloud backtest "{{ project_name }}" --open
+# Push local changes and run backtest in a single command
+lean cloud backtest "{{ project_name }}" --open --push
 ```
 
 ## Notes
-- This workflow combines pushing local changes and running a backtest in one step
-- Your local algorithm changes will be synchronized to QuantConnect Cloud first
-- The backtest will run using the newly pushed code
+- This workflow combines pushing local changes and running a backtest in one step using the `--push` flag
+- The `--push` flag ensures your local algorithm changes are synchronized to QuantConnect Cloud before running the backtest
 - The `--open` flag automatically opens the backtest results in your browser
 - Backtest results will be available in your QuantConnect account
 - This is ideal for iterative development and testing cycles
+- This approach is more efficient than running separate push and backtest commands
 - Windsurf Casacade should attempt to detect the algorithm name based on chat context and the main.py file recently edited

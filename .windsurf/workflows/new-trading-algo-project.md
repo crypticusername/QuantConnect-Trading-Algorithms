@@ -24,32 +24,44 @@ cat > "{{ project_name }}/main.py" << 'EOF'
 from AlgorithmImports import *
 
 class {{ project_name | replace('-', '_') | title }}Algorithm(QCAlgorithm):
-    def Initialize(self):
+    def initialize(self):
+        """Initialize algorithm parameters, data subscriptions, and scheduling."""
         self.set_start_date(2024, 1, 1)
         self.set_end_date(2024, 12, 31)
-        self.set_cash(100000)
-        self.set_time_zone(TimeZones.EASTERN_STANDARD)
+        self.set_cash(10000)
+        self.set_time_zone(TimeZones.NEW_YORK)
         self.set_warm_up(10, Resolution.DAILY)
 
         # Add equity and options
-        equity = self.add_equity("SPY", Resolution.MINUTE).Symbol
-        opt = self.add_option("SPY", Resolution.MINUTE)
-        opt.set_filter(lambda u: u.include_weeklys().strikes(-5, 5).expiration(0, 7))
-        self.option_symbol = opt.Symbol
+        equity = self.add_equity("SPY", Resolution.MINUTE)
+        self.equity_symbol = equity.Symbol
+        
+        option = self.add_option("SPY", Resolution.MINUTE)
+        option.set_filter(lambda u: u.include_weeklys()
+                                     .strikes(-5, 5)
+                                     .expiration(0, 7))
+        self.option_symbol = option.Symbol
+        
+        # Set benchmark
+        self.set_benchmark(self.equity_symbol)
 
         # Schedule algorithm entry points
-        self.schedule.on(self.date_rules.every_day(), self.time_rules.after_market_open("SPY", 5), self.OpenTrades)
-        self.schedule.on(self.date_rules.every_day(), self.time_rules.before_market_close("SPY", 30), self.ClosePositions)
+        self.schedule.on(self.date_rules.every_day(), 
+                         self.time_rules.after_market_open("SPY", 5), 
+                         self.open_trades)
+        self.schedule.on(self.date_rules.every_day(), 
+                         self.time_rules.before_market_close("SPY", 30), 
+                         self.close_positions)
 
-    def OpenTrades(self):
+    def open_trades(self):
         """Logic for opening positions goes here"""
         pass
 
-    def ClosePositions(self):
+    def close_positions(self):
         """Logic for closing positions goes here"""
         pass
 
-    def OnData(self, slice):
+    def on_data(self, slice):
         """Event-driven trading logic goes here (optional)"""
         pass
 EOF

@@ -3,6 +3,7 @@ trigger: always_on
 ---
 
 # WARNING: DO NOT MODIFY THIS FILE WITHOUT EXPLICIT USER PERMISSION
+
 # QuantConnect Python Workspace Rules
 
 > **Scope:** This guide defines conventions for creating Python option-trading algorithms for QuantConnect Cloud via Lean CLI (cloud mode).
@@ -11,12 +12,12 @@ trigger: always_on
 ## 1  Authoritative References
 | Topic                          | Source                                                                                  |
 |--------------------------------|-----------------------------------------------------------------------------------------|
+| Local Documentation            | `.windsurf/QC-Doc-Repos/Documentation`                                                  |
+| Local Lean CLI                 | `.windsurf/QC-Doc-Repos/lean-cli`                                                       |
+| Local Lean Engine              | `.windsurf/QC-Doc-Repos/Lean`                                                           |
+| Local IB Brokerage             | `.windsurf/QC-Doc-Repos/Lean.Brokerages.InteractiveBrokers`                             |
+| Code Examples                  | `.windsurf/qc-code-examples.md`                                                         |
 | QuantConnect Docs (v2)         | https://www.quantconnect.com/docs/v2                                                     |
-| Option Strategies              | https://www.quantconnect.com/docs/v2/writing-algorithms/trading-and-orders/option-strategies |
-| Equity Options Universe        | https://www.quantconnect.com/docs/v2/writing-algorithms/universes/equity-options        |
-| Index Options Universe         | https://www.quantconnect.com/docs/v2/writing-algorithms/universes/index-options         |
-| Future Options Universe        | https://www.quantconnect.com/docs/v2/writing-algorithms/universes/future-options        |
-| Lean CLI API Reference         | https://www.quantconnect.com/docs/v2/lean-cli/api-reference                              |
 | Python PEP 8 Style Guide       | https://peps.python.org/pep-0008/                                                       |
 
 ---
@@ -30,65 +31,31 @@ trigger: always_on
 7. Use `/qc-cloud-update-and-backtest` to push changes and immediately run a backtest.
 
 ---
-## 3  Algorithm Boilerplate
-```python
-from AlgorithmImports import *
-
-class MyAlgorithm(QCAlgorithm):
-    def Initialize(self):
-        """Initialize algorithm parameters, data subscriptions, and scheduling."""
-        self.set_start_date(2024, 1, 1)
-        self.set_end_date(2024, 12, 31)
-        self.set_cash(100000)
-        self.set_time_zone(TimeZones.EASTERN_STANDARD)
-        self.set_warm_up(10, Resolution.DAILY)
-
-        # Add equity and options
-        equity = self.add_equity("SPY", Resolution.MINUTE).Symbol
-        opt = self.add_option("SPY", Resolution.MINUTE)
-        opt.set_filter(lambda u: u.include_weeklys().strikes(-5, 5).expiration(0, 7))
-        self.option_symbol = opt.Symbol
-
-        # Schedule algorithm entry points
-        self.schedule.on(self.date_rules.every_day(), 
-                         self.time_rules.after_market_open("SPY", 5), 
-                         self.open_trades)
-```
-
-### Algorithm Syntax Requirements
+## 3  Algorithm Syntax Requirements
 - Always use `from AlgorithmImports import *`
-- Use snake_case for method names (`set_start_date` not `SetStartDate`).
-- Use UPPERCASE for Resolution values (`Resolution.MINUTE` not `Resolution.Minute`).
+- **CRITICAL:** Python algorithms for QuantConnect MUST use snake_case for method names (`initialize` not `Initialize`, `set_start_date` not `SetStartDate`). Using camelCase will cause compilation errors.
+- Use UPPERCASE for TimeZones and Resolution values (`TimeZones.NEW_YORK`, `Resolution.MINUTE`).
 - Use `self.schedule.on` with `self.date_rules` and `self.time_rules`.
 - Include docstrings for all methods.
 - Follow PEP 8 for code style (4-space indentation, 79-char line limit).
+- See `.windsurf/qc-code-examples.md` for complete code examples.
 
 ---
 ## 4  Data Subscriptions & Universes
-```python
-# Equity options
-opt = self.add_option("SPY", Resolution.MINUTE)
-opt.set_filter(lambda u: u.include_weeklys().strikes(-5, 5).expiration(0, 7))
-
-# Index options
-idx = self.add_index_option("SPX", Resolution.MINUTE)
-idx.set_filter(lambda u: u.include_weeklys().strikes(-10, 10).expiration(0, 7))
-
-# Future options
-fut = self.add_future(Futures.Indices.SP500EMini, Resolution.MINUTE)
-opt = self.add_future_option(fut.Symbol, Resolution.MINUTE)
-```
+- Use `self.add_equity()`, `self.add_option()`, `self.add_index_option()`, etc. to subscribe to data.
+- For options, always use `set_filter()` to narrow down the universe.
+- Include weeklys with `include_weeklys()` when needed.
+- Limit strikes and expirations to reasonable ranges.
+- Store symbols as instance variables for later reference.
+- See `.windsurf/qc-code-examples.md` for detailed examples.
 
 ---
 ## 5  Option Strategy Construction
-```python
-# Create a put credit spread
-symbol = self.option_symbol
-expiry = sorted(self.option_chain.GetExpiryFunctions().Select(x => x.Date))[0]
-strikes = sorted([x.Strike for x in self.option_chain.GetStrikesByExpiration(expiry)])
-spread = OptionStrategies.BearPutSpread(symbol, strikes[1], strikes[0], expiry)
-self.buy(spread, 1)
-```
+- Use the `OptionStrategies` class for predefined strategies.
+- Always check if option chain exists before accessing it.
+- Use modern Python-friendly syntax for accessing option chains.
+- Sort strikes and expiries to ensure consistent selection.
+- See `.windsurf/qc-code-examples.md` for implementation examples.
 
 ---
 ## 6  Risk & Position Sizing
@@ -100,38 +67,28 @@ self.buy(spread, 1)
 
 ---
 ## 7  Documentation-First Principle
-1. **Always consult official documentation** before writing algorithm code.
-2. **Use Lean CLI cloud documentation** specifically - not Docker-based approaches.
-3. **Never ad-lib or guess syntax** for QuantConnect-specific methods.
-4. **When researching, prioritize**:
-   - Official QuantConnect Docs (v2)
-   - QuantConnect Options Strategies documentation
-   - QuantConnect Algorithm Writing guides
-   - LEAN GitHub repository examples
-   - QuantConnect Forum verified answers
+1. **ALWAYS check local documentation repositories** in this order before writing code:
+   - `.windsurf/QC-Doc-Repos/Documentation` (primary reference)
+   - `.windsurf/QC-Doc-Repos/lean-cli` (deployment interface)
+   - `.windsurf/QC-Doc-Repos/Lean` (engine implementation)
+   - `.windsurf/QC-Doc-Repos/Lean.Brokerages.InteractiveBrokers` (IB-specific)
+2. **Use the `/trading-strategy-to-implementation-plan` workflow** to research documentation for new strategies.
+3. **Never guess syntax** - always verify in local documentation.
+4. **Validate all implementations** against documentation examples.
+5. **Document version discrepancies** if found between local docs and current platform.
 
 This workspace is configured for Lean CLI cloud synchronization mode exclusively. When implementing algorithm features, always check the proper syntax in documentation rather than guessing.
 
 ---
 ## 8  Code Quality & Style
-1. Follow PEP 8 for Python style.
-2. Include docstrings for all methods.
-3. Add comments for complex logic.
-4. Use type hints where possible.
-5. Keep methods small and focused.
-6. Implement proper error handling.
-
-```python
-def open_trades(self):
-    """
-    Execute opening trades based on market conditions.
-    """
-    try:
-        # Implementation logic
-        pass
-    except Exception as e:
-        self.log(f"Error in open_trades: {e}")
-```
+1. Always follow the Documentation-First principle 
+2. Follow PEP 8 for Python style.
+3. Include docstrings for all methods.
+4. Add comments for complex logic.
+5. Use type hints where possible.
+6. Keep methods small and focused.
+7. Implement proper error handling.
+8. See `.windsurf/qc-code-examples.md` for examples.
 
 ---
 ## 9  Consultation Triggers
@@ -140,3 +97,4 @@ Consult before:
 2. Adding new asset classes.
 3. Modifying risk parameters.
 4. Implementing complex option strategies.
+5. When documentation appears inconsistent or outdated.

@@ -2,6 +2,7 @@
 description: Convert a trading strategy document into a phased implementation plan with human feedback loops for alignment
 ---
 
+# WARNING: DO NOT MODIFY THIS FILE WITHOUT EXPLICIT USER PERMISSION
 # Trading Strategy to Implementation Plan Workflow
 
 This workflow analyzes a QuantConnect trading strategy document and creates a structured implementation plan with human feedback at key points to ensure alignment.
@@ -33,12 +34,27 @@ cat "{{ strategy_doc }}"
 - type: multiline
 - prompt: Based on the identified components and priorities, here's a draft of implementation phases for the trading algorithm. Please review and modify as needed:
 
-## 6. Specify implementation details
+## 6. Research documentation for implementation details
+```bash
+echo "Researching QuantConnect documentation for implementation guidance..."
+echo "============================================================="
+
+# Search in Documentation repository for key components
+grep -r --include="*.md" --include="*.html" --include="*.py" "{{ key_components }}" /Users/overton/CascadeProjects/QuantConnect\ Trading\ Algorithms/.windsurf/QC-Doc-Repos/Documentation | head -n 10
+
+# Search in lean-cli repository for deployment information
+grep -r --include="*.md" --include="*.py" "{{ key_components }}" /Users/overton/CascadeProjects/QuantConnect\ Trading\ Algorithms/.windsurf/QC-Doc-Repos/lean-cli | head -n 5
+
+# Find example algorithms in Lean repository
+find /Users/overton/CascadeProjects/QuantConnect\ Trading\ Algorithms/.windsurf/QC-Doc-Repos/Lean/Algorithm.Python -type f -name "*{{ key_components }}*.py" | head -n 5
+```
+
+## 7. Specify implementation details based on documentation
 - id: implementation_details
 - type: multiline
-- prompt: For each phase, what specific trading tasks, QuantConnect API calls, and technical details should be included?
+- prompt: Based on the documentation search results, what specific trading tasks, QuantConnect API calls, and technical details should be included for each phase?
 
-## 7. Create implementation plan document
+## 8. Create implementation plan document
 ```bash
 # Create implementation plan document
 cat > "$(dirname "{{ strategy_doc }}")/$(basename "{{ strategy_doc }}" .md)-implementation-plan.md" << 'EOF'
@@ -79,7 +95,14 @@ This document outlines the implementation plan for the [$(basename "{{ strategy_
 
 ## QuantConnect-Specific Considerations
 
-*Document any platform-specific implementation details, limitations, or workarounds*
+*Document any platform-specific implementation details, limitations, or workarounds based on the documentation research*
+
+## Documentation References
+
+- Documentation Repository: `.windsurf/QC-Doc-Repos/Documentation`
+- Lean CLI Repository: `.windsurf/QC-Doc-Repos/lean-cli`
+- Lean Engine Repository: `.windsurf/QC-Doc-Repos/Lean`
+- Example Algorithms: `.windsurf/QC-Doc-Repos/Lean/Algorithm.Python`
 
 ## Known Issues and Challenges
 
@@ -90,19 +113,19 @@ EOF
 echo "Trading algorithm implementation plan created at: $(dirname "{{ strategy_doc }}")/$(basename "{{ strategy_doc }}" .md)-implementation-plan.md"
 ```
 
-## 8. Review final implementation plan
+## 9. Review final implementation plan
 ```bash
 # Display the created implementation plan
 cat "$(dirname "{{ strategy_doc }}")/$(basename "{{ strategy_doc }}" .md)-implementation-plan.md"
 ```
 
-## 9. Update strategy document with plan reference (optional)
+## 10. Update strategy document with plan reference (optional)
 - id: update_strategy
 - type: select
 - options: ["Yes", "No"]
 - prompt: Would you like to add a reference to the implementation plan in the original trading strategy document?
 
-## 10. Add reference to strategy document if requested
+## 11. Add reference to strategy document if requested
 ```bash
 if [ "{{ update_strategy }}" = "Yes" ]; then
   # Check if the strategy already has a reference to the implementation plan
@@ -121,5 +144,7 @@ fi
 - Human feedback is incorporated at key points to ensure alignment
 - The implementation plan includes phases, QuantConnect-specific technical details, and progress tracking
 - Backtesting criteria are included for each phase to validate implementation
+- Documentation research is automatically performed to guide implementation details
+- **IMPORTANT**: All Python code must use snake_case for method names (e.g., `initialize` not `Initialize`)
 - The original trading strategy document can optionally reference the implementation plan
 - The implementation plan is created in the same directory as the trading strategy document

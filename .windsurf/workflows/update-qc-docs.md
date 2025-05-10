@@ -2,6 +2,7 @@
 description: Update all QuantConnect documentation repositories
 ---
 
+# WARNING: DO NOT MODIFY THIS FILE WITHOUT EXPLICIT USER PERMISSION
 # Update QuantConnect Documentation Repositories
 
 This workflow updates all QuantConnect documentation repositories that have been set up as Git submodules in the `.windsurf/QC-Doc-Repos` directory.
