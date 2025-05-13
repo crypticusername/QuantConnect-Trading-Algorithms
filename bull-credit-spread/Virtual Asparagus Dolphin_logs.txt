@@ -1,0 +1,1125 @@
+2024-01-01 00:00:00 Launching analysis for 589408c30f79da808d939da0b0deff69 with LEAN Engine v2.5.0.0.17108
+2024-01-01 00:00:00 Accurate daily end-times now enabled by default. See more at https://qnt.co/3YHaWHL. To disable it and use legacy daily bars set self.settings.daily_precise_end_time = False.
+2024-01-01 00:00:00 Warning: The following securities were set to raw price normalization mode to work with options: SPY...
+2024-01-02 10:00:00 Setting flag to open trades on next data slice
+2024-01-02 10:00:00 Current date: 2024-01-02
+2024-01-02 10:00:00 Current SPY price: 472.27
+2024-01-02 10:00:00 Found 34 put contracts expiring today
+2024-01-02 10:00:00 Available strikes for 2024-01-02: [459.0, 460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0]
+2024-01-02 10:00:00 Filtering 34 contracts for 2024-01-02 to find short put candidate based on delta...
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00460000, Strike: 460.0, Delta: -0.0060
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00461000, Strike: 461.0, Delta: -0.0064
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00462000, Strike: 462.0, Delta: -0.0068
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00463000, Strike: 463.0, Delta: -0.0073
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00464000, Strike: 464.0, Delta: -0.0113
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00465000, Strike: 465.0, Delta: -0.0123
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00466000, Strike: 466.0, Delta: -0.0205
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00467000, Strike: 467.0, Delta: -0.0305
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00468000, Strike: 468.0, Delta: -0.0487
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00469000, Strike: 469.0, Delta: -0.0897
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00470000, Strike: 470.0, Delta: -0.1612
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00471000, Strike: 471.0, Delta: -0.2820
+2024-01-02 10:00:00   Delta Candidate (Short): SPY   240102P00459000, Strike: 459.0, Delta: -0.0056
+2024-01-02 10:00:00 Selected Short Put: SPY   240102P00471000, Strike: 471.0, Delta: -0.2820
+2024-01-02 10:00:00 Selected Long Put: SPY   240102P00470000, Strike: 470.0, Delta: -0.1612
+2024-01-02 10:00:00 Creating bull put spread with verified contracts:
+2024-01-02 10:00:00 Short Put: Strike=471.0, Expiry=2024-01-02 00:00:00
+2024-01-02 10:00:00 Long Put: Strike=470.0, Expiry=2024-01-02 00:00:00
+2024-01-02 10:00:00 Successfully created bull put spread order
+2024-01-02 15:45:00 Setting flag to close positions on next data slice
+2024-01-02 15:45:00 Found long put: SPY   240102P00470000 Strike: 470.0
+2024-01-02 15:45:00 Found short put: SPY   240102P00471000 Strike: 471.0
+2024-01-02 15:45:00 Closing bull put spread: Short 471.0 Put, Long 470.0 Put, Expiry 2024-01-02 00:00:00
+2024-01-02 15:45:00 Using OptionStrategies to close the spread
+2024-01-02 15:45:00 Successfully created close order for bull put spread
+2024-01-03 10:00:00 Setting flag to open trades on next data slice
+2024-01-03 10:00:00 Current date: 2024-01-03
+2024-01-03 10:00:00 Current SPY price: 469.93
+2024-01-03 10:00:00 Found 33 put contracts expiring today
+2024-01-03 10:00:00 Available strikes for 2024-01-03: [457.0, 458.0, 459.0, 460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0]
+2024-01-03 10:00:00 Filtering 33 contracts for 2024-01-03 to find short put candidate based on delta...
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00457000, Strike: 457.0, Delta: -0.0136
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00458000, Strike: 458.0, Delta: -0.0061
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00459000, Strike: 459.0, Delta: -0.0065
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00460000, Strike: 460.0, Delta: -0.0069
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00461000, Strike: 461.0, Delta: -0.0107
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00462000, Strike: 462.0, Delta: -0.0116
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00463000, Strike: 463.0, Delta: -0.0128
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00464000, Strike: 464.0, Delta: -0.0216
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00465000, Strike: 465.0, Delta: -0.0386
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00466000, Strike: 466.0, Delta: -0.0695
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00467000, Strike: 467.0, Delta: -0.1296
+2024-01-03 10:00:00   Delta Candidate (Short): SPY   240103P00468000, Strike: 468.0, Delta: -0.2207
+2024-01-03 10:00:00 Selected Short Put: SPY   240103P00468000, Strike: 468.0, Delta: -0.2207
+2024-01-03 10:00:00 Selected Long Put: SPY   240103P00467000, Strike: 467.0, Delta: -0.1296
+2024-01-03 10:00:00 Creating bull put spread with verified contracts:
+2024-01-03 10:00:00 Short Put: Strike=468.0, Expiry=2024-01-03 00:00:00
+2024-01-03 10:00:00 Long Put: Strike=467.0, Expiry=2024-01-03 00:00:00
+2024-01-03 10:00:00 Successfully created bull put spread order
+2024-01-03 15:45:00 Setting flag to close positions on next data slice
+2024-01-03 15:45:00 Found long put: SPY   240103P00467000 Strike: 467.0
+2024-01-03 15:45:00 Found short put: SPY   240103P00468000 Strike: 468.0
+2024-01-03 15:45:00 Closing bull put spread: Short 468.0 Put, Long 467.0 Put, Expiry 2024-01-03 00:00:00
+2024-01-03 15:45:00 Using OptionStrategies to close the spread
+2024-01-03 15:45:00 Successfully created close order for bull put spread
+2024-01-04 10:00:00 Setting flag to open trades on next data slice
+2024-01-04 10:00:00 Current date: 2024-01-04
+2024-01-04 10:00:00 Current SPY price: 468.9
+2024-01-04 10:00:00 Found 33 put contracts expiring today
+2024-01-04 10:00:00 Available strikes for 2024-01-04: [453.0, 454.0, 455.0, 456.0, 457.0, 458.0, 459.0, 460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0]
+2024-01-04 10:00:00 Filtering 33 contracts for 2024-01-04 to find short put candidate based on delta...
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00455000, Strike: 455.0, Delta: -0.0054
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00456000, Strike: 456.0, Delta: -0.0057
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00457000, Strike: 457.0, Delta: -0.0061
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00458000, Strike: 458.0, Delta: -0.0065
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00459000, Strike: 459.0, Delta: -0.0099
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00460000, Strike: 460.0, Delta: -0.0107
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00461000, Strike: 461.0, Delta: -0.0117
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00462000, Strike: 462.0, Delta: -0.0129
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00463000, Strike: 463.0, Delta: -0.0217
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00464000, Strike: 464.0, Delta: -0.0319
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00465000, Strike: 465.0, Delta: -0.0586
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00466000, Strike: 466.0, Delta: -0.1114
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00467000, Strike: 467.0, Delta: -0.1989
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00453000, Strike: 453.0, Delta: -0.0048
+2024-01-04 10:00:00   Delta Candidate (Short): SPY   240104P00454000, Strike: 454.0, Delta: -0.0051
+2024-01-04 10:00:00 Selected Short Put: SPY   240104P00467000, Strike: 467.0, Delta: -0.1989
+2024-01-04 10:00:00 Selected Long Put: SPY   240104P00466000, Strike: 466.0, Delta: -0.1114
+2024-01-04 10:00:00 Creating bull put spread with verified contracts:
+2024-01-04 10:00:00 Short Put: Strike=467.0, Expiry=2024-01-04 00:00:00
+2024-01-04 10:00:00 Long Put: Strike=466.0, Expiry=2024-01-04 00:00:00
+2024-01-04 10:00:00 Successfully created bull put spread order
+2024-01-04 15:45:00 Setting flag to close positions on next data slice
+2024-01-04 15:45:00 Found long put: SPY   240104P00466000 Strike: 466.0
+2024-01-04 15:45:00 Found short put: SPY   240104P00467000 Strike: 467.0
+2024-01-04 15:45:00 Closing bull put spread: Short 467.0 Put, Long 466.0 Put, Expiry 2024-01-04 00:00:00
+2024-01-04 15:45:00 Using OptionStrategies to close the spread
+2024-01-04 15:45:00 Successfully created close order for bull put spread
+2024-01-05 10:00:00 Setting flag to open trades on next data slice
+2024-01-05 10:00:00 Current date: 2024-01-05
+2024-01-05 10:00:00 Current SPY price: 468.16
+2024-01-05 10:00:00 Found 36 put contracts expiring today
+2024-01-05 10:00:00 Available strikes for 2024-01-05: [451.0, 452.0, 452.5, 453.0, 454.0, 455.0, 456.0, 457.0, 457.5, 458.0, 459.0, 460.0, 461.0, 462.0, 462.5, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0]
+2024-01-05 10:00:00 Filtering 36 contracts for 2024-01-05 to find short put candidate based on delta...
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00451000, Strike: 451.0, Delta: -0.0044
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00452500, Strike: 452.5, Delta: -0.0048
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00453000, Strike: 453.0, Delta: -0.0050
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00454000, Strike: 454.0, Delta: -0.0052
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00455000, Strike: 455.0, Delta: -0.0056
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00456000, Strike: 456.0, Delta: -0.0059
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00457000, Strike: 457.0, Delta: -0.0063
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00457500, Strike: 457.5, Delta: -0.0064
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00458000, Strike: 458.0, Delta: -0.0095
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00459000, Strike: 459.0, Delta: -0.0129
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00460000, Strike: 460.0, Delta: -0.0111
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00461000, Strike: 461.0, Delta: -0.0124
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00462000, Strike: 462.0, Delta: -0.0207
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00462500, Strike: 462.5, Delta: -0.0282
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00463000, Strike: 463.0, Delta: -0.0365
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00464000, Strike: 464.0, Delta: -0.0722
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00465000, Strike: 465.0, Delta: -0.1278
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00466000, Strike: 466.0, Delta: -0.2098
+2024-01-05 10:00:00   Delta Candidate (Short): SPY   240105P00452000, Strike: 452.0, Delta: -0.0047
+2024-01-05 10:00:00 Selected Short Put: SPY   240105P00466000, Strike: 466.0, Delta: -0.2098
+2024-01-05 10:00:00 Selected Long Put: SPY   240105P00465000, Strike: 465.0, Delta: -0.1278
+2024-01-05 10:00:00 Creating bull put spread with verified contracts:
+2024-01-05 10:00:00 Short Put: Strike=466.0, Expiry=2024-01-05 00:00:00
+2024-01-05 10:00:00 Long Put: Strike=465.0, Expiry=2024-01-05 00:00:00
+2024-01-05 10:00:00 Successfully created bull put spread order
+2024-01-05 15:45:00 Setting flag to close positions on next data slice
+2024-01-05 15:45:00 Found long put: SPY   240105P00465000 Strike: 465.0
+2024-01-05 15:45:00 Found short put: SPY   240105P00466000 Strike: 466.0
+2024-01-05 15:45:00 Closing bull put spread: Short 466.0 Put, Long 465.0 Put, Expiry 2024-01-05 00:00:00
+2024-01-05 15:45:00 Using OptionStrategies to close the spread
+2024-01-05 15:45:00 Successfully created close order for bull put spread
+2024-01-08 10:00:00 Setting flag to open trades on next data slice
+2024-01-08 10:00:00 Current date: 2024-01-08
+2024-01-08 10:00:00 Current SPY price: 469.735
+2024-01-08 10:00:00 Found 33 put contracts expiring today
+2024-01-08 10:00:00 Available strikes for 2024-01-08: [452.0, 453.0, 454.0, 455.0, 456.0, 457.0, 458.0, 459.0, 460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0]
+2024-01-08 10:00:00 Filtering 33 contracts for 2024-01-08 to find short put candidate based on delta...
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00452000, Strike: 452.0, Delta: -0.0043
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00453000, Strike: 453.0, Delta: -0.0045
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00454000, Strike: 454.0, Delta: -0.0048
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00455000, Strike: 455.0, Delta: -0.0051
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00456000, Strike: 456.0, Delta: -0.0054
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00457000, Strike: 457.0, Delta: -0.0058
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00458000, Strike: 458.0, Delta: -0.0062
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00459000, Strike: 459.0, Delta: -0.0066
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00460000, Strike: 460.0, Delta: -0.0100
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00461000, Strike: 461.0, Delta: -0.0109
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00462000, Strike: 462.0, Delta: -0.0118
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00463000, Strike: 463.0, Delta: -0.0196
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00464000, Strike: 464.0, Delta: -0.0258
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00465000, Strike: 465.0, Delta: -0.0398
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00466000, Strike: 466.0, Delta: -0.0664
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00467000, Strike: 467.0, Delta: -0.1157
+2024-01-08 10:00:00   Delta Candidate (Short): SPY   240108P00468000, Strike: 468.0, Delta: -0.2074
+2024-01-08 10:00:00 Selected Short Put: SPY   240108P00468000, Strike: 468.0, Delta: -0.2074
+2024-01-08 10:00:00 Selected Long Put: SPY   240108P00467000, Strike: 467.0, Delta: -0.1157
+2024-01-08 10:00:00 Creating bull put spread with verified contracts:
+2024-01-08 10:00:00 Short Put: Strike=468.0, Expiry=2024-01-08 00:00:00
+2024-01-08 10:00:00 Long Put: Strike=467.0, Expiry=2024-01-08 00:00:00
+2024-01-08 10:00:00 Successfully created bull put spread order
+2024-01-08 15:45:00 Setting flag to close positions on next data slice
+2024-01-08 15:45:00 Found long put: SPY   240108P00467000 Strike: 467.0
+2024-01-08 15:45:00 Found short put: SPY   240108P00468000 Strike: 468.0
+2024-01-08 15:45:00 Closing bull put spread: Short 468.0 Put, Long 467.0 Put, Expiry 2024-01-08 00:00:00
+2024-01-08 15:45:00 Using OptionStrategies to close the spread
+2024-01-08 15:45:00 Successfully created close order for bull put spread
+2024-01-09 10:00:00 Setting flag to open trades on next data slice
+2024-01-09 10:00:00 Current date: 2024-01-09
+2024-01-09 10:00:00 Current SPY price: 472.165
+2024-01-09 10:00:00 Found 34 put contracts expiring today
+2024-01-09 10:00:00 Available strikes for 2024-01-09: [458.0, 459.0, 460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0]
+2024-01-09 10:00:00 Filtering 34 contracts for 2024-01-09 to find short put candidate based on delta...
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00458000, Strike: 458.0, Delta: -0.0053
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00459000, Strike: 459.0, Delta: -0.0056
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00460000, Strike: 460.0, Delta: -0.0060
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00461000, Strike: 461.0, Delta: -0.0064
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00462000, Strike: 462.0, Delta: -0.0068
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00463000, Strike: 463.0, Delta: -0.0074
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00464000, Strike: 464.0, Delta: -0.0114
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00465000, Strike: 465.0, Delta: -0.0124
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00466000, Strike: 466.0, Delta: -0.0143
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00467000, Strike: 467.0, Delta: -0.0309
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00468000, Strike: 468.0, Delta: -0.0494
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00469000, Strike: 469.0, Delta: -0.0915
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00470000, Strike: 470.0, Delta: -0.1695
+2024-01-09 10:00:00   Delta Candidate (Short): SPY   240109P00471000, Strike: 471.0, Delta: -0.2950
+2024-01-09 10:00:00 Selected Short Put: SPY   240109P00471000, Strike: 471.0, Delta: -0.2950
+2024-01-09 10:00:00 Selected Long Put: SPY   240109P00470000, Strike: 470.0, Delta: -0.1695
+2024-01-09 10:00:00 Creating bull put spread with verified contracts:
+2024-01-09 10:00:00 Short Put: Strike=471.0, Expiry=2024-01-09 00:00:00
+2024-01-09 10:00:00 Long Put: Strike=470.0, Expiry=2024-01-09 00:00:00
+2024-01-09 10:00:00 Successfully created bull put spread order
+2024-01-09 15:45:00 Setting flag to close positions on next data slice
+2024-01-09 15:45:00 Found long put: SPY   240109P00470000 Strike: 470.0
+2024-01-09 15:45:00 Found short put: SPY   240109P00471000 Strike: 471.0
+2024-01-09 15:45:00 Closing bull put spread: Short 471.0 Put, Long 470.0 Put, Expiry 2024-01-09 00:00:00
+2024-01-09 15:45:00 Using OptionStrategies to close the spread
+2024-01-09 15:45:00 Successfully created close order for bull put spread
+2024-01-10 10:00:00 Setting flag to open trades on next data slice
+2024-01-10 10:00:00 Current date: 2024-01-10
+2024-01-10 10:00:00 Current SPY price: 474.71
+2024-01-10 10:00:00 Found 33 put contracts expiring today
+2024-01-10 10:00:00 Available strikes for 2024-01-10: [458.0, 459.0, 460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0]
+2024-01-10 10:00:00 Filtering 33 contracts for 2024-01-10 to find short put candidate based on delta...
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00458000, Strike: 458.0, Delta: -0.0045
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00459000, Strike: 459.0, Delta: -0.0048
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00460000, Strike: 460.0, Delta: -0.0051
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00461000, Strike: 461.0, Delta: -0.0054
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00462000, Strike: 462.0, Delta: -0.0058
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00463000, Strike: 463.0, Delta: -0.0062
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00464000, Strike: 464.0, Delta: -0.0066
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00465000, Strike: 465.0, Delta: -0.0071
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00466000, Strike: 466.0, Delta: -0.0109
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00467000, Strike: 467.0, Delta: -0.0119
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00468000, Strike: 468.0, Delta: -0.0133
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00469000, Strike: 469.0, Delta: -0.0223
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00470000, Strike: 470.0, Delta: -0.0327
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00471000, Strike: 471.0, Delta: -0.0606
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00472000, Strike: 472.0, Delta: -0.1163
+2024-01-10 10:00:00   Delta Candidate (Short): SPY   240110P00473000, Strike: 473.0, Delta: -0.2126
+2024-01-10 10:00:00 Selected Short Put: SPY   240110P00473000, Strike: 473.0, Delta: -0.2126
+2024-01-10 10:00:00 Selected Long Put: SPY   240110P00472000, Strike: 472.0, Delta: -0.1163
+2024-01-10 10:00:00 Creating bull put spread with verified contracts:
+2024-01-10 10:00:00 Short Put: Strike=473.0, Expiry=2024-01-10 00:00:00
+2024-01-10 10:00:00 Long Put: Strike=472.0, Expiry=2024-01-10 00:00:00
+2024-01-10 10:00:00 Successfully created bull put spread order
+2024-01-10 15:45:00 Setting flag to close positions on next data slice
+2024-01-10 15:45:00 Found long put: SPY   240110P00472000 Strike: 472.0
+2024-01-10 15:45:00 Found short put: SPY   240110P00473000 Strike: 473.0
+2024-01-10 15:45:00 Closing bull put spread: Short 473.0 Put, Long 472.0 Put, Expiry 2024-01-10 00:00:00
+2024-01-10 15:45:00 Using OptionStrategies to close the spread
+2024-01-10 15:45:00 Successfully created close order for bull put spread
+2024-01-11 10:00:00 Setting flag to open trades on next data slice
+2024-01-11 10:00:00 Current date: 2024-01-11
+2024-01-11 10:00:00 Current SPY price: 476.31
+2024-01-11 10:00:00 Found 34 put contracts expiring today
+2024-01-11 10:00:00 Available strikes for 2024-01-11: [460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0]
+2024-01-11 10:00:00 Filtering 34 contracts for 2024-01-11 to find short put candidate based on delta...
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00460000, Strike: 460.0, Delta: -0.0046
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00461000, Strike: 461.0, Delta: -0.0049
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00462000, Strike: 462.0, Delta: -0.0052
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00463000, Strike: 463.0, Delta: -0.0056
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00464000, Strike: 464.0, Delta: -0.0060
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00465000, Strike: 465.0, Delta: -0.0088
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00466000, Strike: 466.0, Delta: -0.0068
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00467000, Strike: 467.0, Delta: -0.0104
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00468000, Strike: 468.0, Delta: -0.0113
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00469000, Strike: 469.0, Delta: -0.0186
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00470000, Strike: 470.0, Delta: -0.0319
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00471000, Strike: 471.0, Delta: -0.0518
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00472000, Strike: 472.0, Delta: -0.0841
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00473000, Strike: 473.0, Delta: -0.1392
+2024-01-11 10:00:00   Delta Candidate (Short): SPY   240111P00474000, Strike: 474.0, Delta: -0.2171
+2024-01-11 10:00:00 Selected Short Put: SPY   240111P00474000, Strike: 474.0, Delta: -0.2171
+2024-01-11 10:00:00 Selected Long Put: SPY   240111P00473000, Strike: 473.0, Delta: -0.1392
+2024-01-11 10:00:00 Creating bull put spread with verified contracts:
+2024-01-11 10:00:00 Short Put: Strike=474.0, Expiry=2024-01-11 00:00:00
+2024-01-11 10:00:00 Long Put: Strike=473.0, Expiry=2024-01-11 00:00:00
+2024-01-11 10:00:00 Successfully created bull put spread order
+2024-01-11 15:45:00 Setting flag to close positions on next data slice
+2024-01-11 15:45:00 Found long put: SPY   240111P00473000 Strike: 473.0
+2024-01-11 15:45:00 Found short put: SPY   240111P00474000 Strike: 474.0
+2024-01-11 15:45:00 Closing bull put spread: Short 474.0 Put, Long 473.0 Put, Expiry 2024-01-11 00:00:00
+2024-01-11 15:45:00 Using OptionStrategies to close the spread
+2024-01-11 15:45:00 Successfully created close order for bull put spread
+2024-01-12 10:00:00 Setting flag to open trades on next data slice
+2024-01-12 10:00:00 Current date: 2024-01-12
+2024-01-12 10:00:00 Current SPY price: 477.12
+2024-01-12 10:00:00 Found 37 put contracts expiring today
+2024-01-12 10:00:00 Available strikes for 2024-01-12: [460.0, 461.0, 462.0, 462.5, 463.0, 464.0, 465.0, 466.0, 467.0, 467.5, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 487.5, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0]
+2024-01-12 10:00:00 Filtering 37 contracts for 2024-01-12 to find short put candidate based on delta...
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00460000, Strike: 460.0, Delta: -0.0061
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00461000, Strike: 461.0, Delta: -0.0047
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00462000, Strike: 462.0, Delta: -0.0067
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00462500, Strike: 462.5, Delta: -0.0069
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00463000, Strike: 463.0, Delta: -0.0072
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00464000, Strike: 464.0, Delta: -0.0097
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00465000, Strike: 465.0, Delta: -0.0103
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00466000, Strike: 466.0, Delta: -0.0109
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00467000, Strike: 467.0, Delta: -0.0067
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00467500, Strike: 467.5, Delta: -0.0071
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00468000, Strike: 468.0, Delta: -0.0101
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00469000, Strike: 469.0, Delta: -0.0110
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00470000, Strike: 470.0, Delta: -0.0124
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00471000, Strike: 471.0, Delta: -0.0264
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00472000, Strike: 472.0, Delta: -0.0414
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00473000, Strike: 473.0, Delta: -0.0743
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00474000, Strike: 474.0, Delta: -0.1264
+2024-01-12 10:00:00   Delta Candidate (Short): SPY   240112P00475000, Strike: 475.0, Delta: -0.2034
+2024-01-12 10:00:00 Selected Short Put: SPY   240112P00475000, Strike: 475.0, Delta: -0.2034
+2024-01-12 10:00:00 Selected Long Put: SPY   240112P00474000, Strike: 474.0, Delta: -0.1264
+2024-01-12 10:00:00 Creating bull put spread with verified contracts:
+2024-01-12 10:00:00 Short Put: Strike=475.0, Expiry=2024-01-12 00:00:00
+2024-01-12 10:00:00 Long Put: Strike=474.0, Expiry=2024-01-12 00:00:00
+2024-01-12 10:00:00 Successfully created bull put spread order
+2024-01-12 15:45:00 Setting flag to close positions on next data slice
+2024-01-12 15:45:00 Found long put: SPY   240112P00474000 Strike: 474.0
+2024-01-12 15:45:00 Found short put: SPY   240112P00475000 Strike: 475.0
+2024-01-12 15:45:00 Closing bull put spread: Short 475.0 Put, Long 474.0 Put, Expiry 2024-01-12 00:00:00
+2024-01-12 15:45:00 Using OptionStrategies to close the spread
+2024-01-12 15:45:00 Successfully created close order for bull put spread
+2024-01-16 10:00:00 Setting flag to open trades on next data slice
+2024-01-16 10:00:00 Current date: 2024-01-16
+2024-01-16 10:00:00 Current SPY price: 474.5
+2024-01-16 10:00:00 Found 34 put contracts expiring today
+2024-01-16 10:00:00 Available strikes for 2024-01-16: [460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0]
+2024-01-16 10:00:00 Filtering 34 contracts for 2024-01-16 to find short put candidate based on delta...
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00460000, Strike: 460.0, Delta: -0.0091
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00461000, Strike: 461.0, Delta: -0.0097
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00462000, Strike: 462.0, Delta: -0.0103
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00463000, Strike: 463.0, Delta: -0.0110
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00464000, Strike: 464.0, Delta: -0.0117
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00465000, Strike: 465.0, Delta: -0.0072
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00466000, Strike: 466.0, Delta: -0.0111
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00467000, Strike: 467.0, Delta: -0.0121
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00468000, Strike: 468.0, Delta: -0.0201
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00469000, Strike: 469.0, Delta: -0.0296
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00470000, Strike: 470.0, Delta: -0.0472
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00471000, Strike: 471.0, Delta: -0.0910
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00472000, Strike: 472.0, Delta: -0.1611
+2024-01-16 10:00:00   Delta Candidate (Short): SPY   240116P00473000, Strike: 473.0, Delta: -0.2679
+2024-01-16 10:00:00 Selected Short Put: SPY   240116P00473000, Strike: 473.0, Delta: -0.2679
+2024-01-16 10:00:00 Selected Long Put: SPY   240116P00472000, Strike: 472.0, Delta: -0.1611
+2024-01-16 10:00:00 Creating bull put spread with verified contracts:
+2024-01-16 10:00:00 Short Put: Strike=473.0, Expiry=2024-01-16 00:00:00
+2024-01-16 10:00:00 Long Put: Strike=472.0, Expiry=2024-01-16 00:00:00
+2024-01-16 10:00:00 Successfully created bull put spread order
+2024-01-16 15:45:00 Setting flag to close positions on next data slice
+2024-01-16 15:45:00 Found short put: SPY   240116P00473000 Strike: 473.0
+2024-01-16 15:45:00 Found long put: SPY   240116P00472000 Strike: 472.0
+2024-01-16 15:45:00 Closing bull put spread: Short 473.0 Put, Long 472.0 Put, Expiry 2024-01-16 00:00:00
+2024-01-16 15:45:00 Using OptionStrategies to close the spread
+2024-01-16 15:45:00 Successfully created close order for bull put spread
+2024-01-17 10:00:00 Setting flag to open trades on next data slice
+2024-01-17 10:00:00 Current date: 2024-01-17
+2024-01-17 10:00:00 Current SPY price: 471.321
+2024-01-17 10:00:00 Found 34 put contracts expiring today
+2024-01-17 10:00:00 Available strikes for 2024-01-17: [458.0, 459.0, 460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0]
+2024-01-17 10:00:00 Filtering 34 contracts for 2024-01-17 to find short put candidate based on delta...
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00459000, Strike: 459.0, Delta: -0.0059
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00460000, Strike: 460.0, Delta: -0.0063
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00461000, Strike: 461.0, Delta: -0.0068
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00462000, Strike: 462.0, Delta: -0.0104
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00463000, Strike: 463.0, Delta: -0.0113
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00464000, Strike: 464.0, Delta: -0.0123
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00465000, Strike: 465.0, Delta: -0.0204
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00466000, Strike: 466.0, Delta: -0.0364
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00467000, Strike: 467.0, Delta: -0.0656
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00468000, Strike: 468.0, Delta: -0.1117
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00469000, Strike: 469.0, Delta: -0.1914
+2024-01-17 10:00:00   Delta Candidate (Short): SPY   240117P00458000, Strike: 458.0, Delta: -0.0056
+2024-01-17 10:00:00 Selected Short Put: SPY   240117P00469000, Strike: 469.0, Delta: -0.1914
+2024-01-17 10:00:00 Selected Long Put: SPY   240117P00468000, Strike: 468.0, Delta: -0.1117
+2024-01-17 10:00:00 Creating bull put spread with verified contracts:
+2024-01-17 10:00:00 Short Put: Strike=469.0, Expiry=2024-01-17 00:00:00
+2024-01-17 10:00:00 Long Put: Strike=468.0, Expiry=2024-01-17 00:00:00
+2024-01-17 10:00:00 Successfully created bull put spread order
+2024-01-17 15:45:00 Setting flag to close positions on next data slice
+2024-01-17 15:45:00 Found short put: SPY   240117P00469000 Strike: 469.0
+2024-01-17 15:45:00 Found long put: SPY   240117P00468000 Strike: 468.0
+2024-01-17 15:45:00 Closing bull put spread: Short 469.0 Put, Long 468.0 Put, Expiry 2024-01-17 00:00:00
+2024-01-17 15:45:00 Using OptionStrategies to close the spread
+2024-01-17 15:45:00 Successfully created close order for bull put spread
+2024-01-18 10:00:00 Setting flag to open trades on next data slice
+2024-01-18 10:00:00 Current date: 2024-01-18
+2024-01-18 10:00:00 Current SPY price: 473.89
+2024-01-18 10:00:00 Found 33 put contracts expiring today
+2024-01-18 10:00:00 Available strikes for 2024-01-18: [456.0, 457.0, 458.0, 459.0, 460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0]
+2024-01-18 10:00:00 Filtering 33 contracts for 2024-01-18 to find short put candidate based on delta...
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00457000, Strike: 457.0, Delta: -0.0045
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00458000, Strike: 458.0, Delta: -0.0048
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00459000, Strike: 459.0, Delta: -0.0069
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00460000, Strike: 460.0, Delta: -0.0073
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00461000, Strike: 461.0, Delta: -0.0078
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00462000, Strike: 462.0, Delta: -0.0107
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00463000, Strike: 463.0, Delta: -0.0114
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00464000, Strike: 464.0, Delta: -0.0147
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00465000, Strike: 465.0, Delta: -0.0107
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00466000, Strike: 466.0, Delta: -0.0117
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00467000, Strike: 467.0, Delta: -0.0193
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00468000, Strike: 468.0, Delta: -0.0283
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00469000, Strike: 469.0, Delta: -0.0389
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00470000, Strike: 470.0, Delta: -0.0699
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00471000, Strike: 471.0, Delta: -0.1263
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00472000, Strike: 472.0, Delta: -0.2165
+2024-01-18 10:00:00   Delta Candidate (Short): SPY   240118P00456000, Strike: 456.0, Delta: -0.0042
+2024-01-18 10:00:00 Selected Short Put: SPY   240118P00472000, Strike: 472.0, Delta: -0.2165
+2024-01-18 10:00:00 Selected Long Put: SPY   240118P00471000, Strike: 471.0, Delta: -0.1263
+2024-01-18 10:00:00 Creating bull put spread with verified contracts:
+2024-01-18 10:00:00 Short Put: Strike=472.0, Expiry=2024-01-18 00:00:00
+2024-01-18 10:00:00 Long Put: Strike=471.0, Expiry=2024-01-18 00:00:00
+2024-01-18 10:00:00 Successfully created bull put spread order
+2024-01-18 15:45:00 Setting flag to close positions on next data slice
+2024-01-18 15:45:00 Found short put: SPY   240118P00472000 Strike: 472.0
+2024-01-18 15:45:00 Found long put: SPY   240118P00471000 Strike: 471.0
+2024-01-18 15:45:00 Closing bull put spread: Short 472.0 Put, Long 471.0 Put, Expiry 2024-01-18 00:00:00
+2024-01-18 15:45:00 Using OptionStrategies to close the spread
+2024-01-18 15:45:00 Successfully created close order for bull put spread
+2024-01-19 10:00:00 Setting flag to open trades on next data slice
+2024-01-19 10:00:00 Current date: 2024-01-19
+2024-01-19 10:00:00 Current SPY price: 477.92
+2024-01-19 10:00:00 Found 34 put contracts expiring today
+2024-01-19 10:00:00 Available strikes for 2024-01-19: [460.0, 461.0, 462.0, 463.0, 464.0, 465.0, 466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0]
+2024-01-19 10:00:00 Filtering 34 contracts for 2024-01-19 to find short put candidate based on delta...
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00460000, Strike: 460.0, Delta: -0.0060
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00461000, Strike: 461.0, Delta: -0.0062
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00462000, Strike: 462.0, Delta: -0.0100
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00463000, Strike: 463.0, Delta: -0.0088
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00464000, Strike: 464.0, Delta: -0.0094
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00465000, Strike: 465.0, Delta: -0.0099
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00466000, Strike: 466.0, Delta: -0.0105
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00467000, Strike: 467.0, Delta: -0.0090
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00468000, Strike: 468.0, Delta: -0.0097
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00469000, Strike: 469.0, Delta: -0.0104
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00470000, Strike: 470.0, Delta: -0.0171
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00471000, Strike: 471.0, Delta: -0.0247
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00472000, Strike: 472.0, Delta: -0.0384
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00473000, Strike: 473.0, Delta: -0.0631
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00474000, Strike: 474.0, Delta: -0.0984
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00475000, Strike: 475.0, Delta: -0.1636
+2024-01-19 10:00:00   Delta Candidate (Short): SPY   240119P00476000, Strike: 476.0, Delta: -0.2454
+2024-01-19 10:00:00 Selected Short Put: SPY   240119P00476000, Strike: 476.0, Delta: -0.2454
+2024-01-19 10:00:00 Selected Long Put: SPY   240119P00475000, Strike: 475.0, Delta: -0.1636
+2024-01-19 10:00:00 Creating bull put spread with verified contracts:
+2024-01-19 10:00:00 Short Put: Strike=476.0, Expiry=2024-01-19 00:00:00
+2024-01-19 10:00:00 Long Put: Strike=475.0, Expiry=2024-01-19 00:00:00
+2024-01-19 10:00:00 Successfully created bull put spread order
+2024-01-19 15:45:00 Setting flag to close positions on next data slice
+2024-01-19 15:45:00 Found long put: SPY   240119P00475000 Strike: 475.0
+2024-01-19 15:45:00 Found short put: SPY   240119P00476000 Strike: 476.0
+2024-01-19 15:45:00 Closing bull put spread: Short 476.0 Put, Long 475.0 Put, Expiry 2024-01-19 00:00:00
+2024-01-19 15:45:00 Using OptionStrategies to close the spread
+2024-01-19 15:45:00 Successfully created close order for bull put spread
+2024-01-22 10:00:00 Setting flag to open trades on next data slice
+2024-01-22 10:00:00 Current date: 2024-01-22
+2024-01-22 10:00:00 Current SPY price: 485.01
+2024-01-22 10:00:00 Found 35 put contracts expiring today
+2024-01-22 10:00:00 Available strikes for 2024-01-22: [466.0, 467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0]
+2024-01-22 10:00:00 Filtering 35 contracts for 2024-01-22 to find short put candidate based on delta...
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00466000, Strike: 466.0, Delta: -0.0040
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00467000, Strike: 467.0, Delta: -0.0042
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00468000, Strike: 468.0, Delta: -0.0044
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00469000, Strike: 469.0, Delta: -0.0066
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00470000, Strike: 470.0, Delta: -0.0050
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00471000, Strike: 471.0, Delta: -0.0072
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00472000, Strike: 472.0, Delta: -0.0078
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00473000, Strike: 473.0, Delta: -0.0084
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00474000, Strike: 474.0, Delta: -0.0091
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00475000, Strike: 475.0, Delta: -0.0098
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00476000, Strike: 476.0, Delta: -0.0106
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00477000, Strike: 477.0, Delta: -0.0174
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00478000, Strike: 478.0, Delta: -0.0249
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00479000, Strike: 479.0, Delta: -0.0329
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00480000, Strike: 480.0, Delta: -0.0542
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00481000, Strike: 481.0, Delta: -0.0783
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00482000, Strike: 482.0, Delta: -0.1317
+2024-01-22 10:00:00   Delta Candidate (Short): SPY   240122P00483000, Strike: 483.0, Delta: -0.2104
+2024-01-22 10:00:00 Selected Short Put: SPY   240122P00483000, Strike: 483.0, Delta: -0.2104
+2024-01-22 10:00:00 Selected Long Put: SPY   240122P00482000, Strike: 482.0, Delta: -0.1317
+2024-01-22 10:00:00 Creating bull put spread with verified contracts:
+2024-01-22 10:00:00 Short Put: Strike=483.0, Expiry=2024-01-22 00:00:00
+2024-01-22 10:00:00 Long Put: Strike=482.0, Expiry=2024-01-22 00:00:00
+2024-01-22 10:00:00 Successfully created bull put spread order
+2024-01-22 15:45:00 Setting flag to close positions on next data slice
+2024-01-22 15:45:00 Found short put: SPY   240122P00483000 Strike: 483.0
+2024-01-22 15:45:00 Found long put: SPY   240122P00482000 Strike: 482.0
+2024-01-22 15:45:00 Closing bull put spread: Short 483.0 Put, Long 482.0 Put, Expiry 2024-01-22 00:00:00
+2024-01-22 15:45:00 Using OptionStrategies to close the spread
+2024-01-22 15:45:00 Successfully created close order for bull put spread
+2024-01-23 10:00:00 Setting flag to open trades on next data slice
+2024-01-23 10:00:00 Current date: 2024-01-23
+2024-01-23 10:00:00 Current SPY price: 483.97
+2024-01-23 10:00:00 Found 34 put contracts expiring today
+2024-01-23 10:00:00 Available strikes for 2024-01-23: [468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 502.0]
+2024-01-23 10:00:00 Filtering 34 contracts for 2024-01-23 to find short put candidate based on delta...
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00468000, Strike: 468.0, Delta: -0.0047
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00469000, Strike: 469.0, Delta: -0.0050
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00470000, Strike: 470.0, Delta: -0.0054
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00471000, Strike: 471.0, Delta: -0.0057
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00472000, Strike: 472.0, Delta: -0.0061
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00473000, Strike: 473.0, Delta: -0.0065
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00474000, Strike: 474.0, Delta: -0.0098
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00475000, Strike: 475.0, Delta: -0.0107
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00476000, Strike: 476.0, Delta: -0.0116
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00477000, Strike: 477.0, Delta: -0.0192
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00478000, Strike: 478.0, Delta: -0.0280
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00479000, Strike: 479.0, Delta: -0.0442
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00480000, Strike: 480.0, Delta: -0.0691
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00481000, Strike: 481.0, Delta: -0.1149
+2024-01-23 10:00:00   Delta Candidate (Short): SPY   240123P00482000, Strike: 482.0, Delta: -0.1990
+2024-01-23 10:00:00 Selected Short Put: SPY   240123P00482000, Strike: 482.0, Delta: -0.1990
+2024-01-23 10:00:00 Selected Long Put: SPY   240123P00481000, Strike: 481.0, Delta: -0.1149
+2024-01-23 10:00:00 Creating bull put spread with verified contracts:
+2024-01-23 10:00:00 Short Put: Strike=482.0, Expiry=2024-01-23 00:00:00
+2024-01-23 10:00:00 Long Put: Strike=481.0, Expiry=2024-01-23 00:00:00
+2024-01-23 10:00:00 Successfully created bull put spread order
+2024-01-23 15:45:00 Setting flag to close positions on next data slice
+2024-01-23 15:45:00 Found short put: SPY   240123P00482000 Strike: 482.0
+2024-01-23 15:45:00 Found long put: SPY   240123P00481000 Strike: 481.0
+2024-01-23 15:45:00 Closing bull put spread: Short 482.0 Put, Long 481.0 Put, Expiry 2024-01-23 00:00:00
+2024-01-23 15:45:00 Using OptionStrategies to close the spread
+2024-01-23 15:45:00 Successfully created close order for bull put spread
+2024-01-24 10:00:00 Setting flag to open trades on next data slice
+2024-01-24 10:00:00 Current date: 2024-01-24
+2024-01-24 10:00:00 Current SPY price: 487.1
+2024-01-24 10:00:00 Found 34 put contracts expiring today
+2024-01-24 10:00:00 Available strikes for 2024-01-24: [468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 502.0]
+2024-01-24 10:00:00 Filtering 34 contracts for 2024-01-24 to find short put candidate based on delta...
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00468000, Strike: 468.0, Delta: -0.0040
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00469000, Strike: 469.0, Delta: -0.0042
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00470000, Strike: 470.0, Delta: -0.0044
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00471000, Strike: 471.0, Delta: -0.0047
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00472000, Strike: 472.0, Delta: -0.0050
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00473000, Strike: 473.0, Delta: -0.0053
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00474000, Strike: 474.0, Delta: -0.0057
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00475000, Strike: 475.0, Delta: -0.0060
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00476000, Strike: 476.0, Delta: -0.0064
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00477000, Strike: 477.0, Delta: -0.0069
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00478000, Strike: 478.0, Delta: -0.0106
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00479000, Strike: 479.0, Delta: -0.0083
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00480000, Strike: 480.0, Delta: -0.0125
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00481000, Strike: 481.0, Delta: -0.0211
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00482000, Strike: 482.0, Delta: -0.0311
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00483000, Strike: 483.0, Delta: -0.0498
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00484000, Strike: 484.0, Delta: -0.0926
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00485000, Strike: 485.0, Delta: -0.1679
+2024-01-24 10:00:00   Delta Candidate (Short): SPY   240124P00486000, Strike: 486.0, Delta: -0.2955
+2024-01-24 10:00:00 Selected Short Put: SPY   240124P00486000, Strike: 486.0, Delta: -0.2955
+2024-01-24 10:00:00 Selected Long Put: SPY   240124P00485000, Strike: 485.0, Delta: -0.1679
+2024-01-24 10:00:00 Creating bull put spread with verified contracts:
+2024-01-24 10:00:00 Short Put: Strike=486.0, Expiry=2024-01-24 00:00:00
+2024-01-24 10:00:00 Long Put: Strike=485.0, Expiry=2024-01-24 00:00:00
+2024-01-24 10:00:00 Successfully created bull put spread order
+2024-01-24 15:45:00 Setting flag to close positions on next data slice
+2024-01-24 15:45:00 Found short put: SPY   240124P00486000 Strike: 486.0
+2024-01-24 15:45:00 Found long put: SPY   240124P00485000 Strike: 485.0
+2024-01-24 15:45:00 Closing bull put spread: Short 486.0 Put, Long 485.0 Put, Expiry 2024-01-24 00:00:00
+2024-01-24 15:45:00 Using OptionStrategies to close the spread
+2024-01-24 15:45:00 Successfully created close order for bull put spread
+2024-01-25 10:00:00 Setting flag to open trades on next data slice
+2024-01-25 10:00:00 Current date: 2024-01-25
+2024-01-25 10:00:00 Current SPY price: 487.26
+2024-01-25 10:00:00 Found 32 put contracts expiring today
+2024-01-25 10:00:00 Available strikes for 2024-01-25: [469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0]
+2024-01-25 10:00:00 Filtering 32 contracts for 2024-01-25 to find short put candidate based on delta...
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00469000, Strike: 469.0, Delta: -0.0041
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00470000, Strike: 470.0, Delta: -0.0044
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00471000, Strike: 471.0, Delta: -0.0047
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00472000, Strike: 472.0, Delta: -0.0050
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00473000, Strike: 473.0, Delta: -0.0071
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00474000, Strike: 474.0, Delta: -0.0076
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00475000, Strike: 475.0, Delta: -0.0082
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00476000, Strike: 476.0, Delta: -0.0089
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00477000, Strike: 477.0, Delta: -0.0119
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00478000, Strike: 478.0, Delta: -0.0104
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00479000, Strike: 479.0, Delta: -0.0113
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00480000, Strike: 480.0, Delta: -0.0123
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00481000, Strike: 481.0, Delta: -0.0205
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00482000, Strike: 482.0, Delta: -0.0305
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00483000, Strike: 483.0, Delta: -0.0550
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00484000, Strike: 484.0, Delta: -0.1040
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00485000, Strike: 485.0, Delta: -0.1842
+2024-01-25 10:00:00   Delta Candidate (Short): SPY   240125P00486000, Strike: 486.0, Delta: -0.2983
+2024-01-25 10:00:00 Selected Short Put: SPY   240125P00486000, Strike: 486.0, Delta: -0.2983
+2024-01-25 10:00:00 Selected Long Put: SPY   240125P00485000, Strike: 485.0, Delta: -0.1842
+2024-01-25 10:00:00 Creating bull put spread with verified contracts:
+2024-01-25 10:00:00 Short Put: Strike=486.0, Expiry=2024-01-25 00:00:00
+2024-01-25 10:00:00 Long Put: Strike=485.0, Expiry=2024-01-25 00:00:00
+2024-01-25 10:00:00 Successfully created bull put spread order
+2024-01-25 15:45:00 Setting flag to close positions on next data slice
+2024-01-25 15:45:00 Found short put: SPY   240125P00486000 Strike: 486.0
+2024-01-25 15:45:00 Found long put: SPY   240125P00485000 Strike: 485.0
+2024-01-25 15:45:00 Closing bull put spread: Short 486.0 Put, Long 485.0 Put, Expiry 2024-01-25 00:00:00
+2024-01-25 15:45:00 Using OptionStrategies to close the spread
+2024-01-25 15:45:00 Successfully created close order for bull put spread
+2024-01-26 10:00:00 Setting flag to open trades on next data slice
+2024-01-26 10:00:00 Current date: 2024-01-26
+2024-01-26 10:00:00 Current SPY price: 487.7
+2024-01-26 10:00:00 Found 33 put contracts expiring today
+2024-01-26 10:00:00 Available strikes for 2024-01-26: [473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 487.5, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 502.0, 504.0, 505.0, 506.0]
+2024-01-26 10:00:00 Filtering 33 contracts for 2024-01-26 to find short put candidate based on delta...
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00473000, Strike: 473.0, Delta: -0.0051
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00474000, Strike: 474.0, Delta: -0.0054
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00475000, Strike: 475.0, Delta: -0.0057
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00476000, Strike: 476.0, Delta: -0.0061
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00477000, Strike: 477.0, Delta: -0.0092
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00478000, Strike: 478.0, Delta: -0.0098
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00479000, Strike: 479.0, Delta: -0.0106
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00480000, Strike: 480.0, Delta: -0.0116
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00481000, Strike: 481.0, Delta: -0.0192
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00482000, Strike: 482.0, Delta: -0.0280
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00483000, Strike: 483.0, Delta: -0.0442
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00484000, Strike: 484.0, Delta: -0.0752
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00485000, Strike: 485.0, Delta: -0.1299
+2024-01-26 10:00:00   Delta Candidate (Short): SPY   240126P00486000, Strike: 486.0, Delta: -0.2228
+2024-01-26 10:00:00 Selected Short Put: SPY   240126P00486000, Strike: 486.0, Delta: -0.2228
+2024-01-26 10:00:00 Selected Long Put: SPY   240126P00485000, Strike: 485.0, Delta: -0.1299
+2024-01-26 10:00:00 Creating bull put spread with verified contracts:
+2024-01-26 10:00:00 Short Put: Strike=486.0, Expiry=2024-01-26 00:00:00
+2024-01-26 10:00:00 Long Put: Strike=485.0, Expiry=2024-01-26 00:00:00
+2024-01-26 10:00:00 Successfully created bull put spread order
+2024-01-26 15:45:00 Setting flag to close positions on next data slice
+2024-01-26 15:45:00 Found long put: SPY   240126P00485000 Strike: 485.0
+2024-01-26 15:45:00 Found short put: SPY   240126P00486000 Strike: 486.0
+2024-01-26 15:45:00 Closing bull put spread: Short 486.0 Put, Long 485.0 Put, Expiry 2024-01-26 00:00:00
+2024-01-26 15:45:00 Using OptionStrategies to close the spread
+2024-01-26 15:45:00 Successfully created close order for bull put spread
+2024-01-29 10:00:00 Setting flag to open trades on next data slice
+2024-01-29 10:00:00 Current date: 2024-01-29
+2024-01-29 10:00:00 Current SPY price: 488.01
+2024-01-29 10:00:00 Found 30 put contracts expiring today
+2024-01-29 10:00:00 Available strikes for 2024-01-29: [471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0]
+2024-01-29 10:00:00 Filtering 30 contracts for 2024-01-29 to find short put candidate based on delta...
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00473000, Strike: 473.0, Delta: -0.0050
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00474000, Strike: 474.0, Delta: -0.0053
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00475000, Strike: 475.0, Delta: -0.0057
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00476000, Strike: 476.0, Delta: -0.0061
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00477000, Strike: 477.0, Delta: -0.0065
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00478000, Strike: 478.0, Delta: -0.0098
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00479000, Strike: 479.0, Delta: -0.0106
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00480000, Strike: 480.0, Delta: -0.0116
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00481000, Strike: 481.0, Delta: -0.0191
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00482000, Strike: 482.0, Delta: -0.0213
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00483000, Strike: 483.0, Delta: -0.0315
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00484000, Strike: 484.0, Delta: -0.0575
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00485000, Strike: 485.0, Delta: -0.0943
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00486000, Strike: 486.0, Delta: -0.1758
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00471000, Strike: 471.0, Delta: -0.0045
+2024-01-29 10:00:00   Delta Candidate (Short): SPY   240129P00472000, Strike: 472.0, Delta: -0.0047
+2024-01-29 10:00:00 Selected Short Put: SPY   240129P00486000, Strike: 486.0, Delta: -0.1758
+2024-01-29 10:00:00 Selected Long Put: SPY   240129P00485000, Strike: 485.0, Delta: -0.0943
+2024-01-29 10:00:00 Creating bull put spread with verified contracts:
+2024-01-29 10:00:00 Short Put: Strike=486.0, Expiry=2024-01-29 00:00:00
+2024-01-29 10:00:00 Long Put: Strike=485.0, Expiry=2024-01-29 00:00:00
+2024-01-29 10:00:00 Successfully created bull put spread order
+2024-01-29 15:45:00 Setting flag to close positions on next data slice
+2024-01-29 15:45:00 Found short put: SPY   240129P00486000 Strike: 486.0
+2024-01-29 15:45:00 Found long put: SPY   240129P00485000 Strike: 485.0
+2024-01-29 15:45:00 Closing bull put spread: Short 486.0 Put, Long 485.0 Put, Expiry 2024-01-29 00:00:00
+2024-01-29 15:45:00 Using OptionStrategies to close the spread
+2024-01-29 15:45:00 Successfully created close order for bull put spread
+2024-01-30 10:00:00 Setting flag to open trades on next data slice
+2024-01-30 10:00:00 Current date: 2024-01-30
+2024-01-30 10:00:00 Current SPY price: 491.29
+2024-01-30 10:00:00 Found 27 put contracts expiring today
+2024-01-30 10:00:00 Available strikes for 2024-01-30: [475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 505.0]
+2024-01-30 10:00:00 Filtering 27 contracts for 2024-01-30 to find short put candidate based on delta...
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00475000, Strike: 475.0, Delta: -0.0046
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00476000, Strike: 476.0, Delta: -0.0049
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00477000, Strike: 477.0, Delta: -0.0053
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00478000, Strike: 478.0, Delta: -0.0056
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00479000, Strike: 479.0, Delta: -0.0082
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00480000, Strike: 480.0, Delta: -0.0089
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00481000, Strike: 481.0, Delta: -0.0096
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00482000, Strike: 482.0, Delta: -0.0155
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00483000, Strike: 483.0, Delta: -0.0170
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00484000, Strike: 484.0, Delta: -0.0241
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00485000, Strike: 485.0, Delta: -0.0374
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00486000, Strike: 486.0, Delta: -0.0572
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00487000, Strike: 487.0, Delta: -0.0888
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00488000, Strike: 488.0, Delta: -0.1346
+2024-01-30 10:00:00   Delta Candidate (Short): SPY   240130P00489000, Strike: 489.0, Delta: -0.2165
+2024-01-30 10:00:00 Selected Short Put: SPY   240130P00489000, Strike: 489.0, Delta: -0.2165
+2024-01-30 10:00:00 Selected Long Put: SPY   240130P00488000, Strike: 488.0, Delta: -0.1346
+2024-01-30 10:00:00 Creating bull put spread with verified contracts:
+2024-01-30 10:00:00 Short Put: Strike=489.0, Expiry=2024-01-30 00:00:00
+2024-01-30 10:00:00 Long Put: Strike=488.0, Expiry=2024-01-30 00:00:00
+2024-01-30 10:00:00 Successfully created bull put spread order
+2024-01-30 15:45:00 Setting flag to close positions on next data slice
+2024-01-30 15:45:00 Found short put: SPY   240130P00489000 Strike: 489.0
+2024-01-30 15:45:00 Found long put: SPY   240130P00488000 Strike: 488.0
+2024-01-30 15:45:00 Closing bull put spread: Short 489.0 Put, Long 488.0 Put, Expiry 2024-01-30 00:00:00
+2024-01-30 15:45:00 Using OptionStrategies to close the spread
+2024-01-30 15:45:00 Successfully created close order for bull put spread
+2024-01-31 10:00:00 Setting flag to open trades on next data slice
+2024-01-31 10:00:00 Current date: 2024-01-31
+2024-01-31 10:00:00 Current SPY price: 487.74
+2024-01-31 10:00:00 Found 33 put contracts expiring today
+2024-01-31 10:00:00 Available strikes for 2024-01-31: [474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 504.0, 505.0, 506.0, 508.0]
+2024-01-31 10:00:00 Filtering 33 contracts for 2024-01-31 to find short put candidate based on delta...
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00474000, Strike: 474.0, Delta: -0.0054
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00475000, Strike: 475.0, Delta: -0.0058
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00476000, Strike: 476.0, Delta: -0.0062
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00477000, Strike: 477.0, Delta: -0.0066
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00478000, Strike: 478.0, Delta: -0.0100
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00479000, Strike: 479.0, Delta: -0.0109
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00480000, Strike: 480.0, Delta: -0.0229
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00481000, Strike: 481.0, Delta: -0.0307
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00482000, Strike: 482.0, Delta: -0.0538
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00483000, Strike: 483.0, Delta: -0.0910
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00484000, Strike: 484.0, Delta: -0.1451
+2024-01-31 10:00:00   Delta Candidate (Short): SPY   240131P00485000, Strike: 485.0, Delta: -0.2192
+2024-01-31 10:00:00 Selected Short Put: SPY   240131P00485000, Strike: 485.0, Delta: -0.2192
+2024-01-31 10:00:00 Selected Long Put: SPY   240131P00484000, Strike: 484.0, Delta: -0.1451
+2024-01-31 10:00:00 Creating bull put spread with verified contracts:
+2024-01-31 10:00:00 Short Put: Strike=485.0, Expiry=2024-01-31 00:00:00
+2024-01-31 10:00:00 Long Put: Strike=484.0, Expiry=2024-01-31 00:00:00
+2024-01-31 10:00:00 Successfully created bull put spread order
+2024-01-31 15:45:00 Setting flag to close positions on next data slice
+2024-01-31 15:45:00 Found short put: SPY   240131P00485000 Strike: 485.0
+2024-01-31 15:45:00 Found long put: SPY   240131P00484000 Strike: 484.0
+2024-01-31 15:45:00 Closing bull put spread: Short 485.0 Put, Long 484.0 Put, Expiry 2024-01-31 00:00:00
+2024-01-31 15:45:00 Using OptionStrategies to close the spread
+2024-01-31 15:45:00 Successfully created close order for bull put spread
+2024-02-01 10:00:00 Setting flag to open trades on next data slice
+2024-02-01 10:00:00 Current date: 2024-02-01
+2024-02-01 10:00:00 Current SPY price: 485.08
+2024-02-01 10:00:00 Found 33 put contracts expiring today
+2024-02-01 10:00:00 Available strikes for 2024-02-01: [467.0, 468.0, 469.0, 470.0, 471.0, 472.0, 473.0, 474.0, 475.0, 476.0, 477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0]
+2024-02-01 10:00:00 Filtering 33 contracts for 2024-02-01 to find short put candidate based on delta...
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00468000, Strike: 468.0, Delta: -0.0603
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00469000, Strike: 469.0, Delta: -0.0047
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00470000, Strike: 470.0, Delta: -0.0050
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00471000, Strike: 471.0, Delta: -0.0053
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00472000, Strike: 472.0, Delta: -0.0077
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00473000, Strike: 473.0, Delta: -0.0083
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00474000, Strike: 474.0, Delta: -0.0090
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00475000, Strike: 475.0, Delta: -0.0098
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00476000, Strike: 476.0, Delta: -0.0158
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00477000, Strike: 477.0, Delta: -0.0221
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00478000, Strike: 478.0, Delta: -0.0365
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00479000, Strike: 479.0, Delta: -0.0537
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00480000, Strike: 480.0, Delta: -0.0870
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00481000, Strike: 481.0, Delta: -0.1288
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00482000, Strike: 482.0, Delta: -0.1917
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00483000, Strike: 483.0, Delta: -0.2726
+2024-02-01 10:00:00   Delta Candidate (Short): SPY   240201P00467000, Strike: 467.0, Delta: -0.0354
+2024-02-01 10:00:00 Selected Short Put: SPY   240201P00483000, Strike: 483.0, Delta: -0.2726
+2024-02-01 10:00:00 Selected Long Put: SPY   240201P00482000, Strike: 482.0, Delta: -0.1917
+2024-02-01 10:00:00 Creating bull put spread with verified contracts:
+2024-02-01 10:00:00 Short Put: Strike=483.0, Expiry=2024-02-01 00:00:00
+2024-02-01 10:00:00 Long Put: Strike=482.0, Expiry=2024-02-01 00:00:00
+2024-02-01 10:00:00 Successfully created bull put spread order
+2024-02-01 15:45:00 Setting flag to close positions on next data slice
+2024-02-01 15:45:00 Found long put: SPY   240201P00482000 Strike: 482.0
+2024-02-01 15:45:00 Found short put: SPY   240201P00483000 Strike: 483.0
+2024-02-01 15:45:00 Closing bull put spread: Short 483.0 Put, Long 482.0 Put, Expiry 2024-02-01 00:00:00
+2024-02-01 15:45:00 Using OptionStrategies to close the spread
+2024-02-01 15:45:00 Successfully created close order for bull put spread
+2024-02-02 10:00:00 Setting flag to open trades on next data slice
+2024-02-02 10:00:00 Current date: 2024-02-02
+2024-02-02 10:00:00 Current SPY price: 490.44
+2024-02-02 10:00:00 Found 36 put contracts expiring today
+2024-02-02 10:00:00 Available strikes for 2024-02-02: [473.0, 474.0, 475.0, 476.0, 477.0, 477.5, 478.0, 479.0, 480.0, 481.0, 482.0, 482.5, 483.0, 484.0, 485.0, 486.0, 487.0, 487.5, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 504.0, 505.0, 506.0]
+2024-02-02 10:00:00 Filtering 36 contracts for 2024-02-02 to find short put candidate based on delta...
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00473000, Strike: 473.0, Delta: -0.0043
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00474000, Strike: 474.0, Delta: -0.0046
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00475000, Strike: 475.0, Delta: -0.0049
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00476000, Strike: 476.0, Delta: -0.0052
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00477000, Strike: 477.0, Delta: -0.0055
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00477500, Strike: 477.5, Delta: -0.0078
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00478000, Strike: 478.0, Delta: -0.0081
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00479000, Strike: 479.0, Delta: -0.0087
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00480000, Strike: 480.0, Delta: -0.0093
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00481000, Strike: 481.0, Delta: -0.0100
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00482000, Strike: 482.0, Delta: -0.0164
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00482500, Strike: 482.5, Delta: -0.0171
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00483000, Strike: 483.0, Delta: -0.0234
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00484000, Strike: 484.0, Delta: -0.0361
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00485000, Strike: 485.0, Delta: -0.0549
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00486000, Strike: 486.0, Delta: -0.0847
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00487000, Strike: 487.0, Delta: -0.1321
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00487500, Strike: 487.5, Delta: -0.1659
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00488000, Strike: 488.0, Delta: -0.2039
+2024-02-02 10:00:00   Delta Candidate (Short): SPY   240202P00489000, Strike: 489.0, Delta: -0.2979
+2024-02-02 10:00:00 Selected Short Put: SPY   240202P00489000, Strike: 489.0, Delta: -0.2979
+2024-02-02 10:00:00 Selected Long Put: SPY   240202P00488000, Strike: 488.0, Delta: -0.2039
+2024-02-02 10:00:00 Creating bull put spread with verified contracts:
+2024-02-02 10:00:00 Short Put: Strike=489.0, Expiry=2024-02-02 00:00:00
+2024-02-02 10:00:00 Long Put: Strike=488.0, Expiry=2024-02-02 00:00:00
+2024-02-02 10:00:00 Successfully created bull put spread order
+2024-02-02 15:45:00 Setting flag to close positions on next data slice
+2024-02-02 15:45:00 Found short put: SPY   240202P00489000 Strike: 489.0
+2024-02-02 15:45:00 Found long put: SPY   240202P00488000 Strike: 488.0
+2024-02-02 15:45:00 Closing bull put spread: Short 489.0 Put, Long 488.0 Put, Expiry 2024-02-02 00:00:00
+2024-02-02 15:45:00 Using OptionStrategies to close the spread
+2024-02-02 15:45:00 Successfully created close order for bull put spread
+2024-02-05 10:00:00 Setting flag to open trades on next data slice
+2024-02-05 10:00:00 Current date: 2024-02-05
+2024-02-05 10:00:00 Current SPY price: 493.45
+2024-02-05 10:00:00 Found 25 put contracts expiring today
+2024-02-05 10:00:00 Available strikes for 2024-02-05: [478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 505.0, 510.0]
+2024-02-05 10:00:00 Filtering 25 contracts for 2024-02-05 to find short put candidate based on delta...
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00478000, Strike: 478.0, Delta: -0.0068
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00479000, Strike: 479.0, Delta: -0.0071
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00480000, Strike: 480.0, Delta: -0.0055
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00481000, Strike: 481.0, Delta: -0.0059
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00482000, Strike: 482.0, Delta: -0.0088
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00483000, Strike: 483.0, Delta: -0.0095
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00484000, Strike: 484.0, Delta: -0.0103
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00485000, Strike: 485.0, Delta: -0.0111
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00486000, Strike: 486.0, Delta: -0.0121
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00487000, Strike: 487.0, Delta: -0.0202
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00488000, Strike: 488.0, Delta: -0.0298
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00489000, Strike: 489.0, Delta: -0.0532
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00490000, Strike: 490.0, Delta: -0.0965
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00491000, Strike: 491.0, Delta: -0.1704
+2024-02-05 10:00:00   Delta Candidate (Short): SPY   240205P00492000, Strike: 492.0, Delta: -0.2759
+2024-02-05 10:00:00 Selected Short Put: SPY   240205P00492000, Strike: 492.0, Delta: -0.2759
+2024-02-05 10:00:00 Selected Long Put: SPY   240205P00491000, Strike: 491.0, Delta: -0.1704
+2024-02-05 10:00:00 Creating bull put spread with verified contracts:
+2024-02-05 10:00:00 Short Put: Strike=492.0, Expiry=2024-02-05 00:00:00
+2024-02-05 10:00:00 Long Put: Strike=491.0, Expiry=2024-02-05 00:00:00
+2024-02-05 10:00:00 Successfully created bull put spread order
+2024-02-05 15:45:00 Setting flag to close positions on next data slice
+2024-02-05 15:45:00 Found long put: SPY   240205P00491000 Strike: 491.0
+2024-02-05 15:45:00 Found short put: SPY   240205P00492000 Strike: 492.0
+2024-02-05 15:45:00 Closing bull put spread: Short 492.0 Put, Long 491.0 Put, Expiry 2024-02-05 00:00:00
+2024-02-05 15:45:00 Using OptionStrategies to close the spread
+2024-02-05 15:45:00 Successfully created close order for bull put spread
+2024-02-06 10:00:00 Setting flag to open trades on next data slice
+2024-02-06 10:00:00 Current date: 2024-02-06
+2024-02-06 10:00:00 Current SPY price: 493.005
+2024-02-06 10:00:00 Found 30 put contracts expiring today
+2024-02-06 10:00:00 Available strikes for 2024-02-06: [477.0, 478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 503.0, 504.0, 505.0, 510.0]
+2024-02-06 10:00:00 Filtering 30 contracts for 2024-02-06 to find short put candidate based on delta...
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00477000, Strike: 477.0, Delta: -0.0047
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00478000, Strike: 478.0, Delta: -0.0050
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00479000, Strike: 479.0, Delta: -0.0054
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00480000, Strike: 480.0, Delta: -0.0057
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00481000, Strike: 481.0, Delta: -0.0061
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00482000, Strike: 482.0, Delta: -0.0065
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00483000, Strike: 483.0, Delta: -0.0098
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00484000, Strike: 484.0, Delta: -0.0106
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00485000, Strike: 485.0, Delta: -0.0116
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00486000, Strike: 486.0, Delta: -0.0127
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00487000, Strike: 487.0, Delta: -0.0214
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00488000, Strike: 488.0, Delta: -0.0382
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00489000, Strike: 489.0, Delta: -0.0635
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00490000, Strike: 490.0, Delta: -0.1189
+2024-02-06 10:00:00   Delta Candidate (Short): SPY   240206P00491000, Strike: 491.0, Delta: -0.2075
+2024-02-06 10:00:00 Selected Short Put: SPY   240206P00491000, Strike: 491.0, Delta: -0.2075
+2024-02-06 10:00:00 Selected Long Put: SPY   240206P00490000, Strike: 490.0, Delta: -0.1189
+2024-02-06 10:00:00 Creating bull put spread with verified contracts:
+2024-02-06 10:00:00 Short Put: Strike=491.0, Expiry=2024-02-06 00:00:00
+2024-02-06 10:00:00 Long Put: Strike=490.0, Expiry=2024-02-06 00:00:00
+2024-02-06 10:00:00 Successfully created bull put spread order
+2024-02-06 15:45:00 Setting flag to close positions on next data slice
+2024-02-06 15:45:00 Found short put: SPY   240206P00491000 Strike: 491.0
+2024-02-06 15:45:00 Found long put: SPY   240206P00490000 Strike: 490.0
+2024-02-06 15:45:00 Closing bull put spread: Short 491.0 Put, Long 490.0 Put, Expiry 2024-02-06 00:00:00
+2024-02-06 15:45:00 Using OptionStrategies to close the spread
+2024-02-06 15:45:00 Successfully created close order for bull put spread
+2024-02-07 10:00:00 Setting flag to open trades on next data slice
+2024-02-07 10:00:00 Current date: 2024-02-07
+2024-02-07 10:00:00 Current SPY price: 495.9
+2024-02-07 10:00:00 Found 25 put contracts expiring today
+2024-02-07 10:00:00 Available strikes for 2024-02-07: [478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 505.0, 510.0]
+2024-02-07 10:00:00 Filtering 25 contracts for 2024-02-07 to find short put candidate based on delta...
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00478000, Strike: 478.0, Delta: -0.0042
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00479000, Strike: 479.0, Delta: -0.0045
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00480000, Strike: 480.0, Delta: -0.0048
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00481000, Strike: 481.0, Delta: -0.0051
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00482000, Strike: 482.0, Delta: -0.0054
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00483000, Strike: 483.0, Delta: -0.0057
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00484000, Strike: 484.0, Delta: -0.0061
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00485000, Strike: 485.0, Delta: -0.0091
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00486000, Strike: 486.0, Delta: -0.0099
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00487000, Strike: 487.0, Delta: -0.0107
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00488000, Strike: 488.0, Delta: -0.0117
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00489000, Strike: 489.0, Delta: -0.0193
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00490000, Strike: 490.0, Delta: -0.0334
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00491000, Strike: 491.0, Delta: -0.0496
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00492000, Strike: 492.0, Delta: -0.0798
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00493000, Strike: 493.0, Delta: -0.1302
+2024-02-07 10:00:00   Delta Candidate (Short): SPY   240207P00494000, Strike: 494.0, Delta: -0.2159
+2024-02-07 10:00:00 Selected Short Put: SPY   240207P00494000, Strike: 494.0, Delta: -0.2159
+2024-02-07 10:00:00 Selected Long Put: SPY   240207P00493000, Strike: 493.0, Delta: -0.1302
+2024-02-07 10:00:00 Creating bull put spread with verified contracts:
+2024-02-07 10:00:00 Short Put: Strike=494.0, Expiry=2024-02-07 00:00:00
+2024-02-07 10:00:00 Long Put: Strike=493.0, Expiry=2024-02-07 00:00:00
+2024-02-07 10:00:00 Successfully created bull put spread order
+2024-02-07 15:45:00 Setting flag to close positions on next data slice
+2024-02-07 15:45:00 Found long put: SPY   240207P00493000 Strike: 493.0
+2024-02-07 15:45:00 Found short put: SPY   240207P00494000 Strike: 494.0
+2024-02-07 15:45:00 Closing bull put spread: Short 494.0 Put, Long 493.0 Put, Expiry 2024-02-07 00:00:00
+2024-02-07 15:45:00 Using OptionStrategies to close the spread
+2024-02-07 15:45:00 Successfully created close order for bull put spread
+2024-02-08 10:00:00 Setting flag to open trades on next data slice
+2024-02-08 10:00:00 Current date: 2024-02-08
+2024-02-08 10:00:00 Current SPY price: 497.99
+2024-02-08 10:00:00 Found 29 put contracts expiring today
+2024-02-08 10:00:00 Available strikes for 2024-02-08: [483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 502.0, 504.0, 505.0, 506.0, 508.0, 510.0, 512.0, 514.0, 515.0, 516.0, 518.0]
+2024-02-08 10:00:00 Filtering 29 contracts for 2024-02-08 to find short put candidate based on delta...
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00483000, Strike: 483.0, Delta: -0.0050
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00484000, Strike: 484.0, Delta: -0.0054
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00485000, Strike: 485.0, Delta: -0.0057
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00486000, Strike: 486.0, Delta: -0.0084
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00487000, Strike: 487.0, Delta: -0.0091
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00488000, Strike: 488.0, Delta: -0.0098
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00489000, Strike: 489.0, Delta: -0.0106
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00490000, Strike: 490.0, Delta: -0.0116
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00491000, Strike: 491.0, Delta: -0.0127
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00492000, Strike: 492.0, Delta: -0.0214
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00493000, Strike: 493.0, Delta: -0.0315
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00494000, Strike: 494.0, Delta: -0.0577
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00495000, Strike: 495.0, Delta: -0.1045
+2024-02-08 10:00:00   Delta Candidate (Short): SPY   240208P00496000, Strike: 496.0, Delta: -0.1915
+2024-02-08 10:00:00 Selected Short Put: SPY   240208P00496000, Strike: 496.0, Delta: -0.1915
+2024-02-08 10:00:00 Selected Long Put: SPY   240208P00495000, Strike: 495.0, Delta: -0.1045
+2024-02-08 10:00:00 Creating bull put spread with verified contracts:
+2024-02-08 10:00:00 Short Put: Strike=496.0, Expiry=2024-02-08 00:00:00
+2024-02-08 10:00:00 Long Put: Strike=495.0, Expiry=2024-02-08 00:00:00
+2024-02-08 10:00:00 Successfully created bull put spread order
+2024-02-08 15:45:00 Setting flag to close positions on next data slice
+2024-02-08 15:45:00 Found long put: SPY   240208P00495000 Strike: 495.0
+2024-02-08 15:45:00 Found short put: SPY   240208P00496000 Strike: 496.0
+2024-02-08 15:45:00 Closing bull put spread: Short 496.0 Put, Long 495.0 Put, Expiry 2024-02-08 00:00:00
+2024-02-08 15:45:00 Using OptionStrategies to close the spread
+2024-02-08 15:45:00 Successfully created close order for bull put spread
+2024-02-09 10:00:00 Setting flag to open trades on next data slice
+2024-02-09 10:00:00 Current date: 2024-02-09
+2024-02-09 10:00:00 Current SPY price: 499.5
+2024-02-09 10:00:00 Found 31 put contracts expiring today
+2024-02-09 10:00:00 Available strikes for 2024-02-09: [483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 503.0, 504.0, 505.0, 506.0, 508.0, 510.0, 512.0, 514.0, 515.0, 516.0, 518.0]
+2024-02-09 10:00:00 Filtering 31 contracts for 2024-02-09 to find short put candidate based on delta...
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00483000, Strike: 483.0, Delta: -0.0046
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00484000, Strike: 484.0, Delta: -0.0049
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00485000, Strike: 485.0, Delta: -0.0051
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00486000, Strike: 486.0, Delta: -0.0055
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00487000, Strike: 487.0, Delta: -0.0080
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00488000, Strike: 488.0, Delta: -0.0086
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00489000, Strike: 489.0, Delta: -0.0093
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00490000, Strike: 490.0, Delta: -0.0100
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00491000, Strike: 491.0, Delta: -0.0107
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00492000, Strike: 492.0, Delta: -0.0119
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00493000, Strike: 493.0, Delta: -0.0258
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00494000, Strike: 494.0, Delta: -0.0348
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00495000, Strike: 495.0, Delta: -0.0516
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00496000, Strike: 496.0, Delta: -0.0878
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00497000, Strike: 497.0, Delta: -0.1514
+2024-02-09 10:00:00   Delta Candidate (Short): SPY   240209P00498000, Strike: 498.0, Delta: -0.2488
+2024-02-09 10:00:00 Selected Short Put: SPY   240209P00498000, Strike: 498.0, Delta: -0.2488
+2024-02-09 10:00:00 Selected Long Put: SPY   240209P00497000, Strike: 497.0, Delta: -0.1514
+2024-02-09 10:00:00 Creating bull put spread with verified contracts:
+2024-02-09 10:00:00 Short Put: Strike=498.0, Expiry=2024-02-09 00:00:00
+2024-02-09 10:00:00 Long Put: Strike=497.0, Expiry=2024-02-09 00:00:00
+2024-02-09 10:00:00 Successfully created bull put spread order
+2024-02-09 15:45:00 Setting flag to close positions on next data slice
+2024-02-09 15:45:00 Found short put: SPY   240209P00498000 Strike: 498.0
+2024-02-09 15:45:00 Found long put: SPY   240209P00497000 Strike: 497.0
+2024-02-09 15:45:00 Closing bull put spread: Short 498.0 Put, Long 497.0 Put, Expiry 2024-02-09 00:00:00
+2024-02-09 15:45:00 Using OptionStrategies to close the spread
+2024-02-09 15:45:00 Successfully created close order for bull put spread
+2024-02-12 10:00:00 Setting flag to open trades on next data slice
+2024-02-12 10:00:00 Current date: 2024-02-12
+2024-02-12 10:00:00 Current SPY price: 501.43
+2024-02-12 10:00:00 Found 37 put contracts expiring today
+2024-02-12 10:00:00 Available strikes for 2024-02-12: [485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 503.0, 504.0, 505.0, 506.0, 507.0, 508.0, 509.0, 510.0, 511.0, 512.0, 513.0, 514.0, 515.0, 516.0, 517.0, 518.0, 519.0, 520.0, 521.0]
+2024-02-12 10:00:00 Filtering 37 contracts for 2024-02-12 to find short put candidate based on delta...
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00485000, Strike: 485.0, Delta: -0.0081
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00486000, Strike: 486.0, Delta: -0.0086
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00487000, Strike: 487.0, Delta: -0.0092
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00488000, Strike: 488.0, Delta: -0.0097
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00489000, Strike: 489.0, Delta: -0.0121
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00490000, Strike: 490.0, Delta: -0.0129
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00491000, Strike: 491.0, Delta: -0.0164
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00492000, Strike: 492.0, Delta: -0.0103
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00493000, Strike: 493.0, Delta: -0.0111
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00494000, Strike: 494.0, Delta: -0.0121
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00495000, Strike: 495.0, Delta: -0.0202
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00496000, Strike: 496.0, Delta: -0.0299
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00497000, Strike: 497.0, Delta: -0.0417
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00498000, Strike: 498.0, Delta: -0.0697
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00499000, Strike: 499.0, Delta: -0.1289
+2024-02-12 10:00:00   Delta Candidate (Short): SPY   240212P00500000, Strike: 500.0, Delta: -0.2395
+2024-02-12 10:00:00 Selected Short Put: SPY   240212P00500000, Strike: 500.0, Delta: -0.2395
+2024-02-12 10:00:00 Selected Long Put: SPY   240212P00499000, Strike: 499.0, Delta: -0.1289
+2024-02-12 10:00:00 Creating bull put spread with verified contracts:
+2024-02-12 10:00:00 Short Put: Strike=500.0, Expiry=2024-02-12 00:00:00
+2024-02-12 10:00:00 Long Put: Strike=499.0, Expiry=2024-02-12 00:00:00
+2024-02-12 10:00:00 Successfully created bull put spread order
+2024-02-12 15:45:00 Setting flag to close positions on next data slice
+2024-02-12 15:45:00 Found long put: SPY   240212P00499000 Strike: 499.0
+2024-02-12 15:45:00 Found short put: SPY   240212P00500000 Strike: 500.0
+2024-02-12 15:45:00 Closing bull put spread: Short 500.0 Put, Long 499.0 Put, Expiry 2024-02-12 00:00:00
+2024-02-12 15:45:00 Using OptionStrategies to close the spread
+2024-02-12 15:45:00 Successfully created close order for bull put spread
+2024-02-13 10:00:00 Setting flag to open trades on next data slice
+2024-02-13 10:00:00 Current date: 2024-02-13
+2024-02-13 10:00:00 Current SPY price: 493.81
+2024-02-13 10:00:00 Found 37 put contracts expiring today
+2024-02-13 10:00:00 Available strikes for 2024-02-13: [484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 503.0, 504.0, 505.0, 506.0, 507.0, 508.0, 509.0, 510.0, 511.0, 512.0, 513.0, 514.0, 515.0, 516.0, 517.0, 518.0, 519.0, 520.0]
+2024-02-13 10:00:00 Filtering 37 contracts for 2024-02-13 to find short put candidate based on delta...
+2024-02-13 10:00:00   Delta Candidate (Short): SPY   240213P00484000, Strike: 484.0, Delta: -0.0100
+2024-02-13 10:00:00   Delta Candidate (Short): SPY   240213P00485000, Strike: 485.0, Delta: -0.0108
+2024-02-13 10:00:00   Delta Candidate (Short): SPY   240213P00486000, Strike: 486.0, Delta: -0.0178
+2024-02-13 10:00:00   Delta Candidate (Short): SPY   240213P00487000, Strike: 487.0, Delta: -0.0255
+2024-02-13 10:00:00   Delta Candidate (Short): SPY   240213P00488000, Strike: 488.0, Delta: -0.0339
+2024-02-13 10:00:00   Delta Candidate (Short): SPY   240213P00489000, Strike: 489.0, Delta: -0.0611
+2024-02-13 10:00:00   Delta Candidate (Short): SPY   240213P00490000, Strike: 490.0, Delta: -0.1032
+2024-02-13 10:00:00   Delta Candidate (Short): SPY   240213P00491000, Strike: 491.0, Delta: -0.1719
+2024-02-13 10:00:00   Delta Candidate (Short): SPY   240213P00492000, Strike: 492.0, Delta: -0.2669
+2024-02-13 10:00:00 Selected Short Put: SPY   240213P00492000, Strike: 492.0, Delta: -0.2669
+2024-02-13 10:00:00 Selected Long Put: SPY   240213P00491000, Strike: 491.0, Delta: -0.1719
+2024-02-13 10:00:00 Creating bull put spread with verified contracts:
+2024-02-13 10:00:00 Short Put: Strike=492.0, Expiry=2024-02-13 00:00:00
+2024-02-13 10:00:00 Long Put: Strike=491.0, Expiry=2024-02-13 00:00:00
+2024-02-13 10:00:00 Successfully created bull put spread order
+2024-02-13 15:45:00 Setting flag to close positions on next data slice
+2024-02-13 15:45:00 Found short put: SPY   240213P00492000 Strike: 492.0
+2024-02-13 15:45:00 Found long put: SPY   240213P00491000 Strike: 491.0
+2024-02-13 15:45:00 Closing bull put spread: Short 492.0 Put, Long 491.0 Put, Expiry 2024-02-13 00:00:00
+2024-02-13 15:45:00 Using OptionStrategies to close the spread
+2024-02-13 15:45:00 Successfully created close order for bull put spread
+2024-02-14 10:00:00 Setting flag to open trades on next data slice
+2024-02-14 10:00:00 Current date: 2024-02-14
+2024-02-14 10:00:00 Current SPY price: 496.88
+2024-02-14 10:00:00 Found 36 put contracts expiring today
+2024-02-14 10:00:00 Available strikes for 2024-02-14: [478.0, 479.0, 480.0, 481.0, 482.0, 483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 503.0, 504.0, 505.0, 506.0, 507.0, 508.0, 509.0, 510.0, 511.0, 512.0, 513.0]
+2024-02-14 10:00:00 Filtering 36 contracts for 2024-02-14 to find short put candidate based on delta...
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00478000, Strike: 478.0, Delta: -0.0040
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00479000, Strike: 479.0, Delta: -0.0042
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00480000, Strike: 480.0, Delta: -0.0045
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00481000, Strike: 481.0, Delta: -0.0048
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00482000, Strike: 482.0, Delta: -0.0051
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00483000, Strike: 483.0, Delta: -0.0054
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00484000, Strike: 484.0, Delta: -0.0057
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00485000, Strike: 485.0, Delta: -0.0085
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00486000, Strike: 486.0, Delta: -0.0092
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00487000, Strike: 487.0, Delta: -0.0099
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00488000, Strike: 488.0, Delta: -0.0107
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00489000, Strike: 489.0, Delta: -0.0176
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00490000, Strike: 490.0, Delta: -0.0253
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00491000, Strike: 491.0, Delta: -0.0393
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00492000, Strike: 492.0, Delta: -0.0553
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00493000, Strike: 493.0, Delta: -0.0900
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00494000, Strike: 494.0, Delta: -0.1457
+2024-02-14 10:00:00   Delta Candidate (Short): SPY   240214P00495000, Strike: 495.0, Delta: -0.2368
+2024-02-14 10:00:00 Selected Short Put: SPY   240214P00495000, Strike: 495.0, Delta: -0.2368
+2024-02-14 10:00:00 Selected Long Put: SPY   240214P00494000, Strike: 494.0, Delta: -0.1457
+2024-02-14 10:00:00 Creating bull put spread with verified contracts:
+2024-02-14 10:00:00 Short Put: Strike=495.0, Expiry=2024-02-14 00:00:00
+2024-02-14 10:00:00 Long Put: Strike=494.0, Expiry=2024-02-14 00:00:00
+2024-02-14 10:00:00 Successfully created bull put spread order
+2024-02-14 15:45:00 Setting flag to close positions on next data slice
+2024-02-14 15:45:00 Found short put: SPY   240214P00495000 Strike: 495.0
+2024-02-14 15:45:00 Found long put: SPY   240214P00494000 Strike: 494.0
+2024-02-14 15:45:00 Closing bull put spread: Short 495.0 Put, Long 494.0 Put, Expiry 2024-02-14 00:00:00
+2024-02-14 15:45:00 Using OptionStrategies to close the spread
+2024-02-14 15:45:00 Successfully created close order for bull put spread
+2024-02-15 10:00:00 Setting flag to open trades on next data slice
+2024-02-15 10:00:00 Current date: 2024-02-15
+2024-02-15 10:00:00 Current SPY price: 499.64
+2024-02-15 10:00:00 Found 36 put contracts expiring today
+2024-02-15 10:00:00 Available strikes for 2024-02-15: [483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 503.0, 504.0, 505.0, 506.0, 507.0, 508.0, 509.0, 510.0, 511.0, 512.0, 513.0, 514.0, 515.0, 516.0, 517.0, 518.0]
+2024-02-15 10:00:00 Filtering 36 contracts for 2024-02-15 to find short put candidate based on delta...
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00483000, Strike: 483.0, Delta: -0.0064
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00484000, Strike: 484.0, Delta: -0.0067
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00485000, Strike: 485.0, Delta: -0.0091
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00486000, Strike: 486.0, Delta: -0.0096
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00487000, Strike: 487.0, Delta: -0.0102
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00488000, Strike: 488.0, Delta: -0.0127
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00489000, Strike: 489.0, Delta: -0.0138
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00490000, Strike: 490.0, Delta: -0.0101
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00491000, Strike: 491.0, Delta: -0.0110
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00492000, Strike: 492.0, Delta: -0.0119
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00493000, Strike: 493.0, Delta: -0.0260
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00494000, Strike: 494.0, Delta: -0.0406
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00495000, Strike: 495.0, Delta: -0.0673
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00496000, Strike: 496.0, Delta: -0.1096
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00497000, Strike: 497.0, Delta: -0.1741
+2024-02-15 10:00:00   Delta Candidate (Short): SPY   240215P00498000, Strike: 498.0, Delta: -0.2704
+2024-02-15 10:00:00 Selected Short Put: SPY   240215P00498000, Strike: 498.0, Delta: -0.2704
+2024-02-15 10:00:00 Selected Long Put: SPY   240215P00497000, Strike: 497.0, Delta: -0.1741
+2024-02-15 10:00:00 Creating bull put spread with verified contracts:
+2024-02-15 10:00:00 Short Put: Strike=498.0, Expiry=2024-02-15 00:00:00
+2024-02-15 10:00:00 Long Put: Strike=497.0, Expiry=2024-02-15 00:00:00
+2024-02-15 10:00:00 Successfully created bull put spread order
+2024-02-15 15:45:00 Setting flag to close positions on next data slice
+2024-02-15 15:45:00 Found short put: SPY   240215P00498000 Strike: 498.0
+2024-02-15 15:45:00 Found long put: SPY   240215P00497000 Strike: 497.0
+2024-02-15 15:45:00 Closing bull put spread: Short 498.0 Put, Long 497.0 Put, Expiry 2024-02-15 00:00:00
+2024-02-15 15:45:00 Using OptionStrategies to close the spread
+2024-02-15 15:45:00 Successfully created close order for bull put spread
+2024-02-16 10:00:00 Setting flag to open trades on next data slice
+2024-02-16 10:00:00 Current date: 2024-02-16
+2024-02-16 10:00:00 Current SPY price: 499.66
+2024-02-16 10:00:00 Found 37 put contracts expiring today
+2024-02-16 10:00:00 Available strikes for 2024-02-16: [486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 503.0, 504.0, 505.0, 506.0, 507.0, 508.0, 509.0, 510.0, 511.0, 512.0, 513.0, 514.0, 515.0, 516.0, 517.0, 518.0, 519.0, 520.0, 521.0, 522.0]
+2024-02-16 10:00:00 Filtering 37 contracts for 2024-02-16 to find short put candidate based on delta...
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00486000, Strike: 486.0, Delta: -0.0110
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00487000, Strike: 487.0, Delta: -0.0117
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00488000, Strike: 488.0, Delta: -0.0126
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00489000, Strike: 489.0, Delta: -0.0091
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00490000, Strike: 490.0, Delta: -0.0122
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00491000, Strike: 491.0, Delta: -0.0206
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00492000, Strike: 492.0, Delta: -0.0271
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00493000, Strike: 493.0, Delta: -0.0491
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00494000, Strike: 494.0, Delta: -0.0677
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00495000, Strike: 495.0, Delta: -0.1028
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00496000, Strike: 496.0, Delta: -0.1533
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00497000, Strike: 497.0, Delta: -0.2146
+2024-02-16 10:00:00   Delta Candidate (Short): SPY   240216P00498000, Strike: 498.0, Delta: -0.2914
+2024-02-16 10:00:00 Selected Short Put: SPY   240216P00498000, Strike: 498.0, Delta: -0.2914
+2024-02-16 10:00:00 Selected Long Put: SPY   240216P00497000, Strike: 497.0, Delta: -0.2146
+2024-02-16 10:00:00 Creating bull put spread with verified contracts:
+2024-02-16 10:00:00 Short Put: Strike=498.0, Expiry=2024-02-16 00:00:00
+2024-02-16 10:00:00 Long Put: Strike=497.0, Expiry=2024-02-16 00:00:00
+2024-02-16 10:00:00 Successfully created bull put spread order
+2024-02-16 15:45:00 Setting flag to close positions on next data slice
+2024-02-16 15:45:00 Found long put: SPY   240216P00497000 Strike: 497.0
+2024-02-16 15:45:00 Found short put: SPY   240216P00498000 Strike: 498.0
+2024-02-16 15:45:00 Closing bull put spread: Short 498.0 Put, Long 497.0 Put, Expiry 2024-02-16 00:00:00
+2024-02-16 15:45:00 Using OptionStrategies to close the spread
+2024-02-16 15:45:00 Successfully created close order for bull put spread
+2024-02-20 10:00:00 Setting flag to open trades on next data slice
+2024-02-20 10:00:00 Current date: 2024-02-20
+2024-02-20 10:00:00 Current SPY price: 496.68
+2024-02-20 10:00:00 Found 37 put contracts expiring today
+2024-02-20 10:00:00 Available strikes for 2024-02-20: [483.0, 484.0, 485.0, 486.0, 487.0, 488.0, 489.0, 490.0, 491.0, 492.0, 493.0, 494.0, 495.0, 496.0, 497.0, 498.0, 499.0, 500.0, 501.0, 502.0, 503.0, 504.0, 505.0, 506.0, 507.0, 508.0, 509.0, 510.0, 511.0, 512.0, 513.0, 514.0, 515.0, 516.0, 517.0, 518.0, 519.0]
+2024-02-20 10:00:00 Filtering 37 contracts for 2024-02-20 to find short put candidate based on delta...
+2024-02-20 10:00:00   Delta Candidate (Short): SPY   240220P00483000, Strike: 483.0, Delta: -0.0055
+2024-02-20 10:00:00   Delta Candidate (Short): SPY   240220P00484000, Strike: 484.0, Delta: -0.0058
+2024-02-20 10:00:00   Delta Candidate (Short): SPY   240220P00485000, Strike: 485.0, Delta: -0.0062
+2024-02-20 10:00:00   Delta Candidate (Short): SPY   240220P00486000, Strike: 486.0, Delta: -0.0138
+2024-02-20 10:00:00   Delta Candidate (Short): SPY   240220P00487000, Strike: 487.0, Delta: -0.0150
+2024-02-20 10:00:00   Delta Candidate (Short): SPY   240220P00488000, Strike: 488.0, Delta: -0.0109
+2024-02-20 10:00:00   Delta Candidate (Short): SPY   240220P00489000, Strike: 489.0, Delta: -0.0119
+2024-02-20 10:00:00   Delta Candidate (Short): SPY   240220P00490000, Strike: 490.0, Delta: -0.0197
+2024-02-20 10:00:00   Delta Candidate (Short): SPY   240220P00491000, Strike: 491.0, Delta: -0.0290
+You currently have a maximum of 100kb of log data per backtest, and 100kb total max per day. Have you tried step-by-step debugging? See more at https://qnt.co/debugging or upgrade your organization type for more logs at https://www.quantconnect.com/pricing
