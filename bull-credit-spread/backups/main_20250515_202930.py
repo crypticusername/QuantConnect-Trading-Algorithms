@@ -1,21 +1,7 @@
 from AlgorithmImports import *
 from datetime import datetime # Ensure datetime is imported
 
-# ===== COMPONENT: IMPORTS =====
-# All imports should be placed above this line
-# ===== END COMPONENT =====
-
-# ===== COMPONENT: CONFIGURATION =====
-# Strategy parameters and configuration should be defined below
-# ===== END COMPONENT =====
-
-# ===== COMPONENT: STATE_MANAGEMENT =====
-# State tracking variables should be defined below
-# ===== END COMPONENT =====
-
 class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
-    # ===== COMPONENT: INITIALIZATION =====
-    # Algorithm initialization code goes here
     def initialize(self) -> None:
         self.set_start_date(2023, 10, 1)
         self.set_end_date(2023, 12, 31) 
@@ -84,8 +70,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
             self.close_all_option_positions_force
         ) 
 
-    # ===== COMPONENT: TRADE_ENTRY =====
-    # Trade entry logic goes here
     def open_trades(self) -> None:
         if self.spread_is_open:
             self.log("Spread already open, skipping")
@@ -93,8 +77,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         self.log("Setting flag to open trades on next data slice")
         self.pending_open = True
 
-    # ===== COMPONENT: TRADE_EXIT =====
-    # Trade exit logic goes here
     def close_positions(self) -> None:
         if not self.spread_is_open:
             self.log("No spread position open to close")
@@ -102,8 +84,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         self.log("Setting flag to close positions on next data slice")
         self.pending_close = True
         
-    # ===== COMPONENT: RISK_MANAGEMENT =====
-    # Risk management and emergency close logic goes here
     def close_all_option_positions_force(self) -> None:
         """
         Scheduled failsafe to close ALL open option contracts for this symbol before expiry/market close.
@@ -137,8 +117,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         self.log("FAILSAFE: Spread position marked as closed")
 
 
-    # ===== COMPONENT: DATA_HANDLING =====
-    # Main data processing and event handling
     def on_data(self, slice: Slice) -> None:
         """Main event handler for market data updates."""
         # First, handle pending open if no spread is open yet
@@ -166,8 +144,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
             self.log("ON_DATA: Checking profit target")
             self.monitor_profit_target(slice)
             
-    # ===== COMPONENT: STOP_LOSS =====
-    # Stop loss calculation and triggering
     def check_stop_loss(self, slice: Slice) -> bool:
         """Checks if the current position has hit the stop loss threshold.
         
@@ -215,8 +191,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
             self.error(f"CHECK_STOP_LOSS: Error in stop loss check: {str(e)}")
             return False
             
-    # ===== COMPONENT: PROFIT_TARGET =====
-    # Profit target monitoring and triggering
     def monitor_profit_target(self, slice: Slice) -> None:
         """Monitors an open spread for profit target"""
         if not self.spread_is_open or not self.initial_credit:
@@ -288,8 +262,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         except Exception as e:
             self.error(f"PROFIT_TARGET: Error calculating profit target: {str(e)}")
 
-    # ===== COMPONENT: SPREAD_SELECTION =====
-    # Spread selection and entry logic
     def try_open_spread(self, slice: Slice) -> None:
         """Attempts to open a bull put spread if conditions are met."""
         self.log(f"TRY_OPEN_SPREAD: Attempting to open spread. Current Time: {self.time}")
@@ -526,8 +498,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
                 if long_put.symbol in self.portfolio and self.portfolio[long_put.symbol].invested:
                     self.liquidate(long_put.symbol)
 
-    # ===== COMPONENT: POSITION_MANAGEMENT =====
-    # Position management and order execution
     def try_close_spread(self, reason: str = "Unknown") -> None:
         """Attempts to close the current spread position."""
         if not self.spread_is_open:
@@ -641,8 +611,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
             self.error(f"TRY_CLOSE_SPREAD ({reason}): Error during spread closure: {str(e)}")
             self.reset_spread_state(f"CloseOrderFail_{reason}")
 
-    # ===== COMPONENT: STATE_MANAGEMENT =====
-    # State management and cleanup
     def reset_spread_state(self, reason: str = "Unknown"):
         self.log(f"RESET_SPREAD_STATE ({reason}): Resetting all spread-related state variables.")
         self.spread_is_open = False 
@@ -657,8 +625,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         self.opening_order_tickets.clear()
         self.closing_order_tickets.clear()
 
-    # ===== COMPONENT: PRICING =====
-    # Pricing and valuation calculations
     def calculate_current_debit_to_close(self, slice: Slice) -> float:
         """Calculates the current debit required to close the spread."""
         if not self.spread_is_open or not self.opened_short_put_symbol or not self.opened_long_put_symbol:
@@ -696,8 +662,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
 
 
 
-    # ===== COMPONENT: ORDER_HANDLING =====
-    # Order event processing and tracking
     def on_order_event(self, order_event: OrderEvent) -> None:
         """Handles order events for tracking fill prices and status."""
         self.log(f"ON_ORDER_EVENT: Received event for OrderID {order_event.order_id}. Status: {order_event.status}, Symbol: {order_event.symbol.value}")
