@@ -1,0 +1,1169 @@
+2024-01-01 00:00:00 Launching analysis for abb40dbf026bf3321879abbb56216082 with LEAN Engine v2.5.0.0.17108
+2024-01-01 00:00:00 Accurate daily end-times now enabled by default. See more at https://qnt.co/3YHaWHL. To disable it and use legacy daily bars set self.settings.daily_precise_end_time = False.
+2024-01-01 00:00:00 Warning: The following securities were set to raw price normalization mode to work with options: SPY...
+2024-01-02 10:00:00 Setting flag to open trades on next data slice
+2024-01-02 10:00:00 ON_DATA: Opening trade initiated
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-02 10:00:00
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 471.0 with delta -0.28
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 466.0
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 471.0, delta 0.28
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 466.0, delta 0.02
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $38.00
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Max loss: $462.00, Stop loss target: $962.00
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-02 10:00:00 ON_ORDER_EVENT: Received event for OrderID 1. Status: 1, Symbol: SPY   240102P00471000
+2024-01-02 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 1. Status: 1
+2024-01-02 10:00:00 ON_ORDER_EVENT: Received event for OrderID 2. Status: 1, Symbol: SPY   240102P00466000
+2024-01-02 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 2. Status: 1
+2024-01-02 10:00:00 ON_ORDER_EVENT: Received event for OrderID 1. Status: 3, Symbol: SPY   240102P00471000
+2024-01-02 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 1. Status: 3
+2024-01-02 10:00:00 ON_ORDER_EVENT: Received event for OrderID 2. Status: 3, Symbol: SPY   240102P00466000
+2024-01-02 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 2. Status: 3
+2024-01-02 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240102P00471000, Long put: SPY   240102P00466000
+2024-01-02 15:30:00 No spread position open to close
+2024-01-02 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-02 15:45:00 FAILSAFE: Liquidating SPY   240102P00466000, Quantity: 1.0
+2024-01-02 15:45:00 ON_ORDER_EVENT: Received event for OrderID 3. Status: 1, Symbol: SPY   240102P00466000
+2024-01-02 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 3. Status: 1
+2024-01-02 15:45:00 ON_ORDER_EVENT: Received event for OrderID 3. Status: 3, Symbol: SPY   240102P00466000
+2024-01-02 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 3. Status: 3
+2024-01-02 15:45:00 FAILSAFE: Order created. ID: 3 for SPY   240102P00466000
+2024-01-02 15:45:00 FAILSAFE: Liquidating SPY   240102P00471000, Quantity: -1.0
+2024-01-02 15:45:00 ON_ORDER_EVENT: Received event for OrderID 4. Status: 1, Symbol: SPY   240102P00471000
+2024-01-02 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 4. Status: 1
+2024-01-02 15:45:00 ON_ORDER_EVENT: Received event for OrderID 4. Status: 3, Symbol: SPY   240102P00471000
+2024-01-02 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 4. Status: 3
+2024-01-02 15:45:00 FAILSAFE: Order created. ID: 4 for SPY   240102P00471000
+2024-01-02 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-02 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-03 10:00:00 Setting flag to open trades on next data slice
+2024-01-03 10:00:00 ON_DATA: Opening trade initiated
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-03 10:00:00
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 468.0 with delta -0.22
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 463.0
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 468.0, delta 0.22
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 463.0, delta 0.01
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $30.00
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Max loss: $470.00, Stop loss target: $970.00
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-03 10:00:00 ON_ORDER_EVENT: Received event for OrderID 5. Status: 1, Symbol: SPY   240103P00468000
+2024-01-03 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 5. Status: 1
+2024-01-03 10:00:00 ON_ORDER_EVENT: Received event for OrderID 6. Status: 1, Symbol: SPY   240103P00463000
+2024-01-03 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 6. Status: 1
+2024-01-03 10:00:00 ON_ORDER_EVENT: Received event for OrderID 5. Status: 3, Symbol: SPY   240103P00468000
+2024-01-03 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 5. Status: 3
+2024-01-03 10:00:00 ON_ORDER_EVENT: Received event for OrderID 6. Status: 3, Symbol: SPY   240103P00463000
+2024-01-03 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 6. Status: 3
+2024-01-03 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240103P00468000, Long put: SPY   240103P00463000
+2024-01-03 15:30:00 No spread position open to close
+2024-01-03 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-03 15:45:00 FAILSAFE: Liquidating SPY   240103P00463000, Quantity: 1.0
+2024-01-03 15:45:00 ON_ORDER_EVENT: Received event for OrderID 7. Status: 1, Symbol: SPY   240103P00463000
+2024-01-03 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 7. Status: 1
+2024-01-03 15:45:00 ON_ORDER_EVENT: Received event for OrderID 7. Status: 3, Symbol: SPY   240103P00463000
+2024-01-03 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 7. Status: 3
+2024-01-03 15:45:00 FAILSAFE: Order created. ID: 7 for SPY   240103P00463000
+2024-01-03 15:45:00 FAILSAFE: Liquidating SPY   240103P00468000, Quantity: -1.0
+2024-01-03 15:45:00 ON_ORDER_EVENT: Received event for OrderID 8. Status: 1, Symbol: SPY   240103P00468000
+2024-01-03 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 8. Status: 1
+2024-01-03 15:45:00 ON_ORDER_EVENT: Received event for OrderID 8. Status: 3, Symbol: SPY   240103P00468000
+2024-01-03 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 8. Status: 3
+2024-01-03 15:45:00 FAILSAFE: Order created. ID: 8 for SPY   240103P00468000
+2024-01-03 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-03 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-04 10:00:00 Setting flag to open trades on next data slice
+2024-01-04 10:00:00 ON_DATA: Opening trade initiated
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-04 10:00:00
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 467.0 with delta -0.20
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 462.0
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 467.0, delta 0.20
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 462.0, delta 0.01
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $24.00
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Max loss: $476.00, Stop loss target: $976.00
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-04 10:00:00 ON_ORDER_EVENT: Received event for OrderID 9. Status: 1, Symbol: SPY   240104P00467000
+2024-01-04 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 9. Status: 1
+2024-01-04 10:00:00 ON_ORDER_EVENT: Received event for OrderID 10. Status: 1, Symbol: SPY   240104P00462000
+2024-01-04 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 10. Status: 1
+2024-01-04 10:00:00 ON_ORDER_EVENT: Received event for OrderID 9. Status: 3, Symbol: SPY   240104P00467000
+2024-01-04 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 9. Status: 3
+2024-01-04 10:00:00 ON_ORDER_EVENT: Received event for OrderID 10. Status: 3, Symbol: SPY   240104P00462000
+2024-01-04 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 10. Status: 3
+2024-01-04 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240104P00467000, Long put: SPY   240104P00462000
+2024-01-04 15:30:00 No spread position open to close
+2024-01-04 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-04 15:45:00 FAILSAFE: Liquidating SPY   240104P00462000, Quantity: 1.0
+2024-01-04 15:45:00 ON_ORDER_EVENT: Received event for OrderID 11. Status: 1, Symbol: SPY   240104P00462000
+2024-01-04 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 11. Status: 1
+2024-01-04 15:45:00 ON_ORDER_EVENT: Received event for OrderID 11. Status: 3, Symbol: SPY   240104P00462000
+2024-01-04 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 11. Status: 3
+2024-01-04 15:45:00 FAILSAFE: Order created. ID: 11 for SPY   240104P00462000
+2024-01-04 15:45:00 FAILSAFE: Liquidating SPY   240104P00467000, Quantity: -1.0
+2024-01-04 15:45:00 ON_ORDER_EVENT: Received event for OrderID 12. Status: 1, Symbol: SPY   240104P00467000
+2024-01-04 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 12. Status: 1
+2024-01-04 15:45:00 ON_ORDER_EVENT: Received event for OrderID 12. Status: 3, Symbol: SPY   240104P00467000
+2024-01-04 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 12. Status: 3
+2024-01-04 15:45:00 FAILSAFE: Order created. ID: 12 for SPY   240104P00467000
+2024-01-04 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-04 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-05 10:00:00 Setting flag to open trades on next data slice
+2024-01-05 10:00:00 ON_DATA: Opening trade initiated
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-05 10:00:00
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 466.0 with delta -0.21
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 461.0
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 466.0, delta 0.21
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 461.0, delta 0.01
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $33.00
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Max loss: $467.00, Stop loss target: $967.00
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-05 10:00:00 ON_ORDER_EVENT: Received event for OrderID 13. Status: 1, Symbol: SPY   240105P00466000
+2024-01-05 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 13. Status: 1
+2024-01-05 10:00:00 ON_ORDER_EVENT: Received event for OrderID 14. Status: 1, Symbol: SPY   240105P00461000
+2024-01-05 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 14. Status: 1
+2024-01-05 10:00:00 ON_ORDER_EVENT: Received event for OrderID 13. Status: 3, Symbol: SPY   240105P00466000
+2024-01-05 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 13. Status: 3
+2024-01-05 10:00:00 ON_ORDER_EVENT: Received event for OrderID 14. Status: 3, Symbol: SPY   240105P00461000
+2024-01-05 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 14. Status: 3
+2024-01-05 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240105P00466000, Long put: SPY   240105P00461000
+2024-01-05 15:30:00 No spread position open to close
+2024-01-05 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-05 15:45:00 FAILSAFE: Liquidating SPY   240105P00461000, Quantity: 1.0
+2024-01-05 15:45:00 ON_ORDER_EVENT: Received event for OrderID 15. Status: 1, Symbol: SPY   240105P00461000
+2024-01-05 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 15. Status: 1
+2024-01-05 15:45:00 ON_ORDER_EVENT: Received event for OrderID 15. Status: 3, Symbol: SPY   240105P00461000
+2024-01-05 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 15. Status: 3
+2024-01-05 15:45:00 FAILSAFE: Order created. ID: 15 for SPY   240105P00461000
+2024-01-05 15:45:00 FAILSAFE: Liquidating SPY   240105P00466000, Quantity: -1.0
+2024-01-05 15:45:00 ON_ORDER_EVENT: Received event for OrderID 16. Status: 1, Symbol: SPY   240105P00466000
+2024-01-05 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 16. Status: 1
+2024-01-05 15:45:00 ON_ORDER_EVENT: Received event for OrderID 16. Status: 3, Symbol: SPY   240105P00466000
+2024-01-05 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 16. Status: 3
+2024-01-05 15:45:00 FAILSAFE: Order created. ID: 16 for SPY   240105P00466000
+2024-01-05 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-05 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-08 10:00:00 Setting flag to open trades on next data slice
+2024-01-08 10:00:00 ON_DATA: Opening trade initiated
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-08 10:00:00
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 468.0 with delta -0.21
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 463.0
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 468.0, delta 0.21
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 463.0, delta 0.02
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $23.00
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Max loss: $477.00, Stop loss target: $977.00
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-08 10:00:00 ON_ORDER_EVENT: Received event for OrderID 17. Status: 1, Symbol: SPY   240108P00468000
+2024-01-08 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 17. Status: 1
+2024-01-08 10:00:00 ON_ORDER_EVENT: Received event for OrderID 18. Status: 1, Symbol: SPY   240108P00463000
+2024-01-08 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 18. Status: 1
+2024-01-08 10:00:00 ON_ORDER_EVENT: Received event for OrderID 17. Status: 3, Symbol: SPY   240108P00468000
+2024-01-08 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 17. Status: 3
+2024-01-08 10:00:00 ON_ORDER_EVENT: Received event for OrderID 18. Status: 3, Symbol: SPY   240108P00463000
+2024-01-08 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 18. Status: 3
+2024-01-08 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240108P00468000, Long put: SPY   240108P00463000
+2024-01-08 15:30:00 No spread position open to close
+2024-01-08 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-08 15:45:00 FAILSAFE: Liquidating SPY   240108P00463000, Quantity: 1.0
+2024-01-08 15:45:00 ON_ORDER_EVENT: Received event for OrderID 19. Status: 1, Symbol: SPY   240108P00463000
+2024-01-08 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 19. Status: 1
+2024-01-08 15:45:00 ON_ORDER_EVENT: Received event for OrderID 19. Status: 3, Symbol: SPY   240108P00463000
+2024-01-08 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 19. Status: 3
+2024-01-08 15:45:00 FAILSAFE: Order created. ID: 19 for SPY   240108P00463000
+2024-01-08 15:45:00 FAILSAFE: Liquidating SPY   240108P00468000, Quantity: -1.0
+2024-01-08 15:45:00 ON_ORDER_EVENT: Received event for OrderID 20. Status: 1, Symbol: SPY   240108P00468000
+2024-01-08 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 20. Status: 1
+2024-01-08 15:45:00 ON_ORDER_EVENT: Received event for OrderID 20. Status: 3, Symbol: SPY   240108P00468000
+2024-01-08 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 20. Status: 3
+2024-01-08 15:45:00 FAILSAFE: Order created. ID: 20 for SPY   240108P00468000
+2024-01-08 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-08 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-09 10:00:00 Setting flag to open trades on next data slice
+2024-01-09 10:00:00 ON_DATA: Opening trade initiated
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-09 10:00:00
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 471.0 with delta -0.30
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 466.0
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 471.0, delta 0.30
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 466.0, delta 0.01
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $41.00
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Max loss: $459.00, Stop loss target: $959.00
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-09 10:00:00 ON_ORDER_EVENT: Received event for OrderID 21. Status: 1, Symbol: SPY   240109P00471000
+2024-01-09 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 21. Status: 1
+2024-01-09 10:00:00 ON_ORDER_EVENT: Received event for OrderID 22. Status: 1, Symbol: SPY   240109P00466000
+2024-01-09 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 22. Status: 1
+2024-01-09 10:00:00 ON_ORDER_EVENT: Received event for OrderID 21. Status: 3, Symbol: SPY   240109P00471000
+2024-01-09 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 21. Status: 3
+2024-01-09 10:00:00 ON_ORDER_EVENT: Received event for OrderID 22. Status: 3, Symbol: SPY   240109P00466000
+2024-01-09 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 22. Status: 3
+2024-01-09 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240109P00471000, Long put: SPY   240109P00466000
+2024-01-09 15:30:00 No spread position open to close
+2024-01-09 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-09 15:45:00 FAILSAFE: Liquidating SPY   240109P00466000, Quantity: 1.0
+2024-01-09 15:45:00 ON_ORDER_EVENT: Received event for OrderID 23. Status: 1, Symbol: SPY   240109P00466000
+2024-01-09 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 23. Status: 1
+2024-01-09 15:45:00 ON_ORDER_EVENT: Received event for OrderID 23. Status: 3, Symbol: SPY   240109P00466000
+2024-01-09 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 23. Status: 3
+2024-01-09 15:45:00 FAILSAFE: Order created. ID: 23 for SPY   240109P00466000
+2024-01-09 15:45:00 FAILSAFE: Liquidating SPY   240109P00471000, Quantity: -1.0
+2024-01-09 15:45:00 ON_ORDER_EVENT: Received event for OrderID 24. Status: 1, Symbol: SPY   240109P00471000
+2024-01-09 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 24. Status: 1
+2024-01-09 15:45:00 ON_ORDER_EVENT: Received event for OrderID 24. Status: 3, Symbol: SPY   240109P00471000
+2024-01-09 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 24. Status: 3
+2024-01-09 15:45:00 FAILSAFE: Order created. ID: 24 for SPY   240109P00471000
+2024-01-09 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-09 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-10 10:00:00 Setting flag to open trades on next data slice
+2024-01-10 10:00:00 ON_DATA: Opening trade initiated
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-10 10:00:00
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 473.0 with delta -0.21
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 468.0
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 473.0, delta 0.21
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 468.0, delta 0.01
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $25.00
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Max loss: $475.00, Stop loss target: $975.00
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-10 10:00:00 ON_ORDER_EVENT: Received event for OrderID 25. Status: 1, Symbol: SPY   240110P00473000
+2024-01-10 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 25. Status: 1
+2024-01-10 10:00:00 ON_ORDER_EVENT: Received event for OrderID 26. Status: 1, Symbol: SPY   240110P00468000
+2024-01-10 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 26. Status: 1
+2024-01-10 10:00:00 ON_ORDER_EVENT: Received event for OrderID 25. Status: 3, Symbol: SPY   240110P00473000
+2024-01-10 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 25. Status: 3
+2024-01-10 10:00:00 ON_ORDER_EVENT: Received event for OrderID 26. Status: 3, Symbol: SPY   240110P00468000
+2024-01-10 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 26. Status: 3
+2024-01-10 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240110P00473000, Long put: SPY   240110P00468000
+2024-01-10 15:30:00 No spread position open to close
+2024-01-10 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-10 15:45:00 FAILSAFE: Liquidating SPY   240110P00468000, Quantity: 1.0
+2024-01-10 15:45:00 ON_ORDER_EVENT: Received event for OrderID 27. Status: 1, Symbol: SPY   240110P00468000
+2024-01-10 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 27. Status: 1
+2024-01-10 15:45:00 ON_ORDER_EVENT: Received event for OrderID 27. Status: 3, Symbol: SPY   240110P00468000
+2024-01-10 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 27. Status: 3
+2024-01-10 15:45:00 FAILSAFE: Order created. ID: 27 for SPY   240110P00468000
+2024-01-10 15:45:00 FAILSAFE: Liquidating SPY   240110P00473000, Quantity: -1.0
+2024-01-10 15:45:00 ON_ORDER_EVENT: Received event for OrderID 28. Status: 1, Symbol: SPY   240110P00473000
+2024-01-10 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 28. Status: 1
+2024-01-10 15:45:00 ON_ORDER_EVENT: Received event for OrderID 28. Status: 3, Symbol: SPY   240110P00473000
+2024-01-10 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 28. Status: 3
+2024-01-10 15:45:00 FAILSAFE: Order created. ID: 28 for SPY   240110P00473000
+2024-01-10 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-10 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-11 10:00:00 Setting flag to open trades on next data slice
+2024-01-11 10:00:00 ON_DATA: Opening trade initiated
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-11 10:00:00
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 474.0 with delta -0.22
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 469.0
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 474.0, delta 0.22
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 469.0, delta 0.02
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $35.00
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Max loss: $465.00, Stop loss target: $965.00
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-11 10:00:00 ON_ORDER_EVENT: Received event for OrderID 29. Status: 1, Symbol: SPY   240111P00474000
+2024-01-11 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 29. Status: 1
+2024-01-11 10:00:00 ON_ORDER_EVENT: Received event for OrderID 30. Status: 1, Symbol: SPY   240111P00469000
+2024-01-11 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 30. Status: 1
+2024-01-11 10:00:00 ON_ORDER_EVENT: Received event for OrderID 29. Status: 3, Symbol: SPY   240111P00474000
+2024-01-11 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 29. Status: 3
+2024-01-11 10:00:00 ON_ORDER_EVENT: Received event for OrderID 30. Status: 3, Symbol: SPY   240111P00469000
+2024-01-11 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 30. Status: 3
+2024-01-11 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240111P00474000, Long put: SPY   240111P00469000
+2024-01-11 15:30:00 No spread position open to close
+2024-01-11 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-11 15:45:00 FAILSAFE: Liquidating SPY   240111P00469000, Quantity: 1.0
+2024-01-11 15:45:00 ON_ORDER_EVENT: Received event for OrderID 31. Status: 1, Symbol: SPY   240111P00469000
+2024-01-11 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 31. Status: 1
+2024-01-11 15:45:00 ON_ORDER_EVENT: Received event for OrderID 31. Status: 3, Symbol: SPY   240111P00469000
+2024-01-11 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 31. Status: 3
+2024-01-11 15:45:00 FAILSAFE: Order created. ID: 31 for SPY   240111P00469000
+2024-01-11 15:45:00 FAILSAFE: Liquidating SPY   240111P00474000, Quantity: -1.0
+2024-01-11 15:45:00 ON_ORDER_EVENT: Received event for OrderID 32. Status: 1, Symbol: SPY   240111P00474000
+2024-01-11 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 32. Status: 1
+2024-01-11 15:45:00 ON_ORDER_EVENT: Received event for OrderID 32. Status: 3, Symbol: SPY   240111P00474000
+2024-01-11 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 32. Status: 3
+2024-01-11 15:45:00 FAILSAFE: Order created. ID: 32 for SPY   240111P00474000
+2024-01-11 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-11 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-12 10:00:00 Setting flag to open trades on next data slice
+2024-01-12 10:00:00 ON_DATA: Opening trade initiated
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-12 10:00:00
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 475.0 with delta -0.20
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 470.0
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 475.0, delta 0.20
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 470.0, delta 0.01
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $32.00
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Max loss: $468.00, Stop loss target: $968.00
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-12 10:00:00 ON_ORDER_EVENT: Received event for OrderID 33. Status: 1, Symbol: SPY   240112P00475000
+2024-01-12 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 33. Status: 1
+2024-01-12 10:00:00 ON_ORDER_EVENT: Received event for OrderID 34. Status: 1, Symbol: SPY   240112P00470000
+2024-01-12 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 34. Status: 1
+2024-01-12 10:00:00 ON_ORDER_EVENT: Received event for OrderID 33. Status: 3, Symbol: SPY   240112P00475000
+2024-01-12 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 33. Status: 3
+2024-01-12 10:00:00 ON_ORDER_EVENT: Received event for OrderID 34. Status: 3, Symbol: SPY   240112P00470000
+2024-01-12 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 34. Status: 3
+2024-01-12 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240112P00475000, Long put: SPY   240112P00470000
+2024-01-12 15:30:00 No spread position open to close
+2024-01-12 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-12 15:45:00 FAILSAFE: Liquidating SPY   240112P00470000, Quantity: 1.0
+2024-01-12 15:45:00 ON_ORDER_EVENT: Received event for OrderID 35. Status: 1, Symbol: SPY   240112P00470000
+2024-01-12 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 35. Status: 1
+2024-01-12 15:45:00 ON_ORDER_EVENT: Received event for OrderID 35. Status: 3, Symbol: SPY   240112P00470000
+2024-01-12 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 35. Status: 3
+2024-01-12 15:45:00 FAILSAFE: Order created. ID: 35 for SPY   240112P00470000
+2024-01-12 15:45:00 FAILSAFE: Liquidating SPY   240112P00475000, Quantity: -1.0
+2024-01-12 15:45:00 ON_ORDER_EVENT: Received event for OrderID 36. Status: 1, Symbol: SPY   240112P00475000
+2024-01-12 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 36. Status: 1
+2024-01-12 15:45:00 ON_ORDER_EVENT: Received event for OrderID 36. Status: 3, Symbol: SPY   240112P00475000
+2024-01-12 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 36. Status: 3
+2024-01-12 15:45:00 FAILSAFE: Order created. ID: 36 for SPY   240112P00475000
+2024-01-12 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-12 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-16 10:00:00 Setting flag to open trades on next data slice
+2024-01-16 10:00:00 ON_DATA: Opening trade initiated
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-16 10:00:00
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 473.0 with delta -0.27
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 468.0
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 473.0, delta 0.27
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 468.0, delta 0.02
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $39.00
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Max loss: $461.00, Stop loss target: $961.00
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-16 10:00:00 ON_ORDER_EVENT: Received event for OrderID 37. Status: 1, Symbol: SPY   240116P00473000
+2024-01-16 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 37. Status: 1
+2024-01-16 10:00:00 ON_ORDER_EVENT: Received event for OrderID 38. Status: 1, Symbol: SPY   240116P00468000
+2024-01-16 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 38. Status: 1
+2024-01-16 10:00:00 ON_ORDER_EVENT: Received event for OrderID 37. Status: 3, Symbol: SPY   240116P00473000
+2024-01-16 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 37. Status: 3
+2024-01-16 10:00:00 ON_ORDER_EVENT: Received event for OrderID 38. Status: 3, Symbol: SPY   240116P00468000
+2024-01-16 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 38. Status: 3
+2024-01-16 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240116P00473000, Long put: SPY   240116P00468000
+2024-01-16 15:30:00 No spread position open to close
+2024-01-16 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-16 15:45:00 FAILSAFE: Liquidating SPY   240116P00473000, Quantity: -1.0
+2024-01-16 15:45:00 ON_ORDER_EVENT: Received event for OrderID 39. Status: 1, Symbol: SPY   240116P00473000
+2024-01-16 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 39. Status: 1
+2024-01-16 15:45:00 ON_ORDER_EVENT: Received event for OrderID 39. Status: 3, Symbol: SPY   240116P00473000
+2024-01-16 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 39. Status: 3
+2024-01-16 15:45:00 FAILSAFE: Order created. ID: 39 for SPY   240116P00473000
+2024-01-16 15:45:00 FAILSAFE: Liquidating SPY   240116P00468000, Quantity: 1.0
+2024-01-16 15:45:00 ON_ORDER_EVENT: Received event for OrderID 40. Status: 1, Symbol: SPY   240116P00468000
+2024-01-16 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 40. Status: 1
+2024-01-16 15:45:00 ON_ORDER_EVENT: Received event for OrderID 40. Status: 3, Symbol: SPY   240116P00468000
+2024-01-16 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 40. Status: 3
+2024-01-16 15:45:00 FAILSAFE: Order created. ID: 40 for SPY   240116P00468000
+2024-01-16 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-16 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-17 10:00:00 Setting flag to open trades on next data slice
+2024-01-17 10:00:00 ON_DATA: Opening trade initiated
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-17 10:00:00
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 469.0 with delta -0.19
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 464.0
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 469.0, delta 0.19
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 464.0, delta 0.01
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $27.00
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Max loss: $473.00, Stop loss target: $973.00
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-17 10:00:00 ON_ORDER_EVENT: Received event for OrderID 41. Status: 1, Symbol: SPY   240117P00469000
+2024-01-17 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 41. Status: 1
+2024-01-17 10:00:00 ON_ORDER_EVENT: Received event for OrderID 42. Status: 1, Symbol: SPY   240117P00464000
+2024-01-17 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 42. Status: 1
+2024-01-17 10:00:00 ON_ORDER_EVENT: Received event for OrderID 41. Status: 3, Symbol: SPY   240117P00469000
+2024-01-17 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 41. Status: 3
+2024-01-17 10:00:00 ON_ORDER_EVENT: Received event for OrderID 42. Status: 3, Symbol: SPY   240117P00464000
+2024-01-17 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 42. Status: 3
+2024-01-17 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240117P00469000, Long put: SPY   240117P00464000
+2024-01-17 15:30:00 No spread position open to close
+2024-01-17 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-17 15:45:00 FAILSAFE: Liquidating SPY   240117P00469000, Quantity: -1.0
+2024-01-17 15:45:00 ON_ORDER_EVENT: Received event for OrderID 43. Status: 1, Symbol: SPY   240117P00469000
+2024-01-17 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 43. Status: 1
+2024-01-17 15:45:00 ON_ORDER_EVENT: Received event for OrderID 43. Status: 3, Symbol: SPY   240117P00469000
+2024-01-17 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 43. Status: 3
+2024-01-17 15:45:00 FAILSAFE: Order created. ID: 43 for SPY   240117P00469000
+2024-01-17 15:45:00 FAILSAFE: Liquidating SPY   240117P00464000, Quantity: 1.0
+2024-01-17 15:45:00 ON_ORDER_EVENT: Received event for OrderID 44. Status: 1, Symbol: SPY   240117P00464000
+2024-01-17 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 44. Status: 1
+2024-01-17 15:45:00 ON_ORDER_EVENT: Received event for OrderID 44. Status: 3, Symbol: SPY   240117P00464000
+2024-01-17 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 44. Status: 3
+2024-01-17 15:45:00 FAILSAFE: Order created. ID: 44 for SPY   240117P00464000
+2024-01-17 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-17 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-18 10:00:00 Setting flag to open trades on next data slice
+2024-01-18 10:00:00 ON_DATA: Opening trade initiated
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-18 10:00:00
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 472.0 with delta -0.22
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 467.0
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 472.0, delta 0.22
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 467.0, delta 0.02
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $28.00
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Max loss: $472.00, Stop loss target: $972.00
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-18 10:00:00 ON_ORDER_EVENT: Received event for OrderID 45. Status: 1, Symbol: SPY   240118P00472000
+2024-01-18 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 45. Status: 1
+2024-01-18 10:00:00 ON_ORDER_EVENT: Received event for OrderID 46. Status: 1, Symbol: SPY   240118P00467000
+2024-01-18 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 46. Status: 1
+2024-01-18 10:00:00 ON_ORDER_EVENT: Received event for OrderID 45. Status: 3, Symbol: SPY   240118P00472000
+2024-01-18 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 45. Status: 3
+2024-01-18 10:00:00 ON_ORDER_EVENT: Received event for OrderID 46. Status: 3, Symbol: SPY   240118P00467000
+2024-01-18 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 46. Status: 3
+2024-01-18 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240118P00472000, Long put: SPY   240118P00467000
+2024-01-18 15:30:00 No spread position open to close
+2024-01-18 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-18 15:45:00 FAILSAFE: Liquidating SPY   240118P00472000, Quantity: -1.0
+2024-01-18 15:45:00 ON_ORDER_EVENT: Received event for OrderID 47. Status: 1, Symbol: SPY   240118P00472000
+2024-01-18 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 47. Status: 1
+2024-01-18 15:45:00 ON_ORDER_EVENT: Received event for OrderID 47. Status: 3, Symbol: SPY   240118P00472000
+2024-01-18 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 47. Status: 3
+2024-01-18 15:45:00 FAILSAFE: Order created. ID: 47 for SPY   240118P00472000
+2024-01-18 15:45:00 FAILSAFE: Liquidating SPY   240118P00467000, Quantity: 1.0
+2024-01-18 15:45:00 ON_ORDER_EVENT: Received event for OrderID 48. Status: 1, Symbol: SPY   240118P00467000
+2024-01-18 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 48. Status: 1
+2024-01-18 15:45:00 ON_ORDER_EVENT: Received event for OrderID 48. Status: 3, Symbol: SPY   240118P00467000
+2024-01-18 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 48. Status: 3
+2024-01-18 15:45:00 FAILSAFE: Order created. ID: 48 for SPY   240118P00467000
+2024-01-18 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-18 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-19 10:00:00 Setting flag to open trades on next data slice
+2024-01-19 10:00:00 ON_DATA: Opening trade initiated
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-19 10:00:00
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 476.0 with delta -0.25
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 471.0
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 476.0, delta 0.25
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 471.0, delta 0.02
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $42.00
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Max loss: $458.00, Stop loss target: $958.00
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-19 10:00:00 ON_ORDER_EVENT: Received event for OrderID 49. Status: 1, Symbol: SPY   240119P00476000
+2024-01-19 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 49. Status: 1
+2024-01-19 10:00:00 ON_ORDER_EVENT: Received event for OrderID 50. Status: 1, Symbol: SPY   240119P00471000
+2024-01-19 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 50. Status: 1
+2024-01-19 10:00:00 ON_ORDER_EVENT: Received event for OrderID 49. Status: 3, Symbol: SPY   240119P00476000
+2024-01-19 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 49. Status: 3
+2024-01-19 10:00:00 ON_ORDER_EVENT: Received event for OrderID 50. Status: 3, Symbol: SPY   240119P00471000
+2024-01-19 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 50. Status: 3
+2024-01-19 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240119P00476000, Long put: SPY   240119P00471000
+2024-01-19 15:30:00 No spread position open to close
+2024-01-19 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-19 15:45:00 FAILSAFE: Liquidating SPY   240119P00471000, Quantity: 1.0
+2024-01-19 15:45:00 ON_ORDER_EVENT: Received event for OrderID 51. Status: 1, Symbol: SPY   240119P00471000
+2024-01-19 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 51. Status: 1
+2024-01-19 15:45:00 ON_ORDER_EVENT: Received event for OrderID 51. Status: 3, Symbol: SPY   240119P00471000
+2024-01-19 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 51. Status: 3
+2024-01-19 15:45:00 FAILSAFE: Order created. ID: 51 for SPY   240119P00471000
+2024-01-19 15:45:00 FAILSAFE: Liquidating SPY   240119P00476000, Quantity: -1.0
+2024-01-19 15:45:00 ON_ORDER_EVENT: Received event for OrderID 52. Status: 1, Symbol: SPY   240119P00476000
+2024-01-19 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 52. Status: 1
+2024-01-19 15:45:00 ON_ORDER_EVENT: Received event for OrderID 52. Status: 3, Symbol: SPY   240119P00476000
+2024-01-19 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 52. Status: 3
+2024-01-19 15:45:00 FAILSAFE: Order created. ID: 52 for SPY   240119P00476000
+2024-01-19 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-19 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-22 10:00:00 Setting flag to open trades on next data slice
+2024-01-22 10:00:00 ON_DATA: Opening trade initiated
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-22 10:00:00
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 483.0 with delta -0.21
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 478.0
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 483.0, delta 0.21
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 478.0, delta 0.02
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $27.00
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Max loss: $473.00, Stop loss target: $973.00
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-22 10:00:00 ON_ORDER_EVENT: Received event for OrderID 53. Status: 1, Symbol: SPY   240122P00483000
+2024-01-22 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 53. Status: 1
+2024-01-22 10:00:00 ON_ORDER_EVENT: Received event for OrderID 54. Status: 1, Symbol: SPY   240122P00478000
+2024-01-22 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 54. Status: 1
+2024-01-22 10:00:00 ON_ORDER_EVENT: Received event for OrderID 53. Status: 3, Symbol: SPY   240122P00483000
+2024-01-22 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 53. Status: 3
+2024-01-22 10:00:00 ON_ORDER_EVENT: Received event for OrderID 54. Status: 3, Symbol: SPY   240122P00478000
+2024-01-22 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 54. Status: 3
+2024-01-22 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240122P00483000, Long put: SPY   240122P00478000
+2024-01-22 15:30:00 No spread position open to close
+2024-01-22 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-22 15:45:00 FAILSAFE: Liquidating SPY   240122P00483000, Quantity: -1.0
+2024-01-22 15:45:00 ON_ORDER_EVENT: Received event for OrderID 55. Status: 1, Symbol: SPY   240122P00483000
+2024-01-22 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 55. Status: 1
+2024-01-22 15:45:00 ON_ORDER_EVENT: Received event for OrderID 55. Status: 3, Symbol: SPY   240122P00483000
+2024-01-22 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 55. Status: 3
+2024-01-22 15:45:00 FAILSAFE: Order created. ID: 55 for SPY   240122P00483000
+2024-01-22 15:45:00 FAILSAFE: Liquidating SPY   240122P00478000, Quantity: 1.0
+2024-01-22 15:45:00 ON_ORDER_EVENT: Received event for OrderID 56. Status: 1, Symbol: SPY   240122P00478000
+2024-01-22 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 56. Status: 1
+2024-01-22 15:45:00 ON_ORDER_EVENT: Received event for OrderID 56. Status: 3, Symbol: SPY   240122P00478000
+2024-01-22 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 56. Status: 3
+2024-01-22 15:45:00 FAILSAFE: Order created. ID: 56 for SPY   240122P00478000
+2024-01-22 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-22 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-23 10:00:00 Setting flag to open trades on next data slice
+2024-01-23 10:00:00 ON_DATA: Opening trade initiated
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-23 10:00:00
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 482.0 with delta -0.20
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 477.0
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 482.0, delta 0.20
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 477.0, delta 0.02
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $24.00
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Max loss: $476.00, Stop loss target: $976.00
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-23 10:00:00 ON_ORDER_EVENT: Received event for OrderID 57. Status: 1, Symbol: SPY   240123P00482000
+2024-01-23 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 57. Status: 1
+2024-01-23 10:00:00 ON_ORDER_EVENT: Received event for OrderID 58. Status: 1, Symbol: SPY   240123P00477000
+2024-01-23 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 58. Status: 1
+2024-01-23 10:00:00 ON_ORDER_EVENT: Received event for OrderID 57. Status: 3, Symbol: SPY   240123P00482000
+2024-01-23 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 57. Status: 3
+2024-01-23 10:00:00 ON_ORDER_EVENT: Received event for OrderID 58. Status: 3, Symbol: SPY   240123P00477000
+2024-01-23 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 58. Status: 3
+2024-01-23 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240123P00482000, Long put: SPY   240123P00477000
+2024-01-23 15:30:00 No spread position open to close
+2024-01-23 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-23 15:45:00 FAILSAFE: Liquidating SPY   240123P00482000, Quantity: -1.0
+2024-01-23 15:45:00 ON_ORDER_EVENT: Received event for OrderID 59. Status: 1, Symbol: SPY   240123P00482000
+2024-01-23 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 59. Status: 1
+2024-01-23 15:45:00 ON_ORDER_EVENT: Received event for OrderID 59. Status: 3, Symbol: SPY   240123P00482000
+2024-01-23 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 59. Status: 3
+2024-01-23 15:45:00 FAILSAFE: Order created. ID: 59 for SPY   240123P00482000
+2024-01-23 15:45:00 FAILSAFE: Liquidating SPY   240123P00477000, Quantity: 1.0
+2024-01-23 15:45:00 ON_ORDER_EVENT: Received event for OrderID 60. Status: 1, Symbol: SPY   240123P00477000
+2024-01-23 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 60. Status: 1
+2024-01-23 15:45:00 ON_ORDER_EVENT: Received event for OrderID 60. Status: 3, Symbol: SPY   240123P00477000
+2024-01-23 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 60. Status: 3
+2024-01-23 15:45:00 FAILSAFE: Order created. ID: 60 for SPY   240123P00477000
+2024-01-23 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-23 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-24 10:00:00 Setting flag to open trades on next data slice
+2024-01-24 10:00:00 ON_DATA: Opening trade initiated
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-24 10:00:00
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 486.0 with delta -0.30
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 481.0
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 486.0, delta 0.30
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 481.0, delta 0.02
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $38.00
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Max loss: $462.00, Stop loss target: $962.00
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-24 10:00:00 ON_ORDER_EVENT: Received event for OrderID 61. Status: 1, Symbol: SPY   240124P00486000
+2024-01-24 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 61. Status: 1
+2024-01-24 10:00:00 ON_ORDER_EVENT: Received event for OrderID 62. Status: 1, Symbol: SPY   240124P00481000
+2024-01-24 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 62. Status: 1
+2024-01-24 10:00:00 ON_ORDER_EVENT: Received event for OrderID 61. Status: 3, Symbol: SPY   240124P00486000
+2024-01-24 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 61. Status: 3
+2024-01-24 10:00:00 ON_ORDER_EVENT: Received event for OrderID 62. Status: 3, Symbol: SPY   240124P00481000
+2024-01-24 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 62. Status: 3
+2024-01-24 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240124P00486000, Long put: SPY   240124P00481000
+2024-01-24 15:30:00 No spread position open to close
+2024-01-24 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-24 15:45:00 FAILSAFE: Liquidating SPY   240124P00486000, Quantity: -1.0
+2024-01-24 15:45:00 ON_ORDER_EVENT: Received event for OrderID 63. Status: 1, Symbol: SPY   240124P00486000
+2024-01-24 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 63. Status: 1
+2024-01-24 15:45:00 ON_ORDER_EVENT: Received event for OrderID 63. Status: 3, Symbol: SPY   240124P00486000
+2024-01-24 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 63. Status: 3
+2024-01-24 15:45:00 FAILSAFE: Order created. ID: 63 for SPY   240124P00486000
+2024-01-24 15:45:00 FAILSAFE: Liquidating SPY   240124P00481000, Quantity: 1.0
+2024-01-24 15:45:00 ON_ORDER_EVENT: Received event for OrderID 64. Status: 1, Symbol: SPY   240124P00481000
+2024-01-24 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 64. Status: 1
+2024-01-24 15:45:00 ON_ORDER_EVENT: Received event for OrderID 64. Status: 3, Symbol: SPY   240124P00481000
+2024-01-24 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 64. Status: 3
+2024-01-24 15:45:00 FAILSAFE: Order created. ID: 64 for SPY   240124P00481000
+2024-01-24 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-24 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-25 10:00:00 Setting flag to open trades on next data slice
+2024-01-25 10:00:00 ON_DATA: Opening trade initiated
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-25 10:00:00
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 486.0 with delta -0.30
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 481.0
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 486.0, delta 0.30
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 481.0, delta 0.02
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $45.00
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Max loss: $455.00, Stop loss target: $955.00
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-25 10:00:00 ON_ORDER_EVENT: Received event for OrderID 65. Status: 1, Symbol: SPY   240125P00486000
+2024-01-25 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 65. Status: 1
+2024-01-25 10:00:00 ON_ORDER_EVENT: Received event for OrderID 66. Status: 1, Symbol: SPY   240125P00481000
+2024-01-25 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 66. Status: 1
+2024-01-25 10:00:00 ON_ORDER_EVENT: Received event for OrderID 65. Status: 3, Symbol: SPY   240125P00486000
+2024-01-25 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 65. Status: 3
+2024-01-25 10:00:00 ON_ORDER_EVENT: Received event for OrderID 66. Status: 3, Symbol: SPY   240125P00481000
+2024-01-25 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 66. Status: 3
+2024-01-25 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240125P00486000, Long put: SPY   240125P00481000
+2024-01-25 15:30:00 No spread position open to close
+2024-01-25 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-25 15:45:00 FAILSAFE: Liquidating SPY   240125P00481000, Quantity: 1.0
+2024-01-25 15:45:00 ON_ORDER_EVENT: Received event for OrderID 67. Status: 1, Symbol: SPY   240125P00481000
+2024-01-25 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 67. Status: 1
+2024-01-25 15:45:00 ON_ORDER_EVENT: Received event for OrderID 67. Status: 3, Symbol: SPY   240125P00481000
+2024-01-25 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 67. Status: 3
+2024-01-25 15:45:00 FAILSAFE: Order created. ID: 67 for SPY   240125P00481000
+2024-01-25 15:45:00 FAILSAFE: Liquidating SPY   240125P00486000, Quantity: -1.0
+2024-01-25 15:45:00 ON_ORDER_EVENT: Received event for OrderID 68. Status: 1, Symbol: SPY   240125P00486000
+2024-01-25 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 68. Status: 1
+2024-01-25 15:45:00 ON_ORDER_EVENT: Received event for OrderID 68. Status: 3, Symbol: SPY   240125P00486000
+2024-01-25 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 68. Status: 3
+2024-01-25 15:45:00 FAILSAFE: Order created. ID: 68 for SPY   240125P00486000
+2024-01-25 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-25 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-26 10:00:00 Setting flag to open trades on next data slice
+2024-01-26 10:00:00 ON_DATA: Opening trade initiated
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-26 10:00:00
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 486.0 with delta -0.22
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 481.0
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 486.0, delta 0.22
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 481.0, delta 0.02
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $30.00
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Max loss: $470.00, Stop loss target: $970.00
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-26 10:00:00 ON_ORDER_EVENT: Received event for OrderID 69. Status: 1, Symbol: SPY   240126P00486000
+2024-01-26 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 69. Status: 1
+2024-01-26 10:00:00 ON_ORDER_EVENT: Received event for OrderID 70. Status: 1, Symbol: SPY   240126P00481000
+2024-01-26 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 70. Status: 1
+2024-01-26 10:00:00 ON_ORDER_EVENT: Received event for OrderID 69. Status: 3, Symbol: SPY   240126P00486000
+2024-01-26 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 69. Status: 3
+2024-01-26 10:00:00 ON_ORDER_EVENT: Received event for OrderID 70. Status: 3, Symbol: SPY   240126P00481000
+2024-01-26 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 70. Status: 3
+2024-01-26 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240126P00486000, Long put: SPY   240126P00481000
+2024-01-26 15:30:00 No spread position open to close
+2024-01-26 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-26 15:45:00 FAILSAFE: Liquidating SPY   240126P00481000, Quantity: 1.0
+2024-01-26 15:45:00 ON_ORDER_EVENT: Received event for OrderID 71. Status: 1, Symbol: SPY   240126P00481000
+2024-01-26 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 71. Status: 1
+2024-01-26 15:45:00 ON_ORDER_EVENT: Received event for OrderID 71. Status: 3, Symbol: SPY   240126P00481000
+2024-01-26 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 71. Status: 3
+2024-01-26 15:45:00 FAILSAFE: Order created. ID: 71 for SPY   240126P00481000
+2024-01-26 15:45:00 FAILSAFE: Liquidating SPY   240126P00486000, Quantity: -1.0
+2024-01-26 15:45:00 ON_ORDER_EVENT: Received event for OrderID 72. Status: 1, Symbol: SPY   240126P00486000
+2024-01-26 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 72. Status: 1
+2024-01-26 15:45:00 ON_ORDER_EVENT: Received event for OrderID 72. Status: 3, Symbol: SPY   240126P00486000
+2024-01-26 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 72. Status: 3
+2024-01-26 15:45:00 FAILSAFE: Order created. ID: 72 for SPY   240126P00486000
+2024-01-26 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-26 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-29 10:00:00 Setting flag to open trades on next data slice
+2024-01-29 10:00:00 ON_DATA: Opening trade initiated
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-29 10:00:00
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 486.0 with delta -0.18
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 481.0
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 486.0, delta 0.18
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 481.0, delta 0.02
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $18.00
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Max loss: $482.00, Stop loss target: $982.00
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-29 10:00:00 ON_ORDER_EVENT: Received event for OrderID 73. Status: 1, Symbol: SPY   240129P00486000
+2024-01-29 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 73. Status: 1
+2024-01-29 10:00:00 ON_ORDER_EVENT: Received event for OrderID 74. Status: 1, Symbol: SPY   240129P00481000
+2024-01-29 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 74. Status: 1
+2024-01-29 10:00:00 ON_ORDER_EVENT: Received event for OrderID 73. Status: 3, Symbol: SPY   240129P00486000
+2024-01-29 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 73. Status: 3
+2024-01-29 10:00:00 ON_ORDER_EVENT: Received event for OrderID 74. Status: 3, Symbol: SPY   240129P00481000
+2024-01-29 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 74. Status: 3
+2024-01-29 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240129P00486000, Long put: SPY   240129P00481000
+2024-01-29 15:30:00 No spread position open to close
+2024-01-29 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-29 15:45:00 FAILSAFE: Liquidating SPY   240129P00481000, Quantity: 1.0
+2024-01-29 15:45:00 ON_ORDER_EVENT: Received event for OrderID 75. Status: 1, Symbol: SPY   240129P00481000
+2024-01-29 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 75. Status: 1
+2024-01-29 15:45:00 ON_ORDER_EVENT: Received event for OrderID 75. Status: 3, Symbol: SPY   240129P00481000
+2024-01-29 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 75. Status: 3
+2024-01-29 15:45:00 FAILSAFE: Order created. ID: 75 for SPY   240129P00481000
+2024-01-29 15:45:00 FAILSAFE: Liquidating SPY   240129P00486000, Quantity: -1.0
+2024-01-29 15:45:00 ON_ORDER_EVENT: Received event for OrderID 76. Status: 1, Symbol: SPY   240129P00486000
+2024-01-29 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 76. Status: 1
+2024-01-29 15:45:00 ON_ORDER_EVENT: Received event for OrderID 76. Status: 3, Symbol: SPY   240129P00486000
+2024-01-29 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 76. Status: 3
+2024-01-29 15:45:00 FAILSAFE: Order created. ID: 76 for SPY   240129P00486000
+2024-01-29 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-29 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-30 10:00:00 Setting flag to open trades on next data slice
+2024-01-30 10:00:00 ON_DATA: Opening trade initiated
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-30 10:00:00
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 489.0 with delta -0.22
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 484.0
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 489.0, delta 0.22
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 484.0, delta 0.02
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $33.00
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Max loss: $467.00, Stop loss target: $967.00
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-30 10:00:00 ON_ORDER_EVENT: Received event for OrderID 77. Status: 1, Symbol: SPY   240130P00489000
+2024-01-30 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 77. Status: 1
+2024-01-30 10:00:00 ON_ORDER_EVENT: Received event for OrderID 78. Status: 1, Symbol: SPY   240130P00484000
+2024-01-30 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 78. Status: 1
+2024-01-30 10:00:00 ON_ORDER_EVENT: Received event for OrderID 77. Status: 3, Symbol: SPY   240130P00489000
+2024-01-30 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 77. Status: 3
+2024-01-30 10:00:00 ON_ORDER_EVENT: Received event for OrderID 78. Status: 3, Symbol: SPY   240130P00484000
+2024-01-30 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 78. Status: 3
+2024-01-30 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240130P00489000, Long put: SPY   240130P00484000
+2024-01-30 15:30:00 No spread position open to close
+2024-01-30 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-30 15:45:00 FAILSAFE: Liquidating SPY   240130P00484000, Quantity: 1.0
+2024-01-30 15:45:00 ON_ORDER_EVENT: Received event for OrderID 79. Status: 1, Symbol: SPY   240130P00484000
+2024-01-30 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 79. Status: 1
+2024-01-30 15:45:00 ON_ORDER_EVENT: Received event for OrderID 79. Status: 3, Symbol: SPY   240130P00484000
+2024-01-30 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 79. Status: 3
+2024-01-30 15:45:00 FAILSAFE: Order created. ID: 79 for SPY   240130P00484000
+2024-01-30 15:45:00 FAILSAFE: Liquidating SPY   240130P00489000, Quantity: -1.0
+2024-01-30 15:45:00 ON_ORDER_EVENT: Received event for OrderID 80. Status: 1, Symbol: SPY   240130P00489000
+2024-01-30 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 80. Status: 1
+2024-01-30 15:45:00 ON_ORDER_EVENT: Received event for OrderID 80. Status: 3, Symbol: SPY   240130P00489000
+2024-01-30 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 80. Status: 3
+2024-01-30 15:45:00 FAILSAFE: Order created. ID: 80 for SPY   240130P00489000
+2024-01-30 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-30 15:45:00 FAILSAFE: Spread position marked as closed
+2024-01-31 10:00:00 Setting flag to open trades on next data slice
+2024-01-31 10:00:00 ON_DATA: Opening trade initiated
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-01-31 10:00:00
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 485.0 with delta -0.22
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 480.0
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 485.0, delta 0.22
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 480.0, delta 0.02
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $42.00
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Max loss: $458.00, Stop loss target: $958.00
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-01-31 10:00:00 ON_ORDER_EVENT: Received event for OrderID 81. Status: 1, Symbol: SPY   240131P00485000
+2024-01-31 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 81. Status: 1
+2024-01-31 10:00:00 ON_ORDER_EVENT: Received event for OrderID 82. Status: 1, Symbol: SPY   240131P00480000
+2024-01-31 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 82. Status: 1
+2024-01-31 10:00:00 ON_ORDER_EVENT: Received event for OrderID 81. Status: 3, Symbol: SPY   240131P00485000
+2024-01-31 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 81. Status: 3
+2024-01-31 10:00:00 ON_ORDER_EVENT: Received event for OrderID 82. Status: 3, Symbol: SPY   240131P00480000
+2024-01-31 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 82. Status: 3
+2024-01-31 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240131P00485000, Long put: SPY   240131P00480000
+2024-01-31 15:30:00 No spread position open to close
+2024-01-31 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-01-31 15:45:00 FAILSAFE: Liquidating SPY   240131P00480000, Quantity: 1.0
+2024-01-31 15:45:00 ON_ORDER_EVENT: Received event for OrderID 83. Status: 1, Symbol: SPY   240131P00480000
+2024-01-31 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 83. Status: 1
+2024-01-31 15:45:00 ON_ORDER_EVENT: Received event for OrderID 83. Status: 3, Symbol: SPY   240131P00480000
+2024-01-31 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 83. Status: 3
+2024-01-31 15:45:00 FAILSAFE: Order created. ID: 83 for SPY   240131P00480000
+2024-01-31 15:45:00 FAILSAFE: Liquidating SPY   240131P00485000, Quantity: -1.0
+2024-01-31 15:45:00 ON_ORDER_EVENT: Received event for OrderID 84. Status: 1, Symbol: SPY   240131P00485000
+2024-01-31 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 84. Status: 1
+2024-01-31 15:45:00 ON_ORDER_EVENT: Received event for OrderID 84. Status: 3, Symbol: SPY   240131P00485000
+2024-01-31 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 84. Status: 3
+2024-01-31 15:45:00 FAILSAFE: Order created. ID: 84 for SPY   240131P00485000
+2024-01-31 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-01-31 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-01 10:00:00 Setting flag to open trades on next data slice
+2024-02-01 10:00:00 ON_DATA: Opening trade initiated
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-01 10:00:00
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 483.0 with delta -0.27
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 478.0
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 483.0, delta 0.27
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 478.0, delta 0.04
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $53.00
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Max loss: $447.00, Stop loss target: $947.00
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-01 10:00:00 ON_ORDER_EVENT: Received event for OrderID 85. Status: 1, Symbol: SPY   240201P00483000
+2024-02-01 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 85. Status: 1
+2024-02-01 10:00:00 ON_ORDER_EVENT: Received event for OrderID 86. Status: 1, Symbol: SPY   240201P00478000
+2024-02-01 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 86. Status: 1
+2024-02-01 10:00:00 ON_ORDER_EVENT: Received event for OrderID 85. Status: 3, Symbol: SPY   240201P00483000
+2024-02-01 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 85. Status: 3
+2024-02-01 10:00:00 ON_ORDER_EVENT: Received event for OrderID 86. Status: 3, Symbol: SPY   240201P00478000
+2024-02-01 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 86. Status: 3
+2024-02-01 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240201P00483000, Long put: SPY   240201P00478000
+2024-02-01 15:30:00 No spread position open to close
+2024-02-01 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-01 15:45:00 FAILSAFE: Liquidating SPY   240201P00478000, Quantity: 1.0
+2024-02-01 15:45:00 ON_ORDER_EVENT: Received event for OrderID 87. Status: 1, Symbol: SPY   240201P00478000
+2024-02-01 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 87. Status: 1
+2024-02-01 15:45:00 ON_ORDER_EVENT: Received event for OrderID 87. Status: 3, Symbol: SPY   240201P00478000
+2024-02-01 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 87. Status: 3
+2024-02-01 15:45:00 FAILSAFE: Order created. ID: 87 for SPY   240201P00478000
+2024-02-01 15:45:00 FAILSAFE: Liquidating SPY   240201P00483000, Quantity: -1.0
+2024-02-01 15:45:00 ON_ORDER_EVENT: Received event for OrderID 88. Status: 1, Symbol: SPY   240201P00483000
+2024-02-01 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 88. Status: 1
+2024-02-01 15:45:00 ON_ORDER_EVENT: Received event for OrderID 88. Status: 3, Symbol: SPY   240201P00483000
+2024-02-01 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 88. Status: 3
+2024-02-01 15:45:00 FAILSAFE: Order created. ID: 88 for SPY   240201P00483000
+2024-02-01 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-02-01 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-02 10:00:00 Setting flag to open trades on next data slice
+2024-02-02 10:00:00 ON_DATA: Opening trade initiated
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-02 10:00:00
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 489.0 with delta -0.30
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 484.0
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 489.0, delta 0.30
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 484.0, delta 0.04
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $54.00
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Max loss: $446.00, Stop loss target: $946.00
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-02 10:00:00 ON_ORDER_EVENT: Received event for OrderID 89. Status: 1, Symbol: SPY   240202P00489000
+2024-02-02 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 89. Status: 1
+2024-02-02 10:00:00 ON_ORDER_EVENT: Received event for OrderID 90. Status: 1, Symbol: SPY   240202P00484000
+2024-02-02 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 90. Status: 1
+2024-02-02 10:00:00 ON_ORDER_EVENT: Received event for OrderID 89. Status: 3, Symbol: SPY   240202P00489000
+2024-02-02 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 89. Status: 3
+2024-02-02 10:00:00 ON_ORDER_EVENT: Received event for OrderID 90. Status: 3, Symbol: SPY   240202P00484000
+2024-02-02 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 90. Status: 3
+2024-02-02 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240202P00489000, Long put: SPY   240202P00484000
+2024-02-02 15:30:00 No spread position open to close
+2024-02-02 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-02 15:45:00 FAILSAFE: Liquidating SPY   240202P00489000, Quantity: -1.0
+2024-02-02 15:45:00 ON_ORDER_EVENT: Received event for OrderID 91. Status: 1, Symbol: SPY   240202P00489000
+2024-02-02 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 91. Status: 1
+2024-02-02 15:45:00 ON_ORDER_EVENT: Received event for OrderID 91. Status: 3, Symbol: SPY   240202P00489000
+2024-02-02 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 91. Status: 3
+2024-02-02 15:45:00 FAILSAFE: Order created. ID: 91 for SPY   240202P00489000
+2024-02-02 15:45:00 FAILSAFE: Liquidating SPY   240202P00484000, Quantity: 1.0
+2024-02-02 15:45:00 ON_ORDER_EVENT: Received event for OrderID 92. Status: 1, Symbol: SPY   240202P00484000
+2024-02-02 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 92. Status: 1
+2024-02-02 15:45:00 ON_ORDER_EVENT: Received event for OrderID 92. Status: 3, Symbol: SPY   240202P00484000
+2024-02-02 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 92. Status: 3
+2024-02-02 15:45:00 FAILSAFE: Order created. ID: 92 for SPY   240202P00484000
+2024-02-02 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-02-02 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-05 10:00:00 Setting flag to open trades on next data slice
+2024-02-05 10:00:00 ON_DATA: Opening trade initiated
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-05 10:00:00
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 492.0 with delta -0.28
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 487.0
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 492.0, delta 0.28
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 487.0, delta 0.02
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $41.00
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Max loss: $459.00, Stop loss target: $959.00
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-05 10:00:00 ON_ORDER_EVENT: Received event for OrderID 93. Status: 1, Symbol: SPY   240205P00492000
+2024-02-05 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 93. Status: 1
+2024-02-05 10:00:00 ON_ORDER_EVENT: Received event for OrderID 94. Status: 1, Symbol: SPY   240205P00487000
+2024-02-05 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 94. Status: 1
+2024-02-05 10:00:00 ON_ORDER_EVENT: Received event for OrderID 93. Status: 3, Symbol: SPY   240205P00492000
+2024-02-05 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 93. Status: 3
+2024-02-05 10:00:00 ON_ORDER_EVENT: Received event for OrderID 94. Status: 3, Symbol: SPY   240205P00487000
+2024-02-05 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 94. Status: 3
+2024-02-05 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240205P00492000, Long put: SPY   240205P00487000
+2024-02-05 15:30:00 No spread position open to close
+2024-02-05 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-05 15:45:00 FAILSAFE: Liquidating SPY   240205P00487000, Quantity: 1.0
+2024-02-05 15:45:00 ON_ORDER_EVENT: Received event for OrderID 95. Status: 1, Symbol: SPY   240205P00487000
+2024-02-05 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 95. Status: 1
+2024-02-05 15:45:00 ON_ORDER_EVENT: Received event for OrderID 95. Status: 3, Symbol: SPY   240205P00487000
+2024-02-05 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 95. Status: 3
+2024-02-05 15:45:00 FAILSAFE: Order created. ID: 95 for SPY   240205P00487000
+2024-02-05 15:45:00 FAILSAFE: Liquidating SPY   240205P00492000, Quantity: -1.0
+2024-02-05 15:45:00 ON_ORDER_EVENT: Received event for OrderID 96. Status: 1, Symbol: SPY   240205P00492000
+2024-02-05 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 96. Status: 1
+2024-02-05 15:45:00 ON_ORDER_EVENT: Received event for OrderID 96. Status: 3, Symbol: SPY   240205P00492000
+2024-02-05 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 96. Status: 3
+2024-02-05 15:45:00 FAILSAFE: Order created. ID: 96 for SPY   240205P00492000
+2024-02-05 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-02-05 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-06 10:00:00 Setting flag to open trades on next data slice
+2024-02-06 10:00:00 ON_DATA: Opening trade initiated
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-06 10:00:00
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 491.0 with delta -0.21
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 486.0
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 491.0, delta 0.21
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 486.0, delta 0.01
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $28.00
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Max loss: $472.00, Stop loss target: $972.00
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-06 10:00:00 ON_ORDER_EVENT: Received event for OrderID 97. Status: 1, Symbol: SPY   240206P00491000
+2024-02-06 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 97. Status: 1
+2024-02-06 10:00:00 ON_ORDER_EVENT: Received event for OrderID 98. Status: 1, Symbol: SPY   240206P00486000
+2024-02-06 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 98. Status: 1
+2024-02-06 10:00:00 ON_ORDER_EVENT: Received event for OrderID 97. Status: 3, Symbol: SPY   240206P00491000
+2024-02-06 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 97. Status: 3
+2024-02-06 10:00:00 ON_ORDER_EVENT: Received event for OrderID 98. Status: 3, Symbol: SPY   240206P00486000
+2024-02-06 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 98. Status: 3
+2024-02-06 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240206P00491000, Long put: SPY   240206P00486000
+2024-02-06 15:30:00 No spread position open to close
+2024-02-06 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-06 15:45:00 FAILSAFE: Liquidating SPY   240206P00486000, Quantity: 1.0
+2024-02-06 15:45:00 ON_ORDER_EVENT: Received event for OrderID 99. Status: 1, Symbol: SPY   240206P00486000
+2024-02-06 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 99. Status: 1
+2024-02-06 15:45:00 ON_ORDER_EVENT: Received event for OrderID 99. Status: 3, Symbol: SPY   240206P00486000
+2024-02-06 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 99. Status: 3
+2024-02-06 15:45:00 FAILSAFE: Order created. ID: 99 for SPY   240206P00486000
+2024-02-06 15:45:00 FAILSAFE: Liquidating SPY   240206P00491000, Quantity: -1.0
+2024-02-06 15:45:00 ON_ORDER_EVENT: Received event for OrderID 100. Status: 1, Symbol: SPY   240206P00491000
+2024-02-06 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 100. Status: 1
+2024-02-06 15:45:00 ON_ORDER_EVENT: Received event for OrderID 100. Status: 3, Symbol: SPY   240206P00491000
+2024-02-06 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 100. Status: 3
+2024-02-06 15:45:00 FAILSAFE: Order created. ID: 100 for SPY   240206P00491000
+2024-02-06 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-02-06 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-07 10:00:00 Setting flag to open trades on next data slice
+2024-02-07 10:00:00 ON_DATA: Opening trade initiated
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-07 10:00:00
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 494.0 with delta -0.22
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 489.0
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 494.0, delta 0.22
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 489.0, delta 0.02
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $28.00
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Max loss: $472.00, Stop loss target: $972.00
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-07 10:00:00 ON_ORDER_EVENT: Received event for OrderID 101. Status: 1, Symbol: SPY   240207P00494000
+2024-02-07 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 101. Status: 1
+2024-02-07 10:00:00 ON_ORDER_EVENT: Received event for OrderID 102. Status: 1, Symbol: SPY   240207P00489000
+2024-02-07 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 102. Status: 1
+2024-02-07 10:00:00 ON_ORDER_EVENT: Received event for OrderID 101. Status: 3, Symbol: SPY   240207P00494000
+2024-02-07 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 101. Status: 3
+2024-02-07 10:00:00 ON_ORDER_EVENT: Received event for OrderID 102. Status: 3, Symbol: SPY   240207P00489000
+2024-02-07 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 102. Status: 3
+2024-02-07 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240207P00494000, Long put: SPY   240207P00489000
+2024-02-07 15:30:00 No spread position open to close
+2024-02-07 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-07 15:45:00 FAILSAFE: Liquidating SPY   240207P00489000, Quantity: 1.0
+2024-02-07 15:45:00 ON_ORDER_EVENT: Received event for OrderID 103. Status: 1, Symbol: SPY   240207P00489000
+2024-02-07 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 103. Status: 1
+2024-02-07 15:45:00 ON_ORDER_EVENT: Received event for OrderID 103. Status: 3, Symbol: SPY   240207P00489000
+2024-02-07 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 103. Status: 3
+2024-02-07 15:45:00 FAILSAFE: Order created. ID: 103 for SPY   240207P00489000
+2024-02-07 15:45:00 FAILSAFE: Liquidating SPY   240207P00494000, Quantity: -1.0
+2024-02-07 15:45:00 ON_ORDER_EVENT: Received event for OrderID 104. Status: 1, Symbol: SPY   240207P00494000
+2024-02-07 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 104. Status: 1
+2024-02-07 15:45:00 ON_ORDER_EVENT: Received event for OrderID 104. Status: 3, Symbol: SPY   240207P00494000
+2024-02-07 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 104. Status: 3
+2024-02-07 15:45:00 FAILSAFE: Order created. ID: 104 for SPY   240207P00494000
+2024-02-07 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-02-07 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-08 10:00:00 Setting flag to open trades on next data slice
+2024-02-08 10:00:00 ON_DATA: Opening trade initiated
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-08 10:00:00
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 496.0 with delta -0.19
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 491.0
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 496.0, delta 0.19
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 491.0, delta 0.01
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $23.00
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Max loss: $477.00, Stop loss target: $977.00
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-08 10:00:00 ON_ORDER_EVENT: Received event for OrderID 105. Status: 1, Symbol: SPY   240208P00496000
+2024-02-08 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 105. Status: 1
+2024-02-08 10:00:00 ON_ORDER_EVENT: Received event for OrderID 106. Status: 1, Symbol: SPY   240208P00491000
+2024-02-08 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 106. Status: 1
+2024-02-08 10:00:00 ON_ORDER_EVENT: Received event for OrderID 105. Status: 3, Symbol: SPY   240208P00496000
+2024-02-08 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 105. Status: 3
+2024-02-08 10:00:00 ON_ORDER_EVENT: Received event for OrderID 106. Status: 3, Symbol: SPY   240208P00491000
+2024-02-08 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 106. Status: 3
+2024-02-08 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240208P00496000, Long put: SPY   240208P00491000
+2024-02-08 15:30:00 No spread position open to close
+2024-02-08 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-08 15:45:00 FAILSAFE: Liquidating SPY   240208P00491000, Quantity: 1.0
+2024-02-08 15:45:00 ON_ORDER_EVENT: Received event for OrderID 107. Status: 1, Symbol: SPY   240208P00491000
+2024-02-08 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 107. Status: 1
+2024-02-08 15:45:00 ON_ORDER_EVENT: Received event for OrderID 107. Status: 3, Symbol: SPY   240208P00491000
+2024-02-08 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 107. Status: 3
+2024-02-08 15:45:00 FAILSAFE: Order created. ID: 107 for SPY   240208P00491000
+2024-02-08 15:45:00 FAILSAFE: Liquidating SPY   240208P00496000, Quantity: -1.0
+2024-02-08 15:45:00 ON_ORDER_EVENT: Received event for OrderID 108. Status: 1, Symbol: SPY   240208P00496000
+2024-02-08 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 108. Status: 1
+2024-02-08 15:45:00 ON_ORDER_EVENT: Received event for OrderID 108. Status: 3, Symbol: SPY   240208P00496000
+2024-02-08 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 108. Status: 3
+2024-02-08 15:45:00 FAILSAFE: Order created. ID: 108 for SPY   240208P00496000
+2024-02-08 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-02-08 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-09 10:00:00 Setting flag to open trades on next data slice
+2024-02-09 10:00:00 ON_DATA: Opening trade initiated
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-09 10:00:00
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 498.0 with delta -0.25
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 493.0
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 498.0, delta 0.25
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 493.0, delta 0.03
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $35.00
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Max loss: $465.00, Stop loss target: $965.00
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-09 10:00:00 ON_ORDER_EVENT: Received event for OrderID 109. Status: 1, Symbol: SPY   240209P00498000
+2024-02-09 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 109. Status: 1
+2024-02-09 10:00:00 ON_ORDER_EVENT: Received event for OrderID 110. Status: 1, Symbol: SPY   240209P00493000
+2024-02-09 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 110. Status: 1
+2024-02-09 10:00:00 ON_ORDER_EVENT: Received event for OrderID 109. Status: 3, Symbol: SPY   240209P00498000
+2024-02-09 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 109. Status: 3
+2024-02-09 10:00:00 ON_ORDER_EVENT: Received event for OrderID 110. Status: 3, Symbol: SPY   240209P00493000
+2024-02-09 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 110. Status: 3
+2024-02-09 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240209P00498000, Long put: SPY   240209P00493000
+2024-02-09 15:30:00 No spread position open to close
+2024-02-09 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-09 15:45:00 FAILSAFE: Liquidating SPY   240209P00493000, Quantity: 1.0
+2024-02-09 15:45:00 ON_ORDER_EVENT: Received event for OrderID 111. Status: 1, Symbol: SPY   240209P00493000
+2024-02-09 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 111. Status: 1
+2024-02-09 15:45:00 ON_ORDER_EVENT: Received event for OrderID 111. Status: 3, Symbol: SPY   240209P00493000
+2024-02-09 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 111. Status: 3
+2024-02-09 15:45:00 FAILSAFE: Order created. ID: 111 for SPY   240209P00493000
+2024-02-09 15:45:00 FAILSAFE: Liquidating SPY   240209P00498000, Quantity: -1.0
+2024-02-09 15:45:00 ON_ORDER_EVENT: Received event for OrderID 112. Status: 1, Symbol: SPY   240209P00498000
+2024-02-09 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 112. Status: 1
+2024-02-09 15:45:00 ON_ORDER_EVENT: Received event for OrderID 112. Status: 3, Symbol: SPY   240209P00498000
+2024-02-09 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 112. Status: 3
+2024-02-09 15:45:00 FAILSAFE: Order created. ID: 112 for SPY   240209P00498000
+2024-02-09 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-02-09 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-12 10:00:00 Setting flag to open trades on next data slice
+2024-02-12 10:00:00 ON_DATA: Opening trade initiated
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-12 10:00:00
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 500.0 with delta -0.24
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 495.0
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 500.0, delta 0.24
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 495.0, delta 0.02
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $27.00
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Max loss: $473.00, Stop loss target: $973.00
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-12 10:00:00 ON_ORDER_EVENT: Received event for OrderID 113. Status: 1, Symbol: SPY   240212P00500000
+2024-02-12 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 113. Status: 1
+2024-02-12 10:00:00 ON_ORDER_EVENT: Received event for OrderID 114. Status: 1, Symbol: SPY   240212P00495000
+2024-02-12 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 114. Status: 1
+2024-02-12 10:00:00 ON_ORDER_EVENT: Received event for OrderID 113. Status: 3, Symbol: SPY   240212P00500000
+2024-02-12 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 113. Status: 3
+2024-02-12 10:00:00 ON_ORDER_EVENT: Received event for OrderID 114. Status: 3, Symbol: SPY   240212P00495000
+2024-02-12 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 114. Status: 3
+2024-02-12 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240212P00500000, Long put: SPY   240212P00495000
+2024-02-12 15:30:00 No spread position open to close
+2024-02-12 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-12 15:45:00 FAILSAFE: Liquidating SPY   240212P00495000, Quantity: 1.0
+2024-02-12 15:45:00 ON_ORDER_EVENT: Received event for OrderID 115. Status: 1, Symbol: SPY   240212P00495000
+2024-02-12 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 115. Status: 1
+2024-02-12 15:45:00 ON_ORDER_EVENT: Received event for OrderID 115. Status: 3, Symbol: SPY   240212P00495000
+2024-02-12 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 115. Status: 3
+2024-02-12 15:45:00 FAILSAFE: Order created. ID: 115 for SPY   240212P00495000
+2024-02-12 15:45:00 FAILSAFE: Liquidating SPY   240212P00500000, Quantity: -1.0
+2024-02-12 15:45:00 ON_ORDER_EVENT: Received event for OrderID 116. Status: 1, Symbol: SPY   240212P00500000
+2024-02-12 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 116. Status: 1
+2024-02-12 15:45:00 ON_ORDER_EVENT: Received event for OrderID 116. Status: 3, Symbol: SPY   240212P00500000
+2024-02-12 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 116. Status: 3
+2024-02-12 15:45:00 FAILSAFE: Order created. ID: 116 for SPY   240212P00500000
+2024-02-12 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-02-12 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-13 10:00:00 Setting flag to open trades on next data slice
+2024-02-13 10:00:00 ON_DATA: Opening trade initiated
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-13 10:00:00
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 492.0 with delta -0.27
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 487.0
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 492.0, delta 0.27
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 487.0, delta 0.03
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $46.00
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Max loss: $454.00, Stop loss target: $954.00
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-13 10:00:00 ON_ORDER_EVENT: Received event for OrderID 117. Status: 1, Symbol: SPY   240213P00492000
+2024-02-13 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 117. Status: 1
+2024-02-13 10:00:00 ON_ORDER_EVENT: Received event for OrderID 118. Status: 1, Symbol: SPY   240213P00487000
+2024-02-13 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 118. Status: 1
+2024-02-13 10:00:00 ON_ORDER_EVENT: Received event for OrderID 117. Status: 3, Symbol: SPY   240213P00492000
+2024-02-13 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 117. Status: 3
+2024-02-13 10:00:00 ON_ORDER_EVENT: Received event for OrderID 118. Status: 3, Symbol: SPY   240213P00487000
+2024-02-13 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 118. Status: 3
+2024-02-13 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240213P00492000, Long put: SPY   240213P00487000
+2024-02-13 15:30:00 No spread position open to close
+2024-02-13 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-13 15:45:00 FAILSAFE: Liquidating SPY   240213P00487000, Quantity: 1.0
+2024-02-13 15:45:00 ON_ORDER_EVENT: Received event for OrderID 119. Status: 1, Symbol: SPY   240213P00487000
+2024-02-13 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 119. Status: 1
+2024-02-13 15:45:00 ON_ORDER_EVENT: Received event for OrderID 119. Status: 3, Symbol: SPY   240213P00487000
+2024-02-13 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 119. Status: 3
+2024-02-13 15:45:00 FAILSAFE: Order created. ID: 119 for SPY   240213P00487000
+2024-02-13 15:45:00 FAILSAFE: Liquidating SPY   240213P00492000, Quantity: -1.0
+2024-02-13 15:45:00 ON_ORDER_EVENT: Received event for OrderID 120. Status: 1, Symbol: SPY   240213P00492000
+2024-02-13 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 120. Status: 1
+2024-02-13 15:45:00 ON_ORDER_EVENT: Received event for OrderID 120. Status: 3, Symbol: SPY   240213P00492000
+2024-02-13 15:45:00 ON_ORDER_EVENT: Received event for untracked OrderID 120. Status: 3
+2024-02-13 15:45:00 FAILSAFE: Order created. ID: 120 for SPY   240213P00492000
+2024-02-13 15:45:00 FAILSAFE: Submitted liquidation orders for 2 open option leg(s) before market close
+2024-02-13 15:45:00 FAILSAFE: Spread position marked as closed
+2024-02-14 10:00:00 Setting flag to open trades on next data slice
+2024-02-14 10:00:00 ON_DATA: Opening trade initiated
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Attempting to open spread. Current Time: 2024-02-14 10:00:00
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Found same-day expiry options (0DTE)
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Using MAX delta targeting mode with max 0.3
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 495.0 with delta -0.24
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Using FIXED spread width of 5.0 points
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Found exact strike match for long put at 490.0
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Selected short put at strike 495.0, delta 0.24
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Selected long put at strike 490.0, delta 0.03
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Spread width: 5.0 points, Expected credit: $34.00
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Max loss: $466.00, Stop loss target: $966.00
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Placing order using OptionStrategies
+2024-02-14 10:00:00 ON_ORDER_EVENT: Received event for OrderID 121. Status: 1, Symbol: SPY   240214P00495000
+2024-02-14 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 121. Status: 1
+2024-02-14 10:00:00 ON_ORDER_EVENT: Received event for OrderID 122. Status: 1, Symbol: SPY   240214P00490000
+2024-02-14 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 122. Status: 1
+2024-02-14 10:00:00 ON_ORDER_EVENT: Received event for OrderID 121. Status: 3, Symbol: SPY   240214P00495000
+2024-02-14 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 121. Status: 3
+2024-02-14 10:00:00 ON_ORDER_EVENT: Received event for OrderID 122. Status: 3, Symbol: SPY   240214P00490000
+2024-02-14 10:00:00 ON_ORDER_EVENT: Received event for untracked OrderID 122. Status: 3
+2024-02-14 10:00:00 TRY_OPEN_SPREAD: Orders placed successfully. Short put: SPY   240214P00495000, Long put: SPY   240214P00490000
+2024-02-14 15:30:00 No spread position open to close
+2024-02-14 15:45:00 FAILSAFE: Executing forced liquidation of all option positions before market close
+2024-02-14 15:45:00 FAILSAFE: Liquidating SPY   240214P00490000, Quantity: 1.0
+You currently have a maximum of 100kb of log data per backtest, and 100kb total max per day. Have you tried step-by-step debugging? See more at https://qnt.co/debugging or upgrade your organization type for more logs at https://www.quantconnect.com/pricing

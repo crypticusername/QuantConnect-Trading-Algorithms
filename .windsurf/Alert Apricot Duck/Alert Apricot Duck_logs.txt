@@ -1,0 +1,567 @@
+2024-01-01 00:00:00 Launching analysis for 448e260c2336263bbb47a468027bc360 with LEAN Engine v2.5.0.0.17108
+2024-01-01 00:00:00 Accurate daily end-times now enabled by default. See more at https://qnt.co/3YHaWHL. To disable it and use legacy daily bars set self.settings.daily_precise_end_time = False.
+2024-01-01 00:00:00 Warning: The following securities were set to raw price normalization mode to work with options: SPY...
+2024-01-02 10:00:00 Setting flag to open trades on next data slice
+2024-01-02 10:00:00 Order Event: FILLED ID 1, Symbol SPY   240102P00471000, FillPrice $0.41, Qty -1.0
+2024-01-02 10:00:00 Order Event: FILLED ID 2, Symbol SPY   240102P00466000, FillPrice $0.03, Qty 1.0
+2024-01-02 10:00:00 Submitted Bull Put Spread. Short: SPY   240102P00471000, Long: SPY   240102P00466000, Est. Credit: $0.39
+2024-01-02 15:45:00 Setting flag to close positions on next data slice
+2024-01-02 15:45:00 Order Event: FILLED ID 3, Symbol SPY   240102P00471000, FillPrice $0.25, Qty 1.0
+2024-01-02 15:45:00 Order Event: FILLED ID 4, Symbol SPY   240102P00466000, FillPrice $0.01, Qty -1.0
+2024-01-02 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240102P00471000, Long: SPY   240102P00466000
+2024-01-02 15:45:00 Spread state reset after attempting close.
+2024-01-03 10:00:00 Setting flag to open trades on next data slice
+2024-01-03 10:00:00 Order Event: FILLED ID 5, Symbol SPY   240103P00468000, FillPrice $0.32, Qty -1.0
+2024-01-03 10:00:00 Order Event: FILLED ID 6, Symbol SPY   240103P00463000, FillPrice $0.02, Qty 1.0
+2024-01-03 10:00:00 Submitted Bull Put Spread. Short: SPY   240103P00468000, Long: SPY   240103P00463000, Est. Credit: $0.32
+2024-01-03 15:45:00 Setting flag to close positions on next data slice
+2024-01-03 15:45:00 Order Event: FILLED ID 7, Symbol SPY   240103P00468000, FillPrice $0.06, Qty 1.0
+2024-01-03 15:45:00 Order Event: FILLED ID 8, Symbol SPY   240103P00463000, FillPrice $0.01, Qty -1.0
+2024-01-03 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240103P00468000, Long: SPY   240103P00463000
+2024-01-03 15:45:00 Spread state reset after attempting close.
+2024-01-04 10:00:00 Setting flag to open trades on next data slice
+2024-01-04 10:00:00 Order Event: FILLED ID 9, Symbol SPY   240104P00467000, FillPrice $0.26, Qty -1.0
+2024-01-04 10:00:00 Order Event: FILLED ID 10, Symbol SPY   240104P00462000, FillPrice $0.02, Qty 1.0
+2024-01-04 10:00:00 Submitted Bull Put Spread. Short: SPY   240104P00467000, Long: SPY   240104P00462000, Est. Credit: $0.25
+2024-01-04 15:45:00 Setting flag to close positions on next data slice
+2024-01-04 15:45:00 Order Event: FILLED ID 11, Symbol SPY   240104P00467000, FillPrice $0.03, Qty 1.0
+2024-01-04 15:45:00 Order Event: FILLED ID 12, Symbol SPY   240104P00462000, FillPrice $0.01, Qty -1.0
+2024-01-04 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240104P00467000, Long: SPY   240104P00462000
+2024-01-04 15:45:00 Spread state reset after attempting close.
+2024-01-05 10:00:00 Setting flag to open trades on next data slice
+2024-01-05 10:00:00 Order Event: FILLED ID 13, Symbol SPY   240105P00466000, FillPrice $0.35, Qty -1.0
+2024-01-05 10:00:00 Order Event: FILLED ID 14, Symbol SPY   240105P00461000, FillPrice $0.02, Qty 1.0
+2024-01-05 10:00:00 Submitted Bull Put Spread. Short: SPY   240105P00466000, Long: SPY   240105P00461000, Est. Credit: $0.34
+2024-01-05 15:45:00 Setting flag to close positions on next data slice
+2024-01-05 15:45:00 Order Event: FILLED ID 15, Symbol SPY   240105P00466000, FillPrice $0.05, Qty 1.0
+2024-01-05 15:45:00 Order Event: FILLED ID 16, Symbol SPY   240105P00461000, FillPrice $0.01, Qty -1.0
+2024-01-05 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240105P00466000, Long: SPY   240105P00461000
+2024-01-05 15:45:00 Spread state reset after attempting close.
+2024-01-08 10:00:00 Setting flag to open trades on next data slice
+2024-01-08 10:00:00 Order Event: FILLED ID 17, Symbol SPY   240108P00468000, FillPrice $0.26, Qty -1.0
+2024-01-08 10:00:00 Order Event: FILLED ID 18, Symbol SPY   240108P00463000, FillPrice $0.03, Qty 1.0
+2024-01-08 10:00:00 Submitted Bull Put Spread. Short: SPY   240108P00468000, Long: SPY   240108P00463000, Est. Credit: $0.24
+2024-01-08 15:45:00 Setting flag to close positions on next data slice
+2024-01-08 15:45:00 Order Event: FILLED ID 19, Symbol SPY   240108P00468000, FillPrice $0.01, Qty 1.0
+2024-01-08 15:45:00 Order Event: FILLED ID 20, Symbol SPY   240108P00463000, FillPrice $0.01, Qty -1.0
+2024-01-08 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240108P00468000, Long: SPY   240108P00463000
+2024-01-08 15:45:00 Spread state reset after attempting close.
+2024-01-09 10:00:00 Setting flag to open trades on next data slice
+2024-01-09 10:00:00 Order Event: FILLED ID 21, Symbol SPY   240109P00471000, FillPrice $0.43, Qty -1.0
+2024-01-09 10:00:00 Order Event: FILLED ID 22, Symbol SPY   240109P00466000, FillPrice $0.02, Qty 1.0
+2024-01-09 10:00:00 Submitted Bull Put Spread. Short: SPY   240109P00471000, Long: SPY   240109P00466000, Est. Credit: $0.42
+2024-01-09 15:45:00 Setting flag to close positions on next data slice
+2024-01-09 15:45:00 Order Event: FILLED ID 23, Symbol SPY   240109P00471000, FillPrice $0.02, Qty 1.0
+2024-01-09 15:45:00 Order Event: FILLED ID 24, Symbol SPY   240109P00466000, FillPrice $0.01, Qty -1.0
+2024-01-09 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240109P00471000, Long: SPY   240109P00466000
+2024-01-09 15:45:00 Spread state reset after attempting close.
+2024-01-10 10:00:00 Setting flag to open trades on next data slice
+2024-01-10 10:00:00 Order Event: FILLED ID 25, Symbol SPY   240110P00473000, FillPrice $0.27, Qty -1.0
+2024-01-10 10:00:00 Order Event: FILLED ID 26, Symbol SPY   240110P00468000, FillPrice $0.02, Qty 1.0
+2024-01-10 10:00:00 Submitted Bull Put Spread. Short: SPY   240110P00473000, Long: SPY   240110P00468000, Est. Credit: $0.26
+2024-01-10 15:45:00 Setting flag to close positions on next data slice
+2024-01-10 15:45:00 Order Event: FILLED ID 27, Symbol SPY   240110P00473000, FillPrice $0.02, Qty 1.0
+2024-01-10 15:45:00 Order Event: FILLED ID 28, Symbol SPY   240110P00468000, FillPrice $0.01, Qty -1.0
+2024-01-10 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240110P00473000, Long: SPY   240110P00468000
+2024-01-10 15:45:00 Spread state reset after attempting close.
+2024-01-11 10:00:00 Setting flag to open trades on next data slice
+2024-01-11 10:00:00 Order Event: FILLED ID 29, Symbol SPY   240111P00474000, FillPrice $0.38, Qty -1.0
+2024-01-11 10:00:00 Order Event: FILLED ID 30, Symbol SPY   240111P00469000, FillPrice $0.03, Qty 1.0
+2024-01-11 10:00:00 Submitted Bull Put Spread. Short: SPY   240111P00474000, Long: SPY   240111P00469000, Est. Credit: $0.36
+2024-01-11 10:05:00 Order Event: FILLED ID 31, Symbol SPY   240111P00474000, FillPrice $0.85, Qty 1.0
+2024-01-11 10:05:00 Order Event: FILLED ID 32, Symbol SPY   240111P00469000, FillPrice $0.07, Qty -1.0
+2024-01-11 10:05:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240111P00474000, Long: SPY   240111P00469000
+2024-01-11 10:05:00 Spread state reset after attempting close.
+2024-01-11 10:05:00 STOP LOSS HIT: Current debit to close $0.78 >= Target $0.72. Will close spread.
+2024-01-11 15:45:00 No spread position open to close
+2024-01-12 10:00:00 Setting flag to open trades on next data slice
+2024-01-12 10:00:00 Order Event: FILLED ID 33, Symbol SPY   240112P00475000, FillPrice $0.34, Qty -1.0
+2024-01-12 10:00:00 Order Event: FILLED ID 34, Symbol SPY   240112P00470000, FillPrice $0.02, Qty 1.0
+2024-01-12 10:00:00 Submitted Bull Put Spread. Short: SPY   240112P00475000, Long: SPY   240112P00470000, Est. Credit: $0.33
+2024-01-12 10:50:00 Order Event: FILLED ID 35, Symbol SPY   240112P00475000, FillPrice $0.70, Qty 1.0
+2024-01-12 10:50:00 Order Event: FILLED ID 36, Symbol SPY   240112P00470000, FillPrice $0.03, Qty -1.0
+2024-01-12 10:50:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240112P00475000, Long: SPY   240112P00470000
+2024-01-12 10:50:00 Spread state reset after attempting close.
+2024-01-12 10:50:00 STOP LOSS HIT: Current debit to close $0.67 >= Target $0.66. Will close spread.
+2024-01-12 15:45:00 No spread position open to close
+2024-01-16 10:00:00 Setting flag to open trades on next data slice
+2024-01-16 10:00:00 Order Event: FILLED ID 37, Symbol SPY   240116P00473000, FillPrice $0.42, Qty -1.0
+2024-01-16 10:00:00 Order Event: FILLED ID 38, Symbol SPY   240116P00468000, FillPrice $0.03, Qty 1.0
+2024-01-16 10:00:00 Submitted Bull Put Spread. Short: SPY   240116P00473000, Long: SPY   240116P00468000, Est. Credit: $0.40
+2024-01-16 15:45:00 Setting flag to close positions on next data slice
+2024-01-16 15:45:00 Order Event: FILLED ID 39, Symbol SPY   240116P00473000, FillPrice $0.04, Qty 1.0
+2024-01-16 15:45:00 Order Event: FILLED ID 40, Symbol SPY   240116P00468000, FillPrice $0.01, Qty -1.0
+2024-01-16 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240116P00473000, Long: SPY   240116P00468000
+2024-01-16 15:45:00 Spread state reset after attempting close.
+2024-01-17 10:00:00 Setting flag to open trades on next data slice
+2024-01-17 10:00:00 Order Event: FILLED ID 41, Symbol SPY   240117P00469000, FillPrice $0.29, Qty -1.0
+2024-01-17 10:00:00 Order Event: FILLED ID 42, Symbol SPY   240117P00464000, FillPrice $0.02, Qty 1.0
+2024-01-17 10:00:00 Submitted Bull Put Spread. Short: SPY   240117P00469000, Long: SPY   240117P00464000, Est. Credit: $0.28
+2024-01-17 15:45:00 Setting flag to close positions on next data slice
+2024-01-17 15:45:00 Order Event: FILLED ID 43, Symbol SPY   240117P00469000, FillPrice $0.02, Qty 1.0
+2024-01-17 15:45:00 Order Event: FILLED ID 44, Symbol SPY   240117P00464000, FillPrice $0.01, Qty -1.0
+2024-01-17 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240117P00469000, Long: SPY   240117P00464000
+2024-01-17 15:45:00 Spread state reset after attempting close.
+2024-01-18 10:00:00 Setting flag to open trades on next data slice
+2024-01-18 10:00:00 Order Event: FILLED ID 45, Symbol SPY   240118P00472000, FillPrice $0.31, Qty -1.0
+2024-01-18 10:00:00 Order Event: FILLED ID 46, Symbol SPY   240118P00467000, FillPrice $0.03, Qty 1.0
+2024-01-18 10:00:00 Submitted Bull Put Spread. Short: SPY   240118P00472000, Long: SPY   240118P00467000, Est. Credit: $0.29
+2024-01-18 15:45:00 Setting flag to close positions on next data slice
+2024-01-18 15:45:00 Order Event: FILLED ID 47, Symbol SPY   240118P00472000, FillPrice $0.02, Qty 1.0
+2024-01-18 15:45:00 Order Event: FILLED ID 48, Symbol SPY   240118P00467000, FillPrice $0.01, Qty -1.0
+2024-01-18 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240118P00472000, Long: SPY   240118P00467000
+2024-01-18 15:45:00 Spread state reset after attempting close.
+2024-01-19 10:00:00 Setting flag to open trades on next data slice
+2024-01-19 10:00:00 Order Event: FILLED ID 49, Symbol SPY   240119P00476000, FillPrice $0.46, Qty -1.0
+2024-01-19 10:00:00 Order Event: FILLED ID 50, Symbol SPY   240119P00471000, FillPrice $0.04, Qty 1.0
+2024-01-19 10:00:00 Submitted Bull Put Spread. Short: SPY   240119P00476000, Long: SPY   240119P00471000, Est. Credit: $0.43
+2024-01-19 15:45:00 Setting flag to close positions on next data slice
+2024-01-19 15:45:00 Order Event: FILLED ID 51, Symbol SPY   240119P00476000, FillPrice $0.01, Qty 1.0
+2024-01-19 15:45:00 Order Event: FILLED ID 52, Symbol SPY   240119P00471000, FillPrice $0.01, Qty -1.0
+2024-01-19 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240119P00476000, Long: SPY   240119P00471000
+2024-01-19 15:45:00 Spread state reset after attempting close.
+2024-01-22 10:00:00 Setting flag to open trades on next data slice
+2024-01-22 10:00:00 Order Event: FILLED ID 53, Symbol SPY   240122P00483000, FillPrice $0.31, Qty -1.0
+2024-01-22 10:00:00 Order Event: FILLED ID 54, Symbol SPY   240122P00478000, FillPrice $0.04, Qty 1.0
+2024-01-22 10:00:00 Submitted Bull Put Spread. Short: SPY   240122P00483000, Long: SPY   240122P00478000, Est. Credit: $0.28
+2024-01-22 11:01:00 Order Event: FILLED ID 55, Symbol SPY   240122P00483000, FillPrice $0.65, Qty 1.0
+2024-01-22 11:01:00 Order Event: FILLED ID 56, Symbol SPY   240122P00478000, FillPrice $0.03, Qty -1.0
+2024-01-22 11:01:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240122P00483000, Long: SPY   240122P00478000
+2024-01-22 11:01:00 Spread state reset after attempting close.
+2024-01-22 11:01:00 STOP LOSS HIT: Current debit to close $0.62 >= Target $0.56. Will close spread.
+2024-01-22 15:45:00 No spread position open to close
+2024-01-23 10:00:00 Setting flag to open trades on next data slice
+2024-01-23 10:00:00 Order Event: FILLED ID 57, Symbol SPY   240123P00482000, FillPrice $0.27, Qty -1.0
+2024-01-23 10:00:00 Order Event: FILLED ID 58, Symbol SPY   240123P00477000, FillPrice $0.03, Qty 1.0
+2024-01-23 10:00:00 Submitted Bull Put Spread. Short: SPY   240123P00482000, Long: SPY   240123P00477000, Est. Credit: $0.25
+2024-01-23 15:45:00 Setting flag to close positions on next data slice
+2024-01-23 15:45:00 Order Event: FILLED ID 59, Symbol SPY   240123P00482000, FillPrice $0.02, Qty 1.0
+2024-01-23 15:45:00 Order Event: FILLED ID 60, Symbol SPY   240123P00477000, FillPrice $0.01, Qty -1.0
+2024-01-23 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240123P00482000, Long: SPY   240123P00477000
+2024-01-23 15:45:00 Spread state reset after attempting close.
+2024-01-24 10:00:00 Setting flag to open trades on next data slice
+2024-01-24 10:00:00 Order Event: FILLED ID 61, Symbol SPY   240124P00486000, FillPrice $0.41, Qty -1.0
+2024-01-24 10:00:00 Order Event: FILLED ID 62, Symbol SPY   240124P00481000, FillPrice $0.03, Qty 1.0
+2024-01-24 10:00:00 Submitted Bull Put Spread. Short: SPY   240124P00486000, Long: SPY   240124P00481000, Est. Credit: $0.39
+2024-01-24 15:45:00 Setting flag to close positions on next data slice
+2024-01-24 15:45:00 Order Event: FILLED ID 63, Symbol SPY   240124P00486000, FillPrice $0.23, Qty 1.0
+2024-01-24 15:45:00 Order Event: FILLED ID 64, Symbol SPY   240124P00481000, FillPrice $0.01, Qty -1.0
+2024-01-24 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240124P00486000, Long: SPY   240124P00481000
+2024-01-24 15:45:00 Spread state reset after attempting close.
+2024-01-25 10:00:00 Setting flag to open trades on next data slice
+2024-01-25 10:00:00 Order Event: FILLED ID 65, Symbol SPY   240125P00486000, FillPrice $0.48, Qty -1.0
+2024-01-25 10:00:00 Order Event: FILLED ID 66, Symbol SPY   240125P00481000, FillPrice $0.03, Qty 1.0
+2024-01-25 10:00:00 Submitted Bull Put Spread. Short: SPY   240125P00486000, Long: SPY   240125P00481000, Est. Credit: $0.46
+2024-01-25 15:45:00 Setting flag to close positions on next data slice
+2024-01-25 15:45:00 Order Event: FILLED ID 67, Symbol SPY   240125P00486000, FillPrice $0.06, Qty 1.0
+2024-01-25 15:45:00 Order Event: FILLED ID 68, Symbol SPY   240125P00481000, FillPrice $0.01, Qty -1.0
+2024-01-25 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240125P00486000, Long: SPY   240125P00481000
+2024-01-25 15:45:00 Spread state reset after attempting close.
+2024-01-26 10:00:00 Setting flag to open trades on next data slice
+2024-01-26 10:00:00 Order Event: FILLED ID 69, Symbol SPY   240126P00486000, FillPrice $0.33, Qty -1.0
+2024-01-26 10:00:00 Order Event: FILLED ID 70, Symbol SPY   240126P00481000, FillPrice $0.03, Qty 1.0
+2024-01-26 10:00:00 Submitted Bull Put Spread. Short: SPY   240126P00486000, Long: SPY   240126P00481000, Est. Credit: $0.31
+2024-01-26 15:45:00 Setting flag to close positions on next data slice
+2024-01-26 15:45:00 Order Event: FILLED ID 71, Symbol SPY   240126P00486000, FillPrice $0.03, Qty 1.0
+2024-01-26 15:45:00 Order Event: FILLED ID 72, Symbol SPY   240126P00481000, FillPrice $0.01, Qty -1.0
+2024-01-26 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240126P00486000, Long: SPY   240126P00481000
+2024-01-26 15:45:00 Spread state reset after attempting close.
+2024-01-29 10:00:00 Setting flag to open trades on next data slice
+2024-01-29 10:00:00 Order Event: FILLED ID 73, Symbol SPY   240129P00486000, FillPrice $0.21, Qty -1.0
+2024-01-29 10:00:00 Order Event: FILLED ID 74, Symbol SPY   240129P00481000, FillPrice $0.03, Qty 1.0
+2024-01-29 10:00:00 Submitted Bull Put Spread. Short: SPY   240129P00486000, Long: SPY   240129P00481000, Est. Credit: $0.19
+2024-01-29 15:45:00 Setting flag to close positions on next data slice
+2024-01-29 15:45:00 Order Event: FILLED ID 75, Symbol SPY   240129P00486000, FillPrice $0.01, Qty 1.0
+2024-01-29 15:45:00 Order Event: FILLED ID 76, Symbol SPY   240129P00481000, FillPrice $0.01, Qty -1.0
+2024-01-29 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240129P00486000, Long: SPY   240129P00481000
+2024-01-29 15:45:00 Spread state reset after attempting close.
+2024-01-30 10:00:00 Setting flag to open trades on next data slice
+2024-01-30 10:00:00 Order Event: FILLED ID 77, Symbol SPY   240130P00489000, FillPrice $0.37, Qty -1.0
+2024-01-30 10:00:00 Order Event: FILLED ID 78, Symbol SPY   240130P00484000, FillPrice $0.04, Qty 1.0
+2024-01-30 10:00:00 Submitted Bull Put Spread. Short: SPY   240130P00489000, Long: SPY   240130P00484000, Est. Credit: $0.34
+2024-01-30 15:45:00 Setting flag to close positions on next data slice
+2024-01-30 15:45:00 Order Event: FILLED ID 79, Symbol SPY   240130P00489000, FillPrice $0.07, Qty 1.0
+2024-01-30 15:45:00 Order Event: FILLED ID 80, Symbol SPY   240130P00484000, FillPrice $0.01, Qty -1.0
+2024-01-30 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240130P00489000, Long: SPY   240130P00484000
+2024-01-30 15:45:00 Spread state reset after attempting close.
+2024-01-31 10:00:00 Setting flag to open trades on next data slice
+2024-01-31 10:00:00 Order Event: FILLED ID 81, Symbol SPY   240131P00485000, FillPrice $0.46, Qty -1.0
+2024-01-31 10:00:00 Order Event: FILLED ID 82, Symbol SPY   240131P00480000, FillPrice $0.04, Qty 1.0
+2024-01-31 10:00:00 Submitted Bull Put Spread. Short: SPY   240131P00485000, Long: SPY   240131P00480000, Est. Credit: $0.43
+2024-01-31 10:38:00 Order Event: FILLED ID 83, Symbol SPY   240131P00485000, FillPrice $0.92, Qty 1.0
+2024-01-31 10:38:00 Order Event: FILLED ID 84, Symbol SPY   240131P00480000, FillPrice $0.06, Qty -1.0
+2024-01-31 10:38:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240131P00485000, Long: SPY   240131P00480000
+2024-01-31 10:38:00 Spread state reset after attempting close.
+2024-01-31 10:38:00 STOP LOSS HIT: Current debit to close $0.86 >= Target $0.86. Will close spread.
+2024-01-31 15:45:00 No spread position open to close
+2024-02-01 10:00:00 Setting flag to open trades on next data slice
+2024-02-01 10:00:00 Order Event: FILLED ID 85, Symbol SPY   240201P00483000, FillPrice $0.60, Qty -1.0
+2024-02-01 10:00:00 Order Event: FILLED ID 86, Symbol SPY   240201P00478000, FillPrice $0.07, Qty 1.0
+2024-02-01 10:00:00 Submitted Bull Put Spread. Short: SPY   240201P00483000, Long: SPY   240201P00478000, Est. Credit: $0.55
+2024-02-01 15:45:00 Setting flag to close positions on next data slice
+2024-02-01 15:45:00 Order Event: FILLED ID 87, Symbol SPY   240201P00483000, FillPrice $0.02, Qty 1.0
+2024-02-01 15:45:00 Order Event: FILLED ID 88, Symbol SPY   240201P00478000, FillPrice $0.01, Qty -1.0
+2024-02-01 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240201P00483000, Long: SPY   240201P00478000
+2024-02-01 15:45:00 Spread state reset after attempting close.
+2024-02-02 10:00:00 Setting flag to open trades on next data slice
+2024-02-02 10:00:00 Order Event: FILLED ID 89, Symbol SPY   240202P00489000, FillPrice $0.60, Qty -1.0
+2024-02-02 10:00:00 Order Event: FILLED ID 90, Symbol SPY   240202P00484000, FillPrice $0.06, Qty 1.0
+2024-02-02 10:00:00 Submitted Bull Put Spread. Short: SPY   240202P00489000, Long: SPY   240202P00484000, Est. Credit: $0.56
+2024-02-02 15:45:00 Setting flag to close positions on next data slice
+2024-02-02 15:45:00 Order Event: FILLED ID 91, Symbol SPY   240202P00489000, FillPrice $0.01, Qty 1.0
+2024-02-02 15:45:00 Order Event: FILLED ID 92, Symbol SPY   240202P00484000, FillPrice $0.01, Qty -1.0
+2024-02-02 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240202P00489000, Long: SPY   240202P00484000
+2024-02-02 15:45:00 Spread state reset after attempting close.
+2024-02-05 10:00:00 Setting flag to open trades on next data slice
+2024-02-05 10:00:00 Order Event: FILLED ID 93, Symbol SPY   240205P00492000, FillPrice $0.44, Qty -1.0
+2024-02-05 10:00:00 Order Event: FILLED ID 94, Symbol SPY   240205P00487000, FillPrice $0.03, Qty 1.0
+2024-02-05 10:00:00 Submitted Bull Put Spread. Short: SPY   240205P00492000, Long: SPY   240205P00487000, Est. Credit: $0.42
+2024-02-05 10:10:00 Order Event: FILLED ID 95, Symbol SPY   240205P00492000, FillPrice $0.89, Qty 1.0
+2024-02-05 10:10:00 Order Event: FILLED ID 96, Symbol SPY   240205P00487000, FillPrice $0.03, Qty -1.0
+2024-02-05 10:10:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240205P00492000, Long: SPY   240205P00487000
+2024-02-05 10:10:00 Spread state reset after attempting close.
+2024-02-05 10:10:00 STOP LOSS HIT: Current debit to close $0.86 >= Target $0.84. Will close spread.
+2024-02-05 15:45:00 No spread position open to close
+2024-02-06 10:00:00 Setting flag to open trades on next data slice
+2024-02-06 10:00:00 Order Event: FILLED ID 97, Symbol SPY   240206P00491000, FillPrice $0.30, Qty -1.0
+2024-02-06 10:00:00 Order Event: FILLED ID 98, Symbol SPY   240206P00486000, FillPrice $0.02, Qty 1.0
+2024-02-06 10:00:00 Submitted Bull Put Spread. Short: SPY   240206P00491000, Long: SPY   240206P00486000, Est. Credit: $0.29
+2024-02-06 15:45:00 Setting flag to close positions on next data slice
+2024-02-06 15:45:00 Order Event: FILLED ID 99, Symbol SPY   240206P00491000, FillPrice $0.02, Qty 1.0
+2024-02-06 15:45:00 Order Event: FILLED ID 100, Symbol SPY   240206P00486000, FillPrice $0.01, Qty -1.0
+2024-02-06 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240206P00491000, Long: SPY   240206P00486000
+2024-02-06 15:45:00 Spread state reset after attempting close.
+2024-02-07 10:00:00 Setting flag to open trades on next data slice
+2024-02-07 10:00:00 Order Event: FILLED ID 101, Symbol SPY   240207P00494000, FillPrice $0.31, Qty -1.0
+2024-02-07 10:00:00 Order Event: FILLED ID 102, Symbol SPY   240207P00489000, FillPrice $0.03, Qty 1.0
+2024-02-07 10:00:00 Submitted Bull Put Spread. Short: SPY   240207P00494000, Long: SPY   240207P00489000, Est. Credit: $0.29
+2024-02-07 15:45:00 Setting flag to close positions on next data slice
+2024-02-07 15:45:00 Order Event: FILLED ID 103, Symbol SPY   240207P00494000, FillPrice $0.02, Qty 1.0
+2024-02-07 15:45:00 Order Event: FILLED ID 104, Symbol SPY   240207P00489000, FillPrice $0.01, Qty -1.0
+2024-02-07 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240207P00494000, Long: SPY   240207P00489000
+2024-02-07 15:45:00 Spread state reset after attempting close.
+2024-02-08 10:00:00 Setting flag to open trades on next data slice
+2024-02-08 10:00:00 Order Event: FILLED ID 105, Symbol SPY   240208P00496000, FillPrice $0.25, Qty -1.0
+2024-02-08 10:00:00 Order Event: FILLED ID 106, Symbol SPY   240208P00491000, FillPrice $0.02, Qty 1.0
+2024-02-08 10:00:00 Submitted Bull Put Spread. Short: SPY   240208P00496000, Long: SPY   240208P00491000, Est. Credit: $0.24
+2024-02-08 15:45:00 Setting flag to close positions on next data slice
+2024-02-08 15:45:00 Order Event: FILLED ID 107, Symbol SPY   240208P00496000, FillPrice $0.02, Qty 1.0
+2024-02-08 15:45:00 Order Event: FILLED ID 108, Symbol SPY   240208P00491000, FillPrice $0.01, Qty -1.0
+2024-02-08 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240208P00496000, Long: SPY   240208P00491000
+2024-02-08 15:45:00 Spread state reset after attempting close.
+2024-02-09 10:00:00 Setting flag to open trades on next data slice
+2024-02-09 10:00:00 Order Event: FILLED ID 109, Symbol SPY   240209P00498000, FillPrice $0.39, Qty -1.0
+2024-02-09 10:00:00 Order Event: FILLED ID 110, Symbol SPY   240209P00493000, FillPrice $0.04, Qty 1.0
+2024-02-09 10:00:00 Submitted Bull Put Spread. Short: SPY   240209P00498000, Long: SPY   240209P00493000, Est. Credit: $0.36
+2024-02-09 15:45:00 Setting flag to close positions on next data slice
+2024-02-09 15:45:00 Order Event: FILLED ID 111, Symbol SPY   240209P00498000, FillPrice $0.02, Qty 1.0
+2024-02-09 15:45:00 Order Event: FILLED ID 112, Symbol SPY   240209P00493000, FillPrice $0.01, Qty -1.0
+2024-02-09 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240209P00498000, Long: SPY   240209P00493000
+2024-02-09 15:45:00 Spread state reset after attempting close.
+2024-02-12 10:00:00 Setting flag to open trades on next data slice
+2024-02-12 10:00:00 Order Event: FILLED ID 113, Symbol SPY   240212P00500000, FillPrice $0.30, Qty -1.0
+2024-02-12 10:00:00 Order Event: FILLED ID 114, Symbol SPY   240212P00495000, FillPrice $0.03, Qty 1.0
+2024-02-12 10:00:00 Submitted Bull Put Spread. Short: SPY   240212P00500000, Long: SPY   240212P00495000, Est. Credit: $0.28
+2024-02-12 15:45:00 Setting flag to close positions on next data slice
+2024-02-12 15:45:00 Order Event: FILLED ID 115, Symbol SPY   240212P00500000, FillPrice $0.04, Qty 1.0
+2024-02-12 15:45:00 Order Event: FILLED ID 116, Symbol SPY   240212P00495000, FillPrice $0.01, Qty -1.0
+2024-02-12 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240212P00500000, Long: SPY   240212P00495000
+2024-02-12 15:45:00 Spread state reset after attempting close.
+2024-02-13 10:00:00 Setting flag to open trades on next data slice
+2024-02-13 10:00:00 Order Event: FILLED ID 117, Symbol SPY   240213P00492000, FillPrice $0.50, Qty -1.0
+2024-02-13 10:00:00 Order Event: FILLED ID 118, Symbol SPY   240213P00487000, FillPrice $0.04, Qty 1.0
+2024-02-13 10:00:00 Submitted Bull Put Spread. Short: SPY   240213P00492000, Long: SPY   240213P00487000, Est. Credit: $0.47
+2024-02-13 14:53:00 Order Event: FILLED ID 119, Symbol SPY   240213P00492000, FillPrice $0.98, Qty 1.0
+2024-02-13 14:53:00 Order Event: FILLED ID 120, Symbol SPY   240213P00487000, FillPrice $0.02, Qty -1.0
+2024-02-13 14:53:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240213P00492000, Long: SPY   240213P00487000
+2024-02-13 14:53:00 Spread state reset after attempting close.
+2024-02-13 14:53:00 STOP LOSS HIT: Current debit to close $0.96 >= Target $0.94. Will close spread.
+2024-02-13 15:45:00 No spread position open to close
+2024-02-14 10:00:00 Setting flag to open trades on next data slice
+2024-02-14 10:00:00 Order Event: FILLED ID 121, Symbol SPY   240214P00495000, FillPrice $0.38, Qty -1.0
+2024-02-14 10:00:00 Order Event: FILLED ID 122, Symbol SPY   240214P00490000, FillPrice $0.04, Qty 1.0
+2024-02-14 10:00:00 Submitted Bull Put Spread. Short: SPY   240214P00495000, Long: SPY   240214P00490000, Est. Credit: $0.35
+2024-02-14 11:01:00 Order Event: FILLED ID 123, Symbol SPY   240214P00495000, FillPrice $0.80, Qty 1.0
+2024-02-14 11:01:00 Order Event: FILLED ID 124, Symbol SPY   240214P00490000, FillPrice $0.07, Qty -1.0
+2024-02-14 11:01:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240214P00495000, Long: SPY   240214P00490000
+2024-02-14 11:01:00 Spread state reset after attempting close.
+2024-02-14 11:01:00 STOP LOSS HIT: Current debit to close $0.73 >= Target $0.70. Will close spread.
+2024-02-14 15:45:00 No spread position open to close
+2024-02-15 10:00:00 Setting flag to open trades on next data slice
+2024-02-15 10:00:00 Order Event: FILLED ID 125, Symbol SPY   240215P00498000, FillPrice $0.47, Qty -1.0
+2024-02-15 10:00:00 Order Event: FILLED ID 126, Symbol SPY   240215P00493000, FillPrice $0.04, Qty 1.0
+2024-02-15 10:00:00 Submitted Bull Put Spread. Short: SPY   240215P00498000, Long: SPY   240215P00493000, Est. Credit: $0.44
+2024-02-15 15:45:00 Setting flag to close positions on next data slice
+2024-02-15 15:45:00 Order Event: FILLED ID 127, Symbol SPY   240215P00498000, FillPrice $0.02, Qty 1.0
+2024-02-15 15:45:00 Order Event: FILLED ID 128, Symbol SPY   240215P00493000, FillPrice $0.01, Qty -1.0
+2024-02-15 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240215P00498000, Long: SPY   240215P00493000
+2024-02-15 15:45:00 Spread state reset after attempting close.
+2024-02-16 10:00:00 Setting flag to open trades on next data slice
+2024-02-16 10:00:00 Order Event: FILLED ID 129, Symbol SPY   240216P00498000, FillPrice $0.67, Qty -1.0
+2024-02-16 10:00:00 Order Event: FILLED ID 130, Symbol SPY   240216P00493000, FillPrice $0.10, Qty 1.0
+2024-02-16 10:00:00 Submitted Bull Put Spread. Short: SPY   240216P00498000, Long: SPY   240216P00493000, Est. Credit: $0.60
+2024-02-16 15:45:00 Setting flag to close positions on next data slice
+2024-02-16 15:45:00 Order Event: FILLED ID 131, Symbol SPY   240216P00498000, FillPrice $0.09, Qty 1.0
+2024-02-16 15:45:00 Order Event: FILLED ID 132, Symbol SPY   240216P00493000, FillPrice $0.01, Qty -1.0
+2024-02-16 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240216P00498000, Long: SPY   240216P00493000
+2024-02-16 15:45:00 Spread state reset after attempting close.
+2024-02-20 10:00:00 Setting flag to open trades on next data slice
+2024-02-20 10:00:00 Order Event: FILLED ID 133, Symbol SPY   240220P00495000, FillPrice $0.46, Qty -1.0
+2024-02-20 10:00:00 Order Event: FILLED ID 134, Symbol SPY   240220P00490000, FillPrice $0.03, Qty 1.0
+2024-02-20 10:00:00 Submitted Bull Put Spread. Short: SPY   240220P00495000, Long: SPY   240220P00490000, Est. Credit: $0.44
+2024-02-20 12:20:00 Order Event: FILLED ID 135, Symbol SPY   240220P00495000, FillPrice $0.89, Qty 1.0
+2024-02-20 12:20:00 Order Event: FILLED ID 136, Symbol SPY   240220P00490000, FillPrice $0.01, Qty -1.0
+2024-02-20 12:20:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240220P00495000, Long: SPY   240220P00490000
+2024-02-20 12:20:00 Spread state reset after attempting close.
+2024-02-20 12:20:00 STOP LOSS HIT: Current debit to close $0.88 >= Target $0.88. Will close spread.
+2024-02-20 15:45:00 No spread position open to close
+2024-02-21 10:00:00 Setting flag to open trades on next data slice
+2024-02-21 10:00:00 Order Event: FILLED ID 137, Symbol SPY   240221P00493000, FillPrice $0.62, Qty -1.0
+2024-02-21 10:00:00 Order Event: FILLED ID 138, Symbol SPY   240221P00488000, FillPrice $0.07, Qty 1.0
+2024-02-21 10:00:00 Submitted Bull Put Spread. Short: SPY   240221P00493000, Long: SPY   240221P00488000, Est. Credit: $0.56
+2024-02-21 15:45:00 Setting flag to close positions on next data slice
+2024-02-21 15:45:00 Order Event: FILLED ID 139, Symbol SPY   240221P00493000, FillPrice $0.15, Qty 1.0
+2024-02-21 15:45:00 Order Event: FILLED ID 140, Symbol SPY   240221P00488000, FillPrice $0.01, Qty -1.0
+2024-02-21 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240221P00493000, Long: SPY   240221P00488000
+2024-02-21 15:45:00 Spread state reset after attempting close.
+2024-02-22 10:00:00 Setting flag to open trades on next data slice
+2024-02-22 10:00:00 Order Event: FILLED ID 141, Symbol SPY   240222P00503000, FillPrice $0.50, Qty -1.0
+2024-02-22 10:00:00 Order Event: FILLED ID 142, Symbol SPY   240222P00498000, FillPrice $0.06, Qty 1.0
+2024-02-22 10:00:00 Submitted Bull Put Spread. Short: SPY   240222P00503000, Long: SPY   240222P00498000, Est. Credit: $0.46
+2024-02-22 15:45:00 Setting flag to close positions on next data slice
+2024-02-22 15:45:00 Order Event: FILLED ID 143, Symbol SPY   240222P00503000, FillPrice $0.02, Qty 1.0
+2024-02-22 15:45:00 Order Event: FILLED ID 144, Symbol SPY   240222P00498000, FillPrice $0.01, Qty -1.0
+2024-02-22 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240222P00503000, Long: SPY   240222P00498000
+2024-02-22 15:45:00 Spread state reset after attempting close.
+2024-02-23 10:00:00 Setting flag to open trades on next data slice
+2024-02-23 10:00:00 Order Event: FILLED ID 145, Symbol SPY   240223P00508000, FillPrice $0.45, Qty -1.0
+2024-02-23 10:00:00 Order Event: FILLED ID 146, Symbol SPY   240223P00503000, FillPrice $0.05, Qty 1.0
+2024-02-23 10:00:00 Submitted Bull Put Spread. Short: SPY   240223P00508000, Long: SPY   240223P00503000, Est. Credit: $0.41
+2024-02-23 11:05:00 Order Event: FILLED ID 147, Symbol SPY   240223P00508000, FillPrice $1.23, Qty 1.0
+2024-02-23 11:05:00 Order Event: FILLED ID 148, Symbol SPY   240223P00503000, FillPrice $0.10, Qty -1.0
+2024-02-23 11:05:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240223P00508000, Long: SPY   240223P00503000
+2024-02-23 11:05:00 Spread state reset after attempting close.
+2024-02-23 11:05:00 STOP LOSS HIT: Current debit to close $1.13 >= Target $0.82. Will close spread.
+2024-02-23 15:45:00 No spread position open to close
+2024-02-26 10:00:00 Setting flag to open trades on next data slice
+2024-02-26 10:00:00 Order Event: FILLED ID 149, Symbol SPY   240226P00507000, FillPrice $0.46, Qty -1.0
+2024-02-26 10:00:00 Order Event: FILLED ID 150, Symbol SPY   240226P00502000, FillPrice $0.03, Qty 1.0
+2024-02-26 10:00:00 Submitted Bull Put Spread. Short: SPY   240226P00507000, Long: SPY   240226P00502000, Est. Credit: $0.44
+2024-02-26 13:27:00 Order Event: FILLED ID 151, Symbol SPY   240226P00507000, FillPrice $0.99, Qty 1.0
+2024-02-26 13:27:00 Order Event: FILLED ID 152, Symbol SPY   240226P00502000, FillPrice $0.02, Qty -1.0
+2024-02-26 13:27:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240226P00507000, Long: SPY   240226P00502000
+2024-02-26 13:27:00 Spread state reset after attempting close.
+2024-02-26 13:27:00 STOP LOSS HIT: Current debit to close $0.97 >= Target $0.88. Will close spread.
+2024-02-26 15:45:00 No spread position open to close
+2024-02-27 10:00:00 Setting flag to open trades on next data slice
+2024-02-27 10:00:00 Order Event: FILLED ID 153, Symbol SPY   240227P00504000, FillPrice $0.25, Qty -1.0
+2024-02-27 10:00:00 Order Event: FILLED ID 154, Symbol SPY   240227P00499000, FillPrice $0.02, Qty 1.0
+2024-02-27 10:00:00 Submitted Bull Put Spread. Short: SPY   240227P00504000, Long: SPY   240227P00499000, Est. Credit: $0.24
+2024-02-27 15:45:00 Setting flag to close positions on next data slice
+2024-02-27 15:45:00 Order Event: FILLED ID 155, Symbol SPY   240227P00504000, FillPrice $0.01, Qty 1.0
+2024-02-27 15:45:00 Order Event: FILLED ID 156, Symbol SPY   240227P00499000, FillPrice $0.01, Qty -1.0
+2024-02-27 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240227P00504000, Long: SPY   240227P00499000
+2024-02-27 15:45:00 Spread state reset after attempting close.
+2024-02-28 10:00:00 Setting flag to open trades on next data slice
+2024-02-28 10:00:00 Order Event: FILLED ID 157, Symbol SPY   240228P00504000, FillPrice $0.36, Qty -1.0
+2024-02-28 10:00:00 Order Event: FILLED ID 158, Symbol SPY   240228P00499000, FillPrice $0.02, Qty 1.0
+2024-02-28 10:00:00 Submitted Bull Put Spread. Short: SPY   240228P00504000, Long: SPY   240228P00499000, Est. Credit: $0.35
+2024-02-28 15:45:00 Setting flag to close positions on next data slice
+2024-02-28 15:45:00 Order Event: FILLED ID 159, Symbol SPY   240228P00504000, FillPrice $0.02, Qty 1.0
+2024-02-28 15:45:00 Order Event: FILLED ID 160, Symbol SPY   240228P00499000, FillPrice $0.01, Qty -1.0
+2024-02-28 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240228P00504000, Long: SPY   240228P00499000
+2024-02-28 15:45:00 Spread state reset after attempting close.
+2024-02-29 10:00:00 Setting flag to open trades on next data slice
+2024-02-29 10:00:00 Order Event: FILLED ID 161, Symbol SPY   240229P00507000, FillPrice $0.47, Qty -1.0
+2024-02-29 10:00:00 Order Event: FILLED ID 162, Symbol SPY   240229P00502000, FillPrice $0.03, Qty 1.0
+2024-02-29 10:00:00 Submitted Bull Put Spread. Short: SPY   240229P00507000, Long: SPY   240229P00502000, Est. Credit: $0.45
+2024-02-29 10:14:00 Order Event: FILLED ID 163, Symbol SPY   240229P00507000, FillPrice $1.08, Qty 1.0
+2024-02-29 10:14:00 Order Event: FILLED ID 164, Symbol SPY   240229P00502000, FillPrice $0.06, Qty -1.0
+2024-02-29 10:14:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240229P00507000, Long: SPY   240229P00502000
+2024-02-29 10:14:00 Spread state reset after attempting close.
+2024-02-29 10:14:00 STOP LOSS HIT: Current debit to close $1.02 >= Target $0.90. Will close spread.
+2024-02-29 15:45:00 No spread position open to close
+2024-03-01 10:00:00 Setting flag to open trades on next data slice
+2024-03-01 10:00:00 Order Event: FILLED ID 165, Symbol SPY   240301P00507000, FillPrice $0.32, Qty -1.0
+2024-03-01 10:00:00 Order Event: FILLED ID 166, Symbol SPY   240301P00502000, FillPrice $0.04, Qty 1.0
+2024-03-01 10:00:00 Submitted Bull Put Spread. Short: SPY   240301P00507000, Long: SPY   240301P00502000, Est. Credit: $0.31
+2024-03-01 15:45:00 Setting flag to close positions on next data slice
+2024-03-01 15:45:00 Order Event: FILLED ID 167, Symbol SPY   240301P00507000, FillPrice $0.02, Qty 1.0
+2024-03-01 15:45:00 Order Event: FILLED ID 168, Symbol SPY   240301P00502000, FillPrice $0.01, Qty -1.0
+2024-03-01 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240301P00507000, Long: SPY   240301P00502000
+2024-03-01 15:45:00 Spread state reset after attempting close.
+2024-03-04 10:00:00 Setting flag to open trades on next data slice
+2024-03-04 10:00:00 Order Event: FILLED ID 169, Symbol SPY   240304P00511000, FillPrice $0.26, Qty -1.0
+2024-03-04 10:00:00 Order Event: FILLED ID 170, Symbol SPY   240304P00506000, FillPrice $0.03, Qty 1.0
+2024-03-04 10:00:00 Submitted Bull Put Spread. Short: SPY   240304P00511000, Long: SPY   240304P00506000, Est. Credit: $0.24
+2024-03-04 15:45:00 Setting flag to close positions on next data slice
+2024-03-04 15:45:00 Order Event: FILLED ID 171, Symbol SPY   240304P00511000, FillPrice $0.02, Qty 1.0
+2024-03-04 15:45:00 Order Event: FILLED ID 172, Symbol SPY   240304P00506000, FillPrice $0.01, Qty -1.0
+2024-03-04 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240304P00511000, Long: SPY   240304P00506000
+2024-03-04 15:45:00 Spread state reset after attempting close.
+2024-03-05 10:00:00 Setting flag to open trades on next data slice
+2024-03-05 10:00:00 Order Event: FILLED ID 173, Symbol SPY   240305P00508000, FillPrice $0.31, Qty -1.0
+2024-03-05 10:00:00 Order Event: FILLED ID 174, Symbol SPY   240305P00503000, FillPrice $0.04, Qty 1.0
+2024-03-05 10:00:00 Submitted Bull Put Spread. Short: SPY   240305P00508000, Long: SPY   240305P00503000, Est. Credit: $0.29
+2024-03-05 10:20:00 Order Event: FILLED ID 175, Symbol SPY   240305P00508000, FillPrice $0.63, Qty 1.0
+2024-03-05 10:20:00 Order Event: FILLED ID 176, Symbol SPY   240305P00503000, FillPrice $0.03, Qty -1.0
+2024-03-05 10:20:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240305P00508000, Long: SPY   240305P00503000
+2024-03-05 10:20:00 Spread state reset after attempting close.
+2024-03-05 10:20:00 STOP LOSS HIT: Current debit to close $0.60 >= Target $0.59. Will close spread.
+2024-03-05 15:45:00 No spread position open to close
+2024-03-06 10:00:00 Setting flag to open trades on next data slice
+2024-03-06 10:00:00 Order Event: FILLED ID 177, Symbol SPY   240306P00508000, FillPrice $0.52, Qty -1.0
+2024-03-06 10:00:00 Order Event: FILLED ID 178, Symbol SPY   240306P00503000, FillPrice $0.06, Qty 1.0
+2024-03-06 10:00:00 Submitted Bull Put Spread. Short: SPY   240306P00508000, Long: SPY   240306P00503000, Est. Credit: $0.50
+2024-03-06 15:45:00 Setting flag to close positions on next data slice
+2024-03-06 15:45:00 Order Event: FILLED ID 179, Symbol SPY   240306P00508000, FillPrice $0.06, Qty 1.0
+2024-03-06 15:45:00 Order Event: FILLED ID 180, Symbol SPY   240306P00503000, FillPrice $0.01, Qty -1.0
+2024-03-06 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240306P00508000, Long: SPY   240306P00503000
+2024-03-06 15:45:00 Spread state reset after attempting close.
+2024-03-07 10:00:00 Setting flag to open trades on next data slice
+2024-03-07 10:00:00 Order Event: FILLED ID 181, Symbol SPY   240307P00511000, FillPrice $0.35, Qty -1.0
+2024-03-07 10:00:00 Order Event: FILLED ID 182, Symbol SPY   240307P00506000, FillPrice $0.04, Qty 1.0
+2024-03-07 10:00:00 Submitted Bull Put Spread. Short: SPY   240307P00511000, Long: SPY   240307P00506000, Est. Credit: $0.32
+2024-03-07 15:45:00 Setting flag to close positions on next data slice
+2024-03-07 15:45:00 Order Event: FILLED ID 183, Symbol SPY   240307P00511000, FillPrice $0.01, Qty 1.0
+2024-03-07 15:45:00 Order Event: FILLED ID 184, Symbol SPY   240307P00506000, FillPrice $0.01, Qty -1.0
+2024-03-07 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240307P00511000, Long: SPY   240307P00506000
+2024-03-07 15:45:00 Spread state reset after attempting close.
+2024-03-08 10:00:00 Setting flag to open trades on next data slice
+2024-03-08 10:00:00 Order Event: FILLED ID 185, Symbol SPY   240308P00516000, FillPrice $0.50, Qty -1.0
+2024-03-08 10:00:00 Order Event: FILLED ID 186, Symbol SPY   240308P00511000, FillPrice $0.05, Qty 1.0
+2024-03-08 10:00:00 Submitted Bull Put Spread. Short: SPY   240308P00516000, Long: SPY   240308P00511000, Est. Credit: $0.47
+2024-03-08 11:09:00 Order Event: FILLED ID 187, Symbol SPY   240308P00516000, FillPrice $1.00, Qty 1.0
+2024-03-08 11:09:00 Order Event: FILLED ID 188, Symbol SPY   240308P00511000, FillPrice $0.06, Qty -1.0
+2024-03-08 11:09:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240308P00516000, Long: SPY   240308P00511000
+2024-03-08 11:09:00 Spread state reset after attempting close.
+2024-03-08 11:09:00 STOP LOSS HIT: Current debit to close $0.94 >= Target $0.93. Will close spread.
+2024-03-08 15:45:00 No spread position open to close
+2024-03-11 10:00:00 Setting flag to open trades on next data slice
+2024-03-11 10:00:00 Order Event: FILLED ID 189, Symbol SPY   240311P00507000, FillPrice $0.38, Qty -1.0
+2024-03-11 10:00:00 Order Event: FILLED ID 190, Symbol SPY   240311P00502000, FillPrice $0.04, Qty 1.0
+2024-03-11 10:00:00 Submitted Bull Put Spread. Short: SPY   240311P00507000, Long: SPY   240311P00502000, Est. Credit: $0.35
+2024-03-11 15:45:00 Setting flag to close positions on next data slice
+2024-03-11 15:45:00 Order Event: FILLED ID 191, Symbol SPY   240311P00507000, FillPrice $0.02, Qty 1.0
+2024-03-11 15:45:00 Order Event: FILLED ID 192, Symbol SPY   240311P00502000, FillPrice $0.01, Qty -1.0
+2024-03-11 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240311P00507000, Long: SPY   240311P00502000
+2024-03-11 15:45:00 Spread state reset after attempting close.
+2024-03-12 10:00:00 Setting flag to open trades on next data slice
+2024-03-12 10:00:00 Order Event: FILLED ID 193, Symbol SPY   240312P00511000, FillPrice $0.55, Qty -1.0
+2024-03-12 10:00:00 Order Event: FILLED ID 194, Symbol SPY   240312P00506000, FillPrice $0.07, Qty 1.0
+2024-03-12 10:00:00 Submitted Bull Put Spread. Short: SPY   240312P00511000, Long: SPY   240312P00506000, Est. Credit: $0.49
+2024-03-12 15:45:00 Setting flag to close positions on next data slice
+2024-03-12 15:45:00 Order Event: FILLED ID 195, Symbol SPY   240312P00511000, FillPrice $0.01, Qty 1.0
+2024-03-12 15:45:00 Order Event: FILLED ID 196, Symbol SPY   240312P00506000, FillPrice $0.01, Qty -1.0
+2024-03-12 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240312P00511000, Long: SPY   240312P00506000
+2024-03-12 15:45:00 Spread state reset after attempting close.
+2024-03-13 10:00:00 Setting flag to open trades on next data slice
+2024-03-13 10:00:00 Order Event: FILLED ID 197, Symbol SPY   240313P00514000, FillPrice $0.31, Qty -1.0
+2024-03-13 10:00:00 Order Event: FILLED ID 198, Symbol SPY   240313P00509000, FillPrice $0.03, Qty 1.0
+2024-03-13 10:00:00 Submitted Bull Put Spread. Short: SPY   240313P00514000, Long: SPY   240313P00509000, Est. Credit: $0.29
+2024-03-13 15:45:00 Setting flag to close positions on next data slice
+2024-03-13 15:45:00 Order Event: FILLED ID 199, Symbol SPY   240313P00514000, FillPrice $0.03, Qty 1.0
+2024-03-13 15:45:00 Order Event: FILLED ID 200, Symbol SPY   240313P00509000, FillPrice $0.01, Qty -1.0
+2024-03-13 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240313P00514000, Long: SPY   240313P00509000
+2024-03-13 15:45:00 Spread state reset after attempting close.
+2024-03-14 10:00:00 Setting flag to open trades on next data slice
+2024-03-14 10:00:00 Order Event: FILLED ID 201, Symbol SPY   240314P00512000, FillPrice $0.66, Qty -1.0
+2024-03-14 10:00:00 Order Event: FILLED ID 202, Symbol SPY   240314P00507000, FillPrice $0.10, Qty 1.0
+2024-03-14 10:00:00 Submitted Bull Put Spread. Short: SPY   240314P00512000, Long: SPY   240314P00507000, Est. Credit: $0.57
+2024-03-14 15:45:00 Setting flag to close positions on next data slice
+2024-03-14 15:45:00 Order Event: FILLED ID 203, Symbol SPY   240314P00512000, FillPrice $0.11, Qty 1.0
+2024-03-14 15:45:00 Order Event: FILLED ID 204, Symbol SPY   240314P00507000, FillPrice $0.01, Qty -1.0
+2024-03-14 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240314P00512000, Long: SPY   240314P00507000
+2024-03-14 15:45:00 Spread state reset after attempting close.
+2024-03-15 10:00:00 Setting flag to open trades on next data slice
+2024-03-15 10:00:00 Order Event: FILLED ID 205, Symbol SPY   240315P00508000, FillPrice $0.70, Qty -1.0
+2024-03-15 10:00:00 Order Event: FILLED ID 206, Symbol SPY   240315P00503000, FillPrice $0.07, Qty 1.0
+2024-03-15 10:00:00 Submitted Bull Put Spread. Short: SPY   240315P00508000, Long: SPY   240315P00503000, Est. Credit: $0.66
+2024-03-15 15:45:00 Setting flag to close positions on next data slice
+2024-03-15 15:45:00 Order Event: FILLED ID 207, Symbol SPY   240315P00508000, FillPrice $0.07, Qty 1.0
+2024-03-15 15:45:00 Order Event: FILLED ID 208, Symbol SPY   240315P00503000, FillPrice $0.01, Qty -1.0
+2024-03-15 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240315P00508000, Long: SPY   240315P00503000
+2024-03-15 15:45:00 Spread state reset after attempting close.
+2024-03-18 10:00:00 Setting flag to open trades on next data slice
+2024-03-18 10:00:00 Order Event: FILLED ID 209, Symbol SPY   240318P00512000, FillPrice $0.52, Qty -1.0
+2024-03-18 10:00:00 Order Event: FILLED ID 210, Symbol SPY   240318P00507000, FillPrice $0.06, Qty 1.0
+2024-03-18 10:00:00 Submitted Bull Put Spread. Short: SPY   240318P00512000, Long: SPY   240318P00507000, Est. Credit: $0.47
+2024-03-18 15:45:00 Setting flag to close positions on next data slice
+2024-03-18 15:45:00 Order Event: FILLED ID 211, Symbol SPY   240318P00512000, FillPrice $0.06, Qty 1.0
+2024-03-18 15:45:00 Order Event: FILLED ID 212, Symbol SPY   240318P00507000, FillPrice $0.01, Qty -1.0
+2024-03-18 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240318P00512000, Long: SPY   240318P00507000
+2024-03-18 15:45:00 Spread state reset after attempting close.
+2024-03-19 10:00:00 Setting flag to open trades on next data slice
+2024-03-19 10:00:00 Order Event: FILLED ID 213, Symbol SPY   240319P00510000, FillPrice $0.44, Qty -1.0
+2024-03-19 10:00:00 Order Event: FILLED ID 214, Symbol SPY   240319P00505000, FillPrice $0.03, Qty 1.0
+2024-03-19 10:00:00 Submitted Bull Put Spread. Short: SPY   240319P00510000, Long: SPY   240319P00505000, Est. Credit: $0.42
+2024-03-19 15:45:00 Setting flag to close positions on next data slice
+2024-03-19 15:45:00 Order Event: FILLED ID 215, Symbol SPY   240319P00510000, FillPrice $0.01, Qty 1.0
+2024-03-19 15:45:00 Order Event: FILLED ID 216, Symbol SPY   240319P00505000, FillPrice $0.01, Qty -1.0
+2024-03-19 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240319P00510000, Long: SPY   240319P00505000
+2024-03-19 15:45:00 Spread state reset after attempting close.
+2024-03-20 10:00:00 Setting flag to open trades on next data slice
+2024-03-20 10:00:00 Order Event: FILLED ID 217, Symbol SPY   240320P00513000, FillPrice $0.86, Qty -1.0
+2024-03-20 10:00:00 Order Event: FILLED ID 218, Symbol SPY   240320P00508000, FillPrice $0.11, Qty 1.0
+2024-03-20 10:00:00 Submitted Bull Put Spread. Short: SPY   240320P00513000, Long: SPY   240320P00508000, Est. Credit: $0.76
+2024-03-20 15:45:00 Setting flag to close positions on next data slice
+2024-03-20 15:45:00 Order Event: FILLED ID 219, Symbol SPY   240320P00513000, FillPrice $0.01, Qty 1.0
+2024-03-20 15:45:00 Order Event: FILLED ID 220, Symbol SPY   240320P00508000, FillPrice $0.01, Qty -1.0
+2024-03-20 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240320P00513000, Long: SPY   240320P00508000
+2024-03-20 15:45:00 Spread state reset after attempting close.
+2024-03-21 10:00:00 Setting flag to open trades on next data slice
+2024-03-21 10:00:00 Order Event: FILLED ID 221, Symbol SPY   240321P00522000, FillPrice $0.40, Qty -1.0
+2024-03-21 10:00:00 Order Event: FILLED ID 222, Symbol SPY   240321P00517000, FillPrice $0.04, Qty 1.0
+2024-03-21 10:00:00 Submitted Bull Put Spread. Short: SPY   240321P00522000, Long: SPY   240321P00517000, Est. Credit: $0.37
+2024-03-21 15:45:00 Setting flag to close positions on next data slice
+2024-03-21 15:45:00 Order Event: FILLED ID 223, Symbol SPY   240321P00522000, FillPrice $0.07, Qty 1.0
+2024-03-21 15:45:00 Order Event: FILLED ID 224, Symbol SPY   240321P00517000, FillPrice $0.01, Qty -1.0
+2024-03-21 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240321P00522000, Long: SPY   240321P00517000
+2024-03-21 15:45:00 Spread state reset after attempting close.
+2024-03-22 10:00:00 Setting flag to open trades on next data slice
+2024-03-22 10:00:00 Order Event: FILLED ID 225, Symbol SPY   240322P00520000, FillPrice $0.32, Qty -1.0
+2024-03-22 10:00:00 Order Event: FILLED ID 226, Symbol SPY   240322P00515000, FillPrice $0.03, Qty 1.0
+2024-03-22 10:00:00 Submitted Bull Put Spread. Short: SPY   240322P00520000, Long: SPY   240322P00515000, Est. Credit: $0.30
+2024-03-22 15:45:00 Setting flag to close positions on next data slice
+2024-03-22 15:45:00 Order Event: FILLED ID 227, Symbol SPY   240322P00520000, FillPrice $0.03, Qty 1.0
+2024-03-22 15:45:00 Order Event: FILLED ID 228, Symbol SPY   240322P00515000, FillPrice $0.01, Qty -1.0
+2024-03-22 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240322P00520000, Long: SPY   240322P00515000
+2024-03-22 15:45:00 Spread state reset after attempting close.
+2024-03-25 10:00:00 Setting flag to open trades on next data slice
+2024-03-25 10:00:00 Order Event: FILLED ID 229, Symbol SPY   240325P00519000, FillPrice $0.31, Qty -1.0
+2024-03-25 10:00:00 Order Event: FILLED ID 230, Symbol SPY   240325P00514000, FillPrice $0.02, Qty 1.0
+2024-03-25 10:00:00 Submitted Bull Put Spread. Short: SPY   240325P00519000, Long: SPY   240325P00514000, Est. Credit: $0.30
+2024-03-25 15:45:00 Setting flag to close positions on next data slice
+2024-03-25 15:45:00 Order Event: FILLED ID 231, Symbol SPY   240325P00519000, FillPrice $0.02, Qty 1.0
+2024-03-25 15:45:00 Order Event: FILLED ID 232, Symbol SPY   240325P00514000, FillPrice $0.01, Qty -1.0
+2024-03-25 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240325P00519000, Long: SPY   240325P00514000
+2024-03-25 15:45:00 Spread state reset after attempting close.
+2024-03-26 10:00:00 Setting flag to open trades on next data slice
+2024-03-26 10:00:00 Order Event: FILLED ID 233, Symbol SPY   240326P00520000, FillPrice $0.30, Qty -1.0
+2024-03-26 10:00:00 Order Event: FILLED ID 234, Symbol SPY   240326P00515000, FillPrice $0.03, Qty 1.0
+2024-03-26 10:00:00 Submitted Bull Put Spread. Short: SPY   240326P00520000, Long: SPY   240326P00515000, Est. Credit: $0.28
+2024-03-26 15:45:00 Setting flag to close positions on next data slice
+2024-03-26 15:45:00 Order Event: FILLED ID 235, Symbol SPY   240326P00520000, FillPrice $0.86, Qty 1.0
+2024-03-26 15:45:00 Order Event: FILLED ID 236, Symbol SPY   240326P00515000, FillPrice $0.01, Qty -1.0
+2024-03-26 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240326P00520000, Long: SPY   240326P00515000
+2024-03-26 15:45:00 Spread state reset after attempting close.
+2024-03-27 10:00:00 Setting flag to open trades on next data slice
+2024-03-27 10:00:00 Order Event: FILLED ID 237, Symbol SPY   240327P00519000, FillPrice $0.22, Qty -1.0
+2024-03-27 10:00:00 Order Event: FILLED ID 238, Symbol SPY   240327P00514000, FillPrice $0.02, Qty 1.0
+2024-03-27 10:00:00 Submitted Bull Put Spread. Short: SPY   240327P00519000, Long: SPY   240327P00514000, Est. Credit: $0.21
+2024-03-27 10:03:00 Order Event: FILLED ID 239, Symbol SPY   240327P00519000, FillPrice $0.56, Qty 1.0
+2024-03-27 10:03:00 Order Event: FILLED ID 240, Symbol SPY   240327P00514000, FillPrice $0.02, Qty -1.0
+2024-03-27 10:03:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240327P00519000, Long: SPY   240327P00514000
+2024-03-27 10:03:00 Spread state reset after attempting close.
+2024-03-27 10:03:00 STOP LOSS HIT: Current debit to close $0.54 >= Target $0.42. Will close spread.
+2024-03-27 15:45:00 No spread position open to close
+2024-03-28 10:00:00 Setting flag to open trades on next data slice
+2024-03-28 10:00:00 Order Event: FILLED ID 241, Symbol SPY   240328P00522000, FillPrice $0.42, Qty -1.0
+2024-03-28 10:00:00 Order Event: FILLED ID 242, Symbol SPY   240328P00517000, FillPrice $0.03, Qty 1.0
+2024-03-28 10:00:00 Submitted Bull Put Spread. Short: SPY   240328P00522000, Long: SPY   240328P00517000, Est. Credit: $0.40
+2024-03-28 15:45:00 Setting flag to close positions on next data slice
+2024-03-28 15:45:00 Order Event: FILLED ID 243, Symbol SPY   240328P00522000, FillPrice $0.04, Qty 1.0
+2024-03-28 15:45:00 Order Event: FILLED ID 244, Symbol SPY   240328P00517000, FillPrice $0.01, Qty -1.0
+2024-03-28 15:45:00 Submitted combo SELL order to close Bull Put Spread. Short: SPY   240328P00522000, Long: SPY   240328P00517000
+2024-03-28 15:45:00 Spread state reset after attempting close.
+2024-03-29 00:00:00 Algorithm Id:(448e260c2336263bbb47a468027bc360) completed in 161.51 seconds at 340k data points per second. Processing total of 54,948,689 data points.
