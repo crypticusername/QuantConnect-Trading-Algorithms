@@ -1,6 +1,7 @@
 {
     "algorithm-language": "Python",
     "parameters": {},
+    "algorithm-type-name": "main.Basic_Credit_SpreadAlgorithm",
     "description": "",
     "cloud-id": 22913835,
     "organization-id": "84222cd84c061d749197588748558c02"
