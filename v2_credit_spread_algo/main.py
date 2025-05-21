@@ -3,8 +3,8 @@ from AlgorithmImports import *
 # Module imports
 from universe_builder import UniverseBuilder   # M1: Universe building
 from spread_selector import SpreadSelector     # M3: Strike selection
+from order_executor import OrderExecutor       # M4: Order execution 
 # Future modules:
-# from order_executor import OrderExecutor     # M4: Order execution 
 # from risk_manager import RiskManager         # M5: Risk management
 
 class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
@@ -39,8 +39,10 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
         # These can be customized in spread_selector.py or by passing parameters here
         self.spread_selector = SpreadSelector(self)
         
+        # Order execution module (M4)
+        self.order_executor = OrderExecutor(self)                  # M4
+        
         # Future modules
-        # self.order_executor = OrderExecutor(self)                  # M4
         # self.risk_manager = RiskManager(self)                      # M5
         
         # Schedule trading events
@@ -65,7 +67,6 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
         # State variables
         self._option_chain = None
         self._chains_loaded_today = False
-        self._current_spread = None            # Will track active spread details once M4 is added
 
     def load_option_chains(self):
         """Initial attempt to load option chains at market open."""
@@ -115,8 +116,8 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
                 if spread is not None:
                     self.log(f"Found suitable bull put spread - Breakeven: ${breakeven:.2f}")
                     self.log(f"Max profit: ${max_profit:.2f}, Max loss: ${max_loss:.2f}")
-                    # Will execute the trade in M4 (Order Executor)
-                    # self.order_executor.place_spread_order(spread)
+                    # Execute the trade with M4 (Order Executor)
+                    self.order_executor.place_spread_order(spread, max_profit, max_loss, breakeven)
                 else:
                     self.log("No suitable spread found meeting selection criteria")
             except Exception as e:
@@ -126,15 +127,24 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
 
     def close_positions(self):
         """Mandatory closing of any open positions at 15:30 ET."""
-        self.log("15:30 ET: Mandatory position close check (no positions yet in this stage)")
+        self.log("15:30 ET: Mandatory position close check")
+        
+        # Check if we have an open position to close
+        if self.order_executor.spread_is_open and not self.order_executor.pending_close:
+            self.log("Mandatory end-of-day position closure initiated")
+            self.order_executor.close_spread_position(reason="(mandatory end-of-day close)")
+        else:
+            self.log("No open positions to close at end of day")
 
     def on_data(self, slice):
         """Process market data - load chains and monitor risk.
         
         Serves two purposes:
         1. Load option chains as soon as available after market open
-        2. Future: Continuous risk monitoring (stop-loss, take-profit)
+        2. Continuous risk monitoring (stop-loss, take-profit)
         """
+        # We don't need to store the slice - OrderExecutor will use universal_builder directly
+        
         # Load option chains if not already loaded today
         if not self._chains_loaded_today:
             option_chain = self.universe_builder.get_option_chains(slice)
@@ -145,6 +155,20 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
                 current_time = self.time.strftime("%H:%M:%S")
                 self.log(f"Option chain loaded successfully at {current_time}")
         
-        # Risk monitoring - to be implemented in M5 module
-        # Will check for stop-loss (2× credit) and take-profit (50% max gain)
+        # Risk monitoring - implemented in M4 module (OrderExecutor)
+        # Check for stop-loss (2× credit) and take-profit (50% max gain)
+        if self._option_chain is not None and self.order_executor.spread_is_open:
+            # Check if we should close based on stop-loss or take-profit
+            self.order_executor.check_stop_loss(self._option_chain)
+            self.order_executor.check_take_profit(self._option_chain)
 
+    def on_order_event(self, order_event):
+        """Handle order events for tracking spread status.
+        
+        Routes events to the order executor module to manage positions.
+        
+        Parameters:
+            order_event (OrderEvent): The order event
+        """
+        # Forward to order executor module
+        self.order_executor.on_order_event(order_event)

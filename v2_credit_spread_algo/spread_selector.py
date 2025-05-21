@@ -256,8 +256,10 @@ class SpreadSelector:
                     
                 # Create the bull put spread using OptionStrategies
                 expiry = short_put.expiry
-                option_symbol = short_put.symbol.underlying
-                spread = OptionStrategies.bull_put_spread(option_symbol, short_strike, long_strike, expiry)
+                # Use the underlying symbol from the option chain and construct canonical option symbol
+                # This gets the option symbol directly from the option contract being used
+                canonical_option = short_put.symbol.canonical
+                spread = OptionStrategies.bull_put_spread(canonical_option, short_strike, long_strike, expiry)
                 
                 # Calculate breakeven, max profit and max loss
                 breakeven = short_strike - net_credit
