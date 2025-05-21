@@ -17,101 +17,10 @@ This workflow creates a new algorithm project using the official Lean CLI struct
 # Creates a properly structured project recognized by Lean CLI
 lean create-project "{{ project_name }}" --language python
 ```
-
-## 3. Enhance main.py with our custom algorithm boilerplate
-```bash
-cat > "{{ project_name }}/main.py" << 'EOF'
-from AlgorithmImports import *
-
-class {{ project_name | replace('-', '_') | title }}Algorithm(QCAlgorithm):
-    def initialize(self):
-        """Initialize algorithm parameters, data subscriptions, and scheduling."""
-        self.set_start_date(2024, 1, 1)
-        self.set_end_date(2024, 12, 31)
-        self.set_cash(10000)
-        self.set_time_zone(TimeZones.NEW_YORK)
-        self.set_warm_up(10, Resolution.DAILY)
-
-        # Add equity and options
-        equity = self.add_equity("SPY", Resolution.MINUTE)
-        self.equity_symbol = equity.Symbol
-        
-        option = self.add_option("SPY", Resolution.MINUTE)
-        option.set_filter(lambda u: u.include_weeklys()
-                                     .strikes(-5, 5)
-                                     .expiration(0, 7))
-        self.option_symbol = option.Symbol
-        
-        # Set benchmark
-        self.set_benchmark(self.equity_symbol)
-
-        # Schedule algorithm entry points
-        self.schedule.on(self.date_rules.every_day(), 
-                         self.time_rules.after_market_open("SPY", 5), 
-                         self.open_trades)
-        self.schedule.on(self.date_rules.every_day(), 
-                         self.time_rules.before_market_close("SPY", 30), 
-                         self.close_positions)
-
-    def open_trades(self):
-        """Logic for opening positions goes here"""
-        pass
-
-    def close_positions(self):
-        """Logic for closing positions goes here"""
-        pass
-
-    def on_data(self, slice):
-        """Event-driven trading logic goes here (optional)"""
-        pass
-EOF
-```
-
-## 4. Add strategy documentation template
-```bash
-cat > "{{ project_name }}/{{ project_name }}-strategy.md" << 'EOF'
-# {{ project_name | replace('-', ' ') | title }} Strategy
-
-## Overview
-*[Brief description of the strategy and its goals]*
-
-## Market Hypothesis
-*[What market inefficiency or pattern does this strategy exploit?]*
-
-## Key Components
-- **Assets**: 
-- **Time Frame**: 
-- **Entry Criteria**: 
-- **Exit Criteria**: 
-- **Position Sizing**: 
-- **Risk Management**: 
-
-## Expected Performance
-*[Performance expectations, drawdowns, Sharpe ratio targets, etc.]*
-
-## Limitations
-*[Known limitations or scenarios where the strategy may underperform]*
-
-## Implementation Notes
-*[Technical considerations for implementing this strategy in QC]*
-EOF
-```
-
-## 5. Push to QuantConnect Cloud (Optional)
-```bash
-# Uncomment this line to automatically push to QC Cloud
-# lean cloud push --project "{{ project_name }}"
 ```
 
 ## Next Steps
 After the project is created, you can:
-1. Define your strategy in the `{{ project_name }}-strategy.md` file
+1. Define your strategy in the `{{ project_name }}-strategy.md` file or other file if provided by user. 
 2. Implement your algorithm logic in `main.py`
-3. Push to the cloud with:
-   ```
-   lean cloud push --project "{{ project_name }}"
-   ```
-4. Run a backtest with:
-   ```
-   lean cloud backtest "{{ project_name }}" --open
    ```

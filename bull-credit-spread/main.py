@@ -1,24 +1,11 @@
 from AlgorithmImports import *
 from datetime import datetime # Ensure datetime is imported
-
-# ===== COMPONENT: IMPORTS =====
-# All imports should be placed above this line
-# ===== END COMPONENT =====
-
-# ===== COMPONENT: CONFIGURATION =====
-# Strategy parameters and configuration should be defined below
-# ===== END COMPONENT =====
-
-# ===== COMPONENT: STATE_MANAGEMENT =====
-# State tracking variables should be defined below
-# ===== END COMPONENT =====
+from buy_on_open import BuyOnOpen
 
 class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
-    # ===== COMPONENT: INITIALIZATION =====
-    # Algorithm initialization code goes here
     def initialize(self) -> None:
-        self.set_start_date(2023, 10, 1)
-        self.set_end_date(2023, 12, 31) 
+        self.set_start_date(2024, 1, 1)
+        self.set_end_date(2024, 2, 1) 
         self.set_cash(10000)
         self.set_time_zone(TimeZones.NEW_YORK)
 
@@ -30,8 +17,7 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
 
         # Algorithm parameters - Core risk/reward settings
         self.min_credit_threshold = 0.10  # Minimum credit to receive for opening a spread
-        self.enable_stop_loss = True  # Set to False to disable stop loss
-        self.stop_loss_multiplier = 2.0  # Stop loss at 2x credit received (set to 0 to disable)
+        self.stop_loss_multiplier = 2.0  # Stop loss if debit to close is 2x initial credit
         self.profit_target_percentage = 0.50 # Target 50% of max profit (initial credit)
         
         # Option selection parameters - Configurable strategy settings
@@ -65,9 +51,12 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         self.opening_order_tickets = []
         self.closing_order_tickets = []
 
+        # Register the BuyOnOpen feature
+        BuyOnOpen.register(self)
+
         # Scheduled actions
         self.schedule.on(
-            self.date_rules.every_day(self.option_symbol),
+            self.date_rules.every_day(self.equity_symbol),
             self.time_rules.at(10, 0),
             self.open_trades
         )
@@ -84,8 +73,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
             self.close_all_option_positions_force
         ) 
 
-    # ===== COMPONENT: TRADE_ENTRY =====
-    # Trade entry logic goes here
     def open_trades(self) -> None:
         if self.spread_is_open:
             self.log("Spread already open, skipping")
@@ -93,8 +80,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         self.log("Setting flag to open trades on next data slice")
         self.pending_open = True
 
-    # ===== COMPONENT: TRADE_EXIT =====
-    # Trade exit logic goes here
     def close_positions(self) -> None:
         if not self.spread_is_open:
             self.log("No spread position open to close")
@@ -102,8 +87,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         self.log("Setting flag to close positions on next data slice")
         self.pending_close = True
         
-    # ===== COMPONENT: RISK_MANAGEMENT =====
-    # Risk management and emergency close logic goes here
     def close_all_option_positions_force(self) -> None:
         """
         Scheduled failsafe to close ALL open option contracts for this symbol before expiry/market close.
@@ -137,8 +120,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         self.log("FAILSAFE: Spread position marked as closed")
 
 
-    # ===== COMPONENT: DATA_HANDLING =====
-    # Main data processing and event handling
     def on_data(self, slice: Slice) -> None:
         """Main event handler for market data updates."""
         # First, handle pending open if no spread is open yet
@@ -166,57 +147,86 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
             self.log("ON_DATA: Checking profit target")
             self.monitor_profit_target(slice)
             
-    # ===== COMPONENT: STOP_LOSS =====
-    # Stop loss calculation and triggering
     def check_stop_loss(self, slice: Slice) -> bool:
-        """Checks if the current position has hit the stop loss threshold.
-        
-        The stop loss is triggered when the current debit to close the spread
-        reaches (initial_credit * stop_loss_multiplier).
-        
-        Returns:
-            bool: True if stop loss was triggered, False otherwise
-        """
-        # Skip if stop loss is disabled
-        if not self.enable_stop_loss or self.stop_loss_multiplier <= 0:
-            return False
-            
+        """Checks if the current position has hit the stop loss threshold."""
         if not self.spread_is_open or not self.opened_short_put_symbol or not self.opened_long_put_symbol:
-            self.log("CHECK_STOP_LOSS: No spread is open, skipping stop loss check")
             return False
         
-        if not self.initial_credit or self.initial_credit <= 0:
-            self.log("CHECK_STOP_LOSS: Initial credit not set or invalid, skipping stop loss check")
-            return False
-            
         try:    
-            # Calculate current debit to close the spread
-            current_debit = self.calculate_current_debit_to_close(slice)
-            
-            if current_debit is None:
-                self.log("CHECK_STOP_LOSS: Could not calculate current debit, skipping stop loss check")
+            # Get current market data for our options
+            option_chain = slice.option_chains.get(self.option_symbol)
+            if not option_chain:
+                self.log("CHECK_STOP_LOSS: No option chain data available. Cannot check stop loss.")
                 return False
                 
-            # Calculate stop loss price (2x initial credit)
-            stop_loss_price = self.initial_credit * self.stop_loss_multiplier
+            short_put_data = option_chain.get(self.opened_short_put_symbol)
+            long_put_data = option_chain.get(self.opened_long_put_symbol)
             
-            self.log(f"CHECK_STOP_LOSS: Current debit: ${current_debit:.2f}, Stop loss at: ${stop_loss_price:.2f} ({self.stop_loss_multiplier}x initial credit ${self.initial_credit:.2f})")
+            if not short_put_data or not long_put_data:
+                self.log("CHECK_STOP_LOSS: Missing market data for one or both options. Cannot check stop loss.")
+                return False
+                
+            # Calculate current debit to close with fallbacks for zero prices
+            short_put_ask = short_put_data.ask_price
+            long_put_bid = long_put_data.bid_price
+            
+            # If ask is zero, try to use last price or mid price as fallback
+            if short_put_ask == 0:
+                if short_put_data.last_price > 0:
+                    short_put_ask = short_put_data.last_price
+                    self.log(f"CHECK_STOP_LOSS: Using last price {short_put_ask} as fallback for zero ask on short put")
+                elif short_put_data.bid_price > 0:
+                    # Use mid price if available
+                    short_put_ask = short_put_data.bid_price * 1.1  # Add 10% to bid as estimate
+                    self.log(f"CHECK_STOP_LOSS: Using adjusted bid {short_put_ask} as fallback for zero ask on short put")
+                else:
+                    # Last resort: use theoretical price if available
+                    if hasattr(short_put_data, 'theoretical_price') and short_put_data.theoretical_price > 0:
+                        short_put_ask = short_put_data.theoretical_price
+                        self.log(f"CHECK_STOP_LOSS: Using theoretical price {short_put_ask} as fallback for zero ask on short put")
+            
+            # If bid is zero, try to use last price or mid price as fallback
+            if long_put_bid == 0:
+                if long_put_data.last_price > 0:
+                    long_put_bid = long_put_data.last_price
+                    self.log(f"CHECK_STOP_LOSS: Using last price {long_put_bid} as fallback for zero bid on long put")
+                elif long_put_data.ask_price > 0:
+                    # Use mid price if available
+                    long_put_bid = long_put_data.ask_price * 0.9  # Subtract 10% from ask as estimate
+                    self.log(f"CHECK_STOP_LOSS: Using adjusted ask {long_put_bid} as fallback for zero bid on long put")
+                else:
+                    # Last resort: use theoretical price if available
+                    if hasattr(long_put_data, 'theoretical_price') and long_put_data.theoretical_price > 0:
+                        long_put_bid = long_put_data.theoretical_price
+                        self.log(f"CHECK_STOP_LOSS: Using theoretical price {long_put_bid} as fallback for zero bid on long put")
+            
+            # Calculate current debit to close
+            current_debit = short_put_ask - long_put_bid
+            
+            # Sanity check - debit should not be negative
+            if current_debit < 0:
+                self.log(f"CHECK_STOP_LOSS: Warning - calculated negative debit to close: ${current_debit:.2f}. Using absolute value.")
+                current_debit = abs(current_debit)
             
             # Check if we've hit stop loss
-            if current_debit >= stop_loss_price:
-                self.log(f"CHECK_STOP_LOSS: STOP LOSS HIT! Current debit: ${current_debit:.2f}, Target: ${stop_loss_price:.2f} ({self.stop_loss_multiplier}x initial credit)")
+            if current_debit >= self.stop_loss_target_debit:
+                self.log(f"CHECK_STOP_LOSS: Stop loss hit! Current debit to close: ${current_debit:.2f}, Target: ${self.stop_loss_target_debit:.2f}")
                 self.pending_close = True
                 self.try_close_spread("StopLoss")
                 return True
                 
+            # Calculate percentage of max loss
+            max_loss = self.max_loss if hasattr(self, 'max_loss') and self.max_loss > 0 else (self.spread_width - self.initial_credit)
+            current_loss_pct = (current_debit - self.initial_credit) / max_loss if max_loss > 0 else 0
+            
+            # Log current position status with more details
+            self.log(f"CHECK_STOP_LOSS: Current debit: ${current_debit:.2f}, Stop loss: ${self.stop_loss_target_debit:.2f}, Initial credit: ${self.initial_credit:.2f}, Loss: {current_loss_pct:.1%} of max")
             return False
             
         except Exception as e:
-            self.error(f"CHECK_STOP_LOSS: Error in stop loss check: {str(e)}")
+            self.error(f"CHECK_STOP_LOSS: Error calculating stop loss: {str(e)}")
             return False
             
-    # ===== COMPONENT: PROFIT_TARGET =====
-    # Profit target monitoring and triggering
     def monitor_profit_target(self, slice: Slice) -> None:
         """Monitors an open spread for profit target"""
         if not self.spread_is_open or not self.initial_credit:
@@ -288,8 +298,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         except Exception as e:
             self.error(f"PROFIT_TARGET: Error calculating profit target: {str(e)}")
 
-    # ===== COMPONENT: SPREAD_SELECTION =====
-    # Spread selection and entry logic
     def try_open_spread(self, slice: Slice) -> None:
         """Attempts to open a bull put spread if conditions are met."""
         self.log(f"TRY_OPEN_SPREAD: Attempting to open spread. Current Time: {self.time}")
@@ -447,7 +455,7 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
 
         # Calculate max loss (width - credit) and set stop loss target
         max_loss = (spread_width * 100) - expected_credit
-        stop_loss_target = expected_credit * self.stop_loss_multiplier
+        stop_loss_target = expected_credit + (max_loss * self.stop_loss_multiplier)
         self.log(f"TRY_OPEN_SPREAD: Max loss: ${max_loss:.2f}, Stop loss target: ${stop_loss_target:.2f}")
 
         try:
@@ -526,16 +534,7 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
                 if long_put.symbol in self.portfolio and self.portfolio[long_put.symbol].invested:
                     self.liquidate(long_put.symbol)
 
-    # ===== COMPONENT: POSITION_MANAGEMENT =====
-    # Position management and order execution
     def try_close_spread(self, reason: str = "Unknown") -> None:
-        """Attempts to close the current spread position."""
-        if not self.spread_is_open:
-            self.log(f"TRY_CLOSE_SPREAD ({reason}): No spread is currently open.")
-            return
-            
-        self.log(f"TRY_CLOSE_SPREAD ({reason}): Attempting to close spread...")
-        order_ticket = None  # Initialize order_ticket to prevent UnboundLocalError
         if not self.spread_is_open or not self.opened_short_put_symbol or not self.opened_long_put_symbol:
             self.log(f"TRY_CLOSE_SPREAD ({reason}): No open spread with defined legs to close.")
             self.pending_close = False
@@ -641,8 +640,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
             self.error(f"TRY_CLOSE_SPREAD ({reason}): Error during spread closure: {str(e)}")
             self.reset_spread_state(f"CloseOrderFail_{reason}")
 
-    # ===== COMPONENT: STATE_MANAGEMENT =====
-    # State management and cleanup
     def reset_spread_state(self, reason: str = "Unknown"):
         self.log(f"RESET_SPREAD_STATE ({reason}): Resetting all spread-related state variables.")
         self.spread_is_open = False 
@@ -657,8 +654,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
         self.opening_order_tickets.clear()
         self.closing_order_tickets.clear()
 
-    # ===== COMPONENT: PRICING =====
-    # Pricing and valuation calculations
     def calculate_current_debit_to_close(self, slice: Slice) -> float:
         """Calculates the current debit required to close the spread."""
         if not self.spread_is_open or not self.opened_short_put_symbol or not self.opened_long_put_symbol:
@@ -696,8 +691,6 @@ class Basic_Credit_SpreadAlgorithm(QCAlgorithm):
 
 
 
-    # ===== COMPONENT: ORDER_HANDLING =====
-    # Order event processing and tracking
     def on_order_event(self, order_event: OrderEvent) -> None:
         """Handles order events for tracking fill prices and status."""
         self.log(f"ON_ORDER_EVENT: Received event for OrderID {order_event.order_id}. Status: {order_event.status}, Symbol: {order_event.symbol.value}")
