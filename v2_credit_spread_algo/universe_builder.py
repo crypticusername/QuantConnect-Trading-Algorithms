@@ -74,9 +74,54 @@ class UniverseBuilder:
         Returns:
         OptionChain or None: Option chain if available
         """
-        if slice.option_chains and self.option_symbol.value in slice.option_chains:
-            return slice.option_chains[self.option_symbol.value]
-        return None
+        # Detailed diagnostics for option chain loading
+        if slice is None:
+            # This can happen during diagnostic calls when slice isn't available
+            # Check if we can get any option data from securities
+            try:
+                option_security = self.algorithm.securities[self.option_symbol]
+                if option_security is not None:
+                    self.algorithm.log(f"Option security exists but no slice available")
+                return None
+            except Exception as e:
+                self.algorithm.log(f"Cannot access option security: {str(e)}")
+                return None
+        
+        # Check if slice has option chains at all
+        if not slice.option_chains:
+            # Only log this before noon to avoid spamming logs
+            if self.algorithm.time.hour < 12 and self.algorithm.time.minute % 10 == 0:  # Log every 10 minutes
+                self.algorithm.log(f"No option chains in slice at {self.algorithm.time.strftime('%H:%M:%S')}")
+            return None
+        
+        # Check if our specific option symbol is in the chains
+        if self.option_symbol.value not in slice.option_chains:
+            # Only log this before noon to avoid spamming logs
+            if self.algorithm.time.hour < 12 and self.algorithm.time.minute % 10 == 0:  # Log every 10 minutes
+                available_symbols = list(slice.option_chains.keys())
+                symbol_count = len(available_symbols)
+                if symbol_count > 0:
+                    self.algorithm.log(f"Option chain slice has {symbol_count} symbols, but {self.option_symbol.value} not found")
+                else:
+                    self.algorithm.log(f"Option chain slice is empty (has keys but no content)")
+            return None
+        
+        # We have the chain, now check if it has content
+        chain = slice.option_chains[self.option_symbol.value]
+        if chain is None or len(list(chain)) == 0:
+            self.algorithm.log(f"Found empty option chain for {self.option_symbol.value}")
+            return None
+            
+        # Check if today's expiry is in the chain
+        today = self.algorithm.time.date()
+        expiries = [contract.expiry.date() for contract in chain]
+        unique_expiries = set(expiries)
+        
+        if today not in unique_expiries and self.algorithm.time.hour < 12:
+            expiry_str = ', '.join([d.strftime('%Y-%m-%d') for d in sorted(unique_expiries)])
+            self.algorithm.log(f"Chain loaded but missing today's expiry. Available expiries: {expiry_str}")
+        
+        return chain
     
     def get_latest_equity_price(self) -> float:
         """
@@ -86,3 +131,48 @@ class UniverseBuilder:
         float: Latest equity price
         """
         return self.algorithm.securities[self.equity_symbol].price
+        
+    def calculate_option_delta(self, contract) -> float:
+        """
+        Calculate the delta of an option contract.
+        
+        Parameters:
+        contract (OptionContract): The option contract to calculate delta for
+        
+        Returns:
+        float: The delta value (absolute value)
+        """
+        try:
+            # Use the contract symbol to look up the security and get the delta from greeks
+            if contract.symbol in self.algorithm.securities:
+                security = self.algorithm.securities[contract.symbol]
+                # If we have greeks data available, use it
+                if hasattr(security, 'greeks') and security.greeks is not None and security.greeks.delta is not None:
+                    return abs(security.greeks.delta)
+                    
+            # Fallback: use approximation based on moneyness
+            # This is a simple approximation that should only be used when proper greeks are unavailable
+            equity_price = self.get_latest_equity_price()
+            strike_price = contract.strike
+            days_to_expiry = (contract.expiry.date() - self.algorithm.time.date()).days
+            
+            # Very rough delta approximation
+            if days_to_expiry == 0:
+                # 0 DTE options - delta is approximately binary
+                if contract.right == OptionRight.CALL:
+                    return 1.0 if equity_price > strike_price else 0.1
+                else:  # PUT
+                    return 1.0 if equity_price < strike_price else 0.1
+            else:
+                # Simple moneyness-based approximation for non-zero DTE
+                moneyness = equity_price / strike_price
+                if contract.right == OptionRight.CALL:
+                    # For calls: higher delta when in the money
+                    return min(0.99, max(0.01, (moneyness - 0.9) * 5)) 
+                else:  # PUT
+                    # For puts: higher delta when in the money
+                    return min(0.99, max(0.01, (1.1 - moneyness) * 5))
+                    
+        except Exception as e:
+            self.algorithm.log(f"Error calculating delta: {str(e)}")
+            return 0.5  # Return a mid-range value as fallback

@@ -21,6 +21,7 @@ class OrderExecutor:
         self.spread_is_open = False
         self.pending_open = False
         self.pending_close = False
+        self.last_reset_date = None  # Track the last date state was reset
         
         # Current spread details
         self.current_spread_details = {
@@ -33,9 +34,52 @@ class OrderExecutor:
             'expiry': None
         }
         
+    def reset_state(self):
+        """
+        Reset the state flags and spread details based on current portfolio holdings.
+        Should be called at the beginning of each trading day.
+        """
+        current_date = self.algorithm.time.date()
+        
+        # Only reset once per day
+        if self.last_reset_date == current_date:
+            return
+            
+        self.algorithm.log("Performing daily state reset")
+        
+        # Check if we actually have any option positions
+        has_positions = False
+        for symbol, holding in self.algorithm.portfolio.items():
+            # Skip non-option holdings
+            if symbol.SecurityType != SecurityType.OPTION:
+                continue
+                
+            # We have at least one option position
+            if holding.invested or abs(holding.quantity) > 0:
+                has_positions = True
+                self.algorithm.log(f"Found existing position in {symbol}: {holding.quantity} shares")
+                break
+        
+        # Reset state flags if no positions actually exist
+        if not has_positions:
+            if self.spread_is_open or self.pending_open or self.pending_close:
+                self.algorithm.log("Resetting state flags - no actual positions found")
+                self.spread_is_open = False
+                self.pending_open = False
+                self.pending_close = False
+                self._reset_spread_details()
+        else:
+            # Positions exist, make sure our flags reflect this
+            if not self.spread_is_open and not self.pending_open and not self.pending_close:
+                self.algorithm.log("Detected positions but flags were not set - correcting state")
+                self.spread_is_open = True
+        
+        # Record that we reset state today
+        self.last_reset_date = current_date
+    
     def place_spread_order(self, spread, max_profit, max_loss, breakeven):
         """
-        Place a bull put credit spread order.
+        Place a bull put credit spread order using leg-by-leg limit orders.
         
         Parameters:
             spread: The spread object (from OptionStrategies)
@@ -46,32 +90,20 @@ class OrderExecutor:
         Returns:
             bool: True if order was placed, False otherwise
         """
+        # Verify state is correct before placing order
+        self.reset_state()
+        
         if self.spread_is_open or self.pending_open:
             self.algorithm.log("Cannot place order - position already open or pending")
             return False
             
         try:
-            # We get the strikes and expiry directly from the SpreadSelector
-            # These parameters are passed to us with the correct values
-            
-            # Parse the spread's description to extract information
-            description = str(spread)
-            self.algorithm.log(f"Spread description: {description}")
-            
-            # We can't directly access the legs of the OptionStrategy object
-            # Instead, let's use the description to log information about the spread
-            self.algorithm.log(f"Working with a bull put spread strategy")
-                
-            # The max_profit and breakeven are already correct - passed from SpreadSelector
-            # We'll get the actual short_strike and long_strike from the parameters
-            # In a bull put spread, short_strike > long_strike
-            # This matches the way SpreadSelector builds the spread
+            # For a bull put spread, breakeven = short_strike - net_credit
+            net_credit = max_profit / 100.0  # Convert max_profit back to actual credit amount
+            short_strike = breakeven + net_credit
             
             # Calculate width from max loss and profit (width = (max_loss + max_profit) / 100)
             width = (max_loss + max_profit) / 100.0
-            
-            # These values are already correctly calculated by SpreadSelector
-            short_strike = breakeven + (max_profit / 100.0)
             long_strike = short_strike - width
             
             # Store the strikes for later reference - these are the actual strikes used for the spread
@@ -80,36 +112,104 @@ class OrderExecutor:
             # Get the expiry from today's date since we're doing 0 DTE
             expiry = self.algorithm.time.date()
             
-            self.algorithm.log(f"Placing bull put spread - Short: {short_strike}, Long: {long_strike}, Expiry: {expiry.strftime('%Y-%m-%d')}")
+            self.algorithm.log(f"Creating leg-by-leg limit orders for bull put spread - Short: {short_strike}, Long: {long_strike}, Expiry: {expiry.strftime('%Y-%m-%d')}")
             
-            # Calculate the width
-            width = short_strike - long_strike
+            # Create the option contract symbols using proper QuantConnect API methods
+            underlying_symbol = self.algorithm.Securities["SPY"].Symbol
             
-            # Place the spread order (1 contract in Stage 1)
-            tickets = self.algorithm.buy(spread, 1)
+            # Get option chain for today
+            option_chain = self.algorithm.option_chain(underlying_symbol)
+            
+            # Get option contracts from the chain by filtering for the right strike and expiry
+            # First find the option contracts that match our criteria
+            short_options = [x.symbol for x in option_chain 
+                           if x.right == OptionRight.PUT and abs(x.strike - short_strike) < 0.001 
+                           and x.expiry.date() == expiry]
+            
+            long_options = [x.symbol for x in option_chain 
+                          if x.right == OptionRight.PUT and abs(x.strike - long_strike) < 0.001 
+                          and x.expiry.date() == expiry]
+            
+            # Check if we found matching contracts
+            if not short_options or not long_options:
+                self.algorithm.log(f"Error: Could not find matching option contracts for strikes {short_strike}/{long_strike}")
+                return False
+                
+            short_option = short_options[0]
+            long_option = long_options[0]
+            
+            # Already calculated net_credit earlier, don't need to recalculate
+            
+            # Apply a small buffer to ensure we get filled (95% of theoretical credit)
+            # This means we'll accept slightly less credit to improve fill probability
+            target_net_credit = net_credit * 0.95
+            
+            self.algorithm.log(f"Setting leg-by-leg limit orders for net credit: ${target_net_credit:.2f} (95% of theoretical ${net_credit:.2f})")
+            
+            # Get current prices to inform our limit prices
+            short_option_data = self.algorithm.securities[short_option]
+            long_option_data = self.algorithm.securities[long_option]
+            
+            # For a bull put spread, we sell the higher strike put and buy the lower strike put
+            # Determine reasonable price targets for each leg based on current bid/ask
+            short_bid = short_option_data.bid_price
+            long_ask = long_option_data.ask_price
+            
+            # Calculate target prices for each leg
+            # We'll accept a slightly lower price for our short option (selling)
+            # and pay a slightly higher price for our long option (buying)
+            # but ensure the total net credit meets our target
+            short_min_price = short_bid * 0.98  # Min price we'll accept for short leg (98% of bid)
+            long_max_price = short_min_price - target_net_credit  # Max price we'll pay for long leg
+            
+            # Ensure we're not paying more than ask for long leg
+            if long_max_price > long_ask * 1.02:
+                long_max_price = long_ask * 1.02  # Max 2% slippage on ask
+                short_min_price = long_max_price + target_net_credit  # Adjust short price to maintain net credit
+            
+            # Create and submit the limit orders
+            tag = f"TargetCredit:{target_net_credit}"
+            
+            self.algorithm.log(f"Leg-by-leg limits - Short: ${short_min_price:.2f}, Long: ${long_max_price:.2f}, Net: ${target_net_credit:.2f}")
+            
+            # In QuantConnect Python API, we need to use the limit_order method
+            # The direction is specified as a negative quantity for selling and positive for buying
+            
+            # Sell the short put with a limit order (negative quantity = sell)
+            short_ticket = self.algorithm.limit_order(short_option, -1, short_min_price, tag)
+            
+            # Buy the long put with a limit order (positive quantity = buy)
+            long_ticket = self.algorithm.limit_order(long_option, 1, long_max_price, tag)
+            
+            # Store the tickets
+            tickets = [short_ticket, long_ticket]
+            self.order_tickets = tickets
             
             if not tickets or len(tickets) == 0:
                 self.algorithm.log("Failed to place spread order - no order tickets returned")
                 return False
-                
-            self.order_tickets = tickets
-            self.pending_open = True
             
-            # Record trade details
-            self.current_spread_details = {
-                'short_strike': short_strike,
-                'long_strike': long_strike,
-                'initial_credit': None,  # Set when filled
-                'max_profit': max_profit, 
-                'max_loss': max_loss,
-                'breakeven': breakeven,
-                'expiry': expiry
-            }
+            # Log the ticket information
+            for i, ticket in enumerate(tickets):
+                leg_type = "Short" if i == 0 else "Long"
+                price = short_min_price if i == 0 else long_max_price
+                self.algorithm.log(f"{leg_type} leg order ticket created: ID {ticket.order_id}, Status: {ticket.status}")
+                self.algorithm.log(f"Limit price set to: ${price:.2f}")
+                
+            # Update tracking info
+            self.pending_open = True
+            self.current_spread_details['short_strike'] = short_strike
+            self.current_spread_details['long_strike'] = long_strike
+            self.current_spread_details['expiry'] = expiry
+            self.current_spread_details['initial_credit'] = target_net_credit
+            self.current_spread_details['max_profit'] = max_profit
+            self.current_spread_details['max_loss'] = max_loss
+            self.current_spread_details['breakeven'] = breakeven
             
             # Log the spread details we're about to use
             self._log_active_spread()
             
-            self.algorithm.log(f"Placed bull put spread order: {len(tickets)} tickets created")
+            self.algorithm.log(f"Placed bull put spread limit order at ${target_net_credit:.2f}: {len(tickets)} tickets created")
             return True
             
         except Exception as e:
@@ -200,7 +300,8 @@ class OrderExecutor:
     
     def close_spread_position(self, reason=""):
         """
-        Close an open spread position.
+        Close an open spread position using OptionStrategies.
+        Always tries to close the spread as a single unit first, with multiple fallback methods.
         
         Parameters:
             reason: Description of why position is being closed
@@ -213,50 +314,80 @@ class OrderExecutor:
             return False
             
         try:
-            # Create the spread object from current details - must use canonical option symbol
-            # We need to find the canonical option symbol from the option chain
-            canonical_option = None
-            option_chain = None
-            
-            # Try to get the option chain from the algorithm's universe builder
-            if hasattr(self.algorithm, 'universe_builder') and hasattr(self.algorithm, '_option_chain'):
-                # Just use the existing option chain that's already loaded by on_data
-                option_chain = self.algorithm._option_chain
-            
-            # If that didn't work, we can't access the option chain
-            if option_chain is None or len(list(option_chain)) == 0:
-                self.algorithm.log("No option chain available for closing spread - retry next data update")
-                return False
-            
-            # Check if we have an option chain now
-            if option_chain is not None and len(list(option_chain)) > 0:
-                # Find the first contract to get its canonical symbol
-                for contract in option_chain:
-                    if contract is not None and contract.symbol is not None:
-                        canonical_option = contract.symbol.canonical
-                        break
+            # STRATEGY 1: Close using OptionStrategies with current spread details
+            if self._try_close_with_current_details(reason):
+                return True
                 
-                if canonical_option is not None:
-                    spread = OptionStrategies.bull_put_spread(
-                        canonical_option,
-                        self.current_spread_details['short_strike'],
-                        self.current_spread_details['long_strike'],
-                        self.current_spread_details['expiry']
-                    )
-                else:
-                    self.algorithm.log("Could not find canonical option symbol for closing spread")
-                    return False
-            else:
-                self.algorithm.log("No option chain available for closing spread")
-                return False
+            # STRATEGY 2: Try to identify the spread from actual holdings
+            if self._try_close_with_holdings(reason):
+                return True
+                
+            # STRATEGY 3: Last resort - close positions individually
+            self.algorithm.log("Could not close spread as a unit - falling back to individual orders")
+            return self.force_close_positions(reason)
             
-            self.algorithm.log(f"Closing bull put spread {reason}")
+        except Exception as e:
+            self.algorithm.error(f"Error closing spread position: {str(e)} - attempting force close")
+            return self.force_close_positions(reason)
+            
+    def _try_close_with_current_details(self, reason):
+        """
+        Try to close the spread using current spread details and OptionStrategies.
+        
+        Parameters:
+            reason: Description of why position is being closed
+            
+        Returns:
+            bool: True if close order was placed, False otherwise
+        """
+        # Validate that we have all required details
+        if (self.current_spread_details['short_strike'] is None or
+            self.current_spread_details['long_strike'] is None or
+            self.current_spread_details['expiry'] is None):
+            self.algorithm.log("Missing required spread details for closing")
+            return False
+            
+        # Create the spread object from current details - must use canonical option symbol
+        # We need to find the canonical option symbol from the option chain
+        canonical_option = None
+        option_chain = None
+        
+        # Try to get the option chain from the algorithm's universe builder
+        if hasattr(self.algorithm, 'universe_builder') and hasattr(self.algorithm, '_option_chain'):
+            # Just use the existing option chain that's already loaded by on_data
+            option_chain = self.algorithm._option_chain
+        
+        # If we can't get the option chain, we can't create the right strategy object
+        if option_chain is None or len(list(option_chain)) == 0:
+            self.algorithm.log("No option chain available for creating OptionStrategies object")
+            return False
+        
+        # Find the canonical option symbol from the chain
+        for contract in option_chain:
+            if contract is not None and contract.symbol is not None:
+                canonical_option = contract.symbol.canonical
+                break
+                
+        if canonical_option is None:
+            self.algorithm.log("Could not find canonical option symbol for closing spread")
+            return False
+            
+        # Create the spread strategy object
+        try:
+            spread = OptionStrategies.bull_put_spread(
+                canonical_option,
+                self.current_spread_details['short_strike'],
+                self.current_spread_details['long_strike'],
+                self.current_spread_details['expiry']
+            )
+            
+            self.algorithm.log(f"Closing bull put spread {reason} using stored details")
             
             # Sell to close (reverse of buy)
             tickets = self.algorithm.sell(spread, 1)
             
             if not tickets or len(tickets) == 0:
-                self.algorithm.log("Failed to place close order - no order tickets returned")
+                self.algorithm.log("Failed to place close order via stored details")
                 return False
                 
             self.order_tickets = tickets
@@ -266,7 +397,156 @@ class OrderExecutor:
             return True
             
         except Exception as e:
-            self.algorithm.error(f"Error closing spread position: {str(e)}")
+            self.algorithm.error(f"Error closing with stored details: {str(e)}")
+            return False
+            
+    def _try_close_with_holdings(self, reason):
+        """
+        Try to identify and close the spread by analyzing current holdings.
+        
+        Parameters:
+            reason: Description of why position is being closed
+            
+        Returns:
+            bool: True if close order was placed, False otherwise
+        """
+        # Find our option positions
+        option_positions = []
+        for symbol, holding in self.algorithm.portfolio.items():
+            if symbol.SecurityType == SecurityType.OPTION and abs(holding.quantity) > 0:
+                option_positions.append((symbol, holding.quantity))
+                
+        # We should have exactly 2 option positions for a spread
+        if len(option_positions) != 2:
+            self.algorithm.log(f"Expected 2 option positions, found {len(option_positions)}")
+            return False
+            
+        # Extract details from the existing positions
+        try:
+            # Get the canonical symbol from either position
+            canonical_option = None
+            short_position = None
+            long_position = None
+            
+            # Sort into short and long positions
+            for symbol, quantity in option_positions:
+                if quantity < 0:  # Short position
+                    short_position = (symbol, quantity)
+                else:  # Long position
+                    long_position = (symbol, quantity)
+                    
+                # Extract canonical symbol
+                if canonical_option is None and symbol.canonical is not None:
+                    canonical_option = symbol.canonical
+                    
+            # Verify we have both positions
+            if short_position is None or long_position is None:
+                self.algorithm.log("Could not identify both short and long positions")
+                return False
+                
+            # Extract strike prices
+            short_strike = short_position[0].strike
+            long_strike = long_position[0].strike
+            
+            # Verify this is a put spread (both should be puts)
+            if short_position[0].right != OptionRight.PUT or long_position[0].right != OptionRight.PUT:
+                self.algorithm.log("Not a put spread - unexpected option types")
+                return False
+                
+            # Get expiry (should be the same for both)
+            expiry = short_position[0].expiry.date()
+            
+            # Verify they have the same expiry
+            if expiry != long_position[0].expiry.date():
+                self.algorithm.log("Legs have different expiration dates")
+                return False
+                
+            # Verify we have a proper bull put spread (short strike > long strike)
+            if short_strike <= long_strike:
+                self.algorithm.log(f"Not a bull put spread: short strike {short_strike} <= long strike {long_strike}")
+                return False
+                
+            # Create the spread strategy object
+            spread = OptionStrategies.bull_put_spread(
+                canonical_option,
+                short_strike,
+                long_strike,
+                expiry
+            )
+            
+            self.algorithm.log(f"Closing bull put spread {reason} identified from holdings")
+            
+            # Sell to close (reverse of buy)
+            tickets = self.algorithm.sell(spread, 1)
+            
+            if not tickets or len(tickets) == 0:
+                self.algorithm.log("Failed to place close order via holdings analysis")
+                return False
+                
+            self.order_tickets = tickets
+            self.pending_close = True
+            
+            self.algorithm.log(f"Placed spread close order: {len(tickets)} tickets created")
+            return True
+            
+        except Exception as e:
+            self.algorithm.error(f"Error closing with holdings analysis: {str(e)}")
+            return False
+    
+    def force_close_positions(self, reason=""):
+        """
+        Force close all option positions directly.
+        This is a last-resort method when all spread-based closure methods fail.
+        
+        Parameters:
+            reason: Description of why position is being closed
+            
+        Returns:
+            bool: True if liquidation orders were placed, False if no positions to close
+        """
+        self.algorithm.log(f"LAST RESORT: Force closing all option positions individually {reason}")
+        self.algorithm.log("WARNING: This does not close the spread as a unit - price slippage risk")
+        
+        # Verify we have positions to close
+        has_positions = False
+        liquidation_orders = []
+        
+        # Loop through all holdings and close option positions
+        for symbol, holding in self.algorithm.portfolio.items():
+            # Skip any non-option holdings or zero-quantity positions
+            if symbol.SecurityType != SecurityType.OPTION or abs(holding.quantity) == 0:
+                continue
+                
+            has_positions = True
+            quantity = holding.quantity
+            
+            self.algorithm.log(f"Liquidating position: {symbol} x {quantity}")
+            
+            # Place liquidation order
+            if quantity > 0:
+                # Long position - Sell to close
+                order = self.algorithm.sell(symbol, abs(quantity))
+            else:
+                # Short position - Buy to close
+                order = self.algorithm.buy(symbol, abs(quantity))
+                
+            if order is not None:
+                liquidation_orders.append(order)
+        
+        if not has_positions:
+            self.algorithm.log("No positions found to force close - resetting state flags")
+            self.spread_is_open = False
+            self.pending_open = False
+            self.pending_close = False
+            self._reset_spread_details()
+            return False
+            
+        if liquidation_orders:
+            self.algorithm.log(f"Placed {len(liquidation_orders)} individual liquidation orders")
+            self.pending_close = True
+            return True
+        else:
+            self.algorithm.log("No liquidation orders were created - force close failed")
             return False
     
     def on_order_event(self, order_event):
@@ -299,6 +579,43 @@ class OrderExecutor:
             self.algorithm.log(f"Order status none: {order_id}")
         else:
             self.algorithm.log(f"Unhandled order status: {order_status} for order {order_id}")
+    
+    def daily_state_verification(self):
+        """
+        Perform verification of state flags against actual portfolio holdings.
+        This should be called daily to ensure consistency.
+        Returns True if positions exist, False otherwise.
+        """
+        self.reset_state()
+        
+        # Additional verification specifically for EOD
+        # This will help ensure we don't leave positions open overnight
+        has_positions = False
+        option_positions = []
+        
+        for symbol, holding in self.algorithm.portfolio.items():
+            if symbol.SecurityType == SecurityType.OPTION and abs(holding.quantity) > 0:
+                has_positions = True
+                option_positions.append(f"{symbol}: {holding.quantity} shares")
+        
+        if has_positions:
+            positions_str = ", ".join(option_positions)
+            self.algorithm.log(f"EOD Verification found positions: {positions_str}")
+            # CRITICAL: Always set spread_is_open to True if positions exist, regardless of current flags
+            # This ensures we never miss closing a position due to flag inconsistency
+            if not self.spread_is_open:
+                self.algorithm.log("Setting spread_is_open flag to True based on actual portfolio holdings")
+            self.spread_is_open = True
+            return True  # Indicate positions exist
+        else:
+            # No positions exist - make sure flags reflect this
+            if self.spread_is_open or self.pending_open or self.pending_close:
+                self.algorithm.log("State flags incorrect - no positions found but flags indicated positions")
+                self.spread_is_open = False
+                self.pending_open = False
+                self.pending_close = False
+                self._reset_spread_details()
+            return False  # Indicate no positions exist
     
     def on_order_filled(self, order_id, fill_price, fill_quantity, order_event):
         """
