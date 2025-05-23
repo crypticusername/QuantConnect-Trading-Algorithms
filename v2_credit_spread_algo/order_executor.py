@@ -293,7 +293,7 @@ class OrderExecutor:
             profit_percentage = (current_profit / max_profit) * 100
             self.algorithm.log(f"TAKE-PROFIT TRIGGERED: Current profit ${current_profit:.2f} is {profit_percentage:.1f}% of max profit ${max_profit:.2f}")
             # Close the position
-            return self.close_spread_position(reason="(take-profit triggered)")
+            return self.close_spread_position(reason="take-profit")
             
         return False
     
@@ -311,6 +311,13 @@ class OrderExecutor:
         if not self.spread_is_open or self.pending_close:
             self.algorithm.log(f"Cannot close position - no open position or close already pending")
             return False
+            
+        # Store trade start time for duration calculation
+        self.current_spread_details['close_time'] = self.algorithm.time
+        self.current_spread_details['close_reason'] = reason
+            
+        # Format a clear POSITION CLOSE header with reason
+        self.algorithm.log(f"POSITION CLOSE - {reason or 'manual close'} initiated for Bull Put ${self.current_spread_details['short_strike']}/${self.current_spread_details['long_strike']}")
             
         try:
             # STRATEGY 1: Close using OptionStrategies with current spread details
@@ -371,8 +378,8 @@ class OrderExecutor:
             self.algorithm.log("Could not find canonical option symbol for closing spread")
             return False
             
-        # Create the spread strategy object
         try:
+            # Create the spread object - remember it needs canonical option symbol
             spread = OptionStrategies.bull_put_spread(
                 canonical_option,
                 self.current_spread_details['short_strike'],
@@ -380,7 +387,7 @@ class OrderExecutor:
                 self.current_spread_details['expiry']
             )
             
-            self.algorithm.log(f"Closing bull put spread {reason} using stored details")
+            self.algorithm.log(f"Closing bull put spread using stored details")
             
             # Sell to close (reverse of buy)
             tickets = self.algorithm.sell(spread, 1)
@@ -478,8 +485,6 @@ class OrderExecutor:
                 expiry
             )
             
-            self.algorithm.log(f"Closing bull put spread {reason} identified from holdings")
-            
             # Sell to close (reverse of buy)
             tickets = self.algorithm.sell(spread, 1)
             
@@ -508,8 +513,7 @@ class OrderExecutor:
         Returns:
             bool: True if liquidation orders were placed, False if no positions to close
         """
-        self.algorithm.log(f"LAST RESORT: Force closing all option positions individually {reason}")
-        self.algorithm.log("WARNING: This does not close the spread as a unit - price slippage risk")
+        self.algorithm.log(f"POSITION CLOSE - Last resort: Closing individual legs {reason or ''}")
         
         # Verify we have positions to close
         has_positions = False
@@ -674,6 +678,7 @@ class OrderExecutor:
                     
                     # Update the position details with actual fill values
                     self.current_spread_details['initial_credit'] = net_credit
+                    self.current_spread_details['entry_time'] = self.algorithm.time
                 else:
                     self.algorithm.log(f"Warning: Negative or zero net credit received: ${net_credit:.2f}")
                     
@@ -687,12 +692,36 @@ class OrderExecutor:
                 
                 # Calculate profit or loss
                 initial_credit = self.current_spread_details.get('initial_credit')
+                short_strike = self.current_spread_details.get('short_strike')
+                long_strike = self.current_spread_details.get('long_strike')
+                width = 0
+                if short_strike is not None and long_strike is not None:
+                    width = short_strike - long_strike
                 
+                # Calculate trade duration if we have both open and close times
+                trade_duration = ""
+                start_time = self.current_spread_details.get('entry_time')
+                close_time = self.current_spread_details.get('close_time')
+                if start_time is not None and close_time is not None:
+                    duration_minutes = int((close_time - start_time).total_seconds() / 60)
+                    hours, minutes = divmod(duration_minutes, 60)
+                    trade_duration = f"{hours}h {minutes}m"
+                
+                # Generate comprehensive trade summary
                 if initial_credit is not None:
                     profit_loss = (initial_credit - net_debit) * 100  # Per contract
-                    self.algorithm.log(f"Spread position closed - Net debit: ${net_debit:.2f}, P/L: ${profit_loss:.2f}")
+                    profit_pct = profit_loss / (width * 100) * 100 if width > 0 else 0
+                    reason = self.current_spread_details.get('close_reason') or "manual"
+                    
+                    # Format a structured TRADE SUMMARY log with all key metrics
+                    self.algorithm.log(
+                        f"TRADE SUMMARY - Bull Put ${short_strike}/{long_strike}, Width=${width:.2f}\n" +
+                        f"Entry: Credit=${initial_credit:.2f}, Exit: Debit=${net_debit:.2f}\n" +
+                        f"P/L: ${profit_loss:.2f} ({profit_pct:.1f}%), Duration: {trade_duration}\n" +
+                        f"Close reason: {reason}"
+                    )
                 else:
-                    self.algorithm.log(f"Spread position closed - Net debit: ${net_debit:.2f}")
+                    self.algorithm.log(f"POSITION CLOSED - Net debit: ${net_debit:.2f}")
                 
                 # Reset position flags
                 self.spread_is_open = False
@@ -702,19 +731,8 @@ class OrderExecutor:
                 # Clear active orders
                 self.active_spread_orders = {}
                 
-                # Log that we're resetting the spread details
-                self.algorithm.log("Resetting spread details after successful close")
-                
                 # Reset position details
-                self.current_spread_details = {
-                    'short_strike': None,
-                    'long_strike': None, 
-                    'initial_credit': None,
-                    'max_profit': None,
-                    'max_loss': None,
-                    'breakeven': None,
-                    'expiry': None
-                }
+                self._reset_spread_details()
     
     def on_order_canceled(self, order_event):
         """
@@ -866,8 +884,6 @@ class OrderExecutor:
             return None
         
         should_log = self.should_log_monitoring_data()
-        if should_log:
-            self.algorithm.log(f"Looking for put contracts at strikes {short_strike} and {long_strike}")
         
         # Find the current prices for our strikes
         put_contracts = [contract for contract in option_chain 
@@ -876,43 +892,36 @@ class OrderExecutor:
         
         if not put_contracts:
             if should_log:
-                self.algorithm.log(f"No put contracts found for today's expiration ({today})")
+                self.algorithm.log(f"POSITION UPDATE - No put contracts found for today's expiration ({today})")
             return None
-            
-        # Log available strikes to debug only hourly
-        if should_log:
-            strikes = sorted([c.strike for c in put_contracts])
-            self.algorithm.log(f"Available put strikes: {strikes[:5]}...{strikes[-5:]}")
         
         # Find the specific contracts that match our spread
         short_put = next((c for c in put_contracts if abs(c.strike - short_strike) < 0.001), None)
         long_put = next((c for c in put_contracts if abs(c.strike - long_strike) < 0.001), None)
         
-        if short_put is None:
+        if short_put is None or long_put is None:
             if should_log:
-                self.algorithm.log(f"Could not find short put at strike {short_strike}")
-            return None
-            
-        if long_put is None:
-            if should_log:
-                self.algorithm.log(f"Could not find long put at strike {long_strike}")
+                self.algorithm.log(f"POSITION UPDATE - Could not find contracts for ${short_strike}/${long_strike} spread")
             return None
             
         # Calculate debit to close (buy back short, sell long)
         # Using conservative prices (ask for short, bid for long)
         current_debit = short_put.AskPrice - long_put.BidPrice
         
-        if should_log:
-            self.algorithm.log(f"Found contracts - Short Put: ${short_strike} (Ask=${short_put.AskPrice:.2f}), Long Put: ${long_strike} (Bid=${long_put.BidPrice:.2f})")
-            self.algorithm.log(f"Current debit to close: ${current_debit:.2f}")
-        
-        # Calculate profit percentage
-        if initial_credit > 0:
+        # Calculate profit percentage and log consolidated position update
+        if initial_credit > 0 and should_log:
             profit_percentage = (initial_credit - current_debit) / initial_credit
             profit_dollars = (initial_credit - current_debit) * 100  # Per contract
-            # Report the current P/L status - hourly instead of every minute
-            if self.should_log_monitoring_data():
-                self.algorithm.log(f"Current P/L: ${profit_dollars:.2f} ({profit_percentage:.1%})")
+            
+            # Calculate monitoring hour (assuming 9:30 market open)
+            market_open = datetime.datetime.combine(today, datetime.time(9, 30))
+            # Convert to algorithm timezone
+            market_open = market_open.replace(tzinfo=self.algorithm.time.tzinfo)
+            hours_since_open = max(1, int((self.algorithm.time - market_open).total_seconds() / 3600) + 1)
+            
+            # Log consolidated position update
+            self.algorithm.log(f"POSITION UPDATE - Hour {hours_since_open} - Bull Put ${short_strike}/${long_strike}: " +
+                              f"Debit to close=${current_debit:.2f}, P/L=${profit_dollars:.2f} ({profit_percentage:.1%})")
         
         return current_debit
     

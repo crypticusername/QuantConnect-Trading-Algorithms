@@ -56,11 +56,10 @@ class SpreadSelector:
         Returns:
             tuple: (spread, max_profit, max_loss, breakeven) or (None, None, None, None) if no suitable spread
         """
-        # Start of selection process - log initial state
+        # Start of selection process - use structured headers for logging
         num_contracts = len(list(option_chain)) if option_chain else 0
-        self.algorithm.log(f"Starting spread selection with {num_contracts} option contracts")
-        self.algorithm.log(f"Underlying price: ${underlying_price:.2f}")
-        self.algorithm.log(f"Selection criteria: target delta {self.target_delta:.2f}, max delta {self.max_delta:.2f}, min credit {self.min_credit_pct*100:.0f}% of width")
+        
+        # We don't need to log this as the main algorithm already logs a TRADE ANALYSIS header
         
         if not option_chain or num_contracts == 0:
             self.algorithm.log("No option chain available for spread selection")
@@ -72,23 +71,19 @@ class SpreadSelector:
                         if contract.right == OptionRight.PUT 
                         and contract.expiry.date() == today]
         
-        # Log information about available put contracts
+        # Log information about available put contracts with structured header
         num_puts = len(put_contracts)
-        self.algorithm.log(f"Found {num_puts} put contracts for today's expiration ({today})")
         
         if not put_contracts:
-            self.algorithm.log("No put options available for today's expiration")
+            self.algorithm.log("OPTIONS UNIVERSE - No put options available for today's expiration")
             return None, None, None, None
             
-        # Log range of available strikes and deltas
+        # Consolidated logging of available options universe
         if num_puts > 0:
             deltas = [abs(contract.greeks.delta) if contract.greeks and contract.greeks.delta else 0 for contract in put_contracts]
             strikes = [contract.strike for contract in put_contracts]
-            self.algorithm.log(f"Strike range: ${min(strikes):.2f} to ${max(strikes):.2f}")
-            if any(deltas):
-                self.algorithm.log(f"Delta range: {min(deltas):.4f} to {max(deltas):.4f}")
-            else:
-                self.algorithm.log("Warning: No valid delta values found in the option chain")
+            delta_info = f", Delta range: {min(deltas):.4f}-{max(deltas):.4f}" if any(deltas) else ", No valid deltas found"
+            self.algorithm.log(f"OPTIONS UNIVERSE - Strike range: ${min(strikes):.2f}-${max(strikes):.2f}, {num_puts} put contracts expiring today{delta_info}")
             
         # Identify all valid put contracts with delta <= max_delta
         valid_short_candidates = []
@@ -101,12 +96,23 @@ class SpreadSelector:
             else:
                 self.algorithm.log(f"Skipping contract with strike ${contract.strike:.2f} - missing or invalid greeks")
         
-        self.algorithm.log(f"Found {len(valid_short_candidates)} potential short put candidates with delta ≤ {self.max_delta}")
-        
-        # Log all short put candidates with their strikes and deltas in a single line
+        # Log candidates with structured header and more compact format
         if valid_short_candidates:
-            candidates_details = ", ".join([f"(${contract.strike:.2f}, {abs(contract.greeks.delta):.4f})" for contract in valid_short_candidates])
-            self.algorithm.log(f"Short put candidates: {candidates_details}")
+            # Sort candidates by strike price for clearer presentation
+            sorted_candidates = sorted(valid_short_candidates, key=lambda x: x.strike)
+            
+            # Format the candidates in a compact way, limiting to key information
+            if len(sorted_candidates) > 10:
+                # For many candidates, show count and key statistics
+                avg_delta = sum(abs(c.greeks.delta) for c in sorted_candidates) / len(sorted_candidates)
+                key_strikes = sorted([c.strike for c in sorted_candidates])
+                strike_range = f"${key_strikes[0]:.0f}-${key_strikes[-1]:.0f}"
+                
+                self.algorithm.log(f"CANDIDATES - Found {len(sorted_candidates)} potential short puts with delta ≤ {self.max_delta}, Strike range: {strike_range}, Avg delta: {avg_delta:.4f}")
+            else:
+                # For fewer candidates, show details of each
+                candidates_details = ", ".join([f"${c.strike:.0f}/{abs(c.greeks.delta):.4f}" for c in sorted_candidates])
+                self.algorithm.log(f"CANDIDATES - Found {len(sorted_candidates)} potential short puts: {candidates_details}")
         
         if not valid_short_candidates:
             self.algorithm.log(f"No put options found with delta ≤ {self.max_delta}")
@@ -146,30 +152,30 @@ class SpreadSelector:
                 self.algorithm.log(f"Skipping short put: Strike=${short_strike:.2f}, Delta={short_delta:.4f} - No bid available")
                 continue
                 
-            self.algorithm.log(f"Testing short put: Strike=${short_strike:.2f}, Delta={short_delta:.4f}, Bid=${short_bid:.2f}")
+            # Track all tested spreads for later comprehensive logging
+            all_tested_spreads = []
             
-            # First pass: Check all widths for preferred credit threshold (20%)
-            preferred_spread_found = False
-            valid_spreads = []
-            
-            # Store valid spreads for both preferred and fallback thresholds
+            # Try different spread widths
             preferred_spreads = []
             fallback_spreads = []
             
-            # Try different spread widths for this short strike (starting with widest)  
+            # Sort width fallbacks by preference (largest to smallest)
             for target_width in self.width_fallbacks:
-                # Skip widths below our minimum threshold
-                if target_width < self.min_spread_width:
+                # Skip widths that exceed our maximum spread width
+                if target_width > self.max_spread_width:
                     continue
                     
-                self.algorithm.log(f"Testing width: ${target_width:.2f} with short strike ${short_strike:.2f} (delta {short_delta:.4f})")
+                # Skip if width is greater than distance to furthest long strike
+                min_strike = min([c.strike for c in put_contracts])
+                if short_strike - min_strike < target_width:
+                    continue
                 
                 # Find long put candidates that create a spread with width <= target_width
                 long_candidates = [c for c in put_contracts if c.strike < short_strike and 
                                  (short_strike - c.strike) <= target_width]
                 
                 if not long_candidates:
-                    self.algorithm.log(f"No suitable long put options for width ≤ ${target_width:.2f}")
+                    # Don't log individual width failures
                     continue
                     
                 # Sort by spread width descending (wider spreads first, but all ≤ target_width)
@@ -188,7 +194,6 @@ class SpreadSelector:
                 
                 # Skip if spread width is below minimum
                 if spread_width < self.min_spread_width:
-                    self.algorithm.log(f"Spread width ${spread_width:.2f} below minimum ${self.min_spread_width:.2f}")
                     continue
                 
                 # Calculate spread details
@@ -196,7 +201,6 @@ class SpreadSelector:
                 credit_percentage = (net_credit / spread_width) * 100 if spread_width > 0 else 0
                 
                 if net_credit <= 0:
-                    self.algorithm.log(f"REJECTED: Spread has negative or zero credit: ${net_credit:.2f}")
                     continue
                 
                 # Check if meets preferred threshold (20%)
@@ -216,12 +220,23 @@ class SpreadSelector:
                     'credit_percentage': credit_percentage
                 }
                 
-                # Add to appropriate list without detailed logging for each candidate
+                # Add to all_tested_spreads for summary logging
+                test_result = "PREFERRED" if net_credit >= min_required_credit else \
+                              "FALLBACK" if net_credit >= fallback_required_credit else "REJECTED"
+                
+                # Add result to the spread_info dict
+                spread_info['result'] = test_result
+                spread_info['required_credit'] = min_required_credit
+                spread_info['fallback_required_credit'] = fallback_required_credit
+                
+                # Add to all tested spreads
+                all_tested_spreads.append(spread_info)
+                
+                # Add to appropriate list for selection
                 if net_credit >= min_required_credit:
                     preferred_spreads.append(spread_info)
                 elif net_credit >= fallback_required_credit:
                     fallback_spreads.append(spread_info)
-                # No logging for rejected spreads to reduce log volume
             
             # After checking all widths, select the best spread
             selected_spread = None
@@ -264,15 +279,59 @@ class SpreadSelector:
                 max_loss = (spread_width - net_credit) * 100  # Per contract
                 risk_reward = max_loss / max_profit if max_profit > 0 else float('inf')
                 
-                # Consolidated logging with a single comprehensive entry
-                self.algorithm.log(f"SPREAD SELECTED: Bull Put ${short_strike}/{long_strike}, Width=${spread_width:.2f}, Credit=${net_credit:.2f} ({credit_percentage:.2f}%), Max P/L=${max_profit:.2f}/${max_loss:.2f}, Breakeven=${breakeven:.2f}, R/R={risk_reward:.2f}")
+                # Log summary of all tested spreads
+                self._log_spread_test_summary(all_tested_spreads, short_strike)
                 
+                # Consolidated logging with a single comprehensive entry - keep the SPREAD SELECTED format
+                self.algorithm.log(f"SPREAD SELECTED: Bull Put ${short_strike}/{long_strike}, Width=${spread_width:.2f}, Credit=${net_credit:.2f} ({credit_percentage:.2f}%), Max P/L=${max_profit:.2f}/${max_loss:.2f}, Breakeven=${breakeven:.2f}, R/R={risk_reward:.2f}")
                 
                 return spread, max_profit, max_loss, breakeven
         
-        # If we've tried all short strikes and none worked
-        self.algorithm.log("Could not find any valid spread after trying all short strikes and widths")
+        # If we've tried all short strikes and none worked - use consistent format
+        self.algorithm.log("SPREAD SUMMARY - No valid spread found after evaluating all candidates")
         return None, None, None, None
+    
+    def _log_spread_test_summary(self, tested_spreads, short_strike):
+        """
+        Log a summary of all spreads tested during the selection process.
+        
+        Parameters:
+            tested_spreads: List of spread info dictionaries that were tested
+            short_strike: The short strike price that was being tested
+        """
+        if not tested_spreads:
+            return
+            
+        # Count spread results by category
+        preferred_count = sum(1 for s in tested_spreads if s['result'] == "PREFERRED")
+        fallback_count = sum(1 for s in tested_spreads if s['result'] == "FALLBACK")
+        rejected_count = sum(1 for s in tested_spreads if s['result'] == "REJECTED")
+        
+        # Get spread widths tested
+        widths = sorted(set([s['width'] for s in tested_spreads]))
+        width_range = f"${widths[0]:.1f}-${widths[-1]:.1f}" if len(widths) > 1 else f"${widths[0]:.1f}"
+        
+        # Log summary counts
+        self.algorithm.log(f"SPREAD TESTS - Short strike ${short_strike}: Tested {len(tested_spreads)} combinations, " + 
+                          f"Width range: {width_range}, Results: {preferred_count} preferred, {fallback_count} fallback, {rejected_count} rejected")
+        
+        # Log details of valid spreads (preferred and fallback)
+        valid_spreads = [s for s in tested_spreads if s['result'] in ("PREFERRED", "FALLBACK")]
+        if valid_spreads:
+            # Sort by credit percentage descending
+            valid_spreads.sort(key=lambda x: x['credit_percentage'], reverse=True)
+            
+            # Take top 5 at most to avoid verbose logging
+            top_spreads = valid_spreads[:5]
+            
+            # Format details
+            spread_details = []
+            for s in top_spreads:
+                spread_details.append(f"${s['short_strike']:.1f}/${s['long_strike']:.1f} (W=${s['width']:.1f}, C=${s['credit']:.2f}, {s['credit_percentage']:.1f}%)")
+            
+            # Log top spreads
+            if spread_details:
+                self.algorithm.log(f"TOP SPREADS - {', '.join(spread_details)}")
     
     def calculate_current_spread_value(self, option_chain, short_strike, long_strike, initial_credit):
         """

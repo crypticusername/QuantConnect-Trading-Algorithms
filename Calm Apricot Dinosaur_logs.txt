@@ -1,0 +1,657 @@
+2023-12-15 00:00:00 Launching analysis for e01499381beb54df7bd7763f50bc03fb with LEAN Engine v2.5.0.0.17122
+2023-12-15 00:00:00 Accurate daily end-times now enabled by default. See more at https://qnt.co/3YHaWHL. To disable it and use legacy daily bars set self.settings.daily_precise_end_time = False.
+2023-12-15 00:00:00 Warning: The following securities were set to raw price normalization mode to work with options: SPY...
+2023-12-15 00:00:00 Algorithm starting warm up...
+2023-12-15 00:00:00 Algorithm initialized with $10,000 starting capital
+2023-12-29 00:00:00 Processing algorithm warm-up request 82%...
+2024-01-02 00:00:00 Performing daily state reset
+2024-01-02 00:00:00 DAILY RESET - No open positions found
+2024-01-02 00:00:00 MARKET DATA - SPY price: $475.31, Checking for option chain 2024-01-01
+2024-01-02 00:00:00 Option security exists but no slice available
+2024-01-02 00:00:00 Option security exists but no slice available
+2024-01-02 00:00:00 Option security exists but no slice available
+2024-01-02 00:00:00 Option security exists but no slice available
+2024-01-02 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-02 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-02 00:00:00 No open positions to close at end of day
+2024-01-02 00:00:00 No option chains in slice at 00:00:00
+2024-01-02 00:00:00 MARKET DATA - Waiting for option chain data
+2024-01-02 00:00:00 Performing daily state reset
+2024-01-02 06:30:00 Algorithm finished warming up.
+2024-01-02 09:31:00 DAILY RESET - No open positions found
+2024-01-02 09:31:00 MARKET DATA - SPY price: $475.31, Checking for option chain 2024-01-02
+2024-01-02 09:31:00 Option security exists but no slice available
+2024-01-02 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-02 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.40 from 0.3972
+2024-01-02 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.11 from 0.11220000000000001
+2024-01-02 10:00:00 TRADE ANALYSIS - SPY price: $472.27, Chain loaded: True
+2024-01-02 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-02 10:00:00 OPTIONS UNIVERSE - Strike range: $456.00-$495.00, Found 40 put contracts expiring today (2024-01-02)
+2024-01-02 10:00:00 OPTIONS UNIVERSE - Strike range: $456.00-$495.00, 40 put contracts expiring today, Delta range: 0.0047-1.0000
+2024-01-02 10:00:00 CANDIDATES - Found 16 potential short puts with delta ≤ 0.3, Strike range: $456-$471, Avg delta: 0.0439
+2024-01-02 10:00:00 SPREAD TESTS - Short strike $471.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 0 preferred, 2 fallback, 3 rejected
+2024-01-02 10:00:00 TOP SPREADS - $471.0/$470.0 (W=$1.0, C=$0.19, 19.0%), $471.0/$469.0 (W=$2.0, C=$0.30, 15.0%)
+2024-01-02 10:00:00 SPREAD SELECTED: Bull Put $471.0/469.0, Width=$2.00, Credit=$0.30 (15.00%), Max P/L=$30.00/$170.00, Breakeven=$470.70, R/R=5.67
+2024-01-02 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $470.70, Max P/L: $30.00/$170.00
+2024-01-02 10:00:00 TRADE ORDER: Bull Put Spread $471.00/$469.00, Width=$2.00, Target Credit=$0.28 - Short: $0.40, Long: $0.11
+2024-01-02 10:01:00 TRADE FILLED: Bull Put Spread $471.00/$469.00, Width=$2.00, Actual Credit=$0.29, Max P/L=$29.00/$171.00, Breakeven=$470.71
+2024-01-02 10:01:00 POSITION UPDATE - Hour 1 - Bull Put $471.0/$469.0: Debit to close=$0.32, P/L=$-3.00 (-10.3%)
+2024-01-02 11:01:00 POSITION UPDATE - Hour 2 - Bull Put $471.0/$469.0: Debit to close=$0.32, P/L=$-3.00 (-10.3%)
+2024-01-02 12:01:00 POSITION UPDATE - Hour 3 - Bull Put $471.0/$469.0: Debit to close=$0.32, P/L=$-3.00 (-10.3%)
+2024-01-02 13:01:00 POSITION UPDATE - Hour 4 - Bull Put $471.0/$469.0: Debit to close=$0.32, P/L=$-3.00 (-10.3%)
+2024-01-02 14:01:00 POSITION UPDATE - Hour 5 - Bull Put $471.0/$469.0: Debit to close=$0.32, P/L=$-3.00 (-10.3%)
+2024-01-02 15:01:00 POSITION UPDATE - Hour 6 - Bull Put $471.0/$469.0: Debit to close=$0.32, P/L=$-3.00 (-10.3%)
+2024-01-02 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-02 15:30:00 Found option position: SPY   240102P00469000 with 1.0 shares
+2024-01-02 15:30:00 EOD Verification found positions: SPY   240102P00469000: 1.0 shares, SPY   240102P00471000: -1.0 shares
+2024-01-02 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-02 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $471.0/$469.0
+2024-01-02 15:30:00 Closing bull put spread using stored details
+2024-01-02 15:30:00 Placed spread close order: 2 tickets created
+2024-01-03 00:00:00 Performing daily state reset
+2024-01-03 00:00:00 Resetting state flags - no actual positions found
+2024-01-03 09:31:00 DAILY RESET - No open positions found
+2024-01-03 09:31:00 MARKET DATA - SPY price: $472.65, Checking for option chain 2024-01-03
+2024-01-03 09:31:00 Option security exists but no slice available
+2024-01-03 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-03 10:00:00 TRADE ANALYSIS - SPY price: $469.93, Chain loaded: True
+2024-01-03 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-03 10:00:00 OPTIONS UNIVERSE - Strike range: $453.00-$492.00, Found 40 put contracts expiring today (2024-01-03)
+2024-01-03 10:00:00 OPTIONS UNIVERSE - Strike range: $453.00-$492.00, 40 put contracts expiring today, Delta range: 0.0050-1.0000
+2024-01-03 10:00:00 CANDIDATES - Found 16 potential short puts with delta ≤ 0.3, Strike range: $453-$468, Avg delta: 0.0369
+2024-01-03 10:00:00 SPREAD SUMMARY - No valid spread found after evaluating all candidates
+2024-01-03 10:00:00 SPREAD SUMMARY - No suitable spread found. Reasons: Delta > 0.3 or credit < 20.0% of width
+2024-01-03 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-03 15:30:00 No open positions to close at end of day
+2024-01-04 00:00:00 Performing daily state reset
+2024-01-04 09:31:00 DAILY RESET - No open positions found
+2024-01-04 09:31:00 MARKET DATA - SPY price: $468.79, Checking for option chain 2024-01-04
+2024-01-04 09:31:00 Option security exists but no slice available
+2024-01-04 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-04 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.25 from 0.2548
+2024-01-04 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.08 from 0.08379999999999999
+2024-01-04 10:00:00 TRADE ANALYSIS - SPY price: $468.90, Chain loaded: True
+2024-01-04 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-04 10:00:00 OPTIONS UNIVERSE - Strike range: $449.00-$488.00, Found 40 put contracts expiring today (2024-01-04)
+2024-01-04 10:00:00 OPTIONS UNIVERSE - Strike range: $449.00-$488.00, 40 put contracts expiring today, Delta range: 0.0039-1.0000
+2024-01-04 10:00:00 CANDIDATES - Found 19 potential short puts with delta ≤ 0.3, Strike range: $449-$467, Avg delta: 0.0271
+2024-01-04 10:00:00 SPREAD TESTS - Short strike $467.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 0 preferred, 1 fallback, 4 rejected
+2024-01-04 10:00:00 TOP SPREADS - $467.0/$466.0 (W=$1.0, C=$0.18, 18.0%)
+2024-01-04 10:00:00 SPREAD SELECTED: Bull Put $467.0/466.0, Width=$1.00, Credit=$0.18 (18.00%), Max P/L=$18.00/$82.00, Breakeven=$466.82, R/R=4.56
+2024-01-04 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $466.82, Max P/L: $18.00/$82.00
+2024-01-04 10:00:00 TRADE ORDER: Bull Put Spread $467.00/$466.00, Width=$1.00, Target Credit=$0.17 - Short: $0.25, Long: $0.08
+2024-01-04 10:09:00 TRADE FILLED: Bull Put Spread $467.00/$466.00, Width=$1.00, Actual Credit=$0.11, Max P/L=$11.00/$89.00, Breakeven=$466.89
+2024-01-04 10:09:00 POSITION UPDATE - Hour 1 - Bull Put $467.0/$466.0: Debit to close=$0.20, P/L=$-9.00 (-81.8%)
+2024-01-04 11:09:00 POSITION UPDATE - Hour 2 - Bull Put $467.0/$466.0: Debit to close=$0.20, P/L=$-9.00 (-81.8%)
+2024-01-04 12:09:00 POSITION UPDATE - Hour 3 - Bull Put $467.0/$466.0: Debit to close=$0.20, P/L=$-9.00 (-81.8%)
+2024-01-04 13:09:00 POSITION UPDATE - Hour 4 - Bull Put $467.0/$466.0: Debit to close=$0.20, P/L=$-9.00 (-81.8%)
+2024-01-04 14:09:00 POSITION UPDATE - Hour 5 - Bull Put $467.0/$466.0: Debit to close=$0.20, P/L=$-9.00 (-81.8%)
+2024-01-04 15:09:00 POSITION UPDATE - Hour 6 - Bull Put $467.0/$466.0: Debit to close=$0.20, P/L=$-9.00 (-81.8%)
+2024-01-04 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-04 15:30:00 Found option position: SPY   240104P00466000 with 1.0 shares
+2024-01-04 15:30:00 EOD Verification found positions: SPY   240104P00466000: 1.0 shares, SPY   240104P00467000: -1.0 shares
+2024-01-04 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-04 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $467.0/$466.0
+2024-01-04 15:30:00 Closing bull put spread using stored details
+2024-01-04 15:30:00 Placed spread close order: 2 tickets created
+2024-01-05 00:00:00 Performing daily state reset
+2024-01-05 00:00:00 Resetting state flags - no actual positions found
+2024-01-05 09:31:00 DAILY RESET - No open positions found
+2024-01-05 09:31:00 MARKET DATA - SPY price: $467.28, Checking for option chain 2024-01-05
+2024-01-05 09:31:00 Option security exists but no slice available
+2024-01-05 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-05 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.34 from 0.34299999999999997
+2024-01-05 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.11 from 0.11499999999999994
+2024-01-05 10:00:00 TRADE ANALYSIS - SPY price: $468.16, Chain loaded: True
+2024-01-05 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-05 10:00:00 OPTIONS UNIVERSE - Strike range: $451.00-$487.00, Found 40 put contracts expiring today (2024-01-05)
+2024-01-05 10:00:00 OPTIONS UNIVERSE - Strike range: $451.00-$487.00, 40 put contracts expiring today, Delta range: 0.0044-0.9745
+2024-01-05 10:00:00 CANDIDATES - Found 19 potential short puts with delta ≤ 0.3, Strike range: $451-$466, Avg delta: 0.0306
+2024-01-05 10:00:00 SPREAD TESTS - Short strike $466.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 1 preferred, 2 fallback, 2 rejected
+2024-01-05 10:00:00 TOP SPREADS - $466.0/$465.0 (W=$1.0, C=$0.24, 24.0%), $466.0/$464.0 (W=$2.0, C=$0.39, 19.5%), $466.0/$463.0 (W=$3.0, C=$0.47, 15.7%)
+2024-01-05 10:00:00 SPREAD SELECTED: Bull Put $466.0/465.0, Width=$1.00, Credit=$0.24 (24.00%), Max P/L=$24.00/$76.00, Breakeven=$465.76, R/R=3.17
+2024-01-05 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $465.76, Max P/L: $24.00/$76.00
+2024-01-05 10:00:00 TRADE ORDER: Bull Put Spread $466.00/$465.00, Width=$1.00, Target Credit=$0.23 - Short: $0.34, Long: $0.11
+2024-01-05 10:02:00 TRADE FILLED: Bull Put Spread $466.00/$465.00, Width=$1.00, Actual Credit=$0.31, Max P/L=$31.00/$69.00, Breakeven=$465.69
+2024-01-05 10:02:00 POSITION UPDATE - Hour 1 - Bull Put $466.0/$465.0: Debit to close=$0.26, P/L=$5.00 (16.1%)
+2024-01-05 11:02:00 POSITION UPDATE - Hour 2 - Bull Put $466.0/$465.0: Debit to close=$0.26, P/L=$5.00 (16.1%)
+2024-01-05 12:02:00 POSITION UPDATE - Hour 3 - Bull Put $466.0/$465.0: Debit to close=$0.26, P/L=$5.00 (16.1%)
+2024-01-05 13:02:00 POSITION UPDATE - Hour 4 - Bull Put $466.0/$465.0: Debit to close=$0.26, P/L=$5.00 (16.1%)
+2024-01-05 14:02:00 POSITION UPDATE - Hour 5 - Bull Put $466.0/$465.0: Debit to close=$0.26, P/L=$5.00 (16.1%)
+2024-01-05 15:02:00 POSITION UPDATE - Hour 6 - Bull Put $466.0/$465.0: Debit to close=$0.26, P/L=$5.00 (16.1%)
+2024-01-05 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-05 15:30:00 Found option position: SPY   240105P00466000 with -1.0 shares
+2024-01-05 15:30:00 EOD Verification found positions: SPY   240105P00466000: -1.0 shares, SPY   240105P00465000: 1.0 shares
+2024-01-05 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-05 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $466.0/$465.0
+2024-01-05 15:30:00 Closing bull put spread using stored details
+2024-01-05 15:30:00 Placed spread close order: 2 tickets created
+2024-01-08 00:00:00 Performing daily state reset
+2024-01-08 00:00:00 Resetting state flags - no actual positions found
+2024-01-08 00:00:00 DAILY RESET - No open positions found
+2024-01-08 00:00:00 MARKET DATA - SPY price: $467.92, Checking for option chain 2024-01-06
+2024-01-08 00:00:00 Option security exists but no slice available
+2024-01-08 00:00:00 Option security exists but no slice available
+2024-01-08 00:00:00 Option security exists but no slice available
+2024-01-08 00:00:00 Option security exists but no slice available
+2024-01-08 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-08 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-08 00:00:00 No open positions to close at end of day
+2024-01-08 00:00:00 Performing daily state reset
+2024-01-08 00:00:00 DAILY RESET - No open positions found
+2024-01-08 00:00:00 MARKET DATA - SPY price: $467.92, Checking for option chain 2024-01-07
+2024-01-08 00:00:00 Option security exists but no slice available
+2024-01-08 00:00:00 Option security exists but no slice available
+2024-01-08 00:00:00 Option security exists but no slice available
+2024-01-08 00:00:00 Option security exists but no slice available
+2024-01-08 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-08 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-08 00:00:00 No open positions to close at end of day
+2024-01-08 00:00:00 No option chains in slice at 00:00:00
+2024-01-08 00:00:00 MARKET DATA - Waiting for option chain data
+2024-01-08 00:00:00 Performing daily state reset
+2024-01-08 09:31:00 DAILY RESET - No open positions found
+2024-01-08 09:31:00 MARKET DATA - SPY price: $467.92, Checking for option chain 2024-01-08
+2024-01-08 09:31:00 Option security exists but no slice available
+2024-01-08 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-08 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.13 from 0.1274
+2024-01-08 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to -0.02 from -0.015099999999999975
+2024-01-08 10:00:00 TRADE ANALYSIS - SPY price: $469.74, Chain loaded: True
+2024-01-08 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-08 10:00:00 OPTIONS UNIVERSE - Strike range: $448.00-$487.00, Found 40 put contracts expiring today (2024-01-08)
+2024-01-08 10:00:00 OPTIONS UNIVERSE - Strike range: $448.00-$487.00, 40 put contracts expiring today, Delta range: 0.0036-1.0000
+2024-01-08 10:00:00 CANDIDATES - Found 21 potential short puts with delta ≤ 0.3, Strike range: $448-$468, Avg delta: 0.0269
+2024-01-08 10:00:00 SPREAD TESTS - Short strike $467.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 0 preferred, 1 fallback, 4 rejected
+2024-01-08 10:00:00 TOP SPREADS - $467.0/$466.0 (W=$1.0, C=$0.15, 15.0%)
+2024-01-08 10:00:00 SPREAD SELECTED: Bull Put $467.0/466.0, Width=$1.00, Credit=$0.15 (15.00%), Max P/L=$15.00/$85.00, Breakeven=$466.85, R/R=5.67
+2024-01-08 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $466.85, Max P/L: $15.00/$85.00
+2024-01-08 10:00:00 TRADE ORDER: Bull Put Spread $467.00/$466.00, Width=$1.00, Target Credit=$0.14 - Short: $0.13, Long: $-0.02
+2024-01-08 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-08 15:30:00 Found option position: SPY   240108P00467000 with -1.0 shares
+2024-01-08 15:30:00 EOD Verification found positions: SPY   240108P00467000: -1.0 shares
+2024-01-08 15:30:00 Setting spread_is_open flag to True based on actual portfolio holdings
+2024-01-08 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-08 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $467.0/$466.0
+2024-01-08 15:30:00 Closing bull put spread using stored details
+2024-01-08 15:30:00 Placed spread close order: 2 tickets created
+2024-01-08 15:30:00 Found option position: SPY   240108P00466000 with -1.0 shares
+2024-01-08 15:30:00 CRITICAL: Failed to close all positions by end of day. Forcing liquidation.
+2024-01-08 15:30:00 POSITION CLOSE - Last resort: Closing individual legs (final EOD liquidation)
+2024-01-08 15:30:00 Liquidating position: SPY   240108P00466000 x -1.0
+2024-01-08 15:30:00 TRADE FILLED: Bull Put Spread $467.00/$466.00, Width=$1.00, Actual Credit=$0.31, Max P/L=$31.00/$69.00, Breakeven=$466.69
+2024-01-08 15:30:00 Placed 1 individual liquidation orders
+2024-01-09 00:00:00 Unhandled order status: 8 for order 14
+2024-01-09 00:00:00 Performing daily state reset
+2024-01-09 00:00:00 Resetting state flags - no actual positions found
+2024-01-09 00:00:00 Order 14 was canceled: 
+2024-01-09 09:31:00 DAILY RESET - No open positions found
+2024-01-09 09:31:00 MARKET DATA - SPY price: $474.60, Checking for option chain 2024-01-09
+2024-01-09 09:31:00 Option security exists but no slice available
+2024-01-09 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-09 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.42 from 0.4214
+2024-01-09 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.04 from 0.04139999999999999
+2024-01-09 10:00:00 TRADE ANALYSIS - SPY price: $472.17, Chain loaded: True
+2024-01-09 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-09 10:00:00 OPTIONS UNIVERSE - Strike range: $455.00-$494.00, Found 40 put contracts expiring today (2024-01-09)
+2024-01-09 10:00:00 OPTIONS UNIVERSE - Strike range: $455.00-$494.00, 40 put contracts expiring today, Delta range: 0.0044-0.9773
+2024-01-09 10:00:00 CANDIDATES - Found 17 potential short puts with delta ≤ 0.3, Strike range: $455-$471, Avg delta: 0.0427
+2024-01-09 10:00:00 SPREAD TESTS - Short strike $471.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 2 preferred, 1 fallback, 2 rejected
+2024-01-09 10:00:00 TOP SPREADS - $471.0/$470.0 (W=$1.0, C=$0.26, 26.0%), $471.0/$469.0 (W=$2.0, C=$0.40, 20.0%), $471.0/$468.0 (W=$3.0, C=$0.48, 16.0%)
+2024-01-09 10:00:00 SPREAD SELECTED: Bull Put $471.0/469.0, Width=$2.00, Credit=$0.40 (20.00%), Max P/L=$40.00/$160.00, Breakeven=$470.60, R/R=4.00
+2024-01-09 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $470.60, Max P/L: $40.00/$160.00
+2024-01-09 10:00:00 TRADE ORDER: Bull Put Spread $471.00/$469.00, Width=$2.00, Target Credit=$0.38 - Short: $0.42, Long: $0.04
+2024-01-09 11:22:00 TRADE FILLED: Bull Put Spread $471.00/$469.00, Width=$2.00, Actual Credit=$0.69, Max P/L=$69.00/$131.00, Breakeven=$470.31
+2024-01-09 11:22:00 POSITION UPDATE - Hour 2 - Bull Put $471.0/$469.0: Debit to close=$0.42, P/L=$27.00 (39.1%)
+2024-01-09 12:22:00 POSITION UPDATE - Hour 3 - Bull Put $471.0/$469.0: Debit to close=$0.42, P/L=$27.00 (39.1%)
+2024-01-09 13:22:00 POSITION UPDATE - Hour 4 - Bull Put $471.0/$469.0: Debit to close=$0.42, P/L=$27.00 (39.1%)
+2024-01-09 14:22:00 POSITION UPDATE - Hour 5 - Bull Put $471.0/$469.0: Debit to close=$0.42, P/L=$27.00 (39.1%)
+2024-01-09 15:22:00 POSITION UPDATE - Hour 6 - Bull Put $471.0/$469.0: Debit to close=$0.42, P/L=$27.00 (39.1%)
+2024-01-09 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-09 15:30:00 Found option position: SPY   240109P00471000 with -1.0 shares
+2024-01-09 15:30:00 EOD Verification found positions: SPY   240109P00471000: -1.0 shares, SPY   240109P00469000: 1.0 shares
+2024-01-09 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-09 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $471.0/$469.0
+2024-01-09 15:30:00 Closing bull put spread using stored details
+2024-01-09 15:30:00 Placed spread close order: 2 tickets created
+2024-01-10 00:00:00 Performing daily state reset
+2024-01-10 00:00:00 Resetting state flags - no actual positions found
+2024-01-10 09:31:00 DAILY RESET - No open positions found
+2024-01-10 09:31:00 MARKET DATA - SPY price: $473.88, Checking for option chain 2024-01-10
+2024-01-10 09:31:00 Option security exists but no slice available
+2024-01-10 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-10 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.26 from 0.2646
+2024-01-10 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.09 from 0.09359999999999996
+2024-01-10 10:00:00 TRADE ANALYSIS - SPY price: $474.71, Chain loaded: True
+2024-01-10 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-10 10:00:00 OPTIONS UNIVERSE - Strike range: $454.00-$493.00, Found 40 put contracts expiring today (2024-01-10)
+2024-01-10 10:00:00 OPTIONS UNIVERSE - Strike range: $454.00-$493.00, 40 put contracts expiring today, Delta range: 0.0038-0.9820
+2024-01-10 10:00:00 CANDIDATES - Found 20 potential short puts with delta ≤ 0.3, Strike range: $454-$473, Avg delta: 0.0271
+2024-01-10 10:00:00 SPREAD TESTS - Short strike $473.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 0 preferred, 1 fallback, 4 rejected
+2024-01-10 10:00:00 TOP SPREADS - $473.0/$472.0 (W=$1.0, C=$0.18, 18.0%)
+2024-01-10 10:00:00 SPREAD SELECTED: Bull Put $473.0/472.0, Width=$1.00, Credit=$0.18 (18.00%), Max P/L=$18.00/$82.00, Breakeven=$472.82, R/R=4.56
+2024-01-10 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $472.82, Max P/L: $18.00/$82.00
+2024-01-10 10:00:00 TRADE ORDER: Bull Put Spread $473.00/$472.00, Width=$1.00, Target Credit=$0.17 - Short: $0.26, Long: $0.09
+2024-01-10 10:42:00 TRADE FILLED: Bull Put Spread $473.00/$472.00, Width=$1.00, Actual Credit=$0.85, Max P/L=$85.00/$15.00, Breakeven=$472.15
+2024-01-10 10:42:00 POSITION UPDATE - Hour 2 - Bull Put $473.0/$472.0: Debit to close=$0.20, P/L=$65.00 (76.5%)
+2024-01-10 11:42:00 POSITION UPDATE - Hour 3 - Bull Put $473.0/$472.0: Debit to close=$0.20, P/L=$65.00 (76.5%)
+2024-01-10 12:42:00 POSITION UPDATE - Hour 4 - Bull Put $473.0/$472.0: Debit to close=$0.20, P/L=$65.00 (76.5%)
+2024-01-10 13:42:00 POSITION UPDATE - Hour 5 - Bull Put $473.0/$472.0: Debit to close=$0.20, P/L=$65.00 (76.5%)
+2024-01-10 14:42:00 POSITION UPDATE - Hour 6 - Bull Put $473.0/$472.0: Debit to close=$0.20, P/L=$65.00 (76.5%)
+2024-01-10 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-10 15:30:00 Found option position: SPY   240110P00472000 with 1.0 shares
+2024-01-10 15:30:00 EOD Verification found positions: SPY   240110P00472000: 1.0 shares, SPY   240110P00473000: -1.0 shares
+2024-01-10 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-10 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $473.0/$472.0
+2024-01-10 15:30:00 Closing bull put spread using stored details
+2024-01-10 15:30:00 Placed spread close order: 2 tickets created
+2024-01-11 00:00:00 Performing daily state reset
+2024-01-11 00:00:00 Resetting state flags - no actual positions found
+2024-01-11 09:31:00 DAILY RESET - No open positions found
+2024-01-11 09:31:00 MARKET DATA - SPY price: $476.56, Checking for option chain 2024-01-11
+2024-01-11 09:31:00 Option security exists but no slice available
+2024-01-11 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-11 10:00:00 TRADE ANALYSIS - SPY price: $476.31, Chain loaded: True
+2024-01-11 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-11 10:00:00 OPTIONS UNIVERSE - Strike range: $457.00-$496.00, Found 40 put contracts expiring today (2024-01-11)
+2024-01-11 10:00:00 OPTIONS UNIVERSE - Strike range: $457.00-$496.00, 40 put contracts expiring today, Delta range: 0.0040-0.9784
+2024-01-11 10:00:00 CANDIDATES - Found 18 potential short puts with delta ≤ 0.3, Strike range: $457-$474, Avg delta: 0.0342
+2024-01-11 10:00:00 SPREAD SUMMARY - No valid spread found after evaluating all candidates
+2024-01-11 10:00:00 SPREAD SUMMARY - No suitable spread found. Reasons: Delta > 0.3 or credit < 20.0% of width
+2024-01-11 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-11 15:30:00 No open positions to close at end of day
+2024-01-12 00:00:00 Performing daily state reset
+2024-01-12 09:31:00 DAILY RESET - No open positions found
+2024-01-12 09:31:00 MARKET DATA - SPY price: $476.35, Checking for option chain 2024-01-12
+2024-01-12 09:31:00 Option security exists but no slice available
+2024-01-12 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-12 10:00:00 TRADE ANALYSIS - SPY price: $477.12, Chain loaded: True
+2024-01-12 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-12 10:00:00 OPTIONS UNIVERSE - Strike range: $459.00-$495.00, Found 40 put contracts expiring today (2024-01-12)
+2024-01-12 10:00:00 OPTIONS UNIVERSE - Strike range: $459.00-$495.00, 40 put contracts expiring today, Delta range: 0.0042-1.0000
+2024-01-12 10:00:00 CANDIDATES - Found 19 potential short puts with delta ≤ 0.3, Strike range: $459-$475, Avg delta: 0.0298
+2024-01-12 10:00:00 SPREAD SUMMARY - No valid spread found after evaluating all candidates
+2024-01-12 10:00:00 SPREAD SUMMARY - No suitable spread found. Reasons: Delta > 0.3 or credit < 20.0% of width
+2024-01-12 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-12 15:30:00 No open positions to close at end of day
+2024-01-16 00:00:00 Performing daily state reset
+2024-01-16 00:00:00 DAILY RESET - No open positions found
+2024-01-16 00:00:00 MARKET DATA - SPY price: $476.68, Checking for option chain 2024-01-13
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-16 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-16 00:00:00 No open positions to close at end of day
+2024-01-16 00:00:00 Performing daily state reset
+2024-01-16 00:00:00 DAILY RESET - No open positions found
+2024-01-16 00:00:00 MARKET DATA - SPY price: $476.68, Checking for option chain 2024-01-14
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-16 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-16 00:00:00 No open positions to close at end of day
+2024-01-16 00:00:00 Performing daily state reset
+2024-01-16 00:00:00 DAILY RESET - No open positions found
+2024-01-16 00:00:00 MARKET DATA - SPY price: $476.68, Checking for option chain 2024-01-15
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 Option security exists but no slice available
+2024-01-16 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-16 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-16 00:00:00 No open positions to close at end of day
+2024-01-16 00:00:00 No option chains in slice at 00:00:00
+2024-01-16 00:00:00 MARKET DATA - Waiting for option chain data
+2024-01-16 00:00:00 Performing daily state reset
+2024-01-16 09:31:00 DAILY RESET - No open positions found
+2024-01-16 09:31:00 MARKET DATA - SPY price: $476.68, Checking for option chain 2024-01-16
+2024-01-16 09:31:00 Option security exists but no slice available
+2024-01-16 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-16 10:00:00 TRADE ANALYSIS - SPY price: $474.50, Chain loaded: True
+2024-01-16 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-16 10:00:00 OPTIONS UNIVERSE - Strike range: $457.00-$496.00, Found 40 put contracts expiring today (2024-01-16)
+2024-01-16 10:00:00 OPTIONS UNIVERSE - Strike range: $457.00-$496.00, 40 put contracts expiring today, Delta range: 0.0043-0.9888
+2024-01-16 10:00:00 CANDIDATES - Found 17 potential short puts with delta ≤ 0.3, Strike range: $457-$473, Avg delta: 0.0406
+2024-01-16 10:00:00 SPREAD SUMMARY - No valid spread found after evaluating all candidates
+2024-01-16 10:00:00 SPREAD SUMMARY - No suitable spread found. Reasons: Delta > 0.3 or credit < 20.0% of width
+2024-01-16 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-16 15:30:00 No open positions to close at end of day
+2024-01-17 00:00:00 Performing daily state reset
+2024-01-17 09:31:00 DAILY RESET - No open positions found
+2024-01-17 09:31:00 MARKET DATA - SPY price: $474.93, Checking for option chain 2024-01-17
+2024-01-17 09:31:00 Option security exists but no slice available
+2024-01-17 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-17 10:00:00 TRADE ANALYSIS - SPY price: $471.32, Chain loaded: True
+2024-01-17 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-17 10:00:00 OPTIONS UNIVERSE - Strike range: $455.00-$494.00, Found 40 put contracts expiring today (2024-01-17)
+2024-01-17 10:00:00 OPTIONS UNIVERSE - Strike range: $455.00-$494.00, 40 put contracts expiring today, Delta range: 0.0046-1.0000
+2024-01-17 10:00:00 CANDIDATES - Found 15 potential short puts with delta ≤ 0.3, Strike range: $455-$469, Avg delta: 0.0333
+2024-01-17 10:00:00 SPREAD SUMMARY - No valid spread found after evaluating all candidates
+2024-01-17 10:00:00 SPREAD SUMMARY - No suitable spread found. Reasons: Delta > 0.3 or credit < 20.0% of width
+2024-01-17 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-17 15:30:00 No open positions to close at end of day
+2024-01-18 00:00:00 Performing daily state reset
+2024-01-18 09:31:00 DAILY RESET - No open positions found
+2024-01-18 09:31:00 MARKET DATA - SPY price: $472.29, Checking for option chain 2024-01-18
+2024-01-18 09:31:00 Option security exists but no slice available
+2024-01-18 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-18 10:00:00 TRADE ANALYSIS - SPY price: $473.89, Chain loaded: True
+2024-01-18 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-18 10:00:00 OPTIONS UNIVERSE - Strike range: $453.00-$492.00, Found 40 put contracts expiring today (2024-01-18)
+2024-01-18 10:00:00 OPTIONS UNIVERSE - Strike range: $453.00-$492.00, 40 put contracts expiring today, Delta range: 0.0037-0.9725
+2024-01-18 10:00:00 CANDIDATES - Found 20 potential short puts with delta ≤ 0.3, Strike range: $453-$472, Avg delta: 0.0291
+2024-01-18 10:00:00 SPREAD SUMMARY - No valid spread found after evaluating all candidates
+2024-01-18 10:00:00 SPREAD SUMMARY - No suitable spread found. Reasons: Delta > 0.3 or credit < 20.0% of width
+2024-01-18 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-18 15:30:00 No open positions to close at end of day
+2024-01-19 00:00:00 Performing daily state reset
+2024-01-19 09:31:00 DAILY RESET - No open positions found
+2024-01-19 09:31:00 MARKET DATA - SPY price: $476.49, Checking for option chain 2024-01-19
+2024-01-19 09:31:00 Option security exists but no slice available
+2024-01-19 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-19 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.45 from 0.45080000000000003
+2024-01-19 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.24 from 0.24180000000000007
+2024-01-19 10:00:00 TRADE ANALYSIS - SPY price: $477.92, Chain loaded: True
+2024-01-19 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-19 10:00:00 OPTIONS UNIVERSE - Strike range: $457.00-$496.00, Found 40 put contracts expiring today (2024-01-19)
+2024-01-19 10:00:00 OPTIONS UNIVERSE - Strike range: $457.00-$496.00, 40 put contracts expiring today, Delta range: 0.0037-1.0000
+2024-01-19 10:00:00 CANDIDATES - Found 20 potential short puts with delta ≤ 0.3, Strike range: $457-$476, Avg delta: 0.0365
+2024-01-19 10:00:00 SPREAD TESTS - Short strike $476.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 1 preferred, 2 fallback, 2 rejected
+2024-01-19 10:00:00 TOP SPREADS - $476.0/$475.0 (W=$1.0, C=$0.22, 22.0%), $476.0/$474.0 (W=$2.0, C=$0.37, 18.5%), $476.0/$473.0 (W=$3.0, C=$0.46, 15.3%)
+2024-01-19 10:00:00 SPREAD SELECTED: Bull Put $476.0/475.0, Width=$1.00, Credit=$0.22 (22.00%), Max P/L=$22.00/$78.00, Breakeven=$475.78, R/R=3.55
+2024-01-19 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $475.78, Max P/L: $22.00/$78.00
+2024-01-19 10:00:00 TRADE ORDER: Bull Put Spread $476.00/$475.00, Width=$1.00, Target Credit=$0.21 - Short: $0.45, Long: $0.24
+2024-01-19 10:01:00 TRADE FILLED: Bull Put Spread $476.00/$475.00, Width=$1.00, Actual Credit=$1.05, Max P/L=$105.00/$-5.00, Breakeven=$474.95
+2024-01-19 10:01:00 POSITION UPDATE - Hour 1 - Bull Put $476.0/$475.0: Debit to close=$0.24, P/L=$81.00 (77.1%)
+2024-01-19 11:01:00 POSITION UPDATE - Hour 2 - Bull Put $476.0/$475.0: Debit to close=$0.24, P/L=$81.00 (77.1%)
+2024-01-19 12:01:00 POSITION UPDATE - Hour 3 - Bull Put $476.0/$475.0: Debit to close=$0.24, P/L=$81.00 (77.1%)
+2024-01-19 13:01:00 POSITION UPDATE - Hour 4 - Bull Put $476.0/$475.0: Debit to close=$0.24, P/L=$81.00 (77.1%)
+2024-01-19 14:01:00 POSITION UPDATE - Hour 5 - Bull Put $476.0/$475.0: Debit to close=$0.24, P/L=$81.00 (77.1%)
+2024-01-19 15:01:00 POSITION UPDATE - Hour 6 - Bull Put $476.0/$475.0: Debit to close=$0.24, P/L=$81.00 (77.1%)
+2024-01-19 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-19 15:30:00 Found option position: SPY   240119P00475000 with 1.0 shares
+2024-01-19 15:30:00 EOD Verification found positions: SPY   240119P00475000: 1.0 shares, SPY   240119P00476000: -1.0 shares
+2024-01-19 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-19 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $476.0/$475.0
+2024-01-19 15:30:00 Closing bull put spread using stored details
+2024-01-19 15:30:00 Placed spread close order: 2 tickets created
+2024-01-22 00:00:00 Performing daily state reset
+2024-01-22 00:00:00 Resetting state flags - no actual positions found
+2024-01-22 00:00:00 DAILY RESET - No open positions found
+2024-01-22 00:00:00 MARKET DATA - SPY price: $482.43, Checking for option chain 2024-01-20
+2024-01-22 00:00:00 Option security exists but no slice available
+2024-01-22 00:00:00 Option security exists but no slice available
+2024-01-22 00:00:00 Option security exists but no slice available
+2024-01-22 00:00:00 Option security exists but no slice available
+2024-01-22 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-22 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-22 00:00:00 No open positions to close at end of day
+2024-01-22 00:00:00 Performing daily state reset
+2024-01-22 00:00:00 DAILY RESET - No open positions found
+2024-01-22 00:00:00 MARKET DATA - SPY price: $482.43, Checking for option chain 2024-01-21
+2024-01-22 00:00:00 Option security exists but no slice available
+2024-01-22 00:00:00 Option security exists but no slice available
+2024-01-22 00:00:00 Option security exists but no slice available
+2024-01-22 00:00:00 Option security exists but no slice available
+2024-01-22 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-22 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-22 00:00:00 No open positions to close at end of day
+2024-01-22 00:00:00 No option chains in slice at 00:00:00
+2024-01-22 00:00:00 MARKET DATA - Waiting for option chain data
+2024-01-22 00:00:00 Performing daily state reset
+2024-01-22 09:31:00 DAILY RESET - No open positions found
+2024-01-22 09:31:00 MARKET DATA - SPY price: $482.43, Checking for option chain 2024-01-22
+2024-01-22 09:31:00 Option security exists but no slice available
+2024-01-22 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-22 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.30 from 0.3038
+2024-01-22 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.09 from 0.08529999999999999
+2024-01-22 10:00:00 TRADE ANALYSIS - SPY price: $485.01, Chain loaded: True
+2024-01-22 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-22 10:00:00 OPTIONS UNIVERSE - Strike range: $463.00-$504.00, Found 40 put contracts expiring today (2024-01-22)
+2024-01-22 10:00:00 OPTIONS UNIVERSE - Strike range: $463.00-$504.00, 40 put contracts expiring today, Delta range: 0.0036-1.0000
+2024-01-22 10:00:00 CANDIDATES - Found 21 potential short puts with delta ≤ 0.3, Strike range: $463-$483, Avg delta: 0.0300
+2024-01-22 10:00:00 SPREAD TESTS - Short strike $483.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 1 preferred, 1 fallback, 3 rejected
+2024-01-22 10:00:00 TOP SPREADS - $483.0/$482.0 (W=$1.0, C=$0.23, 23.0%), $483.0/$481.0 (W=$2.0, C=$0.35, 17.5%)
+2024-01-22 10:00:00 SPREAD SELECTED: Bull Put $483.0/482.0, Width=$1.00, Credit=$0.23 (23.00%), Max P/L=$23.00/$77.00, Breakeven=$482.77, R/R=3.35
+2024-01-22 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $482.77, Max P/L: $23.00/$77.00
+2024-01-22 10:00:00 TRADE ORDER: Bull Put Spread $483.00/$482.00, Width=$1.00, Target Credit=$0.22 - Short: $0.30, Long: $0.09
+2024-01-22 13:58:00 TRADE FILLED: Bull Put Spread $483.00/$482.00, Width=$1.00, Actual Credit=$1.25, Max P/L=$125.00/$-25.00, Breakeven=$481.75
+2024-01-22 13:58:00 POSITION UPDATE - Hour 5 - Bull Put $483.0/$482.0: Debit to close=$0.25, P/L=$100.00 (80.0%)
+2024-01-22 14:58:00 POSITION UPDATE - Hour 6 - Bull Put $483.0/$482.0: Debit to close=$0.25, P/L=$100.00 (80.0%)
+2024-01-22 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-22 15:30:00 Found option position: SPY   240122P00483000 with -1.0 shares
+2024-01-22 15:30:00 EOD Verification found positions: SPY   240122P00483000: -1.0 shares, SPY   240122P00482000: 1.0 shares
+2024-01-22 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-22 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $483.0/$482.0
+2024-01-22 15:30:00 Closing bull put spread using stored details
+2024-01-22 15:30:00 Placed spread close order: 2 tickets created
+2024-01-23 00:00:00 Performing daily state reset
+2024-01-23 00:00:00 Resetting state flags - no actual positions found
+2024-01-23 09:31:00 DAILY RESET - No open positions found
+2024-01-23 09:31:00 MARKET DATA - SPY price: $483.45, Checking for option chain 2024-01-23
+2024-01-23 09:31:00 Option security exists but no slice available
+2024-01-23 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-23 10:00:00 TRADE ANALYSIS - SPY price: $483.97, Chain loaded: True
+2024-01-23 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-23 10:00:00 OPTIONS UNIVERSE - Strike range: $464.00-$505.00, Found 40 put contracts expiring today (2024-01-23)
+2024-01-23 10:00:00 OPTIONS UNIVERSE - Strike range: $464.00-$505.00, 40 put contracts expiring today, Delta range: 0.0039-0.9839
+2024-01-23 10:00:00 CANDIDATES - Found 19 potential short puts with delta ≤ 0.3, Strike range: $464-$482, Avg delta: 0.0293
+2024-01-23 10:00:00 SPREAD SUMMARY - No valid spread found after evaluating all candidates
+2024-01-23 10:00:00 SPREAD SUMMARY - No suitable spread found. Reasons: Delta > 0.3 or credit < 20.0% of width
+2024-01-23 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-23 15:30:00 No open positions to close at end of day
+2024-01-24 00:00:00 Performing daily state reset
+2024-01-24 09:31:00 DAILY RESET - No open positions found
+2024-01-24 09:31:00 MARKET DATA - SPY price: $484.86, Checking for option chain 2024-01-24
+2024-01-24 09:31:00 Option security exists but no slice available
+2024-01-24 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-24 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.38 from 0.37570000000000003
+2024-01-24 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.21 from 0.2142
+2024-01-24 10:00:00 TRADE ANALYSIS - SPY price: $487.10, Chain loaded: True
+2024-01-24 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-24 10:00:00 OPTIONS UNIVERSE - Strike range: $465.00-$506.00, Found 40 put contracts expiring today (2024-01-24)
+2024-01-24 10:00:00 OPTIONS UNIVERSE - Strike range: $465.00-$506.00, 40 put contracts expiring today, Delta range: 0.0036-0.9730
+2024-01-24 10:00:00 CANDIDATES - Found 22 potential short puts with delta ≤ 0.3, Strike range: $465-$486, Avg delta: 0.0342
+2024-01-24 10:00:00 SPREAD TESTS - Short strike $486.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 0 preferred, 1 fallback, 4 rejected
+2024-01-24 10:00:00 TOP SPREADS - $486.0/$485.0 (W=$1.0, C=$0.17, 17.0%)
+2024-01-24 10:00:00 SPREAD SELECTED: Bull Put $486.0/485.0, Width=$1.00, Credit=$0.17 (17.00%), Max P/L=$17.00/$83.00, Breakeven=$485.83, R/R=4.88
+2024-01-24 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $485.83, Max P/L: $17.00/$83.00
+2024-01-24 10:00:00 TRADE ORDER: Bull Put Spread $486.00/$485.00, Width=$1.00, Target Credit=$0.16 - Short: $0.38, Long: $0.21
+2024-01-24 10:14:00 TRADE FILLED: Bull Put Spread $486.00/$485.00, Width=$1.00, Actual Credit=$1.41, Max P/L=$141.00/$-41.00, Breakeven=$484.59
+2024-01-24 10:14:00 POSITION UPDATE - Hour 1 - Bull Put $486.0/$485.0: Debit to close=$0.19, P/L=$122.00 (86.5%)
+2024-01-24 11:14:00 POSITION UPDATE - Hour 2 - Bull Put $486.0/$485.0: Debit to close=$0.19, P/L=$122.00 (86.5%)
+2024-01-24 12:14:00 POSITION UPDATE - Hour 3 - Bull Put $486.0/$485.0: Debit to close=$0.19, P/L=$122.00 (86.5%)
+2024-01-24 13:14:00 POSITION UPDATE - Hour 4 - Bull Put $486.0/$485.0: Debit to close=$0.19, P/L=$122.00 (86.5%)
+2024-01-24 14:14:00 POSITION UPDATE - Hour 5 - Bull Put $486.0/$485.0: Debit to close=$0.19, P/L=$122.00 (86.5%)
+2024-01-24 15:14:00 POSITION UPDATE - Hour 6 - Bull Put $486.0/$485.0: Debit to close=$0.19, P/L=$122.00 (86.5%)
+2024-01-24 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-24 15:30:00 Found option position: SPY   240124P00486000 with -1.0 shares
+2024-01-24 15:30:00 EOD Verification found positions: SPY   240124P00486000: -1.0 shares, SPY   240124P00485000: 1.0 shares
+2024-01-24 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-24 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $486.0/$485.0
+2024-01-24 15:30:00 Closing bull put spread using stored details
+2024-01-24 15:30:00 Placed spread close order: 2 tickets created
+2024-01-25 00:00:00 Performing daily state reset
+2024-01-25 00:00:00 Resetting state flags - no actual positions found
+2024-01-25 09:31:00 DAILY RESET - No open positions found
+2024-01-25 09:31:00 MARKET DATA - SPY price: $485.39, Checking for option chain 2024-01-25
+2024-01-25 09:31:00 Option security exists but no slice available
+2024-01-25 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-25 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.47 from 0.4704
+2024-01-25 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.24 from 0.2424
+2024-01-25 10:00:00 TRADE ANALYSIS - SPY price: $487.26, Chain loaded: True
+2024-01-25 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-25 10:00:00 OPTIONS UNIVERSE - Strike range: $466.00-$525.00, Found 40 put contracts expiring today (2024-01-25)
+2024-01-25 10:00:00 OPTIONS UNIVERSE - Strike range: $466.00-$525.00, 40 put contracts expiring today, Delta range: 0.0037-1.0000
+2024-01-25 10:00:00 CANDIDATES - Found 21 potential short puts with delta ≤ 0.3, Strike range: $466-$486, Avg delta: 0.0374
+2024-01-25 10:00:00 SPREAD TESTS - Short strike $486.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 1 preferred, 2 fallback, 2 rejected
+2024-01-25 10:00:00 TOP SPREADS - $486.0/$485.0 (W=$1.0, C=$0.24, 24.0%), $486.0/$484.0 (W=$2.0, C=$0.40, 20.0%), $486.0/$483.0 (W=$3.0, C=$0.48, 16.0%)
+2024-01-25 10:00:00 SPREAD SELECTED: Bull Put $486.0/485.0, Width=$1.00, Credit=$0.24 (24.00%), Max P/L=$24.00/$76.00, Breakeven=$485.76, R/R=3.17
+2024-01-25 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $485.76, Max P/L: $24.00/$76.00
+2024-01-25 10:00:00 TRADE ORDER: Bull Put Spread $486.00/$485.00, Width=$1.00, Target Credit=$0.23 - Short: $0.47, Long: $0.24
+2024-01-25 10:09:00 TRADE FILLED: Bull Put Spread $486.00/$485.00, Width=$1.00, Actual Credit=$1.14, Max P/L=$114.00/$-14.00, Breakeven=$484.86
+2024-01-25 10:09:00 POSITION UPDATE - Hour 1 - Bull Put $486.0/$485.0: Debit to close=$0.26, P/L=$88.00 (77.2%)
+2024-01-25 11:09:00 POSITION UPDATE - Hour 2 - Bull Put $486.0/$485.0: Debit to close=$0.26, P/L=$88.00 (77.2%)
+2024-01-25 12:09:00 POSITION UPDATE - Hour 3 - Bull Put $486.0/$485.0: Debit to close=$0.26, P/L=$88.00 (77.2%)
+2024-01-25 13:09:00 POSITION UPDATE - Hour 4 - Bull Put $486.0/$485.0: Debit to close=$0.26, P/L=$88.00 (77.2%)
+2024-01-25 14:09:00 POSITION UPDATE - Hour 5 - Bull Put $486.0/$485.0: Debit to close=$0.26, P/L=$88.00 (77.2%)
+2024-01-25 15:09:00 POSITION UPDATE - Hour 6 - Bull Put $486.0/$485.0: Debit to close=$0.26, P/L=$88.00 (77.2%)
+2024-01-25 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-25 15:30:00 Found option position: SPY   240125P00485000 with 1.0 shares
+2024-01-25 15:30:00 EOD Verification found positions: SPY   240125P00485000: 1.0 shares, SPY   240125P00486000: -1.0 shares
+2024-01-25 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-25 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $486.0/$485.0
+2024-01-25 15:30:00 Closing bull put spread using stored details
+2024-01-25 15:30:00 Placed spread close order: 2 tickets created
+2024-01-26 00:00:00 Performing daily state reset
+2024-01-26 00:00:00 Resetting state flags - no actual positions found
+2024-01-26 09:31:00 DAILY RESET - No open positions found
+2024-01-26 09:31:00 MARKET DATA - SPY price: $488.03, Checking for option chain 2024-01-26
+2024-01-26 09:31:00 Option security exists but no slice available
+2024-01-26 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-26 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.32 from 0.3234
+2024-01-26 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.02 from 0.019400000000000084
+2024-01-26 10:00:00 TRADE ANALYSIS - SPY price: $487.70, Chain loaded: True
+2024-01-26 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-26 10:00:00 OPTIONS UNIVERSE - Strike range: $470.00-$514.00, Found 40 put contracts expiring today (2024-01-26)
+2024-01-26 10:00:00 OPTIONS UNIVERSE - Strike range: $470.00-$514.00, 40 put contracts expiring today, Delta range: 0.0043-1.0000
+2024-01-26 10:00:00 CANDIDATES - Found 17 potential short puts with delta ≤ 0.3, Strike range: $470-$486, Avg delta: 0.0349
+2024-01-26 10:00:00 SPREAD TESTS - Short strike $486.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 0 preferred, 2 fallback, 3 rejected
+2024-01-26 10:00:00 TOP SPREADS - $486.0/$485.0 (W=$1.0, C=$0.20, 20.0%), $486.0/$484.0 (W=$2.0, C=$0.32, 16.0%)
+2024-01-26 10:00:00 SPREAD SELECTED: Bull Put $486.0/484.0, Width=$2.00, Credit=$0.32 (16.00%), Max P/L=$32.00/$168.00, Breakeven=$485.68, R/R=5.25
+2024-01-26 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $485.68, Max P/L: $32.00/$168.00
+2024-01-26 10:00:00 TRADE ORDER: Bull Put Spread $486.00/$484.00, Width=$2.00, Target Credit=$0.30 - Short: $0.32, Long: $0.02
+2024-01-26 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-26 15:30:00 Found option position: SPY   240126P00486000 with -1.0 shares
+2024-01-26 15:30:00 EOD Verification found positions: SPY   240126P00486000: -1.0 shares
+2024-01-26 15:30:00 Setting spread_is_open flag to True based on actual portfolio holdings
+2024-01-26 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-26 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $486.0/$484.0
+2024-01-26 15:30:00 Closing bull put spread using stored details
+2024-01-26 15:30:00 Placed spread close order: 2 tickets created
+2024-01-26 15:30:00 Found option position: SPY   240126P00484000 with -1.0 shares
+2024-01-26 15:30:00 CRITICAL: Failed to close all positions by end of day. Forcing liquidation.
+2024-01-26 15:30:00 POSITION CLOSE - Last resort: Closing individual legs (final EOD liquidation)
+2024-01-26 15:30:00 Liquidating position: SPY   240126P00484000 x -1.0
+2024-01-26 15:30:00 TRADE FILLED: Bull Put Spread $486.00/$484.00, Width=$2.00, Actual Credit=$1.29, Max P/L=$129.00/$71.00, Breakeven=$484.71
+2024-01-26 15:30:00 Placed 1 individual liquidation orders
+2024-01-26 15:45:00 TRADE SUMMARY - Bull Put $486.0/484.0, Width=$2.00
+Entry: Credit=$1.29, Exit: Debit=$-1.27
+P/L: $256.00 (128.0%), Duration: 0h 0m
+Close reason: (mandatory end-of-day close)
+2024-01-27 00:00:00 Performing daily state reset
+2024-01-29 00:00:00 DAILY RESET - No open positions found
+2024-01-29 00:00:00 MARKET DATA - SPY price: $487.41, Checking for option chain 2024-01-27
+2024-01-29 00:00:00 Option security exists but no slice available
+2024-01-29 00:00:00 Option security exists but no slice available
+2024-01-29 00:00:00 Option security exists but no slice available
+2024-01-29 00:00:00 Option security exists but no slice available
+2024-01-29 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-29 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-29 00:00:00 No open positions to close at end of day
+2024-01-29 00:00:00 Performing daily state reset
+2024-01-29 00:00:00 DAILY RESET - No open positions found
+2024-01-29 00:00:00 MARKET DATA - SPY price: $487.41, Checking for option chain 2024-01-28
+2024-01-29 00:00:00 Option security exists but no slice available
+2024-01-29 00:00:00 Option security exists but no slice available
+2024-01-29 00:00:00 Option security exists but no slice available
+2024-01-29 00:00:00 Option security exists but no slice available
+2024-01-29 00:00:00 TRADE ANALYSIS - SKIPPED - No option chains loaded for today
+2024-01-29 00:00:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-29 00:00:00 No open positions to close at end of day
+2024-01-29 00:00:00 No option chains in slice at 00:00:00
+2024-01-29 00:00:00 MARKET DATA - Waiting for option chain data
+2024-01-29 00:00:00 Performing daily state reset
+2024-01-29 09:31:00 DAILY RESET - No open positions found
+2024-01-29 09:31:00 MARKET DATA - SPY price: $487.41, Checking for option chain 2024-01-29
+2024-01-29 09:31:00 Option security exists but no slice available
+2024-01-29 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-29 10:00:00 TRADE ANALYSIS - SPY price: $488.01, Chain loaded: True
+2024-01-29 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-29 10:00:00 OPTIONS UNIVERSE - Strike range: $468.00-$535.00, Found 40 put contracts expiring today (2024-01-29)
+2024-01-29 10:00:00 OPTIONS UNIVERSE - Strike range: $468.00-$535.00, 40 put contracts expiring today, Delta range: 0.0039-1.0000
+2024-01-29 10:00:00 CANDIDATES - Found 19 potential short puts with delta ≤ 0.3, Strike range: $468-$486, Avg delta: 0.0253
+2024-01-29 10:00:00 SPREAD SUMMARY - No valid spread found after evaluating all candidates
+2024-01-29 10:00:00 SPREAD SUMMARY - No suitable spread found. Reasons: Delta > 0.3 or credit < 20.0% of width
+2024-01-29 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-29 15:30:00 No open positions to close at end of day
+2024-01-30 00:00:00 Performing daily state reset
+2024-01-30 09:31:00 DAILY RESET - No open positions found
+2024-01-30 09:31:00 MARKET DATA - SPY price: $491.27, Checking for option chain 2024-01-30
+2024-01-30 09:31:00 Option security exists but no slice available
+2024-01-30 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-30 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.36 from 0.3626
+2024-01-30 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.20 from 0.20109999999999995
+2024-01-30 10:00:00 TRADE ANALYSIS - SPY price: $491.29, Chain loaded: True
+2024-01-30 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-30 10:00:00 OPTIONS UNIVERSE - Strike range: $472.00-$555.00, Found 40 put contracts expiring today (2024-01-30)
+2024-01-30 10:00:00 OPTIONS UNIVERSE - Strike range: $472.00-$555.00, 40 put contracts expiring today, Delta range: 0.0040-1.0000
+2024-01-30 10:00:00 CANDIDATES - Found 18 potential short puts with delta ≤ 0.3, Strike range: $472-$489, Avg delta: 0.0382
+2024-01-30 10:00:00 SPREAD TESTS - Short strike $489.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 0 preferred, 1 fallback, 4 rejected
+2024-01-30 10:00:00 TOP SPREADS - $489.0/$488.0 (W=$1.0, C=$0.17, 17.0%)
+2024-01-30 10:00:00 SPREAD SELECTED: Bull Put $489.0/488.0, Width=$1.00, Credit=$0.17 (17.00%), Max P/L=$17.00/$83.00, Breakeven=$488.83, R/R=4.88
+2024-01-30 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $488.83, Max P/L: $17.00/$83.00
+2024-01-30 10:00:00 TRADE ORDER: Bull Put Spread $489.00/$488.00, Width=$1.00, Target Credit=$0.16 - Short: $0.36, Long: $0.20
+2024-01-30 11:23:00 TRADE FILLED: Bull Put Spread $489.00/$488.00, Width=$1.00, Actual Credit=$0.16, Max P/L=$16.00/$84.00, Breakeven=$488.84
+2024-01-30 11:23:00 POSITION UPDATE - Hour 2 - Bull Put $489.0/$488.0: Debit to close=$0.19, P/L=$-3.00 (-18.7%)
+2024-01-30 12:23:00 POSITION UPDATE - Hour 3 - Bull Put $489.0/$488.0: Debit to close=$0.19, P/L=$-3.00 (-18.7%)
+2024-01-30 13:23:00 POSITION UPDATE - Hour 4 - Bull Put $489.0/$488.0: Debit to close=$0.19, P/L=$-3.00 (-18.7%)
+2024-01-30 14:23:00 POSITION UPDATE - Hour 5 - Bull Put $489.0/$488.0: Debit to close=$0.19, P/L=$-3.00 (-18.7%)
+2024-01-30 15:23:00 POSITION UPDATE - Hour 6 - Bull Put $489.0/$488.0: Debit to close=$0.19, P/L=$-3.00 (-18.7%)
+2024-01-30 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-30 15:30:00 Found option position: SPY   240130P00489000 with -1.0 shares
+2024-01-30 15:30:00 EOD Verification found positions: SPY   240130P00489000: -1.0 shares, SPY   240130P00488000: 1.0 shares
+2024-01-30 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-01-30 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $489.0/$488.0
+2024-01-30 15:30:00 Closing bull put spread using stored details
+2024-01-30 15:30:00 Placed spread close order: 2 tickets created
+2024-01-31 00:00:00 Performing daily state reset
+2024-01-31 00:00:00 Resetting state flags - no actual positions found
+2024-01-31 09:31:00 DAILY RESET - No open positions found
+2024-01-31 09:31:00 MARKET DATA - SPY price: $490.89, Checking for option chain 2024-01-31
+2024-01-31 09:31:00 Option security exists but no slice available
+2024-01-31 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-01-31 10:00:00 TRADE ANALYSIS - SPY price: $487.74, Chain loaded: True
+2024-01-31 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-01-31 10:00:00 OPTIONS UNIVERSE - Strike range: $471.00-$515.00, Found 40 put contracts expiring today (2024-01-31)
+2024-01-31 10:00:00 OPTIONS UNIVERSE - Strike range: $471.00-$515.00, 40 put contracts expiring today, Delta range: 0.0045-1.0000
+2024-01-31 10:00:00 CANDIDATES - Found 15 potential short puts with delta ≤ 0.3, Strike range: $471-$485, Avg delta: 0.0415
+2024-01-31 10:00:00 SPREAD SUMMARY - No valid spread found after evaluating all candidates
+2024-01-31 10:00:00 SPREAD SUMMARY - No suitable spread found. Reasons: Delta > 0.3 or credit < 20.0% of width
+2024-01-31 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-01-31 15:30:00 No open positions to close at end of day
+2024-02-01 00:00:00 Performing daily state reset
+2024-02-01 09:31:00 DAILY RESET - No open positions found
+2024-02-01 09:31:00 MARKET DATA - SPY price: $482.88, Checking for option chain 2024-02-01
+2024-02-01 09:31:00 Option security exists but no slice available
+2024-02-01 09:31:00 MARKET DATA - Option chain loaded with 80 contracts (40 puts, 40 calls), 80 expiring today
+2024-02-01 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.56 from 0.5589999999999999
+2024-02-01 10:00:00 Warning: To meet brokerage precision requirements, order LimitPrice was rounded to 0.26 from 0.255
+2024-02-01 10:00:00 TRADE ANALYSIS - SPY price: $485.08, Chain loaded: True
+2024-02-01 10:00:00 SELECTION CRITERIA - Target delta: 0.15, Max delta: 0.3, Min credit: 20.0% of width
+2024-02-01 10:00:00 OPTIONS UNIVERSE - Strike range: $463.00-$510.00, Found 40 put contracts expiring today (2024-02-01)
+2024-02-01 10:00:00 OPTIONS UNIVERSE - Strike range: $463.00-$510.00, 40 put contracts expiring today, Delta range: 0.0036-1.0000
+2024-02-01 10:00:00 CANDIDATES - Found 21 potential short puts with delta ≤ 0.3, Strike range: $463-$483, Avg delta: 0.0461
+2024-02-01 10:00:00 SPREAD TESTS - Short strike $483.0: Tested 5 combinations, Width range: $1.0-$5.0, Results: 0 preferred, 2 fallback, 3 rejected
+2024-02-01 10:00:00 TOP SPREADS - $483.0/$482.0 (W=$1.0, C=$0.19, 19.0%), $483.0/$481.0 (W=$2.0, C=$0.32, 16.0%)
+2024-02-01 10:00:00 SPREAD SELECTED: Bull Put $483.0/481.0, Width=$2.00, Credit=$0.32 (16.00%), Max P/L=$32.00/$168.00, Breakeven=$482.68, R/R=5.25
+2024-02-01 10:00:00 SPREAD SUMMARY - Bull Put Spread selected, Breakeven: $482.68, Max P/L: $32.00/$168.00
+2024-02-01 10:00:00 TRADE ORDER: Bull Put Spread $483.00/$481.00, Width=$2.00, Target Credit=$0.30 - Short: $0.56, Long: $0.26
+2024-02-01 10:01:00 TRADE FILLED: Bull Put Spread $483.00/$481.00, Width=$2.00, Actual Credit=$0.44, Max P/L=$44.00/$156.00, Breakeven=$482.56
+2024-02-01 10:01:00 POSITION UPDATE - Hour 1 - Bull Put $483.0/$481.0: Debit to close=$0.34, P/L=$10.00 (22.7%)
+2024-02-01 11:01:00 POSITION UPDATE - Hour 2 - Bull Put $483.0/$481.0: Debit to close=$0.34, P/L=$10.00 (22.7%)
+2024-02-01 12:01:00 POSITION UPDATE - Hour 3 - Bull Put $483.0/$481.0: Debit to close=$0.34, P/L=$10.00 (22.7%)
+2024-02-01 13:01:00 POSITION UPDATE - Hour 4 - Bull Put $483.0/$481.0: Debit to close=$0.34, P/L=$10.00 (22.7%)
+2024-02-01 14:01:00 POSITION UPDATE - Hour 5 - Bull Put $483.0/$481.0: Debit to close=$0.34, P/L=$10.00 (22.7%)
+2024-02-01 15:01:00 POSITION UPDATE - Hour 6 - Bull Put $483.0/$481.0: Debit to close=$0.34, P/L=$10.00 (22.7%)
+2024-02-01 15:30:00 CLOSE POSITION - Mandatory EOD close check initiated
+2024-02-01 15:30:00 Found option position: SPY   240201P00483000 with -1.0 shares
+2024-02-01 15:30:00 EOD Verification found positions: SPY   240201P00483000: -1.0 shares, SPY   240201P00481000: 1.0 shares
+2024-02-01 15:30:00 Mandatory end-of-day position closure initiated based on direct position check
+2024-02-01 15:30:00 POSITION CLOSE - (mandatory end-of-day close) initiated for Bull Put $483.0/$481.0
+2024-02-01 15:30:00 Closing bull put spread using stored details
+2024-02-01 15:30:00 Placed spread close order: 2 tickets created
+2024-02-02 00:00:00 Algorithm Id:(e01499381beb54df7bd7763f50bc03fb) completed in 26.04 seconds at 83k data points per second. Processing total of 2,149,658 data points.
