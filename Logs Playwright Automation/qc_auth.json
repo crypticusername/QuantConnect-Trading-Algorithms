@@ -1,0 +1,306 @@
+{
+  "cookies": [
+    {
+      "name": "49874153",
+      "value": "3rd-party",
+      "domain": "www.lean.io",
+      "path": "/terminal-test",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "2aed3b1e",
+      "value": "3rd-party",
+      "domain": "www.lean.io",
+      "path": "/terminal-test",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_GRECAPTCHA",
+      "value": "09AMNxLB_XLiMxPWDxxJorCxjiDoH9_kxtr2vD5OJYi04701DgTc59I_atTVBUcAoI1DUIL2l8a2POR_XygEhvUjQ",
+      "domain": "www.google.com",
+      "path": "/recaptcha",
+      "expires": 1763548514.307932,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "QC_Origin",
+      "value": "quantconnect",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1748169294.915268,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "prism_800313741",
+      "value": "77d332f7-bf1f-4e0d-be23-c4160138901e",
+      "domain": "prism.app-us1.com",
+      "path": "/",
+      "expires": 1750588516.287799,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "prism_800313741",
+      "value": "77d332f7-bf1f-4e0d-be23-c4160138901e",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1750588517,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "m",
+      "value": "111e7bfb-427c-4417-8efe-85482dbd78fbe012de",
+      "domain": "m.stripe.com",
+      "path": "/",
+      "expires": 1782556527.460329,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__stripe_sid",
+      "value": "d9a5e9b1-6bcb-4975-a777-701fcffb7b5337dc27",
+      "domain": ".www.quantconnect.com",
+      "path": "/",
+      "expires": 1747998327,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__stripe_mid",
+      "value": "25a73b49-c39b-4404-b046-2249b68d64f67b84d6",
+      "domain": ".www.quantconnect.com",
+      "path": "/",
+      "expires": 1779532527,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "PHPSESSID",
+      "value": "tt3tj11ie4g5lt8s49c8v6ic9k",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1755772499.742298,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "QC_LOGIN_TARGET",
+      "value": "%7B%22target%22%3A%22terminal%22%2C%22hash%22%3A%22%22%7D",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1747996799.742313,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "intercom-id-9a05faa80b1df601897603e983f2c594391bd0a0",
+      "value": "41905ff3-6cc2-4719-8526-7460399dc0d5",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1771326517,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "intercom-session-9a05faa80b1df601897603e983f2c594391bd0a0",
+      "value": "",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1748601317,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "intercom-device-id-9a05faa80b1df601897603e983f2c594391bd0a0",
+      "value": "b2e0eb45-fb79-49e9-867f-e9ad84531963",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1771326517,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_iidt",
+      "value": "A2PeCARan4mVMit47ZbOdnHeJViLETw06S04qVVE8dwfU4kddYW2C1zcOG4ziIx/3BFPo0TLfLIO69RdJ9DaBe5qnx5JkH6GUEGeVZEh+hBVYcbjQw==",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1779532506.892947,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_vid_t",
+      "value": "HL3Jf6Uv3KIWhumvOOcNLl6DnF0AgHTFnfD7IDTVAT2pKMtPGef1KKnsV232U6fXWH0go+e+S7bji7bdD1LZD62jQI7i+ClExa87cuejzwVELnsOnA==",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1779532506,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "QC_Session",
+      "value": "%7B%22uid%22%3A374457%2C%22sid%22%3A%22bdca759e4798e61952dea117d1d0605f%22%2C%22email%22%3A%22overtoninnovations%40gmail.com%22%2C%22name%22%3A%22Grant%20Overton%22%7D",
+      "domain": ".quantconnect.com",
+      "path": "/",
+      "expires": 1748601314.656242,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "vscode-tkn",
+      "value": "7b8e6919b6aa3a6ecd9156251f9fc1af",
+      "domain": "4757f1dc-be82db3d-489ef8ae-7df97aaa-b5759064.code.quantconnect.com",
+      "path": "/",
+      "expires": 1748601326.550222,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.quantconnect.com",
+      "localStorage": [
+        {
+          "name": "grant-overton-file_font_size",
+          "value": "14"
+        },
+        {
+          "name": "grant-overton-terminal-settings",
+          "value": "{}"
+        },
+        {
+          "name": "algoliasearch-client-js",
+          "value": "{}"
+        },
+        {
+          "name": "pusherTransportEncrypted",
+          "value": "{\"timestamp\":1747996517176,\"transport\":\"ws\",\"latency\":1081}"
+        },
+        {
+          "name": "_vid_lr",
+          "value": "[[\"upTa5vlLHFk5\",\"sbS4sdmEXveCGeOipijVuDvS+6h8k/Y72fu2bsW3NNPsqWzE1ijT47drzbIvzeG9a62gNcG67XzNoHOQ9rdwxrM30ummctXycMHjpiuf93GS684RtvY7z/vlN9W4O6+swxKz0mCx+6h8hes72fvxLqPjLJW1yBax6SzB9aY91bg7rbHrCpTTb7Ds6z+W1HDRsMUQk8M7z/v2N5OgI8Hos2rAuyDV7LRowLsuzbLnDbXDaMH1pjuFoCONrOgy26B0jPu+BdXgfcH1pjeToETP+/c/1bhCvvWmMoSgI9bgvGbboHWG+75oxrIgz/vnP9W4Qpj793zNtCjS7ah8kqAj1euxZ9ugbMHjpjaD9mmQ46txnuZ8ja3tKo6saJa46iqU7XeNvOcq2eF2jvbiOrHJVsyR6maNyCGs9uxhhr9Xi7bQPab0Sta25T+h6yuKmMo6tqA1wbz2fM3sbI+1qHyT8TvZ77Vvw647h7ymZMGzKNf1pj2EoCPV6LVq26B6kKqmZMGzKNf1pj2SoCPV6LVq26BokPu+aMazLc/79y3VuC/R7L0jqq47kKqmZMK7INP1pi2SoCPV77Zs26Bqh/u+JdXxKNPvpmTDtiHP+/dvwrY72e2wZ9ugatLsvHzNtSnP+/dvwbI72e29a9ugatrupmTBtTXBqrNu1bgo0umofISzLNH7vmjGrjuQ7LZ8zbYh1vWmLcGgI9P1pi3CujvZ77Ry1fEr0/u+a8+uO5DqsnzNty/P+/drxqAj1uyofISwKMHjsHLV8S7a+75qzq47kO+9fM22Ls/792zEoCPX76h8hLAgweOwbM6uO5DhsHzNti/P+/dmwqAj1+2ofIS6IMHjsGzArjuQ6LN8zbArz/v3ZsCgI9foqHyEuyvB47dn26Bq2uqmZMS1NcGqvWvVuCrW9aYtxqAj0/WmLcWgI9P1pi3DoCPT9aYtwqAj0/WmLcCgI9P1pi3GtzvZ6ah8hLMgweO1ctXxK9T7vm7boGrU7aZkwa47kO6xfM2zLM/792zDoCPT9aYtw7Y72emofIS2LMHjtHLV8SzU+75u26Bq1uCmZMeuO5DvtHzNsjXBqrJv1bgpz/v3aMWgI9P1pi3BsTvZ6ah8hLQtweO0ctXxL9b7vm7boGrV4aZkx647kO62fM2yNcGqvGzVuCnP+/dmxKAj0/WmLc67O9npqHyEsynS+75u26Bq0um3fM2yNcGqtW7DoCPT9aYtxrMuweO0ctXxKNLgpmTHrjuQ6LZt1bgpz/v3b8SzO9npqHyEsyrQ+75u26Bq0uqyfM2yNcGqtWrPoCPT9aYtxrYgweO0ctXxKNbppmTHrjuQ6LFp1bgoz/v3b8ewO9npqHyEsyjb+75u26Bq0uu0fM2yNcGqtW3HoCPT9aYtxrErweO0ctXxKNDspmTHrjuQ6Ldn1bgpz/v3b8OwO9npqHyEsy3X+75u26Bq0u2xfM22NcGqtWrBoCPT9aYtxrcoweO0ctXxKNbqpmTHrjuQ6LFr1bgpz/v3b8K0O9noqHyEsyza+75u26Bq0u+2fM2yNcGqtWjEoCPX6ah8hLMv1vu+btugatLvsnzNsjXBqrZs1bgoz/v3bcegI9P1pi3EsTvZ6ah8hLYgweO3ctXxLNP7vm7boGrV76Zkx647kO61fM2zNcGqt3zNsjXBqr18zbMrz/v3b8egI9P1pi3GszvZ6ah8hLMrweO1ctXxKND7vm7boGrS7aZkx647kOiyfM2yNcGqtmbVuCnP+/dtxaAj0/WmLcS1O9npqHyEtijB47Ry1fEq2vu+btugatfrpmTHrjuQ6rx8zbI1waqwbdW4Kc/792rHoCPT9aYtw7Q72emofIS6KcHjtHLV8SHS+75u26Bq2++mZMauO5DgtXzNsjXBqr1o1bgpz/v3Z8+gI9P1pi3FsinB47Ry1fEr0+imZMeuO5DrtGzVuCnP+/dpwaAj0uqofIS7LcHjsmzCrjuQ6LJq1bgpnvWmOYSgI9XotW7boH6G+75pxLUoz/viP9W4Qr71pjeWoCO4oqYt1bgv1euzctXnO9nut2jOrjuW+758n/Ztk6q+cdjrfYa38DeD+zeSrOUwg+F2jbfhPYOseoy0uz2ev3OQ9rdwxrM30umiL8rMcYyN5w+B0SyMuOUInrBwopfgH9HrcN6/7TCQ52uTq+0wg69pkbapPYLxbYy0qS2C4H2MtOU3ma0rzemqbtjya4y64DDVrjuGq6Zkmfd1j/WmOoSgI9Xgt2/boH2G+75ozrEoz/vnLdW4L9rqtXLV4WqQ+75px7Mhz/vnO9W4LtLusXLV82rB47NvwLc1war3fM21KtXg+QPboG+Q+74FjKBtweOxZ8+6NcGqpmTV9DuehKh8luA72aKmMJjtacHjpjzV/zXBuOt8zeR4j6rhctXta8Hj4j+b8Xye\"]]"
+        },
+        {
+          "name": "-main-menu",
+          "value": "false"
+        },
+        {
+          "name": "grant-overton-last_selected_organization",
+          "value": "84222cd84c061d749197588748558c02"
+        },
+        {
+          "name": "intercom.intercom-state-9a05faa80b1df601897603e983f2c594391bd0a0",
+          "value": "{\"app\":{\"openConfig\":{\"layout\":\"default\",\"unifiedStyling\":true,\"openTo\":\"home\",\"spaces\":[{\"type\":\"home\",\"label\":\"Home\",\"navigationLabel\":\"Home\",\"badge\":null},{\"type\":\"messages\",\"label\":\"Messages\",\"navigationLabel\":\"Messages\",\"badge\":null},{\"type\":\"tickets\",\"label\":\"Tickets\",\"navigationLabel\":\"Tickets\",\"badge\":null},{\"type\":\"help\",\"label\":\"Help\",\"navigationLabel\":\"Help\",\"badge\":null}],\"userHasReceivedChecklists\":false,\"userHasLiveNewsfeed\":false,\"userHasTickets\":false},\"selfServeSuggestionsMatch\":false,\"name\":\"QuantConnect\",\"features\":{\"anonymousInboundMessages\":true,\"googleAnalytics\":true,\"hubspotInstalled\":false,\"inboundMessages\":true,\"marketoEnrichmentInstalled\":false,\"googleAnalytics4Integration\":true},\"helpCenterSiteUrl\":\"https://intercom.help/quantconnect\",\"inboundConversationsDisabled\":true,\"isDeveloperWorkspace\":false,\"customGoogleAnalyticsTrackerId\":null},\"launcher\":{\"isLauncherEnabled\":false},\"launcherDiscoveryMode\":{\"hasDiscoveredLauncher\":true},\"launcherSettings\":{\"alignment\":\"right\",\"color\":\"#ffa200\",\"colorDark\":null,\"hasRequiredFeatures\":true,\"horizontalPadding\":20,\"instantBootEnabled\":true,\"launcherLogoUrl\":null,\"launcherLogoDarkUrl\":null,\"secondaryColor\":\"#ffa200\",\"secondaryColorDark\":null,\"showLauncher\":false,\"updatedAt\":1747951223,\"verticalPadding\":20,\"isLoading\":false},\"user\":{\"role\":\"visitor\",\"locale\":\"en\",\"hasConversations\":false},\"message\":{},\"conversations\":{\"byId\":{}},\"openOnBoot\":{\"type\":null,\"metadata\":{},\"lastOpenAtTimestamp\":1747996579608},\"operator\":{\"lastComposerEvent\":0},\"router\":{\"isInitialized\":false,\"navigationQueue\":[]}}"
+        },
+        {
+          "name": "grant-overton-84222cd84c061d749197588748558c02_welcome_page",
+          "value": "{\"paymentMethod\":{\"brand\":\"Visa\",\"last4\":\"1957\",\"credit\":null,\"expire\":\"08/28\",\"lastBillingDay\":\"05-03-25\",\"nextInvoiceAmount\":60,\"nextInvoiceDate\":\"06-03-25\"},\"invoicePeriod\":\"05-03-25 to 06-03-25\",\"members\":[{\"id\":371426,\"name\":\"Grant Overton\",\"isAdmin\":true,\"isRequester\":true,\"profile\":\"https://cdn.quantconnect.com/web/i/users/thumbnail/100/f1ae120693174d81746173199.png\",\"editable\":false,\"support\":{\"name\":\"Bronze\"},\"linkedin\":null,\"lastLoginTimestamp\":\"2025-05-23 10:35:10\",\"email\":\"overtoninnovations@gmail.com\",\"profileUrl\":\"/u/grant-overton\",\"publicId\":\"grant-overton\",\"online\":true,\"permissions\":{\"updateBilling\":{\"name\":\"Update Billing\",\"value\":true},\"researchNodeStop\":{\"name\":\"Stop Research Nodes\",\"value\":true},\"researchNodeCreate\":{\"name\":\"Create Research Nodes\",\"value\":true},\"researchNodeDelete\":{\"name\":\"Delete Research Nodes\",\"value\":true},\"liveNodeStop\":{\"name\":\"Stop Live Nodes\",\"value\":true},\"liveNodeCreate\":{\"name\":\"Create Live Nodes\",\"value\":true},\"liveNodeDelete\":{\"name\":\"Delete Live Nodes\",\"value\":true},\"backtestNodeStop\":{\"name\":\"Stop Backtest Nodes\",\"value\":true},\"backtestNodeCreate\":{\"name\":\"Create Backtest Nodes\",\"value\":true},\"backtestNodeDelete\":{\"name\":\"Delete Backtest Nodes\",\"value\":true},\"teamAdd\":{\"name\":\"Add Team Members to The Organization\",\"value\":true},\"teamEdit\":{\"name\":\"Edit Team Members Permissions\",\"value\":false},\"teamRemove\":{\"name\":\"Remove Team Members\",\"value\":true},\"storageRead\":{\"name\":\"Read Storage Files\",\"value\":true},\"storageWrite\":{\"name\":\"Create Storage Files\",\"value\":true},\"storageDelete\":{\"name\":\"Delete Storage Files\",\"value\":true}}}],\"nodes\":{\"backtest\":[{\"speed\":4.9,\"price\":{\"monthly\":14,\"yearly\":168},\"cpu\":2,\"ram\":8,\"name\":\"B2-8 node 71c4f9c8\",\"sku\":\"B2-8\",\"description\":\"2 CPU @ 4.9GHz, 8GB Ram\",\"usedBy\":\"-\",\"userProfile\":\"\",\"projectName\":\"\",\"projectId\":null,\"busy\":false,\"id\":\"BN-71c4f9c8f95c75f02f691fc79df95ebf\",\"assets\":500,\"host\":null,\"hasGpu\":0}],\"research\":[{\"speed\":2.4,\"price\":{\"monthly\":12,\"yearly\":144},\"cpu\":1,\"ram\":4,\"name\":\"R1-4 node ba5be879\",\"sku\":\"R1-4\",\"description\":\"1 CPU @ 2.4GHz, 4GB Ram\",\"usedBy\":\"-\",\"userProfile\":\"\",\"projectName\":\"\",\"projectId\":null,\"busy\":false,\"id\":\"RN-ba5be8798645ec9ca78b79cb9fd70d35\",\"assets\":250,\"host\":null,\"hasGpu\":0}],\"live\":[{\"speed\":2.4,\"price\":{\"monthly\":24,\"yearly\":288},\"cpu\":1,\"ram\":0.5,\"name\":\"L-MICRO node 8ed5d80b\",\"sku\":\"L-MICRO\",\"description\":\"1 CPU @ 2.4GHz, 0.5GB Ram\",\"usedBy\":\"-\",\"userProfile\":\"\",\"projectName\":\"\",\"projectId\":null,\"busy\":false,\"id\":\"LN-8ed5d80b707a53859d1ceee9f3990fdb\",\"assets\":10,\"host\":\"NY7\",\"hasGpu\":0}]}}"
+        },
+        {
+          "name": "_vid_t",
+          "value": "HL3Jf6Uv3KIWhumvOOcNLl6DnF0AgHTFnfD7IDTVAT2pKMtPGef1KKnsV232U6fXWH0go+e+S7bji7bdD1LZD62jQI7i+ClExa87cuejzwVELnsOnA=="
+        },
+        {
+          "name": "grant-overton-project-menu",
+          "value": "false"
+        },
+        {
+          "name": "-file_font_size",
+          "value": "14"
+        },
+        {
+          "name": "grant-overton-project-templates",
+          "value": "[{\"name\":\"US Equity\",\"strategies\":[{\"projectId\":14284119,\"name\":\"ETF Basket Pairs Trading\"},{\"projectId\":14284191,\"name\":\"Efficient Index Tracking\"},{\"projectId\":14284197,\"name\":\"Buffet Bargain Hunter\"},{\"projectId\":14284212,\"name\":\"Tactical Momentum Rank\"},{\"projectId\":14606783,\"name\":\"SPY Constituents Mean Reversion\"},{\"projectId\":14607036,\"name\":\"Uncorrelated Assets\"},{\"projectId\":14607055,\"name\":\"Forecasting of Tech Stocks with ML\"},{\"projectId\":14988004,\"name\":\"Price and Earnings Momentum\"},{\"projectId\":14988020,\"name\":\"Temporal CNN Prediction\"},{\"projectId\":14988034,\"name\":\"Mean Reversion Effect in Country Equity Indexes\"},{\"projectId\":14988109,\"name\":\"Copula Pairs Trading\"},{\"projectId\":14988713,\"name\":\"January Effect in Stocks\"},{\"projectId\":14988718,\"name\":\"VIX Predicts Stock Index Returns\"},{\"projectId\":14988725,\"name\":\"Momentum in Mutual Fund Returns\"},{\"projectId\":14988739,\"name\":\"CAPM Alpha Ranking on Dow 30\"},{\"projectId\":14988743,\"name\":\"Sector Rotation on News Sentiment\"},{\"projectId\":14988752,\"name\":\"Gaussian Naive Bayes Model\"},{\"projectId\":15314036,\"name\":\"Standardized Unexpected Earnings\"},{\"projectId\":15314047,\"name\":\"Piotroski F-Score Investing\"},{\"projectId\":15314055,\"name\":\"Short Term Reversal\"},{\"projectId\":15314070,\"name\":\"Short Term Reversal in Stocks\"},{\"projectId\":15529060,\"name\":\"Drawdown Regime Gold-SPY Hedge Portfolio\"},{\"projectId\":15529066,\"name\":\"TDA Portfolio Construction\"}],\"categoryClass\":\"category-2\"},{\"name\":\"Alternative Data\",\"strategies\":[{\"projectId\":14284067,\"name\":\"Quiver Quant Crowd Sentiment\"},{\"projectId\":14284103,\"name\":\"Breaking News Events\"},{\"projectId\":14284112,\"name\":\"Factor Sector Rotation\"},{\"projectId\":14988736,\"name\":\"Country Rotation Based on Regulatory Alerts Sentiment\"}],\"categoryClass\":\"category-3\"},{\"name\":\"Futures\",\"strategies\":[{\"projectId\":14284133,\"name\":\"All-Weather Portfolio\"},{\"projectId\":14284263,\"name\":\"Inverse Volatility Rank\"},{\"projectId\":14284322,\"name\":\"Oil Production Trend Following\"},{\"projectId\":14988027,\"name\":\"Exploit VIX Term Structure\"},{\"projectId\":15529038,\"name\":\"Adjusted Trend\"},{\"projectId\":15529043,\"name\":\"Fast Trend Following With Trend Strength\"},{\"projectId\":15529155,\"name\":\"Combined Carry and Trend\"}],\"categoryClass\":\"category-4\"},{\"name\":\"Crypto\",\"strategies\":[{\"projectId\":14284312,\"name\":\"Crypto Technical Momentum\"},{\"projectId\":14284329,\"name\":\"Long-Short Bitcoin Beta\"},{\"projectId\":14987989,\"name\":\"BTC Dual Thrust Long Only\"}],\"categoryClass\":\"category-5\"},{\"name\":\"Forex\",\"strategies\":[{\"projectId\":14284586,\"name\":\"FX Statistical Arbitrage\"},{\"projectId\":14987999,\"name\":\"SVM Wavelet Forecasting\"}],\"categoryClass\":\"category-6\"},{\"name\":\"League\",\"strategies\":[{\"projectId\":17695558,\"name\":\"Wavelet Momentum Forex\"},{\"projectId\":17695576,\"name\":\"Rising Sentiment Momentum\"},{\"projectId\":17804270,\"name\":\"Money Market Bonds\"},{\"projectId\":17872999,\"name\":\"Overnight Mean Reversion \"},{\"projectId\":17874998,\"name\":\"Momentum Reversal Insight\"},{\"projectId\":17933312,\"name\":\"Multi-Alpha Fusion\"},{\"projectId\":17933356,\"name\":\"CryptoAlpha Evolution\"},{\"projectId\":17945754,\"name\":\"Momentum Monte Allocation\"},{\"projectId\":17968389,\"name\":\"Trend-Optimized Allocation\"},{\"projectId\":17968670,\"name\":\"Dynamic Volatility Blend\"},{\"projectId\":18114348,\"name\":\"Tactical Momentum Rank\"},{\"projectId\":18137273,\"name\":\"Intraday Momentum\"},{\"projectId\":18250454,\"name\":\"Sector Momentum Exploit\"},{\"projectId\":18250479,\"name\":\"Cointegration-Enhanced Crypto\"},{\"projectId\":18250489,\"name\":\"AlphaWave Market Insights\"},{\"projectId\":18250593,\"name\":\"Crypto and Stock Momentum\"},{\"projectId\":18262332,\"name\":\"Bid-Ask Skew\"},{\"projectId\":18291549,\"name\":\"Simple Dynamic Momentum\"},{\"projectId\":18335322,\"name\":\"Volatility-Adjusted Means\"},{\"projectId\":18410679,\"name\":\"Pairs Trading US ETFs\"},{\"projectId\":18413414,\"name\":\"Multi-Layer EMA strategy\"},{\"projectId\":18492379,\"name\":\"Wavelet Momentum Forex\"},{\"projectId\":18492519,\"name\":\"Rising Sentiment Momentum\"},{\"projectId\":18492521,\"name\":\"Money Market Bonds and Trend Trading. \"},{\"projectId\":18492524,\"name\":\"Overnight Mean Reversion \"},{\"projectId\":18492528,\"name\":\"Momentum Reversal Insight\"},{\"projectId\":18492531,\"name\":\"Multi-Alpha Fusion\"},{\"projectId\":18492533,\"name\":\"CryptoAlpha Evolution\"},{\"projectId\":18492537,\"name\":\"Protective Momentum Holding\"},{\"projectId\":18492541,\"name\":\"Trend-Optimized Allocation\"},{\"projectId\":18492546,\"name\":\"High Volume Node Retracements\"},{\"projectId\":18492548,\"name\":\"Tactical Momentum Rank\"},{\"projectId\":18492550,\"name\":\"Intraday Momentum\"},{\"projectId\":18492552,\"name\":\"Sector Momentum Exploit\"},{\"projectId\":18492556,\"name\":\"Candlestick Trading Equities + Forex\"},{\"projectId\":18492559,\"name\":\"Moving Average\"},{\"projectId\":18492565,\"name\":\"Crypto and Stock Momentum\"},{\"projectId\":18492568,\"name\":\"Trend Following\"},{\"projectId\":18492570,\"name\":\"Bid-Ask Skew\"},{\"projectId\":18492572,\"name\":\"Simple Dynamic Momentum\"},{\"projectId\":18492575,\"name\":\"Volatility-Adjusted Means\"},{\"projectId\":18492577,\"name\":\"Pairs Trading US ETFs\"},{\"projectId\":18492580,\"name\":\"Multi-Layer EMA\"},{\"projectId\":20896578,\"name\":\"Wavelet Momentum Forex\"},{\"projectId\":20896582,\"name\":\"Cardinal Wings\"},{\"projectId\":20896589,\"name\":\"Overnight Mean Reversion \"},{\"projectId\":20896593,\"name\":\"Momentum Reversal Insight\"},{\"projectId\":20896596,\"name\":\"Multi-Alpha Fusion\"},{\"projectId\":20896599,\"name\":\"RSI Momentum Strategy\"},{\"projectId\":20896604,\"name\":\"Protective Momentum Holding\"},{\"projectId\":20896606,\"name\":\"Trend-Optimized Allocation\"},{\"projectId\":20896608,\"name\":\"High Volume Node Retracements\"},{\"projectId\":20896611,\"name\":\"Tactical Momentum Rank\"},{\"projectId\":20896615,\"name\":\"Intraday Momentum\"},{\"projectId\":20896619,\"name\":\"Sector Momentum Exploit\"},{\"projectId\":20896623,\"name\":\"Candlestick Trading Equities + Forex\"},{\"projectId\":20896632,\"name\":\"Crypto and Stock Momentum\"},{\"projectId\":20896635,\"name\":\"Trend Following\"},{\"projectId\":20896638,\"name\":\"Bid-Ask Skew\"},{\"projectId\":20896641,\"name\":\"Simple Dynamic Momentum\"},{\"projectId\":20896643,\"name\":\"Volatility-Adjusted Means\"},{\"projectId\":20896730,\"name\":\"Pairs Trading US ETFs\"},{\"projectId\":20896733,\"name\":\"Multi-Layer EMA\"},{\"projectId\":20896736,\"name\":\"Momentum-Driven Sector Rotation\"},{\"projectId\":20896739,\"name\":\"Multi Asset Momentum strategy\"},{\"projectId\":20896746,\"name\":\"Firebirds Investment Club\"},{\"projectId\":20896748,\"name\":\"VWMA-ROC Momentum (Temporary)\"},{\"projectId\":21205682,\"name\":\"MACDelta\"},{\"projectId\":22149468,\"name\":\"Santa Clara Quant\"}],\"categoryClass\":\"category-7\"}]"
+        },
+        {
+          "name": "_grecaptcha",
+          "value": "09AMNxLB-FvGDMOP8wRGkktnio4TCX-rYoVdR9062x-ACSxCV9jDwCRjrNAUjlSjK8PaU8fP_NFtwqLUMW3Qg2TPjEPrBvaRqhiIG8NgUZy5tuXhJGI3E7qiIrWZjTlRv2"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::a",
+          "value": "MWs2M3RudDFxdG9lczc="
+        },
+        {
+          "name": "rc::f",
+          "value": "0aADHWCRKEfyFuqC6OVxvEdtoOacqYVKKUelDMsUQROF_JbsCFnS_PZtCa4hIjEqt73SYtwX8"
+        }
+      ]
+    },
+    {
+      "origin": "https://4757f1dc-be82db3d-489ef8ae-7df97aaa-b5759064.code.quantconnect.com",
+      "localStorage": [
+        {
+          "name": "profileAssociations",
+          "value": "{\"workspaces\":{\"vscode-remote://4757f1dc-be82db3d-489ef8ae-7df97aaa-b5759064.code.quantconnect.com:443/home/lean-user/workspace/workspace.code-workspace\":\"__default__profile__\"},\"emptyWindows\":{}}"
+        },
+        {
+          "name": "userDataProfiles",
+          "value": "[]"
+        },
+        {
+          "name": "monaco-parts-splash",
+          "value": "{\"baseTheme\":\"vs-dark\",\"colorInfo\":{\"foreground\":\"#cccccc\",\"background\":\"#1e1e1e\",\"editorBackground\":\"#1e1e1e\",\"titleBarBackground\":\"#3c3c3c\",\"activityBarBackground\":\"#333333\",\"sideBarBackground\":\"#252526\",\"statusBarBackground\":\"#007acc\",\"statusBarNoFolderBackground\":\"#68217a\"},\"layoutInfo\":{\"sideBarSide\":\"left\",\"editorPartMinWidth\":220,\"titleBarHeight\":0,\"activityBarWidth\":48,\"sideBarWidth\":300,\"auxiliarySideBarWidth\":300,\"statusBarHeight\":0,\"windowBorder\":false}}"
+        }
+      ]
+    },
+    {
+      "origin": "https://18bam6mh3pgvoiovug3ipndmkb0tp03tmq6oq3gs30vqr98cu19n.code-cdn.quantconnect.com",
+      "localStorage": [
+        {
+          "name": "SYMBOLID-SPY 32DXB05AVB1IE|SPY R735QTJ8XC9X",
+          "value": "{\"lot-size\":1,\"minimum-price-variation\":0.01,\"id\":\"SPY 32DXB05AVB1IE|SPY R735QTJ8XC9X\",\"alias\":\"SPY   240102P00469000\",\"market\":\"usa\",\"security-type\":2,\"expiration-date\":\"2024-01-02T00:00:00\"}"
+        },
+        {
+          "name": "SYMBOLID-SPY 32DZ9WC0VJVQE|SPY R735QTJ8XC9X",
+          "value": "{\"lot-size\":1,\"minimum-price-variation\":0.01,\"id\":\"SPY 32DZ9WC0VJVQE|SPY R735QTJ8XC9X\",\"alias\":\"SPY   240104P00467000\",\"market\":\"usa\",\"security-type\":2,\"expiration-date\":\"2024-01-04T00:00:00\"}"
+        },
+        {
+          "name": "SYMBOLID-SPY 32DZ9WC0PLJOM|SPY R735QTJ8XC9X",
+          "value": "{\"lot-size\":1,\"minimum-price-variation\":0.01,\"id\":\"SPY 32DZ9WC0PLJOM|SPY R735QTJ8XC9X\",\"alias\":\"SPY   240104P00466000\",\"market\":\"usa\",\"security-type\":2,\"expiration-date\":\"2024-01-04T00:00:00\"}"
+        },
+        {
+          "name": "SYMBOLID-SPY 32E09CFDPPYSM|SPY R735QTJ8XC9X",
+          "value": "{\"lot-size\":1,\"minimum-price-variation\":0.01,\"id\":\"SPY 32E09CFDPPYSM|SPY R735QTJ8XC9X\",\"alias\":\"SPY   240105P00465000\",\"market\":\"usa\",\"security-type\":2,\"expiration-date\":\"2024-01-05T00:00:00\"}"
+        },
+        {
+          "name": "SYMBOLID-SPY 32DXB05B77PLY|SPY R735QTJ8XC9X",
+          "value": "{\"lot-size\":1,\"minimum-price-variation\":0.01,\"id\":\"SPY 32DXB05B77PLY|SPY R735QTJ8XC9X\",\"alias\":\"SPY   240102P00471000\",\"market\":\"usa\",\"security-type\":2,\"expiration-date\":\"2024-01-02T00:00:00\"}"
+        },
+        {
+          "name": "SYMBOLID-SPY 32E09CFDVOAUE|SPY R735QTJ8XC9X",
+          "value": "{\"lot-size\":1,\"minimum-price-variation\":0.01,\"id\":\"SPY 32E09CFDVOAUE|SPY R735QTJ8XC9X\",\"alias\":\"SPY   240105P00466000\",\"market\":\"usa\",\"security-type\":2,\"expiration-date\":\"2024-01-05T00:00:00\"}"
+        }
+      ]
+    }
+  ]
+}

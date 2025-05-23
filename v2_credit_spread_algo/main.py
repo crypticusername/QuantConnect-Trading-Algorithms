@@ -4,8 +4,7 @@ from AlgorithmImports import *
 from universe_builder import UniverseBuilder   # M1: Universe building
 from spread_selector import SpreadSelector     # M3: Strike selection
 from order_executor import OrderExecutor       # M4: Order execution 
-# Future modules:
-# from risk_manager import RiskManager         # M5: Risk management
+from risk_manager import RiskManager           # M5: Risk management
 
 class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
     """
@@ -66,8 +65,8 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
         self.order_executor = OrderExecutor(self)                  # M4
         self.order_executor.log_method = self.log    # Pass our log method
         
-        # Future modules
-        # self.risk_manager = RiskManager(self)                      # M5
+        # Risk management module (M5)
+        self.risk_manager = RiskManager(self, self.order_executor)   # M5
         
         # Schedule trading events
         # Load chains at market open with fallback attempts each minute
@@ -274,13 +273,11 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
         # Perform state verification to ensure flags match reality
         self.order_executor.reset_state()
         
-        # Risk monitoring - implemented in M4 module (OrderExecutor)
-        # Only check stop-loss, take-profit is disabled
+        # Risk monitoring - now implemented in M5 module (RiskManager)
         if self._option_chain is not None and self.order_executor.spread_is_open:
-            # Check only stop-loss, take-profit is disabled for now
-            self.order_executor.check_stop_loss(self._option_chain)
-            # Take-profit is disabled per user request
-            # self.order_executor.check_take_profit(self._option_chain)
+            # Use Risk Manager to monitor positions (currently only checking stop-loss)
+            self.risk_manager.monitor_positions(self._option_chain)
+            # Note: Take-profit is disabled per user request
 
     def on_order_event(self, order_event):
         """Handle order events for tracking spread status.
