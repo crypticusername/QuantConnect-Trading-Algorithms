@@ -1,4 +1,5 @@
 from AlgorithmImports import *
+import datetime
 
 class OrderExecutor:
     """
@@ -22,6 +23,9 @@ class OrderExecutor:
         self.pending_open = False
         self.pending_close = False
         self.last_reset_date = None  # Track the last date state was reset
+        
+        # Logging control
+        self.last_monitoring_log_time = None
         
         # Current spread details
         self.current_spread_details = {
@@ -107,12 +111,8 @@ class OrderExecutor:
             long_strike = short_strike - width
             
             # Store the strikes for later reference - these are the actual strikes used for the spread
-            self.algorithm.log(f"Storing spread details - Short: {short_strike}, Long: {long_strike}")
-            
             # Get the expiry from today's date since we're doing 0 DTE
             expiry = self.algorithm.time.date()
-            
-            self.algorithm.log(f"Creating leg-by-leg limit orders for bull put spread - Short: {short_strike}, Long: {long_strike}, Expiry: {expiry.strftime('%Y-%m-%d')}")
             
             # Create the option contract symbols using proper QuantConnect API methods
             underlying_symbol = self.algorithm.Securities["SPY"].Symbol
@@ -144,7 +144,7 @@ class OrderExecutor:
             # This means we'll accept slightly less credit to improve fill probability
             target_net_credit = net_credit * 0.95
             
-            self.algorithm.log(f"Setting leg-by-leg limit orders for net credit: ${target_net_credit:.2f} (95% of theoretical ${net_credit:.2f})")
+            # Calculate order parameters - no logging here to reduce log volume
             
             # Get current prices to inform our limit prices
             short_option_data = self.algorithm.securities[short_option]
@@ -170,7 +170,8 @@ class OrderExecutor:
             # Create and submit the limit orders
             tag = f"TargetCredit:{target_net_credit}"
             
-            self.algorithm.log(f"Leg-by-leg limits - Short: ${short_min_price:.2f}, Long: ${long_max_price:.2f}, Net: ${target_net_credit:.2f}")
+            # Placing leg-by-leg orders with consolidated logging
+            self.algorithm.log(f"TRADE ORDER: Bull Put Spread ${short_strike:.2f}/${long_strike:.2f}, Width=${width:.2f}, Target Credit=${target_net_credit:.2f} - Short: ${short_min_price:.2f}, Long: ${long_max_price:.2f}")
             
             # In QuantConnect Python API, we need to use the limit_order method
             # The direction is specified as a negative quantity for selling and positive for buying
@@ -189,12 +190,7 @@ class OrderExecutor:
                 self.algorithm.log("Failed to place spread order - no order tickets returned")
                 return False
             
-            # Log the ticket information
-            for i, ticket in enumerate(tickets):
-                leg_type = "Short" if i == 0 else "Long"
-                price = short_min_price if i == 0 else long_max_price
-                self.algorithm.log(f"{leg_type} leg order ticket created: ID {ticket.order_id}, Status: {ticket.status}")
-                self.algorithm.log(f"Limit price set to: ${price:.2f}")
+            # No detailed ticket logging to reduce log volume
                 
             # Update tracking info
             self.pending_open = True
@@ -206,10 +202,7 @@ class OrderExecutor:
             self.current_spread_details['max_loss'] = max_loss
             self.current_spread_details['breakeven'] = breakeven
             
-            # Log the spread details we're about to use
-            self._log_active_spread()
-            
-            self.algorithm.log(f"Placed bull put spread limit order at ${target_net_credit:.2f}: {len(tickets)} tickets created")
+            # No need for detailed spread logging here - will log on fill instead
             return True
             
         except Exception as e:
@@ -236,6 +229,7 @@ class OrderExecutor:
         initial_credit = self.current_spread_details['initial_credit']
         
         if initial_credit is None:
+            # This is an error condition, so always log it
             self.algorithm.log("Warning: initial_credit is None, cannot evaluate stop-loss")
             return False
             
@@ -243,6 +237,7 @@ class OrderExecutor:
         current_debit = self.calculate_current_spread_value(option_chain)
         
         if current_debit is None:
+            # Error condition, so always log it
             self.algorithm.log("Cannot calculate current spread value for stop-loss check")
             return False
             
@@ -250,6 +245,7 @@ class OrderExecutor:
         stop_loss_threshold = initial_credit * 2
         
         if current_debit >= stop_loss_threshold:
+            # Always log stop-loss triggers regardless of time interval
             self.algorithm.log(f"STOP-LOSS TRIGGERED: Current debit ${current_debit:.2f} ≥ 2× initial credit ${initial_credit:.2f}")
             # Close the position
             return self.close_spread_position(reason="(stop-loss triggered)")
@@ -274,6 +270,7 @@ class OrderExecutor:
         max_profit = self.current_spread_details['max_profit']
         
         if initial_credit is None or max_profit is None:
+            # This is an error condition, so always log it
             self.algorithm.log("Warning: initial_credit or max_profit is None, cannot evaluate take-profit")
             return False
             
@@ -281,6 +278,7 @@ class OrderExecutor:
         current_debit = self.calculate_current_spread_value(option_chain)
         
         if current_debit is None:
+            # Error condition, so always log it
             self.algorithm.log("Cannot calculate current spread value for take-profit check")
             return False
             
@@ -291,6 +289,7 @@ class OrderExecutor:
         take_profit_threshold = max_profit * 0.5
         
         if current_profit >= take_profit_threshold:
+            # Always log take-profit triggers regardless of time interval
             profit_percentage = (current_profit / max_profit) * 100
             self.algorithm.log(f"TAKE-PROFIT TRIGGERED: Current profit ${current_profit:.2f} is {profit_percentage:.1f}% of max profit ${max_profit:.2f}")
             # Close the position
@@ -466,6 +465,11 @@ class OrderExecutor:
                 self.algorithm.log(f"Not a bull put spread: short strike {short_strike} <= long strike {long_strike}")
                 return False
                 
+            # Verify canonical_option is not None before creating the spread
+            if canonical_option is None:
+                self.algorithm.log("Error: canonical_option is None, cannot create spread to close")
+                return False
+                
             # Create the spread strategy object
             spread = OptionStrategies.bull_put_spread(
                 canonical_option,
@@ -560,8 +564,7 @@ class OrderExecutor:
         order_status = order_event.status
         order_id = order_event.order_id
         
-        # Log the event for tracking
-        self.algorithm.log(f"Order Event: ID={order_id}, Status={order_status}")
+        # Skip order event status logging to reduce verbosity
         
         # Process based on status
         if order_status == OrderStatus.FILLED:
@@ -572,9 +575,11 @@ class OrderExecutor:
             self.on_order_invalid(order_event)
         # Add handlers for other statuses as needed
         elif order_status == OrderStatus.SUBMITTED:
-            self.algorithm.log(f"Order submitted: {order_id}")
+            # Skip order submitted logging
+            pass
         elif order_status == OrderStatus.PARTIALLY_FILLED:
-            self.algorithm.log(f"Order partially filled: {order_id}, Quantity: {order_event.fill_quantity}")
+            # Skip partial fill logging
+            pass
         elif order_status == OrderStatus.NONE:
             self.algorithm.log(f"Order status none: {order_id}")
         else:
@@ -642,11 +647,9 @@ class OrderExecutor:
                 'tag': order_tag
             }
         
-        self.algorithm.log(f"ORDER FILLED: OrderId: {order_id}, Tag: {order_tag}, " + 
-                           f"{filled_asset}, qty: {fill_quantity}, price: ${fill_price:.2f}")
+        # Skip detailed order logging to reduce log volume
         
         if self.pending_open:
-            self.algorithm.log("This is a fill for an opening order")
             # Check if all legs of the spread are filled
             tickets_filled = all(ticket.status == OrderStatus.FILLED for ticket in self.order_tickets)
             
@@ -656,20 +659,25 @@ class OrderExecutor:
                 net_credit = self._calculate_net_credit()
                 
                 if net_credit > 0:
-                    self.algorithm.log(f"Spread position opened - Net credit: ${net_credit:.2f}")
+                    # Consolidated fill logging with single comprehensive entry
+                    short_strike = self.current_spread_details['short_strike']
+                    long_strike = self.current_spread_details['long_strike']
+                    width = short_strike - long_strike
+                    max_profit = net_credit * 100
+                    max_loss = (width - net_credit) * 100
+                    breakeven = short_strike - net_credit
+                    
+                    self.algorithm.log(f"TRADE FILLED: Bull Put Spread ${short_strike:.2f}/${long_strike:.2f}, Width=${width:.2f}, Actual Credit=${net_credit:.2f}, Max P/L=${max_profit:.2f}/${max_loss:.2f}, Breakeven=${breakeven:.2f}")
+                    
                     self.spread_is_open = True
                     self.pending_open = False
                     
                     # Update the position details with actual fill values
                     self.current_spread_details['initial_credit'] = net_credit
-                    
-                    # Log detailed opening information
-                    self._log_active_spread()
                 else:
                     self.algorithm.log(f"Warning: Negative or zero net credit received: ${net_credit:.2f}")
                     
         elif self.pending_close:
-            self.algorithm.log("This is a fill for a closing order")
             # Check if all closing orders are filled
             tickets_filled = all(ticket.status == OrderStatus.FILLED for ticket in self.order_tickets)
             
@@ -776,8 +784,7 @@ class OrderExecutor:
             quantity = order_info['quantity']
             price = order_info['price']
             
-            self.algorithm.log(f"Fill details: Quantity={quantity}, Price=${price:.2f}")
-            
+            # Skip detailed fill logging
             # Add to total - but negate it because credit spreads are sells
             # For bull put spreads, we sell the short put (positive) and buy the long put (negative)
             total_credit -= quantity * price
@@ -798,7 +805,7 @@ class OrderExecutor:
             quantity = order_info['quantity']
             price = order_info['price']
             
-            self.algorithm.log(f"Close fill details: Quantity={quantity}, Price=${price:.2f}")
+            # Skip detailed close fill logging - remove verbosity
             
             # Add to total - but negate it because when closing a credit spread,
             # we're buying back the short put (negative) and selling the long put (positive)
@@ -806,6 +813,32 @@ class OrderExecutor:
             
         return total_debit
     
+    def should_log_monitoring_data(self):
+        """
+        Determine if we should log monitoring data based on time interval.
+        Only logs once per hour to reduce log volume.
+        
+        Returns:
+            bool: True if we should log, False otherwise
+        """
+        current_time = self.algorithm.time
+        
+        # Always log in these cases
+        if self.last_monitoring_log_time is None:
+            self.last_monitoring_log_time = current_time
+            return True
+            
+        # Log if it's been at least an hour since the last log
+        time_diff = current_time - self.last_monitoring_log_time
+        if time_diff.total_seconds() >= 3600:  # 3600 seconds = 1 hour
+            self.last_monitoring_log_time = current_time
+            return True
+            
+        # Also log if P&L changes significantly (can add this later if needed)
+        
+        # Default case - don't log
+        return False
+        
     def calculate_current_spread_value(self, option_chain):
         """
         Calculate the current value to close an existing spread.
@@ -828,10 +861,13 @@ class OrderExecutor:
         initial_credit = self.current_spread_details['initial_credit']
         
         if short_strike is None or long_strike is None:
-            self.algorithm.log(f"Missing strike prices: short={short_strike}, long={long_strike}")
+            if self.should_log_monitoring_data():
+                self.algorithm.log(f"Missing strike prices: short={short_strike}, long={long_strike}")
             return None
         
-        self.algorithm.log(f"Looking for put contracts at strikes {short_strike} and {long_strike}")
+        should_log = self.should_log_monitoring_data()
+        if should_log:
+            self.algorithm.log(f"Looking for put contracts at strikes {short_strike} and {long_strike}")
         
         # Find the current prices for our strikes
         put_contracts = [contract for contract in option_chain 
@@ -839,38 +875,44 @@ class OrderExecutor:
                         and contract.expiry.date() == today]
         
         if not put_contracts:
-            self.algorithm.log(f"No put contracts found for today's expiration ({today})")
+            if should_log:
+                self.algorithm.log(f"No put contracts found for today's expiration ({today})")
             return None
             
-        # Log available strikes to debug
-        strikes = sorted([c.strike for c in put_contracts])
-        self.algorithm.log(f"Available put strikes: {strikes[:5]}...{strikes[-5:]}")
+        # Log available strikes to debug only hourly
+        if should_log:
+            strikes = sorted([c.strike for c in put_contracts])
+            self.algorithm.log(f"Available put strikes: {strikes[:5]}...{strikes[-5:]}")
         
         # Find the specific contracts that match our spread
         short_put = next((c for c in put_contracts if abs(c.strike - short_strike) < 0.001), None)
         long_put = next((c for c in put_contracts if abs(c.strike - long_strike) < 0.001), None)
         
         if short_put is None:
-            self.algorithm.log(f"Could not find short put at strike {short_strike}")
+            if should_log:
+                self.algorithm.log(f"Could not find short put at strike {short_strike}")
             return None
             
         if long_put is None:
-            self.algorithm.log(f"Could not find long put at strike {long_strike}")
+            if should_log:
+                self.algorithm.log(f"Could not find long put at strike {long_strike}")
             return None
             
         # Calculate debit to close (buy back short, sell long)
         # Using conservative prices (ask for short, bid for long)
         current_debit = short_put.AskPrice - long_put.BidPrice
         
-        self.algorithm.log(f"Found contracts - Short Put: ${short_strike} (Ask=${short_put.AskPrice:.2f}), Long Put: ${long_strike} (Bid=${long_put.BidPrice:.2f})")
-        self.algorithm.log(f"Current debit to close: ${current_debit:.2f}")
+        if should_log:
+            self.algorithm.log(f"Found contracts - Short Put: ${short_strike} (Ask=${short_put.AskPrice:.2f}), Long Put: ${long_strike} (Bid=${long_put.BidPrice:.2f})")
+            self.algorithm.log(f"Current debit to close: ${current_debit:.2f}")
         
         # Calculate profit percentage
         if initial_credit > 0:
             profit_percentage = (initial_credit - current_debit) / initial_credit
             profit_dollars = (initial_credit - current_debit) * 100  # Per contract
-            
-            self.algorithm.log(f"Current P/L: ${profit_dollars:.2f} ({profit_percentage:.1%})")
+            # Report the current P/L status - hourly instead of every minute
+            if self.should_log_monitoring_data():
+                self.algorithm.log(f"Current P/L: ${profit_dollars:.2f} ({profit_percentage:.1%})")
         
         return current_debit
     

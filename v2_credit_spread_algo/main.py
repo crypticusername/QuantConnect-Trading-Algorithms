@@ -16,6 +16,26 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
     Risk rules: Stop-loss at 2× credit, take-profit at 50% max gain
     """
     
+    def log(self, message):
+        """Enhanced logging that skips messages during warm-up period.
+        
+        Parameters:
+            message: The message to log
+        """
+        # Skip logging during warm-up period
+        if not self.is_warming_up:
+            # Call the parent class's log method
+            super().log(message)
+    
+    def critical_log(self, message):
+        """Log critical messages even during warm-up period.
+        
+        Parameters:
+            message: The message to log
+        """
+        # Always log critical messages regardless of warm-up
+        super().log(message)
+    
     def initialize(self):
         """Initialize algorithm parameters, modules, and scheduling."""
         # Algorithm parameters
@@ -25,11 +45,13 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
         self.set_time_zone(TimeZones.NEW_YORK)
         self.set_warm_up(10, Resolution.DAILY)
         
-        self.log("Algorithm initialized with $10,000 starting capital")
+        # Use critical_log for essential initialization messages
+        self.critical_log("Algorithm initialized with $10,000 starting capital")
         
         # Initialize modules
         self.universe_builder = UniverseBuilder(self)                # M1
         self.universe_builder.initialize_universe("SPY", Resolution.MINUTE)
+        self.universe_builder.log_method = self.log  # Pass our log method
         self.equity_symbol = self.universe_builder.equity_symbol
         self.option_symbol = self.universe_builder.option_symbol
         self.set_benchmark(self.equity_symbol)
@@ -38,9 +60,11 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
         # Note: Using default parameters (target_delta=0.15, max_delta=0.30, min_credit_pct=0.20, etc.)
         # These can be customized in spread_selector.py or by passing parameters here
         self.spread_selector = SpreadSelector(self)
+        self.spread_selector.log_method = self.log  # Pass our log method
         
         # Order execution module (M4)
         self.order_executor = OrderExecutor(self)                  # M4
+        self.order_executor.log_method = self.log    # Pass our log method
         
         # Future modules
         # self.risk_manager = RiskManager(self)                      # M5
@@ -70,78 +94,81 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
 
     def load_option_chains(self):
         """Initial attempt to load option chains at market open."""
-        # Add day start marker for better log tracking
-        self.log(f"=== Trading day start: {self.time.strftime('%Y-%m-%d')} ===")
-        
         # Reset daily state
         self._chains_loaded_today = False
         self._option_chain = None
         
-        # Reset the order executor state at market open
+        # Reset OrderExecutor state
         self.order_executor.reset_state()
         
+        # Check if we have any open positions
+        has_positions = False
+        for security in self.portfolio.keys():
+            if "SPY" in str(security) and abs(self.portfolio[security].quantity) > 0:
+                has_positions = True
+                break
+        
+        # Consolidated log message with clear section header
+        self.log(f"DAILY RESET - {'Open positions found' if has_positions else 'No open positions found'}")
+        
+        # Get current equity price
         equity_price = self.universe_builder.get_latest_equity_price()
-        self.log(f"SPY price at 9:30 AM ET: ${equity_price:.2f}")
-        self.log(f"Attempting to load option chain for {self.time.strftime('%Y-%m-%d')}")
-        self.log("Prepared to load option chains at market open")
+        self.log(f"MARKET DATA - SPY price: ${equity_price:.2f}, Checking for option chain {self.time.strftime('%Y-%m-%d')}")
 
     def load_option_chains_fallback(self):
         """Fallback attempts to load option chains if not loaded at market open."""
         if not self._chains_loaded_today:
-            current_minute = self.time.minute
-            self.log(f"Fallback chain loading attempt at 9:{current_minute} AM ET")
-            # Try to get some diagnostics
+            # Try to get the option chains without verbose logging
             try:
                 chain_status = self.universe_builder.get_option_chains(None)
-                if chain_status is None:
-                    self.log(f"Fallback diagnostics: Option chain is None")
-                else:
+                if chain_status is not None:
                     contracts = list(chain_status)
-                    self.log(f"Fallback diagnostics: Found {len(contracts)} contracts, but not properly loaded")
+                    if len(contracts) > 0:
+                        # Get contract breakdown
+                        put_count = sum(1 for contract in contracts if contract.right == OptionRight.PUT)
+                        call_count = sum(1 for contract in contracts if contract.right == OptionRight.CALL)
+                        today = self.time.date()
+                        today_contracts = [c for c in contracts if c.expiry.date() == today]
+                        
+                        # Consolidated log message for option chain data
+                        self.log(f"MARKET DATA - Option chain loaded with {len(contracts)} contracts ({put_count} puts, {call_count} calls), {len(today_contracts)} expiring today")
+                        self._option_chain = chain_status
+                        self._chains_loaded_today = True
             except Exception as e:
-                self.log(f"Fallback diagnostics error: {str(e)}")
+                # Always log exceptions even during warm-up
+                self.critical_log(f"ERROR - Option chain loading error: {str(e)}")
 
     def open_trades(self):
         """Open bull put credit spreads at 10:00 AM ET."""
         if not self._chains_loaded_today:
-            self.log("No option chains loaded for today. Skipping trade entry.")
+            self.log("TRADE ANALYSIS - SKIPPED - No option chains loaded for today")
             return
             
         if self._option_chain is not None:
             try:
                 # Get current equity price for reference
                 equity_price = self.universe_builder.get_latest_equity_price()
-                self.log(f"SPY price at trade entry: ${equity_price:.2f}")
                 
-                # Count available contracts and verify today's expiry is available
-                contracts = [contract for contract in self._option_chain]
-                put_count = sum(1 for contract in contracts if contract.right == OptionRight.PUT)
-                call_count = sum(1 for contract in contracts if contract.right == OptionRight.CALL)
-                self.log(f"Option chain loaded with {len(contracts)} contracts: {put_count} puts, {call_count} calls")
+                # Consolidated trade analysis log with clear section header
+                self.log(f"TRADE ANALYSIS - SPY price: ${equity_price:.2f}, Chain loaded: {self._chains_loaded_today}")
                 
                 # Verify today's expiry is available
+                contracts = [contract for contract in self._option_chain]
                 today = self.time.date()
                 expiries = set(contract.expiry.date() for contract in contracts)
                 if today not in expiries:
-                    self.log(f"Warning: No 0 DTE options found for today ({today})")
+                    self.log(f"TRADE ANALYSIS - SKIPPED - No 0 DTE options found for today ({today})")
                     return
+                # Format selection criteria with structured header
+                self.log(f"SELECTION CRITERIA - Target delta: {self.spread_selector.target_delta}, Max delta: {self.spread_selector.max_delta}, Min credit: {self.spread_selector.min_credit_pct*100}% of width")
                 
-                # Use SpreadSelector (M3) to find suitable bull put spread
-                self.log(f"Starting spread selection with {len(contracts)} option contracts")
-                self.log(f"Underlying price: ${equity_price:.2f}")
-                self.log(f"Selection criteria: target delta {self.spread_selector.target_delta}, max delta {self.spread_selector.max_delta}, min credit {self.spread_selector.min_credit_pct*100}% of width")
-                
-                # Log available strikes
+                # Log available strikes with structured header
                 today = self.time.date()
                 put_contracts = [contract for contract in contracts if contract.right == OptionRight.PUT and contract.expiry.date() == today]
                 if put_contracts:
-                    self.log(f"Found {len(put_contracts)} put contracts for today's expiration ({today})")
                     strikes = sorted(set([contract.strike for contract in put_contracts]))
-                    self.log(f"Strike range: ${min(strikes):.2f} to ${max(strikes):.2f}")
-                    
-                    # Skip delta logging as it's just for diagnostic purposes
-                    # We'll let the SpreadSelector handle the actual delta filtering
-                    self.log(f"Will evaluate put contracts against delta ≤ {self.spread_selector.max_delta} criteria")
+                    # Consolidated options universe information
+                    self.log(f"OPTIONS UNIVERSE - Strike range: ${min(strikes):.2f}-${max(strikes):.2f}, Found {len(put_contracts)} put contracts expiring today ({today})")
                     # Note: In the future, if delta diagnostics are needed, implement a
                     # calculate_option_delta method in the UniverseBuilder class
                 
@@ -149,13 +176,13 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
                     self._option_chain, equity_price)
                 
                 if spread is not None:
-                    self.log(f"Found suitable bull put spread - Breakeven: ${breakeven:.2f}")
-                    self.log(f"Max profit: ${max_profit:.2f}, Max loss: ${max_loss:.2f}")
+                    # Consolidated spread summary in a single log
+                    self.log(f"SPREAD SUMMARY - Bull Put Spread selected, Breakeven: ${breakeven:.2f}, Max P/L: ${max_profit:.2f}/${max_loss:.2f}")
                     # Execute the trade with M4 (Order Executor)
                     self.order_executor.place_spread_order(spread, max_profit, max_loss, breakeven)
                 else:
-                    self.log("No suitable spread found meeting selection criteria")
-                    self.log(f"Possible reasons: Delta > {self.spread_selector.max_delta} or credit < {self.spread_selector.min_credit_pct*100}% of width")
+                    # Consolidated message for no suitable spread
+                    self.log(f"SPREAD SUMMARY - No suitable spread found. Reasons: Delta > {self.spread_selector.max_delta} or credit < {self.spread_selector.min_credit_pct*100}% of width")
             except Exception as e:
                 self.error(f"Error in spread selection: {str(e)}")
         else:
@@ -163,9 +190,8 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
 
     def close_positions(self):
         """Mandatory closing of any open positions at 15:30 ET."""
-        self.log("15:30 ET: Mandatory position close check")
-        
-        # First, directly check if we have any option positions
+        self.log("CLOSE POSITION - Mandatory EOD close check initiated")
+        # Directly check if we have any option positions
         # This is the most reliable way to determine if we need to close positions
         has_positions = self._has_option_positions()
         
@@ -230,40 +256,43 @@ class V2CreditSpreadAlgoAlgorithm(QCAlgorithm):
                     self._option_chain = option_chain
                     self._chains_loaded_today = True
                     
-                    current_time = self.time.strftime("%H:%M:%S")
-                    self.log(f"Option chain loaded successfully at {current_time} with {len(chain_list)} contracts")
-                    
-                    # Log today's expiry details
+                    # Get contract breakdown
+                    put_count = sum(1 for contract in chain_list if contract.right == OptionRight.PUT)
+                    call_count = sum(1 for contract in chain_list if contract.right == OptionRight.CALL)
                     today = self.time.date()
                     today_contracts = [c for c in chain_list if c.expiry.date() == today]
-                    if today_contracts:
-                        self.log(f"Found {len(today_contracts)} contracts expiring today ({today})")
-                    else:
-                        self.log(f"WARNING: No contracts found expiring today ({today})")
+                    
+                    # Consolidated log message for option chain data
+                    self.log(f"MARKET DATA - Option chain loaded with {len(chain_list)} contracts ({put_count} puts, {call_count} calls), {len(today_contracts)} expiring today")
                 else:
-                    self.log(f"Option chain received but contains 0 contracts at {current_time}")
+                    self.log(f"MARKET DATA - Warning: Option chain received but contains 0 contracts")
             else:
                 # Only log this if it's before noon to avoid excessive logging
                 if self.time.hour < 12:
-                    self.log(f"Still waiting for option chain data at {self.time.strftime('%H:%M:%S')}")
+                    self.log(f"MARKET DATA - Waiting for option chain data")
         
         # Perform state verification to ensure flags match reality
         self.order_executor.reset_state()
         
         # Risk monitoring - implemented in M4 module (OrderExecutor)
-        # Check for stop-loss (2× credit) and take-profit (50% max gain)
+        # Only check stop-loss, take-profit is disabled
         if self._option_chain is not None and self.order_executor.spread_is_open:
-            # Check if we should close based on stop-loss or take-profit
+            # Check only stop-loss, take-profit is disabled for now
             self.order_executor.check_stop_loss(self._option_chain)
-            self.order_executor.check_take_profit(self._option_chain)
+            # Take-profit is disabled per user request
+            # self.order_executor.check_take_profit(self._option_chain)
 
     def on_order_event(self, order_event):
         """Handle order events for tracking spread status.
         
         Routes events to the order executor module to manage positions.
+        Does not log any order events to reduce log volume.
         
         Parameters:
             order_event (OrderEvent): The order event
         """
-        # Forward to order executor module
+        # No order event logging - only pass the event to the executor module
+        # to reduce log volume and focus on critical algorithm information
+        
+        # Pass the event to the order executor module
         self.order_executor.on_order_event(order_event)

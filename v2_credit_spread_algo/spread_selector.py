@@ -103,6 +103,11 @@ class SpreadSelector:
         
         self.algorithm.log(f"Found {len(valid_short_candidates)} potential short put candidates with delta ≤ {self.max_delta}")
         
+        # Log all short put candidates with their strikes and deltas in a single line
+        if valid_short_candidates:
+            candidates_details = ", ".join([f"(${contract.strike:.2f}, {abs(contract.greeks.delta):.4f})" for contract in valid_short_candidates])
+            self.algorithm.log(f"Short put candidates: {candidates_details}")
+        
         if not valid_short_candidates:
             self.algorithm.log(f"No put options found with delta ≤ {self.max_delta}")
             return None, None, None, None
@@ -211,14 +216,12 @@ class SpreadSelector:
                     'credit_percentage': credit_percentage
                 }
                 
+                # Add to appropriate list without detailed logging for each candidate
                 if net_credit >= min_required_credit:
-                    self.algorithm.log(f"FOUND PREFERRED: Credit ${net_credit:.2f} is {credit_percentage:.2f}% of width (≥ {self.min_credit_pct*100:.0f}%)")
                     preferred_spreads.append(spread_info)
                 elif net_credit >= fallback_required_credit:
-                    self.algorithm.log(f"FOUND FALLBACK: Credit ${net_credit:.2f} is {credit_percentage:.2f}% of width (≥ {self.min_credit_fallback_pct*100:.0f}%)")
                     fallback_spreads.append(spread_info)
-                else:
-                    self.algorithm.log(f"REJECTED: Credit ${net_credit:.2f} is only {credit_percentage:.2f}% of width (< {self.min_credit_fallback_pct*100:.0f}%)")
+                # No logging for rejected spreads to reduce log volume
             
             # After checking all widths, select the best spread
             selected_spread = None
@@ -249,15 +252,9 @@ class SpreadSelector:
                 net_credit = selected_spread['credit']
                 credit_percentage = selected_spread['credit_percentage']
                 
-                self.algorithm.log(f"{spread_type}: Credit ${net_credit:.2f} is {credit_percentage:.2f}% of width")
-                self.algorithm.log(f"ACCEPTED: Found valid spread with width ${spread_width:.2f}, credit ${net_credit:.2f} ({credit_percentage:.2f}%)")
-                self.algorithm.log(f"SPREAD DETAILS - Short: ${short_strike} (Δ{short_delta:.4f}, Bid=${short_bid:.2f}), Long: ${long_strike} (Δ{long_delta:.4f}, Ask=${long_ask:.2f})")
-
-                    
                 # Create the bull put spread using OptionStrategies
                 expiry = short_put.expiry
                 # Use the underlying symbol from the option chain and construct canonical option symbol
-                # This gets the option symbol directly from the option contract being used
                 canonical_option = short_put.symbol.canonical
                 spread = OptionStrategies.bull_put_spread(canonical_option, short_strike, long_strike, expiry)
                 
@@ -267,8 +264,9 @@ class SpreadSelector:
                 max_loss = (spread_width - net_credit) * 100  # Per contract
                 risk_reward = max_loss / max_profit if max_profit > 0 else float('inf')
                 
-                # Log comprehensive details in a consolidated format
-                self.algorithm.log(f"TRADE METRICS - Max profit: ${max_profit:.2f}, Max loss: ${max_loss:.2f}, Breakeven: ${breakeven:.2f}, Risk/Reward: {risk_reward:.2f}")
+                # Consolidated logging with a single comprehensive entry
+                self.algorithm.log(f"SPREAD SELECTED: Bull Put ${short_strike}/{long_strike}, Width=${spread_width:.2f}, Credit=${net_credit:.2f} ({credit_percentage:.2f}%), Max P/L=${max_profit:.2f}/${max_loss:.2f}, Breakeven=${breakeven:.2f}, R/R={risk_reward:.2f}")
+                
                 
                 return spread, max_profit, max_loss, breakeven
         

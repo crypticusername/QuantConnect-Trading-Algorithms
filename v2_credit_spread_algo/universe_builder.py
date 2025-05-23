@@ -1,4 +1,5 @@
 from AlgorithmImports import *
+from typing import Callable, Optional
 
 class UniverseBuilder:
     """
@@ -21,6 +22,28 @@ class UniverseBuilder:
         self.option_symbol = None
         self.equity_symbol = None
         self.strike_range = 20  # ±20 strikes around ATM
+        self._log_method = None  # Will be set by main algorithm
+    
+    @property
+    def log_method(self) -> Optional[Callable]:
+        """Getter for log_method property"""
+        return self._log_method
+    
+    @log_method.setter
+    def log_method(self, method: Callable):
+        """Setter for log_method property"""
+        self._log_method = method
+        
+    def log(self, message: str) -> None:
+        """Log a message using the provided log method or fall back to algorithm.log
+        
+        Parameters:
+        message (str): Message to log
+        """
+        if self._log_method:
+            self._log_method(message)
+        else:
+            self.algorithm.log(message)
         
     def initialize_universe(self, equity_ticker: str, resolution: Resolution) -> None:
         """
@@ -36,7 +59,7 @@ class UniverseBuilder:
         # Add the equity
         equity = self.algorithm.add_equity(equity_ticker, resolution)
         self.equity_symbol = equity.Symbol
-        self.algorithm.log(f"Added equity {equity_ticker}")
+        self.log(f"Added equity {equity_ticker}")
         
         # Add the option
         option = self.algorithm.add_option(equity_ticker, resolution)
@@ -47,7 +70,7 @@ class UniverseBuilder:
         
         # Save the option symbol
         self.option_symbol = option.Symbol
-        self.algorithm.log(f"Added option chain for {equity_ticker} with 0 DTE filter")
+        self.log(f"Added option chain for {equity_ticker} with 0 DTE filter")
         
     def _option_filter_function(self, universe: OptionFilterUniverse) -> OptionFilterUniverse:
         """
@@ -81,17 +104,17 @@ class UniverseBuilder:
             try:
                 option_security = self.algorithm.securities[self.option_symbol]
                 if option_security is not None:
-                    self.algorithm.log(f"Option security exists but no slice available")
+                    self.log(f"Option security exists but no slice available")
                 return None
             except Exception as e:
-                self.algorithm.log(f"Cannot access option security: {str(e)}")
+                self.log(f"Cannot access option security: {str(e)}")
                 return None
         
         # Check if slice has option chains at all
         if not slice.option_chains:
             # Only log this before noon to avoid spamming logs
             if self.algorithm.time.hour < 12 and self.algorithm.time.minute % 10 == 0:  # Log every 10 minutes
-                self.algorithm.log(f"No option chains in slice at {self.algorithm.time.strftime('%H:%M:%S')}")
+                self.log(f"No option chains in slice at {self.algorithm.time.strftime('%H:%M:%S')}")
             return None
         
         # Check if our specific option symbol is in the chains
@@ -101,15 +124,15 @@ class UniverseBuilder:
                 available_symbols = list(slice.option_chains.keys())
                 symbol_count = len(available_symbols)
                 if symbol_count > 0:
-                    self.algorithm.log(f"Option chain slice has {symbol_count} symbols, but {self.option_symbol.value} not found")
+                    self.log(f"Option chain slice has {symbol_count} symbols, but {self.option_symbol.value} not found")
                 else:
-                    self.algorithm.log(f"Option chain slice is empty (has keys but no content)")
+                    self.log(f"Option chain slice is empty (has keys but no content)")
             return None
         
         # We have the chain, now check if it has content
         chain = slice.option_chains[self.option_symbol.value]
         if chain is None or len(list(chain)) == 0:
-            self.algorithm.log(f"Found empty option chain for {self.option_symbol.value}")
+            self.log(f"Found empty option chain for {self.option_symbol.value}")
             return None
             
         # Check if today's expiry is in the chain
@@ -119,7 +142,7 @@ class UniverseBuilder:
         
         if today not in unique_expiries and self.algorithm.time.hour < 12:
             expiry_str = ', '.join([d.strftime('%Y-%m-%d') for d in sorted(unique_expiries)])
-            self.algorithm.log(f"Chain loaded but missing today's expiry. Available expiries: {expiry_str}")
+            self.log(f"Chain loaded but missing today's expiry. Available expiries: {expiry_str}")
         
         return chain
     
@@ -174,5 +197,5 @@ class UniverseBuilder:
                     return min(0.99, max(0.01, (1.1 - moneyness) * 5))
                     
         except Exception as e:
-            self.algorithm.log(f"Error calculating delta: {str(e)}")
+            self.log(f"Error calculating delta: {str(e)}")
             return 0.5  # Return a mid-range value as fallback
